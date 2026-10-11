@@ -1,0 +1,15 @@
+# Maven
+crawler/target/
+
+# IDE
+.idea/
+.vscode/
+*.iml
+
+# Betriebssystem
+Thumbs.db
+desktop.ini
+.DS_Store
+
+# lokale Zwischenablagen des Crawlers (rohe API-Antworten zum Debuggen)
+crawler/cache/
