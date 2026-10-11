@@ -102,10 +102,13 @@ public class Main {
 
         if (auswahl.zuLaden.isEmpty()) {
             System.out.println("Nichts zu tun – alle Events sind aktuell.");
-            // Trotzdem meta.json aktualisieren, damit der Zeitstempel stimmt.
+            // Trotzdem meta.json und den Suchindex aktualisieren, damit der
+            // Zeitstempel stimmt und ein fehlender Index nachgezogen wird.
             if (!arg.trockenlauf) {
                 status.aktualisiert = ZEITSTEMPEL.format(Instant.now());
                 status.speichern(statusDatei);
+                Personenindex.schreiben(bestand.alleWertungen(),
+                        datenOrdner.resolve("personen.json"));
                 bestand.metaSpeichern(datenOrdner.resolve("meta.json"),
                         status.aktualisiert, status.events.size());
             }
@@ -198,10 +201,13 @@ public class Main {
         } else {
             status.aktualisiert = ZEITSTEMPEL.format(Instant.now());
             bestand.speichern();
+            int anzahlPersonen = Personenindex.schreiben(
+                    bestand.alleWertungen(), datenOrdner.resolve("personen.json"));
             bestand.metaSpeichern(datenOrdner.resolve("meta.json"),
                     status.aktualisiert, status.events.size());
             status.speichern(statusDatei);
-            System.out.println("Dateien geschrieben nach " + datenOrdner);
+            System.out.println("Dateien geschrieben nach " + datenOrdner
+                    + " (Suchindex: " + anzahlPersonen + " Personen)");
         }
 
         // --- Zusammenfassung ---

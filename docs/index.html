@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Trampolin-Wertungssuche</title>
+<meta name="description" content="Alle Trampolin-Wertungen einer Turnerin oder eines Turners aus deutschen Wettkämpfen auf einer Seite. Daten von sporttech.io.">
+<meta name="color-scheme" content="light dark">
+<link rel="stylesheet" href="style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%232340b8'/><ellipse cx='16' cy='21' rx='10' ry='3.5' fill='none' stroke='white' stroke-width='2.2'/><path d='M16 5v9' stroke='white' stroke-width='2.2' stroke-linecap='round'/></svg>">
+</head>
+<body>
+
+<a class="sprungmarke" href="#suchfeld">Direkt zur Suche</a>
+
+<header class="kopf">
+  <div class="begrenzt kopf-reihe">
+    <div class="marke">
+      <span class="marke-oben">Trampolinturnen</span>
+      <span class="marke-name">Wertungssuche</span>
+    </div>
+
+    <button type="button" id="themaSchalter" class="thema-schalter"
+            aria-label="Farbschema wechseln">
+      <span class="thema-text" id="themaText">Automatisch</span>
+    </button>
+  </div>
+</header>
+
+<main class="begrenzt">
+
+  <!--
+    Das Suchfeld ist der Inhalt der Seite, nicht eine Dekoration darüber.
+    Darum steht es ganz oben und bekommt den meisten Platz.
+  -->
+  <section class="suche" aria-labelledby="suchtitel">
+    <h1 id="suchtitel">Wertungen einer Person suchen</h1>
+
+    <div class="feld-rahmen">
+      <svg class="feld-lupe" viewBox="0 0 24 24" aria-hidden="true">
+        <circle cx="10.5" cy="10.5" r="6.5" fill="none" stroke="currentColor" stroke-width="2"/>
+        <path d="M15.5 15.5 21 21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+      <input type="search" id="suchfeld" class="feld"
+             placeholder="Name eingeben"
+             autocomplete="off" autocapitalize="off" spellcheck="false"
+             enterkeyhint="search"
+             aria-describedby="suchhilfe">
+      <button type="button" id="leeren" class="feld-leeren" hidden
+              aria-label="Suche zurücksetzen">&times;</button>
+    </div>
+
+    <p id="suchhilfe" class="suchhilfe">
+      Ab zwei Buchstaben. Vor- und Nachname in beliebiger Reihenfolge.
+      Umlaute, Akzente und Groß&shy;schreibung sind egal: <em>muller</em> findet
+      auch <em>Müller</em>.
+    </p>
+
+    <p class="bestand" id="bestand">Daten werden geladen&nbsp;…</p>
+  </section>
+
+  <!--
+    Die Punkteformel ist gleichzeitig die Legende für die farbigen Balken in
+    den Tabellen. Beides an einer Stelle, damit man die Farben nicht raten muss.
+  -->
+  <section class="formel" aria-label="So setzt sich eine Wertung zusammen">
+    <h2 class="formel-titel">So setzt sich eine Wertung zusammen</h2>
+    <p class="formel-zeile">
+      <span class="teil teil-d"><b>D</b> Schwierigkeit</span>
+      <span class="op">+</span>
+      <span class="teil teil-e"><b>E</b> Ausführung</span>
+      <span class="op">+</span>
+      <span class="teil teil-t"><b>T</b> Flugzeit</span>
+      <span class="op">+</span>
+      <span class="teil teil-h"><b>H</b> Verlagerung</span>
+      <span class="op">&minus;</span>
+      <span class="teil teil-abzug"><b>A</b> Abzug</span>
+      <span class="op gleich">=</span>
+      <span class="teil teil-gesamt"><b>Gesamt</b></span>
+    </p>
+    <p class="formel-fuss">
+      Die Balken in den Tabellen zeigen genau diese Aufteilung. Der schraffierte
+      rote Teil rechts ist der Abzug – er wird abgezogen, nicht addiert.
+    </p>
+  </section>
+
+  <!-- Lade-, Leer- und Fehlerzustände -->
+  <div id="zustand" class="zustand" role="status" aria-live="polite"></div>
+
+  <!-- Hierhin schreibt app.js die Ergebnisse -->
+  <div id="ergebnisse"></div>
+
+</main>
+
+<footer class="fuss">
+  <div class="begrenzt">
+    <p>
+      Alle Wertungen stammen von
+      <a href="https://sporttech.io" rel="noopener">sporttech.io</a>
+      und werden dort veröffentlicht. Diese Seite sammelt sie nur ein und macht
+      sie nach Namen durchsuchbar.
+    </p>
+    <p id="fussStand" class="fuss-stand"></p>
+    <p>
+      Erfasst werden Trampolin-Einzelwertungen aus Wettkämpfen, die in
+      Deutschland ausgerichtet werden, ab dem 1.&nbsp;Januar 2024 – dazu
+      einzelne Wettkämpfe im Ausland. Synchronspringen, Doppel&shy;mini&shy;trampolin
+      und Tumbling sind nicht dabei.
+    </p>
+  </div>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>

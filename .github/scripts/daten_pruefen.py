@@ -69,7 +69,7 @@ def main():
 
     wertungsdateien = sorted(
         d for d in ORDNER.glob("*.json")
-        if d.stem not in ("meta", "events")
+        if d.stem not in ("meta", "events", "personen")
     )
 
     for datei in wertungsdateien:
@@ -128,6 +128,39 @@ def main():
                 schluessel[s] = ort
 
         print(f"  {datei.name}: {len(inhalt)} Wertungen")
+
+    # personen.json - der Suchindex der Website. Wenn er nicht zu den
+    # Wertungsdateien passt, findet die Suche Personen, zeigt aber keine
+    # Wertungen an.
+    personen_datei = ORDNER / "personen.json"
+    if personen_datei.exists():
+        try:
+            personen = json.loads(personen_datei.read_text(encoding="utf-8"))
+            if not isinstance(personen, list):
+                fehler.append("personen.json: erwartet wird eine Liste")
+            else:
+                summe = 0
+                for nr, p in enumerate(personen):
+                    ort = f"personen.json Eintrag {nr}"
+                    for feld in ("vorname", "nachname", "jahrgang", "vereine",
+                                 "nationen", "datei", "anzahl"):
+                        if feld not in p:
+                            fehler.append(f"{ort}: Feld '{feld}' fehlt")
+                            break
+                    else:
+                        summe += p["anzahl"]
+                        soll = erwartete_datei(p["nachname"])
+                        if p["datei"] != soll:
+                            fehler.append(
+                                f"{ort}: '{p['nachname']}' verweist auf "
+                                f"{p['datei']}.json, erwartet wird {soll}.json")
+                if summe != zeilen_gesamt:
+                    fehler.append(
+                        f"personen.json: die Summe der Wertungen ist {summe}, "
+                        f"in den Dateien stehen aber {zeilen_gesamt}")
+                print(f"  personen.json: {len(personen)} Personen")
+        except Exception as e:
+            fehler.append(f"personen.json: ungueltiges JSON - {e}")
 
     # meta.json
     meta_datei = ORDNER / "meta.json"

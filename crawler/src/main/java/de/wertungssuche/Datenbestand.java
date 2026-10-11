@@ -211,6 +211,15 @@ public class Datenbestand {
         return personen.size();
     }
 
+    /** Alle Wertungen über alle Dateien hinweg – für den Personenindex. */
+    public List<Wertung> alleWertungen() {
+        List<Wertung> alle = new ArrayList<>(anzahlWertungen());
+        for (List<Wertung> liste : dateien.values()) {
+            alle.addAll(liste);
+        }
+        return alle;
+    }
+
     public int getHinzugefuegt() {
         return hinzugefuegt;
     }

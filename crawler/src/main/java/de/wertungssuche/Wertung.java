@@ -86,15 +86,34 @@ public class Wertung {
     }
 
     /**
-     * Der Schlüssel der <b>Person</b> – dafür gruppiert die Website die
-     * Ergebnisse. Name plus Jahrgang plus Verein/Nation, damit Namensgleiche
-     * getrennt bleiben.
+     * Der Schlüssel der <b>Person</b> – danach gruppiert die Website die
+     * Ergebnisse: Nachname, Vorname und Jahrgang.
+     *
+     * <p>Der <b>Verein gehört bewusst nicht dazu</b>, obwohl das zuerst
+     * naheliegt. Die Vereinsangabe ist bei sporttech.io nicht stabil: jeder
+     * Veranstalter trägt sie neu ein. Gemessen am fertigen Datenbestand
+     * betrifft das <b>672 von 2 932 Personen</b> – sie hätten sonst mehrere
+     * Karten statt einer. Beispiele aus den echten Daten:
+     *
+     * <pre>
+     * Tristan Abild (2003)   "TST Satrup"        / "TST Satrup e.V."
+     * Joel Achille (2013)    "GER, TG Münster"   / "TG Münster" / "TG Münster 1862"
+     * Edda Ahrens (2013)     "VfL Grasdorf"      / "VFL Grasdorf 1896 e.V."
+     * Ella Alberternst (2012) "TV 1843 Dillenburg" / "HE, Hessischer Turnverband"
+     * </pre>
+     *
+     * <p>Dazu kommen echte Vereinswechsel, die eine Turnerin ja nicht zu einer
+     * anderen Person machen. Die Website zeigt deshalb <b>alle</b> Vereine
+     * einer Person an, neueste zuerst.
+     *
+     * <p>Der Preis: zwei verschiedene Personen mit gleichem Namen <i>und</i>
+     * gleichem Jahrgang landen auf einer Karte. Das ist selten, und weil dann
+     * beide Vereine nebeneinander stehen, fällt es auf.
      */
     public String personSchluessel() {
         return Namen.normalisieren(nachname)
                 + "|" + Namen.normalisieren(vorname)
-                + "|" + (jahrgang == null ? "" : jahrgang)
-                + "|" + Namen.normalisieren(verein != null ? verein : nation);
+                + "|" + (jahrgang == null ? "" : jahrgang);
     }
 
     /** In welche Datei unter {@code docs/data/} gehört diese Wertung? */
