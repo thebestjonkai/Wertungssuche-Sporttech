@@ -17,6 +17,18 @@
   würde GitHub die README.md als Startseite rendern, und von der Suche
   wäre nichts zu sehen. Darum die Weiterleitung.
 -->
+<!--
+  Die Weiterleitung nimmt Suchanfrage und Anker mit, sonst geht bei einem
+  geteilten Link wie ?name=müller der Name verloren. Das Skript steht im
+  head und greift vor dem meta-refresh; das refresh ist nur die Notlösung
+  für abgeschaltetes JavaScript.
+-->
+<script>
+  (function () {
+    var ziel = 'docs/' + window.location.search + window.location.hash;
+    window.location.replace(ziel);
+  })();
+</script>
 <meta http-equiv="refresh" content="0; url=docs/">
 <link rel="canonical" href="docs/">
 
@@ -41,8 +53,12 @@
 <body>
   <div class="kasten">
     <p>Die Wertungssuche wird geladen&nbsp;…</p>
-    <p><a href="docs/">Weiter zur Suche</a></p>
+    <p><a href="docs/" id="weiter">Weiter zur Suche</a></p>
   </div>
-  <script>location.replace('docs/');</script>
+  <script>
+    // Auch der Notfall-Link soll die Suchanfrage mitnehmen.
+    document.getElementById('weiter').href =
+      'docs/' + window.location.search + window.location.hash;
+  </script>
 </body>
 </html>
