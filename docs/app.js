@@ -319,7 +319,7 @@ function balkenBauen(w, massstab) {
     .filter(([, wert]) => wert !== null && wert !== undefined)
     .map(([k, wert]) => k.toUpperCase() + ' ' + F_DREI.format(wert))
     .join(', ')
-    + (abzug > 0 ? ', Abzug ' + F_EINE.format(abzug) : '');
+    + (abzug > 0 ? ', Penalty ' + F_EINE.format(abzug) : '');
 
   spur.setAttribute('role', 'img');
   spur.setAttribute('aria-label', 'Aufteilung: ' + beschreibung);
@@ -367,7 +367,7 @@ function tabelleBauen(zeilen, massstab) {
   const spalten = [
     ['Datum', ''], ['Event', ''], ['Wettkampf', ''], ['Durchgang', ''],
     ['Platz', 'rechts'], ['D', 'rechts'], ['E', 'rechts'], ['T', 'rechts'],
-    ['H', 'rechts'], ['Abzug', 'rechts'], ['Gesamt', 'rechts'],
+    ['H', 'rechts'], ['Penalty', 'rechts'], ['Gesamt', 'rechts'],
     ['Aufteilung', ''], ['Quelle', '']
   ];
   for (const [name, klasse] of spalten) {
@@ -395,7 +395,7 @@ function tabelleBauen(zeilen, massstab) {
     tr.appendChild(zelle(zahlKlasse(w.e), 'E', zahl(w.e, F_DREI)));
     tr.appendChild(zelle(zahlKlasse(w.t), 'T', zahl(w.t, F_T)));
     tr.appendChild(zelle(zahlKlasse(w.h), 'H', zahl(w.h, F_ZWEI)));
-    tr.appendChild(zelle(zahlKlasse(w.abzug), 'Abzug', zahl(w.abzug, F_EINE)));
+    tr.appendChild(zelle(zahlKlasse(w.abzug), 'Penalty', zahl(w.abzug, F_EINE)));
     tr.appendChild(zelle('gesamt-zelle', 'Gesamt', zahl(w.gesamt, F_DREI)));
 
     tr.appendChild(zelle('balken-zelle', 'Aufteilung', balkenBauen(w, massstab)));
