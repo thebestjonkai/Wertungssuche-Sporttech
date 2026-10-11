@@ -270,70 +270,6 @@ function el(tag, klasse, text) {
   return knoten;
 }
 
-/**
- * Der Balken, der eine Wertung in ihre Teilnoten zerlegt.
- *
- * Die Breite des Balkens richtet sich nach der höchsten Wertung dieser Person
- * (massstab). So sind die Balken innerhalb einer Tabelle untereinander
- * vergleichbar - man sieht auf einen Blick, welcher Wettkampf besser lief und
- * woran es lag.
- *
- * Innerhalb des Balkens wird nach Werten aufgeteilt: ein Segment je Teilnote,
- * mit 2px Fuge dazwischen. Der Abzug hängt abgesetzt und schraffiert hinten
- * dran, weil er abgezogen wird.
- */
-function balkenBauen(w, massstab) {
-  const teile = [
-    ['d', w.d, 'D'],
-    ['e', w.e, 'E'],
-    ['t', w.t, 'T'],
-    ['h', w.h, 'H']
-  ];
-
-  const summe = teile.reduce((s, [, wert]) => s + (wert || 0), 0);
-  const abzug = w.abzug || 0;
-
-  const spur = el('div', 'balken-spur');
-
-  if (summe <= 0 && abzug <= 0) {
-    return spur; // nichts zu zeigen, aber die Zelle bleibt gleich hoch
-  }
-
-  const balken = el('div', 'balken');
-  // Anteil an der Spurbreite. Abzug zählt mit, damit der Balken nicht
-  // breiter wird als die Spur.
-  const anteil = Math.min(1, (summe + abzug) / (massstab || summe || 1));
-  balken.style.width = (anteil * 100).toFixed(2) + '%';
-
-  for (const [kuerzel, wert] of teile) {
-    if (!wert || wert <= 0) continue;
-    const seg = el('span', 'seg seg-' + kuerzel);
-    seg.style.flexGrow = String(wert);
-    seg.style.flexBasis = '0';
-    balken.appendChild(seg);
-  }
-  if (abzug > 0) {
-    const seg = el('span', 'seg seg-abzug');
-    seg.style.flexGrow = String(abzug);
-    seg.style.flexBasis = '0';
-    balken.appendChild(seg);
-  }
-
-  // Für Screenreader und als Tooltip: die Aufteilung in Worten.
-  const beschreibung = teile
-    .filter(([, wert]) => wert !== null && wert !== undefined)
-    .map(([k, wert]) => k.toUpperCase() + ' ' + F_DREI.format(wert))
-    .join(', ')
-    + (abzug > 0 ? ', Penalty ' + F_EINE.format(abzug) : '');
-
-  spur.setAttribute('role', 'img');
-  spur.setAttribute('aria-label', 'Aufteilung: ' + beschreibung);
-  spur.title = beschreibung;
-
-  spur.appendChild(balken);
-  return spur;
-}
-
 /** Eine Kennzahl-Kachel über der Tabelle. */
 function kachelBauen(titel, wert, zusatz, farbe) {
   const kachel = el('div', 'kachel');
@@ -378,20 +314,24 @@ function zelle(klasse, spalte, inhalt) {
  * Zeilen bekommen - und damit in der Handyansicht, wo jede Zeile eine eigene
  * Karte ist, nichts fehlt.
  */
-const SPALTEN_ANZAHL = 14;
+const SPALTEN_ANZAHL = 12;
 
-function tabelleBauen(zeilen, massstab) {
+function tabelleBauen(zeilen) {
   const rahmen = el('div', 'tabelle-rahmen');
   const tabelle = el('table');
 
   const kopf = el('thead');
   const kopfZeile = el('tr');
+  // "trenner" setzt eine senkrechte Linie links von der Spalte. Sie gliedert
+  // die Tabelle in Blöcke: wann und wo · was · Platz · Teilnoten · Gesamt ·
+  // Quelle.
   const spalten = [
-    ['Datum', ''], ['Event', ''], ['Wettkampf', ''], ['Durchgang', ''],
-    ['Übung', 'rechts'], ['Platz', 'rechts'],
-    ['D', 'rechts'], ['E', 'rechts'], ['T', 'rechts'], ['H', 'rechts'],
-    ['Penalty', 'rechts'], ['Gesamt', 'rechts'],
-    ['Aufteilung', ''], ['Quelle', '']
+    ['Datum', ''], ['Event', 'trenner'], ['Wettkampf', ''], ['Durchgang', ''],
+    ['Platz', 'rechts trenner'],
+    ['D', 'rechts trenner'], ['E', 'rechts'], ['T', 'rechts'],
+    ['H', 'rechts'], ['Penalty', 'rechts'],
+    ['Gesamt', 'rechts trenner'],
+    ['Quelle', 'trenner']
   ];
   for (const [name, klasse] of spalten) {
     kopfZeile.appendChild(el('th', klasse, name));
@@ -421,27 +361,23 @@ function tabelleBauen(zeilen, massstab) {
     const tr = el('tr', neuerWettkampf ? 'wk-start' : 'wk-fortsetzung');
 
     tr.appendChild(zelle('datum-zelle', 'Datum', datumAnzeigen(w.datum)));
-    tr.appendChild(zelle('event-zelle', 'Event', w.event || '–'));
+    tr.appendChild(zelle('event-zelle trenner', 'Event', w.event || '–'));
     tr.appendChild(zelle('wettkampf-zelle', 'Wettkampf', w.wettkampf || '–'));
-    tr.appendChild(zelle('durchgang-zelle', 'Durchgang', w.durchgang || '–'));
-    tr.appendChild(zelle('uebung-zelle', 'Übung',
-      w.uebung == null ? '–' : F_GANZ.format(w.uebung)));
+    tr.appendChild(zelle('durchgang-zelle', 'Durchgang', durchgangInhalt(w)));
 
-    const platzKlasse = 'platz-zelle'
+    const platzKlasse = 'platz-zelle trenner'
       + (w.platz && w.platz <= 3 ? ' platz-' + w.platz : '');
     tr.appendChild(zelle(platzKlasse, 'Platz',
       w.platz ? F_GANZ.format(w.platz) + '.' : '–'));
 
-    tr.appendChild(zelle(zahlKlasse(w.d), 'D', zahl(w.d, F_DREI)));
+    tr.appendChild(zelle(zahlKlasse(w.d) + ' trenner', 'D', zahl(w.d, F_DREI)));
     tr.appendChild(zelle(zahlKlasse(w.e), 'E', zahl(w.e, F_DREI)));
     tr.appendChild(zelle(zahlKlasse(w.t), 'T', zahl(w.t, F_T)));
     tr.appendChild(zelle(zahlKlasse(w.h), 'H', zahl(w.h, F_ZWEI)));
     tr.appendChild(zelle(zahlKlasse(w.abzug), 'Penalty', zahl(w.abzug, F_EINE)));
-    tr.appendChild(zelle('gesamt-zelle', 'Gesamt', zahl(w.gesamt, F_DREI)));
+    tr.appendChild(zelle('gesamt-zelle trenner', 'Gesamt', zahl(w.gesamt, F_DREI)));
 
-    tr.appendChild(zelle('balken-zelle', 'Aufteilung', balkenBauen(w, massstab)));
-
-    const td = el('td', 'link-zelle');
+    const td = el('td', 'link-zelle trenner');
     td.setAttribute('data-spalte', 'Quelle');
     if (w.link) {
       const a = el('a', null, 'sporttech.io');
@@ -461,6 +397,32 @@ function tabelleBauen(zeilen, massstab) {
   tabelle.appendChild(koerper);
   rahmen.appendChild(tabelle);
   return rahmen;
+}
+
+/**
+ * Der Inhalt der Spalte "Durchgang": der Name und, wenn der Durchgang aus
+ * mehreren Übungen besteht, die Nummer der Übung.
+ *
+ * Ausgeschrieben als "Qualifikation · Übung 2" und nicht als
+ * "Qualifikation 2": letzteres meint im Trampolinturnen den zweiten
+ * Durchgang, also das Halbfinale. In den Daten bleiben Durchgang und Übung
+ * zwei getrennte Felder, hier werden sie nur gemeinsam angezeigt.
+ *
+ * Bei einem Durchgang aus einer einzigen Übung bleibt die Nummer weg - ein
+ * "Finale · Übung 1" sagt nichts.
+ */
+function durchgangInhalt(w) {
+  // Ein einzelnes Element, kein Fragment: in der Kartenansicht ist die Zelle
+  // ein Flex-Kasten mit space-between. Zwei lose Kinder würden sonst
+  // auseinandergezogen - "Qualifikation" links, "· Übung 1" ganz rechts.
+  const kasten = el('span', 'durchgang-inhalt');
+  kasten.appendChild(document.createTextNode(w.durchgang || '–'));
+
+  if (w.uebungen > 1 && w.uebung != null) {
+    kasten.appendChild(el('span', 'uebung-zusatz',
+      ' · Übung ' + F_GANZ.format(w.uebung)));
+  }
+  return kasten;
 }
 
 /** Eine Zeile über die volle Breite, die ein neues Jahr ankündigt. */
@@ -625,11 +587,10 @@ function inhaltAnhaengen(block, zeilen) {
     beste.h === null ? '–' : F_ZWEI.format(beste.h), null, 'var(--n-h)'));
   block.appendChild(kacheln);
 
-  const massstab = beste.summe || 1;
   const gekuerzt = zeilen.length > MAX_ZEILEN_ANFANGS;
   const sichtbar = gekuerzt ? zeilen.slice(0, MAX_ZEILEN_ANFANGS) : zeilen;
 
-  const tabelle = tabelleBauen(sichtbar, massstab);
+  const tabelle = tabelleBauen(sichtbar);
   block.appendChild(tabelle);
 
   if (gekuerzt) {
@@ -637,22 +598,16 @@ function inhaltAnhaengen(block, zeilen) {
       'Alle ' + F_GANZ.format(zeilen.length) + ' Übungen anzeigen');
     knopf.type = 'button';
     knopf.addEventListener('click', () => {
-      block.replaceChild(tabelleBauen(zeilen, massstab), tabelle);
+      block.replaceChild(tabelleBauen(zeilen), tabelle);
       knopf.remove();
     });
     block.appendChild(knopf);
   }
 }
 
-/**
- * Die Bestwerte einer Person.
- *
- * `summe` ist der grösste Wert aus (D+E+T+H+Abzug) einer einzelnen Übung und
- * dient als Maßstab für die Balken - nicht `gesamt`, weil der Abzug die
- * Balkenbreite mitbestimmt.
- */
+/** Der jeweils beste Wert einer Person, je Teilnote und gesamt. */
 function besteWerte(zeilen) {
-  const beste = { gesamt: null, d: null, e: null, t: null, h: null, summe: 0 };
+  const beste = { gesamt: null, d: null, e: null, t: null, h: null };
 
   for (const w of zeilen) {
     for (const feld of ['gesamt', 'd', 'e', 't', 'h']) {
@@ -662,8 +617,6 @@ function besteWerte(zeilen) {
         beste[feld] = wert;
       }
     }
-    const summe = (w.d || 0) + (w.e || 0) + (w.t || 0) + (w.h || 0) + (w.abzug || 0);
-    if (summe > beste.summe) beste.summe = summe;
   }
   return beste;
 }

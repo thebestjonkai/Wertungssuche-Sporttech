@@ -8,12 +8,15 @@
      - alle Zahlen in Tabellenschrift (Monospace, tabular-nums), damit
        Dezimalstellen untereinander stehen
      - Beschriftungen klein, gesperrt, in Großbuchstaben - wie auf einer Anzeige
-     - genau eine farbige Stelle: die Aufteilung der Wertung in D, E, T, H
-       und Abzug. Alles andere ist grau.
+     - die Tabelle wird durch Linien gegliedert, waagerecht nach Jahr und
+       Wettkampf, senkrecht in Blöcke:
+         Datum │ wo und was │ Platz │ Teilnoten │ Gesamt │ Quelle
+     - genau eine farbige Stelle: die Teilnoten D, E, T, H und Penalty.
+       Alles andere ist grau.
 
    Die Farben der Teilnoten sind nicht frei gewählt, sondern gegen Rot-Grün-
    und Blau-Gelb-Sehschwäche geprüft (Abstand im OKLab-Raum). Die Reihenfolge
-   D - E - T - H - Abzug gehört zur Prüfung dazu; wer sie ändert, muss neu
+   D - E - T - H - Penalty gehört zur Prüfung dazu; wer sie ändert, muss neu
    prüfen.
    =========================================================================== */
 
@@ -704,36 +707,45 @@ tbody tr.jahr-band:first-child td {
   padding: .15rem .7rem;
 }
 
-/* Erste Zeile eines Wettkampfs: Trennlinie und zusätzliche Luft darüber.
-   Der Abstand trennt stärker als die Linie allein - die Übungen eines
-   Wettkampfs rücken dadurch sichtbar zusammen. */
+/* Erste Zeile eines Wettkampfs: eine kräftige Linie darüber. Die Zeilen
+   innerhalb eines Wettkampfs trennt nur die feine Linie, dadurch gehören
+   sie sichtbar zusammen.
+
+   Die 2px sind nötig, nicht Geschmack: bei border-collapse gewinnt zwischen
+   zwei aneinanderstoßenden Rändern der breitere. Mit 1px würde die helle
+   Unterkante der Zeile darüber die Trennlinie überdecken. */
 tr.wk-start td {
-  border-top: 1px solid var(--linie);
-  padding-top: 1rem;
+  border-top: 2px solid var(--schrift-3);
 }
 /* Nach einem Jahresband braucht es die Linie nicht noch einmal. */
-.jahr-band + tr.wk-start td { border-top: 0; padding-top: .55rem; }
+.jahr-band + tr.wk-start td { border-top: 0; }
 tbody tr:first-child td { border-top: 0; }
 
-/* Folgezeilen desselben Wettkampfs: Event und Wettkampfklasse blass, damit
-   das Auge an der ersten Zeile hängen bleibt. Der Text bleibt stehen - für
-   Vorlesewerkzeuge, zum Kopieren und für die Handyansicht.
+/* -------------------------------------------- Senkrechte Trennlinien --- */
 
-   Das Datum bleibt bewusst kräftig: ein Wettkampf zieht sich oft über zwei
-   Tage, Qualifikation am Samstag, Finale am Sonntag. Blass wäre es dort
-   schlicht falsch. */
-tr.wk-fortsetzung .event-zelle,
-tr.wk-fortsetzung .wettkampf-zelle {
-  color: var(--schrift-3);
-  opacity: .6;
+/*
+   Die Tabelle zerfällt in Blöcke, die inhaltlich zusammengehören:
+
+     Datum │ Event  Wettkampf  Durchgang │ Platz │ D  E  T  H  Penalty │ Gesamt │ Quelle
+            wann und wo                    Rang    die Teilnoten         Summe    Nachweis
+
+   Die Linie steht jeweils links von der Spalte, die einen neuen Block
+   eröffnet.
+*/
+thead th.trenner,
+tbody td.trenner {
+  border-left: 1px solid var(--linie);
 }
+/* Im Kopf etwas kräftiger, damit die Gliederung sofort ins Auge fällt. */
+thead th.trenner { border-left-color: var(--schrift-3); }
 
-.uebung-zelle {
+/* Die Übungsnummer steht in derselben Spalte wie der Durchgang, nur
+   zurückgenommen - "Qualifikation · Übung 2". */
+.uebung-zusatz {
   font-family: var(--mono);
   font-variant-numeric: tabular-nums;
-  text-align: right;
+  color: var(--schrift-3);
   white-space: nowrap;
-  color: var(--schrift-2);
 }
 
 .zahl {
@@ -778,51 +790,6 @@ tr.wk-fortsetzung .wettkampf-zelle {
   white-space: nowrap;
 }
 
-/* ------------------------------------------------- Balken: die Aufteilung --- */
-
-.balken-zelle { width: 7.5rem; min-width: 6rem; }
-
-.balken-spur {
-  /* Die Spur ist die Breite der höchsten Wertung dieser Person. So sind die
-     Balken innerhalb einer Tabelle untereinander vergleichbar. */
-  width: 100%;
-  height: .875rem;
-  display: flex;
-  align-items: stretch;
-}
-
-.balken {
-  display: flex;
-  gap: 2px;            /* Trennfuge in Flächenfarbe - trennt die Teilnoten */
-  height: 100%;
-  min-width: 2px;
-}
-
-.seg {
-  min-width: 2px;
-  background: var(--farbe);
-}
-.seg:first-child { border-radius: 3px 0 0 3px; }
-.seg:last-child  { border-radius: 0 3px 3px 0; }
-.seg:only-child  { border-radius: 3px; }
-
-.seg-d { --farbe: var(--n-d); }
-.seg-e { --farbe: var(--n-e); }
-.seg-t { --farbe: var(--n-t); }
-.seg-h { --farbe: var(--n-h); }
-
-/* Der Abzug steht abgesetzt hinter dem Balken und ist schraffiert - er wird
-   abgezogen, nicht addiert. Die Schraffur ist die zweite Kennzeichnung neben
-   der Farbe. */
-.seg-abzug {
-  margin-left: 3px;
-  border-radius: 3px;
-  background: repeating-linear-gradient(
-    135deg,
-    var(--n-abzug) 0 3px,
-    color-mix(in srgb, var(--n-abzug) 40%, var(--flaeche)) 3px 6px);
-}
-
 /* ------------------------------------------------------------ Mobilansicht --- */
 
 /* Unter 820px wird aus jeder Tabellenzeile eine kleine Karte. Die Spalten-
@@ -864,19 +831,11 @@ tr.wk-fortsetzung .wettkampf-zelle {
   .jahr-band td::before { content: none; }
 
   /* Die Trennlinie gehört in der Kartenansicht an die Karte, nicht an die
-     einzelne Zelle. */
+     einzelne Zelle. Senkrechte Linien ergeben hier keinen Sinn. */
   tr.wk-start td { border-top: 0; }
-  tr.wk-start { border-top: 2px solid var(--linie); }
+  tr.wk-start { border-top: 2px solid var(--schrift-3); }
   .jahr-band + tr.wk-start { border-top: 0; }
   tbody tr:first-child { border-top: 0; }
-
-  /* Der Eventname ist hier die Überschrift der Karte - er darf nicht blass
-     werden, sonst sieht die Karte kaputt aus. */
-  tr.wk-fortsetzung .event-zelle,
-  tr.wk-fortsetzung .wettkampf-zelle {
-    opacity: 1;
-  }
-  tr.wk-fortsetzung .event-zelle { color: var(--schrift-2); }
 
   tbody td {
     display: flex;
@@ -887,6 +846,7 @@ tr.wk-fortsetzung .wettkampf-zelle {
     border: 0;
     text-align: left;
   }
+  thead th.trenner, tbody td.trenner { border-left: 0; }
   tbody td::before {
     content: attr(data-spalte);
     flex: none;
@@ -935,10 +895,6 @@ tr.wk-fortsetzung .wettkampf-zelle {
     padding-top: .5rem;
   }
   tbody td.zahl::before { margin-bottom: .1rem; }
-
-  .balken-zelle { display: block; width: 100%; padding-top: .6rem; }
-  .balken-zelle::before { content: none; }
-  .balken-spur { height: .75rem; }
 
   tbody td.gesamt-zelle {
     margin-top: .5rem;
