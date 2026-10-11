@@ -28,8 +28,13 @@
 
 const ORDNER = 'data/';
 const MIN_ZEICHEN = 2;
-const MAX_PERSONEN = 20;       // mehr Treffer werden erst auf Knopfdruck gezeigt
-const MAX_ZEILEN_ANFANGS = 25; // Zeilen pro Person, bevor "alle anzeigen" kommt
+/**
+ * So viele Personen werden in der Trefferliste gezeigt. Die Liste ist
+ * zugeklappt und kostet fast nichts, deshalb darf sie lang sein.
+ */
+const MAX_PERSONEN = 60;
+/** Zeilen pro Person, bevor "alle anzeigen" kommt. */
+const MAX_ZEILEN_ANFANGS = 25;
 
 /* ----------------------------------------------------------- Zahlenformate */
 
@@ -426,23 +431,16 @@ function zahlKlasse(wert) {
   return (wert === null || wert === undefined) ? 'zahl leer' : 'zahl';
 }
 
-/** Ein Block pro Person: Kopf, Kennzahlen, Tabelle. */
-function personBauen(person, zeilen) {
-  const block = el('article', 'person');
-
-  // --- Kopf ---
-  const kopf = el('div', 'person-kopf');
-  const name = el('h3', 'person-name',
-    [person.vorname, person.nachname].filter(Boolean).join(' '));
-  kopf.appendChild(name);
-
-  if (person.jahrgang) {
-    kopf.appendChild(el('span', 'person-jahrgang', 'Jahrgang ' + person.jahrgang));
-  }
-
-  // Alle Vereine und Nationen, neueste zuerst. Mehrere Einträge entstehen
-  // durch Vereinswechsel und durch unterschiedliche Schreibweisen desselben
-  // Vereins - beides gehört zu derselben Person.
+/**
+ * Die Vereins- und Nationszeile einer Person.
+ *
+ * Mehrere Einträge entstehen durch Vereinswechsel und durch unterschiedliche
+ * Schreibweisen desselben Vereins - beides gehört zu derselben Person. Es
+ * werden höchstens zwei weitere ausgeschrieben; manche Personen haben fünf
+ * Schreibweisen, und das wäre eine Textwüste. Die vollständige Liste steht
+ * im Tooltip.
+ */
+function vereinsZeileBauen(person) {
   const zeile = el('p', 'person-verein');
   const nationen = person.nationen || [];
   const vereine = person.vereine || [];
@@ -455,15 +453,13 @@ function personBauen(person, zeilen) {
     zeile.appendChild(document.createTextNode(vereine[0]));
 
     if (vereine.length > 1) {
-      // Höchstens zwei weitere ausschreiben. Manche Personen haben fünf
-      // Schreibweisen desselben Vereins - das wäre eine Textwüste.
       const weitere = vereine.slice(1);
       const sichtbar = weitere.slice(0, 2);
       const rest = weitere.length - sichtbar.length;
 
       const frueher = el('span', 'person-frueher',
         ' · früher ' + sichtbar.join(' · ')
-        + (rest > 0 ? ' und ' + rest + (rest === 1 ? ' weitere' : ' weitere') : ''));
+        + (rest > 0 ? ' und ' + rest + ' weitere' : ''));
       frueher.title = 'Alle Vereinsangaben dieser Person:\n'
         + vereine.join('\n')
         + '\n\nMehrere Einträge entstehen durch Vereinswechsel und durch '
@@ -473,16 +469,104 @@ function personBauen(person, zeilen) {
   } else if (nationen.length === 0) {
     zeile.textContent = 'ohne Vereinsangabe';
   }
-  kopf.appendChild(zeile);
+  return zeile;
+}
+
+/**
+ * Eine Person in der Trefferliste - zugeklappt.
+ *
+ * Gebaut wird zunächst nur die Übersichtszeile, und zwar allein aus dem
+ * Suchindex. Die Datei mit den Einzelwertungen wird erst geholt, wenn man
+ * die Person wirklich aufklappt. Bei 30 Treffern spart das 30 Tabellen und
+ * bis zu 1,4 MB, die niemand sehen wollte.
+ *
+ * Als Element dient <details>/<summary>: Auf- und Zuklappen, Tastatur und
+ * Vorlesewerkzeuge funktionieren damit ohne eigenes JavaScript.
+ */
+function personBauen(person) {
+  const block = el('details', 'person');
+
+  // --- Übersichtszeile ---
+  const kopf = el('summary', 'person-kopf');
+
+  const links = el('div', 'person-links');
+  const titel = el('div', 'person-titel');
+  titel.appendChild(el('h3', 'person-name',
+    [person.vorname, person.nachname].filter(Boolean).join(' ')));
+  if (person.jahrgang) {
+    titel.appendChild(el('span', 'person-jahrgang', String(person.jahrgang)));
+  }
+  links.appendChild(titel);
+  links.appendChild(vereinsZeileBauen(person));
+  kopf.appendChild(links);
+
+  // Kennzahlen, die schon im Suchindex stehen - dafür muss nichts geladen
+  // werden.
+  const rechts = el('div', 'person-zahlen');
+  rechts.appendChild(uebersichtsWert('Wettkämpfe', F_GANZ.format(person.wettkaempfe)));
+  rechts.appendChild(uebersichtsWert('Übungen', F_GANZ.format(person.anzahl)));
+  rechts.appendChild(uebersichtsWert('Bestwert',
+    person.bestGesamt == null ? '–' : F_DREI.format(person.bestGesamt)));
+  rechts.appendChild(uebersichtsWert('zuletzt',
+    datumAnzeigen(person.letzterWettkampf)));
+  kopf.appendChild(rechts);
+
+  kopf.appendChild(el('span', 'person-pfeil'));
   block.appendChild(kopf);
 
-  // --- Kennzahlen ---
+  // --- Inhalt, erst beim Aufklappen ---
+  let geladen = false;
+  block.addEventListener('toggle', async () => {
+    if (!block.open || geladen) return;
+    geladen = true;
+
+    const laedt = el('div', 'person-laedt');
+    laedt.appendChild(el('span', 'punkte', 'Wertungen werden geladen'));
+    block.appendChild(laedt);
+
+    try {
+      await wertungenHolen(person.datei);
+      const zeilen = wertungenDerPerson(person);
+      laedt.remove();
+
+      if (zeilen.length === 0) {
+        block.appendChild(personFehler(
+          'Zu dieser Person stehen keine Wertungen in ' + person.datei
+          + '.json. Meist liegt das an einer alten Zwischenspeicherung im '
+          + 'Browser – ein Neuladen mit Strg+F5 behebt es.'));
+        return;
+      }
+      inhaltAnhaengen(block, zeilen);
+
+    } catch (fehler) {
+      laedt.remove();
+      geladen = false; // beim nächsten Aufklappen neu versuchen
+      block.appendChild(personFehler(
+        'Die Wertungen konnten nicht geladen werden: ' + fehler.message
+        + '. Nochmal zu- und aufklappen versucht es erneut.'));
+    }
+  });
+
+  return block;
+}
+
+/** Ein beschrifteter Wert in der Übersichtszeile. */
+function uebersichtsWert(titel, wert) {
+  const kasten = el('div', 'person-zahl');
+  kasten.appendChild(el('span', 'person-zahl-titel', titel));
+  kasten.appendChild(el('span', 'person-zahl-wert', wert));
+  return kasten;
+}
+
+function personFehler(text) {
+  return el('div', 'person-fehler', text);
+}
+
+/** Kennzahlen-Kacheln und Tabelle, sobald die Wertungen da sind. */
+function inhaltAnhaengen(block, zeilen) {
   const beste = besteWerte(zeilen);
-  const events = new Set(zeilen.map(w => w.eventId)).size;
 
   const kacheln = el('div', 'kacheln');
-  kacheln.appendChild(kachelBauen('Wettkämpfe', F_GANZ.format(events),
-    F_GANZ.format(zeilen.length) + ' Übungen'));
   kacheln.appendChild(kachelBauen('Bestwert Gesamt',
     beste.gesamt === null ? '–' : F_DREI.format(beste.gesamt)));
   kacheln.appendChild(kachelBauen('Beste D',
@@ -495,7 +579,6 @@ function personBauen(person, zeilen) {
     beste.h === null ? '–' : F_ZWEI.format(beste.h), null, 'var(--n-h)'));
   block.appendChild(kacheln);
 
-  // --- Tabelle, erst gekürzt ---
   const massstab = beste.summe || 1;
   const gekuerzt = zeilen.length > MAX_ZEILEN_ANFANGS;
   const sichtbar = gekuerzt ? zeilen.slice(0, MAX_ZEILEN_ANFANGS) : zeilen;
@@ -513,8 +596,6 @@ function personBauen(person, zeilen) {
     });
     block.appendChild(knopf);
   }
-
-  return block;
 }
 
 /**
@@ -571,13 +652,16 @@ function ergebnisseLeeren() {
 
 /* ------------------------------------------------------------- Suchvorgang */
 
-let laufendeSuche = 0;
-
-async function suchen() {
+/**
+ * Baut die Trefferliste neu auf.
+ *
+ * Läuft ohne Warten auf das Netz: gesucht wird im Suchindex, der schon im
+ * Speicher liegt, und die Trefferliste zeigt nur die Übersichtszeilen. Erst
+ * das Aufklappen einer Person holt deren Wertungsdatei - siehe personBauen().
+ */
+function suchen() {
   const eingabe = knoten.feld.value;
   knoten.leeren.hidden = eingabe.length === 0;
-
-  const lauf = ++laufendeSuche;
 
   if (normalisieren(eingabe).replace(/\s/g, '').length < MIN_ZEICHEN) {
     ergebnisseLeeren();
@@ -605,58 +689,59 @@ async function suchen() {
 
   const gezeigt = treffer.slice(0, MAX_PERSONEN);
 
-  // Nur die Dateien laden, in denen die Treffer stehen.
-  const dateien = [...new Set(gezeigt.map(p => p.datei))];
-  const fehlende = dateien.filter(d => !speicher.wertungen.has(d));
-
-  if (fehlende.length > 0) {
-    zustandZeigen('<p class="punkte">Wertungen werden geladen</p>');
-  }
-
-  try {
-    await Promise.all(dateien.map(wertungenHolen));
-  } catch (fehler) {
-    if (lauf !== laufendeSuche) return;
-    ergebnisseLeeren();
-    zustandZeigen(
-      '<p><strong>Die Wertungen konnten nicht geladen werden.</strong></p>'
-      + '<p>' + textSicher(fehler.message) + '</p>'
-      + '<p>Bitte die Seite neu laden. Besteht das Problem weiter, fehlen die '
-      + 'Datendateien vielleicht gerade – dann hilft ein späterer Versuch.</p>',
-      true);
-    return;
-  }
-
-  // Wurde zwischenzeitlich weitergetippt? Dann dieses Ergebnis verwerfen.
-  if (lauf !== laufendeSuche) return;
-
   ergebnisseLeeren();
+  zustandLeeren();
 
+  // --- Kopfzeile der Trefferliste ---
   const kopf = el('div', 'treffer-kopf');
-  kopf.appendChild(el('h2', null, treffer.length === 1 ? 'Eine Person' : 'Personen'));
-  let hinweis = F_GANZ.format(treffer.length)
-    + (treffer.length === 1 ? ' Treffer' : ' Treffer');
+  kopf.appendChild(el('h2', null,
+    treffer.length === 1 ? 'Eine Person gefunden' : 'Gefundene Personen'));
+
+  let hinweis = F_GANZ.format(treffer.length) + ' Treffer';
   if (treffer.length > gezeigt.length) {
     hinweis += ' · die ' + gezeigt.length + ' mit den meisten Wertungen werden'
       + ' gezeigt, bitte genauer eingeben';
   }
   kopf.appendChild(el('span', 'anzahl', hinweis));
+
+  // Bei mehreren Treffern ein Knopf, um alle auf einmal auf- oder zuzuklappen.
+  let alleKnopf = null;
+  if (gezeigt.length > 1) {
+    alleKnopf = el('button', 'alle-knopf', 'Alle aufklappen');
+    alleKnopf.type = 'button';
+    kopf.appendChild(alleKnopf);
+  }
   knoten.ergebnisse.appendChild(kopf);
 
-  let leerePersonen = 0;
-  for (const person of gezeigt) {
-    const zeilen = wertungenDerPerson(person);
-    if (zeilen.length === 0) { leerePersonen++; continue; }
-    knoten.ergebnisse.appendChild(personBauen(person, zeilen));
+  // --- Die Personen, alle zugeklappt ---
+  const bloecke = gezeigt.map(personBauen);
+  for (const block of bloecke) {
+    knoten.ergebnisse.appendChild(block);
   }
 
-  if (leerePersonen === gezeigt.length) {
-    zustandZeigen(
-      '<p><strong>Der Suchindex und die Wertungsdateien passen nicht zusammen.</strong></p>'
-      + '<p>Das liegt meist an einer alten Zwischenspeicherung im Browser. '
-      + 'Ein Neuladen mit Strg+F5 behebt es.</p>', true);
-  } else {
-    zustandLeeren();
+  if (alleKnopf) {
+    const beschriftungSetzen = () => {
+      const offen = bloecke.filter(b => b.open).length;
+      alleKnopf.textContent = (offen === bloecke.length)
+        ? 'Alle zuklappen'
+        : 'Alle aufklappen';
+    };
+    alleKnopf.addEventListener('click', () => {
+      const aufklappen = bloecke.some(b => !b.open);
+      for (const b of bloecke) {
+        b.open = aufklappen;
+      }
+      beschriftungSetzen();
+    });
+    // Beschriftung mitführen, wenn einzeln geklappt wird.
+    for (const b of bloecke) {
+      b.addEventListener('toggle', beschriftungSetzen);
+    }
+  }
+
+  // Bei genau einem Treffer gibt es nichts zu wählen - dann gleich aufklappen.
+  if (bloecke.length === 1) {
+    bloecke[0].open = true;
   }
 }
 

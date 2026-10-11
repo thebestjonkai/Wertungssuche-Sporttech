@@ -9,8 +9,10 @@ import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.LinkedHashMap;
+import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
 /**
  * Baut {@code docs/data/personen.json} – den Suchindex der Website.
@@ -53,8 +55,13 @@ public class Personenindex {
         public List<String> nationen = new ArrayList<>();
         /** Name der Datei mit den Einzelwertungen, ohne Endung – z. B. {@code m}. */
         public String datei;
-        /** Anzahl der Wertungen dieser Person. */
+        /** Anzahl der Wertungen, also der einzelnen Übungen. */
         public int anzahl;
+        /**
+         * Anzahl der verschiedenen Wettkämpfe. Die Website zeigt das in der
+         * Trefferliste an, noch bevor die Wertungsdatei geladen ist.
+         */
+        public int wettkaempfe;
         /** Bester Gesamtwert einer einzelnen Übung. */
         public Double bestGesamt;
         /** Datum des jüngsten Wettkampfs, Format JJJJ-MM-TT. */
@@ -63,6 +70,8 @@ public class Personenindex {
         /** Verein beziehungsweise Nation -> Datum des letzten Auftritts. */
         private final transient Map<String, String> vereinZuletzt = new LinkedHashMap<>();
         private final transient Map<String, String> nationZuletzt = new LinkedHashMap<>();
+        /** Die Event-IDs, an denen die Person teilgenommen hat – zum Zählen. */
+        private final transient Set<String> eventIds = new LinkedHashSet<>();
     }
 
     private Personenindex() {
@@ -94,6 +103,9 @@ public class Personenindex {
             });
 
             p.anzahl++;
+            if (w.eventId != null) {
+                p.eventIds.add(w.eventId);
+            }
 
             // Je Verein merken, wann er zuletzt vorkam – danach wird sortiert.
             merken(p.vereinZuletzt, w.verein, w.datum);
@@ -114,6 +126,7 @@ public class Personenindex {
         for (Person p : personen.values()) {
             p.vereine = nachDatumSortiert(p.vereinZuletzt);
             p.nationen = nachDatumSortiert(p.nationZuletzt);
+            p.wettkaempfe = p.eventIds.size();
         }
 
         // Nach Nachname, Vorname sortieren – dieselbe Reihenfolge wie in den

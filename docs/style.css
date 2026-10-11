@@ -423,46 +423,151 @@ a:hover { text-decoration-thickness: 2px; }
   color: var(--schrift-2);
 }
 
+/* "Alle aufklappen" sitzt rechts außen in der Kopfzeile. */
+.alle-knopf {
+  margin-left: auto;
+  font: inherit;
+  font-size: .75rem;
+  font-weight: 600;
+  color: var(--akzent);
+  background: none;
+  border: 1px solid var(--linie);
+  border-radius: 999px;
+  padding: .3rem .8rem;
+  cursor: pointer;
+  white-space: nowrap;
+}
+.alle-knopf:hover { background: var(--flaeche); border-color: var(--akzent); }
+
 /* ---------------------------------------------------------------- Person --- */
 
+/*
+   Jede Person ist ein <details>. Zugeklappt sieht man nur die
+   Übersichtszeile - so bekommt man bei vielen Treffern zuerst einen
+   Überblick und klappt dann gezielt auf.
+*/
 .person {
   background: var(--flaeche);
   border: 1px solid var(--linie);
   border-radius: 14px;
-  margin-bottom: 1.25rem;
+  margin-bottom: .625rem;
   overflow: hidden;
+}
+.person[open] {
+  margin-bottom: 1.25rem;
+  border-color: var(--schrift-3);
+  box-shadow: var(--schatten);
 }
 
 .person-kopf {
   display: flex;
   flex-wrap: wrap;
+  align-items: center;
+  gap: .35rem 1.5rem;
+  padding: .85rem 1.25rem;
+  cursor: pointer;
+  /* Das Standard-Dreieck des Browsers weg - wir zeichnen einen eigenen Pfeil. */
+  list-style: none;
+}
+.person-kopf::-webkit-details-marker { display: none; }
+.person-kopf:hover { background: var(--flaeche-2); }
+.person-kopf:focus-visible {
+  outline: 2px solid var(--fokus);
+  outline-offset: -2px;
+}
+
+.person-links { flex: 1 1 16rem; min-width: 0; }
+
+.person-titel {
+  display: flex;
   align-items: baseline;
-  gap: .35rem .75rem;
-  padding: 1.1rem 1.25rem .9rem;
+  flex-wrap: wrap;
+  gap: .35rem .6rem;
 }
 
 .person-name {
   margin: 0;
-  font-size: 1.1875rem;
+  font-size: 1.0625rem;
   font-weight: 700;
   letter-spacing: -.015em;
 }
 
 .person-jahrgang {
   font-family: var(--mono);
-  font-size: .8125rem;
+  font-size: .75rem;
   font-variant-numeric: tabular-nums;
   color: var(--schrift-2);
   background: var(--flaeche-3);
   border-radius: 999px;
-  padding: .1rem .55rem;
+  padding: .1rem .5rem;
 }
 
 .person-verein {
-  flex: 1 1 100%;
-  font-size: .875rem;
+  margin: .15rem 0 0;
+  font-size: .8125rem;
   color: var(--schrift-2);
 }
+
+/* Die Kennzahlen aus dem Suchindex - rechts in der Übersichtszeile. */
+.person-zahlen {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .25rem 1.5rem;
+}
+
+.person-zahl {
+  display: flex;
+  flex-direction: column;
+  min-width: 4.25rem;
+}
+
+.person-zahl-titel {
+  font-size: .5625rem;
+  font-weight: 650;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--schrift-3);
+}
+
+.person-zahl-wert {
+  font-family: var(--mono);
+  font-size: .9375rem;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+/* Der Pfeil ganz rechts, dreht sich beim Aufklappen. */
+.person-pfeil {
+  flex: none;
+  width: .6rem; height: .6rem;
+  border-right: 2px solid var(--schrift-3);
+  border-bottom: 2px solid var(--schrift-3);
+  transform: rotate(45deg);
+  transform-origin: center;
+  margin-top: -.3rem;
+  transition: transform .15s ease;
+}
+.person[open] .person-pfeil {
+  transform: rotate(225deg);
+  margin-top: .2rem;
+}
+.person-kopf:hover .person-pfeil {
+  border-color: var(--schrift);
+}
+@media (prefers-reduced-motion: reduce) {
+  .person-pfeil { transition: none; }
+}
+
+/* Ladehinweis und Fehler innerhalb einer aufgeklappten Person. */
+.person-laedt,
+.person-fehler {
+  padding: 1rem 1.25rem 1.25rem;
+  font-size: .875rem;
+  color: var(--schrift-2);
+  border-top: 1px solid var(--linie-2);
+}
+.person-fehler { color: var(--n-abzug); }
 .person-nation {
   font-family: var(--mono);
   font-weight: 700;
@@ -659,6 +764,24 @@ tbody tr:hover td { background: var(--flaeche-2); }
    überschriften kommen per data-spalte vor den Wert. */
 @media (max-width: 820px) {
   .tabelle-rahmen { overflow-x: visible; }
+
+  /* Der Pfeil würde sonst in eine eigene Zeile unter die Kennzahlen
+     rutschen. Fest nach rechts oben, neben den Namen. */
+  .person-kopf {
+    position: relative;
+    padding-right: 2.5rem;
+  }
+  .person-pfeil {
+    position: absolute;
+    right: 1.1rem;
+    top: 1.15rem;
+    margin-top: 0;
+  }
+  .person[open] .person-pfeil { top: 1.35rem; margin-top: 0; }
+
+  /* Vier Kennzahlen nebeneinander sind auf dem Handy zu eng - zwei Reihen. */
+  .person-zahlen { gap: .5rem 1.25rem; }
+  .person-zahl { min-width: 3.75rem; }
 
   table, thead, tbody, tr, td { display: block; width: 100%; }
   thead { display: none; }

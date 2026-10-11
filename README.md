@@ -8,6 +8,12 @@ Auf sporttech.io selbst muss man jeden Wettkampf einzeln aufrufen und sich durch
 Wettkampfklassen und Durchgänge klicken. Hier gibt man einmal den Namen ein und
 bekommt die gesamte Laufbahn auf einer Seite, mit allen Einzelwertungen.
 
+Die Suche zeigt zuerst **alle Treffer als kompakte Liste** – pro Person eine
+Zeile mit Jahrgang, Verein, Anzahl der Wettkämpfe, Bestwert und dem Datum des
+letzten Starts. So findet man bei einem häufigen Namen schnell die richtige
+Person und klappt dann nur diese auf. Die Wertungen werden erst beim Aufklappen
+geladen.
+
 **Stand des Datenbestands:** 15 258 Wertungen von 2 932 Personen aus 71
 Wettkämpfen (2024 bis 2026).
 
