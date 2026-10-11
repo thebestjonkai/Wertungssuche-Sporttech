@@ -113,7 +113,8 @@ Damit die Website erreichbar ist:
 2. links **Pages** auswählen
 3. unter *Build and deployment* bei **Source** den Eintrag
    **Deploy from a branch** wählen
-4. bei **Branch** den Zweig `main` und den Ordner **`/docs`** auswählen
+4. bei **Branch** den Zweig `main` und – das ist der entscheidende Punkt –
+   den Ordner **`/docs`** auswählen, nicht `/ (root)`
 5. auf **Save** klicken
 
 Nach ein bis zwei Minuten ist die Seite erreichbar unter:
@@ -121,6 +122,14 @@ Nach ein bis zwei Minuten ist die Seite erreichbar unter:
 ```
 https://thebestjonkai.github.io/Wertungssuche-Sporttech/
 ```
+
+> **Wenn dort die README steht statt der Suche:** dann ist bei *Folder* noch
+> `/ (root)` eingestellt. GitHub macht in dem Fall aus der `README.md` die
+> Startseite. Die Suche liegt dann eine Ebene tiefer unter
+> `…/Wertungssuche-Sporttech/docs/` – und die `index.html` im Projektordner
+> leitet automatisch dorthin weiter. Die Einstellung auf `/docs` zu ändern ist
+> trotzdem der saubere Weg: dann stimmt die Adresse, und die Weiterleitung wird
+> nicht mehr gebraucht.
 
 ### Berechtigung für den Crawler-Workflow
 
@@ -445,6 +454,9 @@ freundliches Angebot von sporttech.io, kein Selbstbedienungsladen.
 .
 ├── DATENSTRUKTUR.md          wie die API von sporttech.io aufgebaut ist
 ├── README.md                 diese Datei
+├── index.html                nur eine Weiterleitung auf docs/ - greift,
+│                             falls GitHub Pages auf "/ (root)" steht
+├── .nojekyll                 GitHub Pages soll nichts umbauen
 │
 ├── crawler/
 │   ├── config.json           Einstellungen

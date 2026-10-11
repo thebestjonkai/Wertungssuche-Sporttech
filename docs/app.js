@@ -453,11 +453,21 @@ function personBauen(person, zeilen) {
   if (vereine.length > 0) {
     if (nationen.length > 0) zeile.appendChild(document.createTextNode(' · '));
     zeile.appendChild(document.createTextNode(vereine[0]));
+
     if (vereine.length > 1) {
+      // Höchstens zwei weitere ausschreiben. Manche Personen haben fünf
+      // Schreibweisen desselben Vereins - das wäre eine Textwüste.
+      const weitere = vereine.slice(1);
+      const sichtbar = weitere.slice(0, 2);
+      const rest = weitere.length - sichtbar.length;
+
       const frueher = el('span', 'person-frueher',
-        ' · früher ' + vereine.slice(1).join(' · '));
-      frueher.title = 'Weitere Vereinsangaben derselben Person. '
-        + 'Oft ist es derselbe Verein, nur anders geschrieben.';
+        ' · früher ' + sichtbar.join(' · ')
+        + (rest > 0 ? ' und ' + rest + (rest === 1 ? ' weitere' : ' weitere') : ''));
+      frueher.title = 'Alle Vereinsangaben dieser Person:\n'
+        + vereine.join('\n')
+        + '\n\nMehrere Einträge entstehen durch Vereinswechsel und durch '
+        + 'unterschiedliche Schreibweisen desselben Vereins.';
       zeile.appendChild(frueher);
     }
   } else if (nationen.length === 0) {
