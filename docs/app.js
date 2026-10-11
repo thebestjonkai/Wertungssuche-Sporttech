@@ -96,6 +96,53 @@ function normalisieren(text) {
     .replace(/\s+/g, ' ');
 }
 
+/**
+ * Die ausgeschriebene Form eines Namens: ä -> ae, ö -> oe, ü -> ue, ß -> ss.
+ *
+ * Damit findet die Eingabe "mueller" auch "Müller". Wichtig ist die Richtung:
+ * wir schreiben den **gespeicherten** Namen aus, statt die Eingabe
+ * zusammenzuziehen. Andersherum würde aus "Neuer" ein "Ner" und aus "Bauer"
+ * ein "Bar" - dann fände "bar" plötzlich "Bauer".
+ *
+ * Diese Form dient nur der Suche. Für die Zuordnung von Wertungen zu Personen
+ * gilt weiter normalisieren(), damit "Mueller" und "Müller" nicht
+ * stillschweigend zu einer Person verschmelzen.
+ */
+function ausgeschrieben(text) {
+  if (!text) return '';
+  return text
+    .toLowerCase()
+    .replace(/ä/g, 'ae')
+    .replace(/ö/g, 'oe')
+    .replace(/ü/g, 'ue')
+    .replace(/ß/g, 'ss')
+    .normalize('NFD')
+    .replace(/\p{M}+/gu, '')
+    .trim()
+    .replace(/\s+/g, ' ');
+}
+
+/**
+ * Alle Formen eines Namens, gegen die gesucht wird: der ganze Name und seine
+ * einzelnen Wörter, jeweils in der Vergleichsform und in der ausgeschriebenen
+ * Form. Doppel- und Bindestrichnamen werden dabei zerlegt, damit
+ * "Anna-Lena Schmitz-Berg" auch mit "berg anna" gefunden wird.
+ */
+function suchformen(vorname, nachname) {
+  const formen = new Set();
+  for (const roh of [vorname, nachname]) {
+    if (!roh) continue;
+    for (const variante of [normalisieren(roh), ausgeschrieben(roh)]) {
+      if (!variante) continue;
+      formen.add(variante);
+      for (const stueck of variante.split(/[\s-]+/)) {
+        if (stueck) formen.add(stueck);
+      }
+    }
+  }
+  return [...formen];
+}
+
 /* ------------------------------------------------------------- Daten laden */
 
 /** Alles, was die Seite im Speicher hält. */
@@ -145,12 +192,14 @@ function wertungenHolen(name) {
  * Sucht Personen zur Eingabe.
  *
  * Die Eingabe wird in Wörter zerlegt. Ein Treffer liegt vor, wenn **jedes**
- * eingegebene Wort der Anfang irgendeines Namensteils ist - des Vornamens,
- * des Nachnamens oder eines einzelnen Wortes darin. Damit findet
- * "muller lena" dasselbe wie "lena mu", und Doppelnamen wie
- * "Anna-Lena Schmitz-Berg" werden auch mit "berg anna" gefunden.
+ * eingegebene Wort der Anfang irgendeiner Suchform des Namens ist - siehe
+ * suchformen(). Damit findet "muller lena" dasselbe wie "lena mu" und wie
+ * "mueller", und Doppelnamen wie "Anna-Lena Schmitz-Berg" werden auch mit
+ * "berg anna" gefunden.
  */
 function personenSuchen(eingabe) {
+  // Die Eingabe nur zusammenziehen, nie ausschreiben: die ausgeschriebene
+  // Form steckt schon in den Suchformen der gespeicherten Namen.
   const woerter = normalisieren(eingabe).split(' ').filter(w => w.length > 0);
   if (woerter.length === 0) return [];
 
@@ -659,19 +708,8 @@ async function starten() {
     // Die Vergleichsformen einmal vorberechnen - danach ist jede Suche
     // nur noch ein Durchlauf über ein Feld von Zeichenketten.
     for (const p of personen) {
-      const vorname = normalisieren(p.vorname);
-      const nachname = normalisieren(p.nachname);
-      const teile = new Set();
-      for (const ganz of [vorname, nachname]) {
-        if (!ganz) continue;
-        teile.add(ganz);
-        // Doppelnamen und Bindestrichnamen einzeln aufnehmen.
-        for (const stueck of ganz.split(/[\s-]+/)) {
-          if (stueck) teile.add(stueck);
-        }
-      }
-      p._teile = [...teile];
-      p._sortName = nachname + ' ' + vorname;
+      p._teile = suchformen(p.vorname, p.nachname);
+      p._sortName = normalisieren(p.nachname) + ' ' + normalisieren(p.vorname);
     }
 
     knoten.bestand.textContent =

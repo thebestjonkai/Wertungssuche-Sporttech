@@ -699,7 +699,7 @@ Stand 11.10.2026, ein vollständiger Lauf über alle 71 deutschen Events:
 | **Wertungszeilen** | **15 258** |
 | **Personen** | **3 981** |
 | Zeitraum | 2024: 3 781 · 2025: 4 922 · 2026: 6 555 |
-| Gesamtgröße `docs/data/` | 9,1 MB |
+| Gesamtgröße `docs/data/` | 10,2 MB (davon 0,8 MB Suchindex) |
 | größte Datei | `s.json` mit 1,4 MB |
 | HTTP-Anfragen | 73 (Eventliste, Länderliste, 71 Events) |
 | Laufzeit | rund 2 Minuten bei einer Anfrage pro Sekunde |

@@ -21,17 +21,19 @@ import java.util.Map;
  * aufgeteilt. Für eine Suche nach „Müller" reicht das: die Website lädt
  * {@code m.json} und ist fertig. Für eine Suche nach „Jonas" reicht es
  * <b>nicht</b> – der Vorname sagt nichts darüber, in welcher Datei die Person
- * steht. Die Website müsste alle 25 Dateien laden, also 9 MB.
+ * steht. Die Website müsste alle 25 Dateien laden, also 9 MB Wertungen.
  *
  * <p>Deshalb dieser Index: ein Eintrag pro Person mit Namen, Jahrgang,
- * Verein/Nation und einem Verweis auf die Datei mit den Einzelwertungen. Die
+ * Vereinen und einem Verweis auf die Datei mit den Einzelwertungen. Die
  * Website lädt ihn einmal beim Start (rund 90 KB komprimiert), sucht darin im
  * Browser und holt danach nur die Datei oder Dateien, in denen die Treffer
  * wirklich stehen.
  *
- * <p>Eine Person ist hier dasselbe wie in {@link Wertung#personSchluessel()}:
- * Name plus Jahrgang plus Verein beziehungsweise Nation. Zwei Turnerinnen mit
- * demselben Namen bleiben damit getrennt.
+ * <p>Was eine Person ist, legt {@link Wertung#personSchluessel()} fest:
+ * Nachname, Vorname und Jahrgang – <b>ohne</b> Verein. Dort steht auch, warum
+ * der Verein nicht dazugehört. Weil eine Person dadurch mehrere
+ * Vereinsangaben haben kann, sind {@link Person#vereine} und
+ * {@link Person#nationen} Listen, sortiert nach dem letzten Auftritt.
  */
 public class Personenindex {
 

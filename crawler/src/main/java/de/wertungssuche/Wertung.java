@@ -92,7 +92,7 @@ public class Wertung {
      * <p>Der <b>Verein gehört bewusst nicht dazu</b>, obwohl das zuerst
      * naheliegt. Die Vereinsangabe ist bei sporttech.io nicht stabil: jeder
      * Veranstalter trägt sie neu ein. Gemessen am fertigen Datenbestand
-     * betrifft das <b>672 von 2 932 Personen</b> – sie hätten sonst mehrere
+     * betrifft das <b>696 von 2 932 Personen</b> – sie hätten sonst mehrere
      * Karten statt einer. Beispiele aus den echten Daten:
      *
      * <pre>
