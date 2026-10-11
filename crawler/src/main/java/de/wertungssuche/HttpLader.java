@@ -27,9 +27,14 @@ import java.util.zip.GZIPInputStream;
  */
 public class HttpLader {
 
-    /** Eigener User-Agent mit Projektnamen, damit wir erkennbar sind. */
+    /**
+     * Eigener User-Agent mit Projektnamen und Repository-Adresse, damit der
+     * Betreiber von sporttech.io sehen kann, wer da anfragt, und uns bei
+     * Problemen erreichen könnte.
+     */
     private static final String USER_AGENT =
-            "Trampolin-Wertungssuche/1.0 (+https://github.com/Jonkai/Wertungssuche-auf-Sporttech.io)";
+            "Trampolin-Wertungssuche/1.0 "
+            + "(+https://github.com/thebestjonkai/Wertungssuche-Sporttech)";
 
     private final HttpClient client;
     private final Konfiguration konfig;

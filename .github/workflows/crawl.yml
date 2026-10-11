@@ -1,0 +1,136 @@
+name: Wertungen holen
+
+# Holt die Trampolin-Wertungen von sporttech.io und committet die geaenderten
+# Dateien unter docs/data zurueck ins Repository.
+on:
+  schedule:
+    # Taeglich um 03:00 UTC. GitHub startet geplante Laeufe oft mit einigen
+    # Minuten Verzoegerung - das ist hier egal.
+    - cron: '0 3 * * *'
+
+  # Manueller Start: Actions -> "Wertungen holen" -> "Run workflow"
+  workflow_dispatch:
+    inputs:
+      events:
+        description: 'Zusaetzliche Event-IDs, mit Komma getrennt. Werden dauerhaft aufgenommen, auch wenn sie nicht in Deutschland stattfinden.'
+        required: false
+        default: ''
+      nurEvents:
+        description: 'Nur die oben angegebenen Events laden (Eventliste gar nicht abrufen)'
+        type: boolean
+        required: false
+        default: false
+      max:
+        description: 'Obergrenze neuer Events fuer diesen Lauf (leer = Wert aus crawler/config.json)'
+        required: false
+        default: ''
+
+# Der Workflow committet selbst, deshalb Schreibrechte.
+permissions:
+  contents: write
+
+# Zwei gleichzeitige Laeufe wuerden sich beim Pushen in die Quere kommen.
+concurrency:
+  group: crawl
+  cancel-in-progress: false
+
+jobs:
+  crawl:
+    runs-on: ubuntu-latest
+    # Der erste Lauf kann lange dauern. Die Obergrenze maxNeueEventsProLauf in
+    # crawler/config.json sorgt dafuer, dass ein Lauf trotzdem nicht ausufert.
+    timeout-minutes: 120
+
+    steps:
+      - name: Repository auschecken
+        uses: actions/checkout@v4
+
+      - name: Java 21 einrichten
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '21'
+          # Laedt den Maven-Cache, damit Gson und JUnit nicht jedes Mal neu
+          # heruntergeladen werden.
+          cache: maven
+
+      - name: Crawler bauen
+        run: mvn --batch-mode --no-transfer-progress -f crawler/pom.xml package
+
+      - name: Argumente zusammenstellen
+        id: args
+        # Die Eingaben kommen ueber env herein und nicht direkt in die
+        # Kommandozeile. Sonst koennte eine Eingabe wie "; rm -rf ." als Befehl
+        # ausgefuehrt werden.
+        env:
+          EINGABE_EVENTS: ${{ inputs.events }}
+          EINGABE_NUR_EVENTS: ${{ inputs.nurEvents }}
+          EINGABE_MAX: ${{ inputs.max }}
+        run: |
+          ARGS=""
+          if [ -n "$EINGABE_EVENTS" ]; then
+            # Nur Zeichen zulassen, die in UUIDs und Trennern vorkommen.
+            SAUBER=$(printf '%s' "$EINGABE_EVENTS" | tr -cd '0-9a-fA-F,;-')
+            if [ -n "$SAUBER" ]; then
+              ARGS="$ARGS --event $SAUBER"
+            fi
+          fi
+          if [ "$EINGABE_NUR_EVENTS" = "true" ]; then
+            ARGS="$ARGS --nur-events"
+          fi
+          case "$EINGABE_MAX" in
+            '') ;;
+            *[!0-9]*) echo "max ist keine Zahl, wird ignoriert." ;;
+            *) ARGS="$ARGS --max $EINGABE_MAX" ;;
+          esac
+          echo "wert=$ARGS" >> "$GITHUB_OUTPUT"
+          echo "Crawler-Argumente:$ARGS"
+
+      - name: Crawler starten
+        run: java -jar crawler/target/crawler.jar ${{ steps.args.outputs.wert }}
+
+      - name: Geaenderte Dateien pruefen
+        id: pruefen
+        run: |
+          if [ -n "$(git status --porcelain docs/data)" ]; then
+            echo "geaendert=ja" >> "$GITHUB_OUTPUT"
+            echo "Diese Dateien haben sich geaendert:"
+            git status --short docs/data
+          else
+            echo "geaendert=nein" >> "$GITHUB_OUTPUT"
+            echo "Keine Aenderungen - es wird nicht committet."
+          fi
+
+      - name: Aenderungen committen und pushen
+        if: steps.pruefen.outputs.geaendert == 'ja'
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add docs/data
+
+          NACHRICHT=$(python3 -c "import json; m=json.load(open('docs/data/meta.json')); print(f\"Wertungen aktualisiert: {m['anzahlWertungen']} Wertungen, {m['anzahlPersonen']} Personen, {m['anzahlEvents']} Events\")")
+          git commit -m "$NACHRICHT"
+
+          # Falls zwischenzeitlich jemand anderes gepusht hat, erst neu
+          # aufsetzen und dann pushen.
+          git pull --rebase --autostash origin "$GITHUB_REF_NAME"
+          git push origin "HEAD:$GITHUB_REF_NAME"
+
+      - name: Zusammenfassung schreiben
+        if: always()
+        env:
+          GEAENDERT: ${{ steps.pruefen.outputs.geaendert }}
+        run: |
+          echo "## Lauf vom $(date -u '+%d.%m.%Y %H:%M UTC')" >> "$GITHUB_STEP_SUMMARY"
+          echo "" >> "$GITHUB_STEP_SUMMARY"
+          if [ -f docs/data/meta.json ]; then
+            python3 -c "import json; m=json.load(open('docs/data/meta.json')); print(f\"- Wertungen: **{m['anzahlWertungen']}**\n- Personen: **{m['anzahlPersonen']}**\n- Events: **{m['anzahlEvents']}**\n- Stand: {m['aktualisiert']}\")" >> "$GITHUB_STEP_SUMMARY"
+          else
+            echo "Keine meta.json gefunden." >> "$GITHUB_STEP_SUMMARY"
+          fi
+          echo "" >> "$GITHUB_STEP_SUMMARY"
+          if [ "$GEAENDERT" = "ja" ]; then
+            echo "Aenderungen wurden committet." >> "$GITHUB_STEP_SUMMARY"
+          else
+            echo "Keine Aenderungen." >> "$GITHUB_STEP_SUMMARY"
+          fi
