@@ -657,19 +657,84 @@ thead th {
   letter-spacing: .09em;
   text-transform: uppercase;
   color: var(--schrift-3);
-  padding: .7rem .6rem;
+  padding: .7rem .45rem;
   border-bottom: 1px solid var(--linie);
   white-space: nowrap;
 }
 thead th.rechts { text-align: right; }
 
 tbody td {
-  padding: .55rem .6rem;
+  padding: .55rem .45rem;
   border-bottom: 1px solid var(--linie-2);
   vertical-align: baseline;
 }
 tbody tr:last-child td { border-bottom: 0; }
 tbody tr:hover td { background: var(--flaeche-2); }
+
+/* ------------------------------------------------- Gliederung der Tabelle --- */
+
+/*
+   Zwei Ebenen, damit man sich in einer langen Laufbahn zurechtfindet:
+   das Jahresband trennt die Jahre, die kräftige Linie die Wettkämpfe.
+*/
+
+.jahr-band td {
+  padding: 1.5rem .6rem .4rem;
+  border-bottom: 0;
+  border-top: 1px solid var(--linie);
+  background: none;
+}
+.jahr-band:hover td { background: none; }
+/* Ganz oben braucht es weder Linie noch den großen Abstand. */
+tbody tr.jahr-band:first-child td {
+  padding-top: .35rem;
+  border-top: 0;
+}
+
+.jahr-zahl {
+  display: inline-block;
+  font-family: var(--mono);
+  font-size: .75rem;
+  font-weight: 700;
+  letter-spacing: .12em;
+  font-variant-numeric: tabular-nums;
+  color: var(--schrift-2);
+  background: var(--flaeche-3);
+  border-radius: 999px;
+  padding: .15rem .7rem;
+}
+
+/* Erste Zeile eines Wettkampfs: Trennlinie und zusätzliche Luft darüber.
+   Der Abstand trennt stärker als die Linie allein - die Übungen eines
+   Wettkampfs rücken dadurch sichtbar zusammen. */
+tr.wk-start td {
+  border-top: 1px solid var(--linie);
+  padding-top: 1rem;
+}
+/* Nach einem Jahresband braucht es die Linie nicht noch einmal. */
+.jahr-band + tr.wk-start td { border-top: 0; padding-top: .55rem; }
+tbody tr:first-child td { border-top: 0; }
+
+/* Folgezeilen desselben Wettkampfs: Event und Wettkampfklasse blass, damit
+   das Auge an der ersten Zeile hängen bleibt. Der Text bleibt stehen - für
+   Vorlesewerkzeuge, zum Kopieren und für die Handyansicht.
+
+   Das Datum bleibt bewusst kräftig: ein Wettkampf zieht sich oft über zwei
+   Tage, Qualifikation am Samstag, Finale am Sonntag. Blass wäre es dort
+   schlicht falsch. */
+tr.wk-fortsetzung .event-zelle,
+tr.wk-fortsetzung .wettkampf-zelle {
+  color: var(--schrift-3);
+  opacity: .6;
+}
+
+.uebung-zelle {
+  font-family: var(--mono);
+  font-variant-numeric: tabular-nums;
+  text-align: right;
+  white-space: nowrap;
+  color: var(--schrift-2);
+}
 
 .zahl {
   font-family: var(--mono);
@@ -715,7 +780,7 @@ tbody tr:hover td { background: var(--flaeche-2); }
 
 /* ------------------------------------------------- Balken: die Aufteilung --- */
 
-.balken-zelle { width: 10rem; min-width: 8rem; }
+.balken-zelle { width: 7.5rem; min-width: 6rem; }
 
 .balken-spur {
   /* Die Spur ist die Breite der höchsten Wertung dieser Person. So sind die
@@ -792,6 +857,26 @@ tbody tr:hover td { background: var(--flaeche-2); }
   }
   tbody tr:last-child { border-bottom: 0; }
   tbody tr:hover td { background: none; }
+
+  /* Das Jahresband wird zur Zwischenüberschrift über den Karten. */
+  .jahr-band { padding: 1.25rem 1.25rem .4rem; border-bottom: 0; }
+  .jahr-band td { padding: 0; display: block; }
+  .jahr-band td::before { content: none; }
+
+  /* Die Trennlinie gehört in der Kartenansicht an die Karte, nicht an die
+     einzelne Zelle. */
+  tr.wk-start td { border-top: 0; }
+  tr.wk-start { border-top: 2px solid var(--linie); }
+  .jahr-band + tr.wk-start { border-top: 0; }
+  tbody tr:first-child { border-top: 0; }
+
+  /* Der Eventname ist hier die Überschrift der Karte - er darf nicht blass
+     werden, sonst sieht die Karte kaputt aus. */
+  tr.wk-fortsetzung .event-zelle,
+  tr.wk-fortsetzung .wettkampf-zelle {
+    opacity: 1;
+  }
+  tr.wk-fortsetzung .event-zelle { color: var(--schrift-2); }
 
   tbody td {
     display: flex;

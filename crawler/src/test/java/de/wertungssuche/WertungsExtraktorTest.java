@@ -172,7 +172,8 @@ class WertungsExtraktorTest {
     // ------------------------------------------------------------ Durchgänge
 
     @Test
-    @DisplayName("Eine Qualifikation mit zwei Übungen ergibt zwei Zeilen")
+    @DisplayName("Eine Qualifikation mit zwei Übungen ergibt zwei Zeilen "
+            + "mit demselben Durchgangsnamen")
     void zweiUebungenErgebenZweiZeilen() {
         List<Wertung> wertungen = Beispieldaten.extraktor()
                 .extrahieren(Beispieldaten.cbi2024());
@@ -181,39 +182,65 @@ class WertungsExtraktorTest {
                 .map(w -> w.durchgang)
                 .collect(Collectors.toSet());
 
-        assertTrue(durchgaenge.contains("Qualifikation 1"),
-                "Erwartet: Qualifikation 1, gefunden " + durchgaenge);
-        assertTrue(durchgaenge.contains("Qualifikation 2"),
-                "Erwartet: Qualifikation 2, gefunden " + durchgaenge);
+        assertTrue(durchgaenge.contains("Qualifikation"),
+                "Erwartet: Qualifikation, gefunden " + durchgaenge);
+        assertFalse(durchgaenge.contains("Qualifikation 1"),
+                "Die Übungsnummer gehört nicht in den Durchgangsnamen.");
+        assertFalse(durchgaenge.contains("Qualifikation 2"),
+                "Die Übungsnummer gehört nicht in den Durchgangsnamen.");
 
-        // Beide Zeilen gehören zum selben Durchgang und tragen deshalb
-        // denselben Platz und dieselbe Durchgangssumme.
+        // Die zwei Übungen eines Vorkampfs: gleicher Durchgang, verschiedene
+        // Übungsnummern, gleicher Platz und gleiche Durchgangssumme.
+        Wertung erste = wertungen.get(0);
         List<Wertung> einePerson = wertungen.stream()
-                .filter(w -> w.durchgang.startsWith("Qualifikation"))
-                .filter(w -> w.nachname.equals(wertungen.get(0).nachname))
-                .filter(w -> w.wettkampf.equals(wertungen.get(0).wettkampf))
+                .filter(w -> "Qualifikation".equals(w.durchgang))
+                .filter(w -> w.nachname.equals(erste.nachname))
+                .filter(w -> w.wettkampf.equals(erste.wettkampf))
                 .toList();
 
-        if (einePerson.size() >= 2) {
-            assertEquals(einePerson.get(0).platz, einePerson.get(1).platz,
-                    "Der Platz gehört zum Durchgang, nicht zur einzelnen Übung.");
-            assertEquals(einePerson.get(0).gesamtDurchgang,
-                    einePerson.get(1).gesamtDurchgang,
-                    "Die Durchgangssumme ist für beide Übungen dieselbe.");
-        }
+        assertTrue(einePerson.size() >= 2,
+                "Das Beispiel enthält eine Qualifikation aus zwei Übungen.");
+        assertEquals(1, einePerson.get(0).uebung);
+        assertEquals(2, einePerson.get(1).uebung);
+        assertEquals(2, einePerson.get(0).uebungen);
+        assertEquals(einePerson.get(0).platz, einePerson.get(1).platz,
+                "Der Platz gehört zum Durchgang, nicht zur einzelnen Übung.");
+        assertEquals(einePerson.get(0).gesamtDurchgang,
+                einePerson.get(1).gesamtDurchgang,
+                "Die Durchgangssumme ist für beide Übungen dieselbe.");
+
+        // Und die beiden dürfen sich nicht gegenseitig als Duplikat verdrängen.
+        assertFalse(einePerson.get(0).schluessel()
+                        .equals(einePerson.get(1).schluessel()),
+                "Übung 1 und Übung 2 brauchen verschiedene Schlüssel.");
     }
 
     @Test
-    @DisplayName("Ein Finale mit einer Übung bekommt keine Nummer angehängt")
-    void finaleOhneNummer() {
-        assertEquals("Finale", Durchgang.name(3, 1, 1));
-        assertEquals("Qualifikation", Durchgang.name(0, 1, 1));
-        assertEquals("Qualifikation 1", Durchgang.name(0, 1, 2));
-        assertEquals("Qualifikation 2", Durchgang.name(0, 2, 2));
-        assertEquals("Finale 1", Durchgang.name(8, 1, 1));
-        assertEquals("Team-Finale", Durchgang.name(5, 1, 1));
+    @DisplayName("Der Durchgangsname trägt keine Übungsnummer")
+    void durchgangsnameOhneUebungsnummer() {
+        assertEquals("Qualifikation", Durchgang.name(0));
+        assertEquals("Viertelfinale", Durchgang.name(1));
+        assertEquals("Halbfinale", Durchgang.name(2));
+        assertEquals("Finale", Durchgang.name(3));
+        assertEquals("Team-Halbfinale", Durchgang.name(4));
+        assertEquals("Team-Finale", Durchgang.name(5));
+        assertEquals("Qualifikation II", Durchgang.name(6));
+        assertEquals("Finale 2", Durchgang.name(7));
+        assertEquals("Finale 1", Durchgang.name(8));
         // Unbekannte Nummern dürfen nicht zum Absturz führen.
-        assertEquals("Durchgang 99", Durchgang.name(99, 1, 1));
+        assertEquals("Durchgang 99", Durchgang.name(99));
+        assertEquals("Durchgang null", Durchgang.name(null));
+    }
+
+    @Test
+    @DisplayName("Jede Zeile weiß, die wievielte Übung sie ist")
+    void uebungsnummerGesetzt() {
+        for (Wertung w : Beispieldaten.extraktor().extrahieren(Beispieldaten.cbi2024())) {
+            assertNotNull(w.uebung, "Übungsnummer fehlt bei " + w);
+            assertNotNull(w.uebungen);
+            assertTrue(w.uebung >= 1 && w.uebung <= w.uebungen,
+                    "Übung " + w.uebung + " von " + w.uebungen + " bei " + w);
+        }
     }
 
     // -------------------------------------------------------- Verein / Nation

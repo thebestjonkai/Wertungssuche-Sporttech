@@ -30,7 +30,8 @@ ORDNER = pathlib.Path("docs/data")
 PFLICHTFELDER = [
     "vorname", "nachname", "jahrgang", "verein", "nation",
     "event", "eventId", "datum", "disziplin", "wettkampf",
-    "durchgang", "platz", "d", "e", "h", "t", "abzug",
+    "durchgang", "uebung", "uebungen", "platz",
+    "d", "e", "h", "t", "abzug",
     "gesamt", "gesamtDurchgang", "link",
 ]
 
@@ -118,14 +119,28 @@ def main():
                     f"h={zeile['h']} abzug={zeile['abzug']} "
                     f"-> errechnet {summe:.3f}, gespeichert {zeile['gesamt']}")
 
-            # Duplikate
+            # Die Übungsnummer gehört in den Schlüssel: eine Qualifikation
+            # besteht aus zwei Übungen, die beide "Qualifikation" heissen.
             s = "|".join(str(zeile[f]) for f in
-                         ("eventId", "durchgang", "wettkampf", "nachname",
-                          "vorname", "jahrgang"))
+                         ("eventId", "durchgang", "uebung", "wettkampf",
+                          "nachname", "vorname", "jahrgang"))
             if s in schluessel:
                 fehler.append(f"{ort}: Duplikat von {schluessel[s]}")
             else:
                 schluessel[s] = ort
+
+            # Die Übungsnummer muss zur Anzahl der Übungen passen.
+            nr, gesamt_uebungen = zeile["uebung"], zeile["uebungen"]
+            if not isinstance(nr, int) or not isinstance(gesamt_uebungen, int) \
+                    or nr < 1 or nr > gesamt_uebungen:
+                fehler.append(f"{ort}: Übung {nr} von {gesamt_uebungen} "
+                              f"ist nicht plausibel")
+
+            # Der Durchgangsname darf keine Übungsnummer mehr tragen.
+            if zeile["durchgang"] and zeile["durchgang"][-1].isdigit() \
+                    and zeile["durchgang"].startswith("Qualifikation "):
+                fehler.append(f"{ort}: '{zeile['durchgang']}' sieht aus wie "
+                              f"ein Durchgangsname mit Übungsnummer")
 
         print(f"  {datei.name}: {len(inhalt)} Wertungen")
 

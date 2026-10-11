@@ -320,12 +320,54 @@ werden. Quelle: `TRA.shadow.StageKinds`:
 | 7 | Final2 | Finale 2 |
 | 8 | Final1 | Finale 1 |
 
-Ist `PerfomanceFramesLimit > 1`, gibt es pro Stage mehrere Übungen pro Starter.
-Dann hängen wir die Nummer an: **„Qualifikation 1", „Qualifikation 2"** – das
-entspricht genau dem Beispielwert aus der Aufgabenstellung.
-
 Beobachtet: CBI 2024 benutzt `Kind` 0 (23×), 3 (11×), 7 (2×) und 8 (2×); der
 FIG World Cup Cottbus 2024 benutzt zusätzlich `Kind` 6 (zweite Qualifikation).
+
+#### Durchgang und Übung sind zwei verschiedene Dinge
+
+Ist `PerfomanceFramesLimit > 1`, besteht der Durchgang aus mehreren Übungen
+pro Starter. Eine Qualifikation hat fast immer zwei.
+
+**Diese Übungsnummer gehört nicht in den Durchgangsnamen.** Sie steht in
+unseren Daten im eigenen Feld `uebung`. Der erste Entwurf hängte sie an –
+„Qualifikation 1", „Qualifikation 2" – und das war gleich doppelt falsch:
+
+1. **Im Trampolinturnen meint „Qualifikation 2" üblicherweise den zweiten
+   Durchgang, also das Halbfinale.** An den echten Daten sieht man den
+   Unterschied sofort. FIG World Cup Cottbus 2024, Wettkampf „Men":
+
+   | Durchgang | Starter |
+   |---|---|
+   | Qualifikation, Übung 1 | 89 |
+   | Qualifikation, Übung 2 | 89 |
+   | `Kind 6` – Qualifikation II | 24 |
+   | Finale | 8 |
+
+   Die zwei Übungen der Qualifikation haben dieselben 89 Starter – es wird
+   nicht gesiebt. Gesiebt wird erst beim nächsten *Durchgang*.
+
+2. **Es kollidierte mit echten Durchgangsnamen.** `Kind 8` heißt „Finale 1".
+   Ein Finale (`Kind 3`) aus drei Übungen hätte ebenfalls „Finale 1",
+   „Finale 2", „Finale 3" ergeben – genau das kommt beim Wölfe Open
+   13.09.2025 vor. Zwei verschiedene Sachverhalte unter demselben Namen.
+
+#### Ist `Kind 6` ein Halbfinale?
+
+Funktional meistens ja, aber nicht immer – deshalb heißt es bei uns weiter
+„Qualifikation II" und nicht „Halbfinale":
+
+| Event | Qualifikation | Kind 6 | Finale |
+|---|---|---|---|
+| FIG World Cup Cottbus 2024, Men | 89 | **24** | 8 |
+| FIG World Cup Cottbus 2025, Men | 33 | **16** | 8 |
+| Schülerliga erster Vorkampf, Gruppe 1 | 20 | **20** | 20 |
+
+Bei den World Cups ist `Kind 6` klar das Halbfinale. Bei der Schülerliga wird
+überhaupt nicht gesiebt, da ist es schlicht ein zweiter Durchgang. Außerdem
+hat sporttech.io mit `Kind 2` eine eigene Durchgangsart „SemiFinal", die
+9 Wettkämpfe im Datenbestand auch benutzen. Beides auf „Halbfinale"
+abzubilden würde zwei unterschiedliche Angaben der Quelle gleich aussehen
+lassen.
 
 ### 3.4 `Groups` – die Riege
 
@@ -633,7 +675,9 @@ Weitere nutzbare Routen derselben App: `/stages/:stageID/startlist`,
 | `datum` | `Frame.LastPublishTime_G` (Fallback `Event.StartDate`) |
 | `disziplin` | `Competition.Discipline` → `Trampolin` / `Synchron` / `Doppel-Mini` / `Tumbling` |
 | `wettkampf` | `Competition.Title` |
-| `durchgang` | `Stage.Kind` → Name, plus Übungsnummer bei `PerfomanceFramesLimit > 1` |
+| `durchgang` | `Stage.Kind` → Name, **ohne** Übungsnummer |
+| `uebung` | Position des Frames in `Performance.Frames`, 1-basiert |
+| `uebungen` | `Stage.PerfomanceFramesLimit` |
 | `platz` | `Performance.Rank_G` |
 | `d` | `Frame.DifficultyT_G / 10`; bei `−1` → `null` |
 | `e` | `Frame.ETotalT_G` mit der Reglement-Regel von oben (SYN: `/1000`) |

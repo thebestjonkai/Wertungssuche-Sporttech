@@ -346,7 +346,9 @@ Eine Zeile sieht so aus:
   "datum": "2026-03-07",
   "disziplin": "Trampolin",
   "wettkampf": "WK 05 Jugendturnerinnen C (2012-2013)",
-  "durchgang": "Qualifikation 1",
+  "durchgang": "Qualifikation",
+  "uebung": 1,
+  "uebungen": 2,
   "platz": 9,
   "d": 0.0,
   "e": 10.2,
@@ -360,9 +362,28 @@ Eine Zeile sieht so aus:
 ```
 
 **Eine Zeile ist eine Übung, nicht ein ganzer Durchgang.** Eine Qualifikation
-aus zwei Übungen ergibt zwei Zeilen („Qualifikation 1" und „Qualifikation 2")
-mit je eigenen D-, E-, T- und H-Werten. `platz` und `gesamtDurchgang` gehören
-zum ganzen Durchgang und stehen deshalb auf beiden Zeilen gleich.
+aus zwei Übungen ergibt zwei Zeilen: beide mit `durchgang: "Qualifikation"`,
+die eine mit `uebung: 1`, die andere mit `uebung: 2`, und je eigenen D-, E-,
+T- und H-Werten. `platz` und `gesamtDurchgang` gehören zum ganzen Durchgang
+und stehen deshalb auf beiden Zeilen gleich.
+
+Durchgang und Übung sind bewusst getrennte Felder. Früher stand in
+`durchgang` schlicht „Qualifikation 1" und „Qualifikation 2" – das war gleich
+doppelt falsch:
+
+* Im Trampolinturnen meint **„Qualifikation 2" üblicherweise den zweiten
+  Durchgang, also das Halbfinale** – nicht die zweite Übung des Vorkampfs.
+  Beim FIG World Cup Cottbus 2024 (Männer) sieht man den Unterschied an den
+  Starterzahlen: 89 Starter in *beiden* Übungen der Qualifikation, danach ein
+  eigener Durchgang mit 24 Startern, dann 8 im Finale.
+* Es kollidierte mit echten Durchgangsnamen. sporttech.io kennt eine
+  Durchgangsart, die wirklich „Finale 1" heißt – und ein Finale aus drei
+  Übungen hätte ebenfalls „Finale 1", „Finale 2", „Finale 3" ergeben. Genau
+  das kommt beim Wölfe Open 13.09.2025 vor.
+
+Vorkommende Durchgangsnamen im aktuellen Datenbestand: `Qualifikation`
+(12 494 Zeilen), `Finale` (2 217), `Team-Finale` (294), `Halbfinale` (151),
+`Qualifikation II` (102).
 
 Werte, die es nicht gibt, sind `null` und nicht `0` – `t: null` heißt, dass
 dieser Wettkampf keine Flugzeit gemessen hat.

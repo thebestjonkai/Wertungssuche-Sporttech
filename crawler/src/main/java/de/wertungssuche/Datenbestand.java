@@ -139,7 +139,8 @@ public class Datenbestand {
                 .thenComparing(w -> w.datum == null ? "" : w.datum,
                         Comparator.reverseOrder())
                 .thenComparing(w -> w.wettkampf == null ? "" : w.wettkampf)
-                .thenComparing(w -> w.durchgang == null ? "" : w.durchgang);
+                .thenComparing(w -> w.durchgang == null ? "" : w.durchgang)
+                .thenComparing(w -> w.uebung == null ? 0 : w.uebung);
 
         for (String name : moeglicheDateinamen()) {
             Path datei = datenOrdner.resolve(name + ".json");

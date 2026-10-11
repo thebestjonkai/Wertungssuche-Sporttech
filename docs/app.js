@@ -362,7 +362,24 @@ function zelle(klasse, spalte, inhalt) {
   return td;
 }
 
-/** Die Tabelle mit allen Wertungen einer Person. */
+/**
+ * Die Tabelle mit allen Wertungen einer Person.
+ *
+ * Die Zeilen sind nach Datum absteigend sortiert. Damit man sich darin
+ * zurechtfindet, bekommt die Tabelle zwei Gliederungsebenen:
+ *
+ *   - ein Jahresband, sobald ein neues Jahr beginnt
+ *   - eine kräftige Trennlinie, sobald ein neuer Wettkampf beginnt
+ *     (Wettkampf heißt hier: dasselbe Event und dieselbe Wettkampfklasse)
+ *
+ * Innerhalb eines Wettkampfs werden Datum, Event und Wettkampfklasse nur in
+ * der ersten Zeile hervorgehoben; die Folgezeilen zeigen sie blass. Der Text
+ * bleibt im Dokument, damit Vorlesewerkzeuge und das Kopieren vollständige
+ * Zeilen bekommen - und damit in der Handyansicht, wo jede Zeile eine eigene
+ * Karte ist, nichts fehlt.
+ */
+const SPALTEN_ANZAHL = 14;
+
 function tabelleBauen(zeilen, massstab) {
   const rahmen = el('div', 'tabelle-rahmen');
   const tabelle = el('table');
@@ -371,8 +388,9 @@ function tabelleBauen(zeilen, massstab) {
   const kopfZeile = el('tr');
   const spalten = [
     ['Datum', ''], ['Event', ''], ['Wettkampf', ''], ['Durchgang', ''],
-    ['Platz', 'rechts'], ['D', 'rechts'], ['E', 'rechts'], ['T', 'rechts'],
-    ['H', 'rechts'], ['Penalty', 'rechts'], ['Gesamt', 'rechts'],
+    ['Übung', 'rechts'], ['Platz', 'rechts'],
+    ['D', 'rechts'], ['E', 'rechts'], ['T', 'rechts'], ['H', 'rechts'],
+    ['Penalty', 'rechts'], ['Gesamt', 'rechts'],
     ['Aufteilung', ''], ['Quelle', '']
   ];
   for (const [name, klasse] of spalten) {
@@ -383,13 +401,31 @@ function tabelleBauen(zeilen, massstab) {
 
   const koerper = el('tbody');
 
+  let letztesJahr = null;
+  let letzterWettkampf = null;
+
   for (const w of zeilen) {
-    const tr = el('tr');
+    const jahr = (w.datum || '').slice(0, 4);
+    // Ein Wettkampf ist dasselbe Event plus dieselbe Wettkampfklasse.
+    const wettkampfSchluessel = (w.eventId || '') + '|' + (w.wettkampf || '');
+
+    if (jahr && jahr !== letztesJahr) {
+      koerper.appendChild(jahresBand(jahr));
+      letztesJahr = jahr;
+      letzterWettkampf = null; // nach einem Jahresband immer neu anfangen
+    }
+
+    const neuerWettkampf = wettkampfSchluessel !== letzterWettkampf;
+    letzterWettkampf = wettkampfSchluessel;
+
+    const tr = el('tr', neuerWettkampf ? 'wk-start' : 'wk-fortsetzung');
 
     tr.appendChild(zelle('datum-zelle', 'Datum', datumAnzeigen(w.datum)));
     tr.appendChild(zelle('event-zelle', 'Event', w.event || '–'));
     tr.appendChild(zelle('wettkampf-zelle', 'Wettkampf', w.wettkampf || '–'));
     tr.appendChild(zelle('durchgang-zelle', 'Durchgang', w.durchgang || '–'));
+    tr.appendChild(zelle('uebung-zelle', 'Übung',
+      w.uebung == null ? '–' : F_GANZ.format(w.uebung)));
 
     const platzKlasse = 'platz-zelle'
       + (w.platz && w.platz <= 3 ? ' platz-' + w.platz : '');
@@ -425,6 +461,16 @@ function tabelleBauen(zeilen, massstab) {
   tabelle.appendChild(koerper);
   rahmen.appendChild(tabelle);
   return rahmen;
+}
+
+/** Eine Zeile über die volle Breite, die ein neues Jahr ankündigt. */
+function jahresBand(jahr) {
+  const tr = el('tr', 'jahr-band');
+  const td = el('td');
+  td.colSpan = SPALTEN_ANZAHL;
+  td.appendChild(el('span', 'jahr-zahl', jahr));
+  tr.appendChild(td);
+  return tr;
 }
 
 function zahlKlasse(wert) {

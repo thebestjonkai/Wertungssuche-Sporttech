@@ -48,23 +48,30 @@ public enum Durchgang {
     }
 
     /**
-     * Baut den Namen, der später in der Spalte "Durchgang" steht.
+     * Der Name des Durchgangs – <b>ohne</b> Übungsnummer.
      *
-     * <p>Besteht ein Durchgang aus mehreren Übungen, wird die Übungsnummer
-     * angehängt – aus {@code Kind == 0} mit zwei Übungen wird also
-     * "Qualifikation 1" und "Qualifikation 2". Bei nur einer Übung bleibt es
-     * bei "Finale".
+     * <p>Die Nummer der Übung gehört bewusst nicht hierher, sondern in das
+     * eigene Feld {@link Wertung#uebung}. Früher stand hier "Qualifikation 1"
+     * und "Qualifikation 2" für die zwei Übungen eines Vorkampfs – das war
+     * gleich doppelt missverständlich:
      *
-     * @param kind          {@code Stage.Kind}
-     * @param uebungNr      1-basierte Nummer der Übung innerhalb des Durchgangs
-     * @param anzahlUebungen {@code Stage.PerfomanceFramesLimit}
+     * <ul>
+     *   <li>Im Trampolinturnen heißt "Qualifikation 2" üblicherweise der
+     *       <b>zweite Durchgang</b>, also das Halbfinale – nicht die zweite
+     *       Übung des Vorkampfs. Beim FIG World Cup Cottbus 2024 (Männer)
+     *       sieht man den Unterschied an den Starterzahlen: Qualifikation
+     *       89 Starter in <i>beiden</i> Übungen, danach ein eigener
+     *       Durchgang mit 24 Startern, dann 8 im Finale.</li>
+     *   <li>Es kollidierte mit echten Durchgangsnamen: {@link #FINALE_1}
+     *       heißt "Finale 1" – und ein Finale aus drei Übungen hätte
+     *       ebenfalls "Finale 1", "Finale 2", "Finale 3" ergeben. Genau das
+     *       kommt im Wölfe Open 13.09.2025 vor.</li>
+     * </ul>
+     *
+     * @param kind {@code Stage.Kind}
      */
-    public static String name(Integer kind, int uebungNr, int anzahlUebungen) {
+    public static String name(Integer kind) {
         Durchgang d = vonNummer(kind);
-        String basis = (d != null) ? d.anzeigename() : ("Durchgang " + kind);
-        if (anzahlUebungen > 1) {
-            return basis + " " + uebungNr;
-        }
-        return basis;
+        return (d != null) ? d.anzeigename() : ("Durchgang " + kind);
     }
 }

@@ -41,8 +41,21 @@ public class Wertung {
     public String disziplin;
     /** Name der Wettkampfklasse, z. B. {@code AK 13/14 (weiblich)}. */
     public String wettkampf;
-    /** z. B. {@code Qualifikation 1}, {@code Finale}. */
+    /** z. B. {@code Qualifikation}, {@code Halbfinale}, {@code Finale}. */
     public String durchgang;
+    /**
+     * Die wievielte Übung innerhalb des Durchgangs, 1-basiert.
+     *
+     * <p>Ein Vorkampf besteht meist aus zwei Übungen: der Durchgang heißt
+     * beide Male "Qualifikation", hier steht 1 beziehungsweise 2. Bei einem
+     * Finale aus einer einzigen Übung steht 1.
+     *
+     * <p>Das ist bewusst ein eigenes Feld und nicht Teil von
+     * {@link #durchgang} – siehe {@link Durchgang#name(Integer)}.
+     */
+    public Integer uebung;
+    /** Wie viele Übungen der Durchgang insgesamt hat. */
+    public Integer uebungen;
     /** Platz im gesamten Durchgang. */
     public Integer platz;
 
@@ -68,17 +81,20 @@ public class Wertung {
     /**
      * Der eindeutige Schlüssel dieser Wertung – gegen Duplikate.
      *
-     * <p>Zusammengesetzt aus Event, Durchgang und Person. Die Person steckt mit
-     * drin, weil ein Durchgang mehrere Starter hat; der Durchgangsname enthält
-     * die Übungsnummer, so dass Übung 1 und Übung 2 auseinandergehalten werden.
+     * <p>Zusammengesetzt aus Event, Durchgang, Übungsnummer und Person. Die
+     * Person steckt mit drin, weil ein Durchgang mehrere Starter hat; die
+     * Übungsnummer, weil eine Qualifikation aus zwei Übungen besteht, die
+     * beide "Qualifikation" heißen. Ohne sie würden die zwei Übungen eines
+     * Vorkampfs als Duplikat gelten und eine davon verschwinden.
      *
      * <p>Der Name wird normalisiert, damit eine Korrektur der Schreibweise
-     * ("Mueller" → "Müller") in einem erneut geladenen Event nicht als zweite
+     * ("MUELLER" → "Mueller") in einem erneut geladenen Event nicht als zweite
      * Wertung durchgeht.
      */
     public String schluessel() {
         return eventId
                 + "|" + durchgang
+                + "|" + (uebung == null ? "" : uebung)
                 + "|" + wettkampf
                 + "|" + Namen.normalisieren(nachname)
                 + "|" + Namen.normalisieren(vorname)

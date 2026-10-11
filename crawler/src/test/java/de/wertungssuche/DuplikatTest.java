@@ -34,8 +34,8 @@ class DuplikatTest {
     @Test
     @DisplayName("Dieselbe Wertung zweimal ergibt denselben Schlüssel")
     void gleicheWertungGleicherSchluessel() {
-        Wertung a = beispiel("Müller", "Lena", 2008, "Qualifikation 1");
-        Wertung b = beispiel("Müller", "Lena", 2008, "Qualifikation 1");
+        Wertung a = beispiel("Müller", "Lena", 2008, "Qualifikation");
+        Wertung b = beispiel("Müller", "Lena", 2008, "Qualifikation");
 
         assertEquals(a.schluessel(), b.schluessel());
         assertEquals(a, b);
@@ -45,8 +45,13 @@ class DuplikatTest {
     @Test
     @DisplayName("Die zweite Übung desselben Durchgangs ist eine eigene Wertung")
     void zweiteUebungIstEigeneWertung() {
-        Wertung erste = beispiel("Müller", "Lena", 2008, "Qualifikation 1");
-        Wertung zweite = beispiel("Müller", "Lena", 2008, "Qualifikation 2");
+        // Beide heißen "Qualifikation" - unterschieden wird über die
+        // Übungsnummer. Fehlte sie im Schlüssel, würde eine der beiden
+        // Übungen als Duplikat verschwinden.
+        Wertung erste = beispiel("Müller", "Lena", 2008, "Qualifikation");
+        erste.uebung = 1;
+        Wertung zweite = beispiel("Müller", "Lena", 2008, "Qualifikation");
+        zweite.uebung = 2;
 
         assertFalse(erste.schluessel().equals(zweite.schluessel()),
                 "Übung 1 und Übung 2 dürfen nicht zusammenfallen.");
@@ -57,8 +62,8 @@ class DuplikatTest {
     void schreibweiseErzeugtKeinDuplikat() {
         // Wird in einem Event die Schreibweise nachträglich berichtigt, darf
         // daraus keine zweite Wertung werden.
-        Wertung alt = beispiel("MÜLLER", "LENA", 2008, "Qualifikation 1");
-        Wertung neu = beispiel("Müller", "Lena", 2008, "Qualifikation 1");
+        Wertung alt = beispiel("MÜLLER", "LENA", 2008, "Qualifikation");
+        Wertung neu = beispiel("Müller", "Lena", 2008, "Qualifikation");
 
         assertEquals(alt.schluessel(), neu.schluessel(),
                 "MÜLLER und Müller sind dieselbe Person.");
@@ -77,8 +82,8 @@ class DuplikatTest {
         // (Müller -> mueller). Die Eingabe "mueller" findet damit "Müller",
         // ohne dass die Identität darunter leidet. Siehe suchformen() in
         // docs/app.js.
-        Wertung mitUmlaut = beispiel("Müller", "Lena", 2008, "Qualifikation 1");
-        Wertung ausgeschrieben = beispiel("Mueller", "Lena", 2008, "Qualifikation 1");
+        Wertung mitUmlaut = beispiel("Müller", "Lena", 2008, "Qualifikation");
+        Wertung ausgeschrieben = beispiel("Mueller", "Lena", 2008, "Qualifikation");
 
         assertFalse(mitUmlaut.schluessel().equals(ausgeschrieben.schluessel()));
         assertEquals("muller", Namen.normalisieren("Müller"));
@@ -90,8 +95,8 @@ class DuplikatTest {
     @Test
     @DisplayName("Namensgleiche mit verschiedenem Jahrgang bleiben getrennt")
     void namensgleicheBleibenGetrennt() {
-        Wertung eine = beispiel("Müller", "Lena", 2008, "Qualifikation 1");
-        Wertung andere = beispiel("Müller", "Lena", 2011, "Qualifikation 1");
+        Wertung eine = beispiel("Müller", "Lena", 2008, "Qualifikation");
+        Wertung andere = beispiel("Müller", "Lena", 2011, "Qualifikation");
 
         assertFalse(eine.schluessel().equals(andere.schluessel()));
         assertFalse(eine.personSchluessel().equals(andere.personSchluessel()));
@@ -103,9 +108,9 @@ class DuplikatTest {
         // Genau dieser Fall steckt in den echten Daten: "TV Voerde" und
         // "TV Voerde 1920 e.V." sind derselbe Verein, und ein Vereinswechsel
         // macht eine Turnerin auch nicht zu einer anderen Person.
-        Wertung a = beispiel("Dierks", "Julie", 2013, "Qualifikation 1");
+        Wertung a = beispiel("Dierks", "Julie", 2013, "Qualifikation");
         a.verein = "TV Voerde";
-        Wertung b = beispiel("Dierks", "Julie", 2013, "Qualifikation 1");
+        Wertung b = beispiel("Dierks", "Julie", 2013, "Qualifikation");
         b.verein = "TV Voerde 1920 e.V.";
 
         assertEquals(a.personSchluessel(), b.personSchluessel());
@@ -118,8 +123,8 @@ class DuplikatTest {
     void duplikatWirdUebersprungen(@TempDir Path ordner) {
         Datenbestand bestand = new Datenbestand(ordner);
 
-        Wertung a = beispiel("Müller", "Lena", 2008, "Qualifikation 1");
-        Wertung b = beispiel("Müller", "Lena", 2008, "Qualifikation 1");
+        Wertung a = beispiel("Müller", "Lena", 2008, "Qualifikation");
+        Wertung b = beispiel("Müller", "Lena", 2008, "Qualifikation");
 
         bestand.hinzufuegen(List.of(a, b));
 
@@ -134,14 +139,17 @@ class DuplikatTest {
         Datenbestand bestand = new Datenbestand(ordner);
 
         // Erster Lauf: zwei Übungen.
-        Wertung alt1 = beispiel("Müller", "Lena", 2008, "Qualifikation 1");
-        Wertung alt2 = beispiel("Müller", "Lena", 2008, "Qualifikation 2");
+        Wertung alt1 = beispiel("Müller", "Lena", 2008, "Qualifikation");
+        alt1.uebung = 1;
+        Wertung alt2 = beispiel("Müller", "Lena", 2008, "Qualifikation");
+        alt2.uebung = 2;
         bestand.hinzufuegen(List.of(alt1, alt2));
         assertEquals(2, bestand.anzahlWertungen());
 
         // Zweiter Lauf desselben Events: das Kampfgericht hat die zweite Übung
         // zurückgezogen und die erste korrigiert.
-        Wertung neu1 = beispiel("Müller", "Lena", 2008, "Qualifikation 1");
+        Wertung neu1 = beispiel("Müller", "Lena", 2008, "Qualifikation");
+        neu1.uebung = 1;
         neu1.gesamt = 44.44;
 
         bestand.eventEntfernen("event-1");
@@ -161,8 +169,8 @@ class DuplikatTest {
     void anderesEventBleibtErhalten(@TempDir Path ordner) {
         Datenbestand bestand = new Datenbestand(ordner);
 
-        Wertung ausEventEins = beispiel("Müller", "Lena", 2008, "Qualifikation 1");
-        Wertung ausEventZwei = beispiel("Müller", "Lena", 2008, "Qualifikation 1");
+        Wertung ausEventEins = beispiel("Müller", "Lena", 2008, "Qualifikation");
+        Wertung ausEventZwei = beispiel("Müller", "Lena", 2008, "Qualifikation");
         ausEventZwei.eventId = "event-2";
         ausEventZwei.event = "Zweites Event";
 
@@ -266,6 +274,8 @@ class DuplikatTest {
         w.disziplin = "Trampolin";
         w.wettkampf = "AK 15/16 (weiblich)";
         w.durchgang = durchgang;
+        w.uebung = 1;
+        w.uebungen = 2;
         w.platz = 3;
         w.d = 13.5;
         w.e = 16.2;

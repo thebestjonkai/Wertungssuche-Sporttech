@@ -219,7 +219,12 @@ public class WertungsExtraktor {
 
         w.disziplin = disziplin.anzeigename();
         w.wettkampf = Namen.aufraeumen(wettkampf.Title);
-        w.durchgang = Durchgang.name(stage.Kind, uebungNr, anzahlUebungen);
+        // Durchgang und Übung sind zwei verschiedene Dinge - siehe
+        // Durchgang.name(). Eine Qualifikation aus zwei Übungen heißt beide
+        // Male "Qualifikation", unterschieden wird über uebung.
+        w.durchgang = Durchgang.name(stage.Kind);
+        w.uebung = uebungNr;
+        w.uebungen = anzahlUebungen;
 
         // Gaststarter laufen ohne Platzierung mit; 0 und negative Werte sind
         // Platzhalter und keine echten Plätze.
