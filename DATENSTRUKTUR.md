@@ -62,7 +62,44 @@ Antwortformat – ein Objekt `event`, das nach Event-ID (UUID) gemappt ist:
 ```
 
 Für den Crawler relevant: `event_id`, `en_name`, `begin_date`, `end_date`,
-`sport`, `rules`, `updated_at`.
+`sport`, `rules`, `updated_at` – und `organizations`, siehe gleich.
+
+#### Das Land steht nur in der Organisation
+
+Im Event selbst gibt es **kein** Länderfeld. Deshalb wird
+`fetch_organizations=true` gebraucht: die Antwort enthält dann ein zweites
+Objekt `organization`, und über `event.organizations[].organization_id` kommt
+man an den Ausrichter:
+
+```json
+"organization": {
+  "a02ce08a-…": {
+    "organization_id": "a02ce08a-…",
+    "en_name": "Deutscher Turner-Bund",
+    "country_id": 276
+  }
+}
+```
+
+`country_id` ist die numerische Länder-ID, die auch `/api/countries/` benutzt –
+**276 = Deutschland**. Jedes Event hat genau einen Eintrag mit
+`participation: "host"`; weitere Einträge haben `participation: "participant"`.
+
+Damit lassen sich die deutschen Events sauber herausfiltern. Stand 11.10.2026
+ergibt das für Trampolin ab dem 01.01.2024:
+
+| Ausrichterland | Events |
+|---|---|
+| Portugal | 160 |
+| Russland | 154 |
+| Australien | 148 |
+| **Deutschland (276)** | **71** |
+| Dänemark | 64 |
+| Neuseeland | 56 |
+| Schweden | 29 |
+
+Die 71 deutschen Events reichen von Vereinsmeisterschaften über Landes- und
+Deutsche Meisterschaften bis zum FIG World Cup Cottbus.
 
 #### So erkennt man Trampolin
 
@@ -385,8 +422,8 @@ festem Faktor**, nicht Kommazahlen.
 | `State` | `3` | – | **Nur `3` = veröffentlicht zählt**, siehe unten |
 | `SubState` | `0` | – | `1`=DNS, `2`=BLOCKED, `3`=FSF, `4`=DNF, `5`=DSQ, `6`=DQB, `7`=DNC |
 | `MarkTTT_G` | `58055` | `/1000` | **Gesamt der Übung** → 58,055 |
-| `DifficultyT_G` | `180` | `/10` | **D** – Schwierigkeit → 18,0 |
-| `ETotalT_G` | `148` | `/10` | **E** – Ausführung → 14,8 |
+| `DifficultyT_G` | `180` | `/10` | **D** – Schwierigkeit → 18,0. **`−1` heißt „nicht gesetzt"** |
+| `ETotalT_G` | `148` | *besonders* | **E** – Ausführung → 14,8. **Nicht immer `/10`, siehe unten** |
 | `TimeTMS_G` | `15955` | `/1000` | **T** – Flugzeit in Sekunden → 15,955 |
 | `Displacement_G` | `930` | `/100` | **H / HD** – horizontale Verlagerung → 9,30 |
 | `PenaltyT` | `0` | `/10` | **Abzug** (Strafe) |
@@ -417,7 +454,7 @@ Im CBI 2024: 900 Frames, davon 342 mit `State == 3`. Der Rest sind größtenteil
 nie benutzte Platzhalter (jede Performance hat 4 Frame-Slots, auch wenn nur 2
 geturnt werden).
 
-#### Die Punkteformel – an 342 Übungen exakt verifiziert
+#### Die Punkteformel
 
 ```
 Gesamt = D + E + T + H + Bonus − Abzug − zusätzlicher Abzug
@@ -426,10 +463,18 @@ Gesamt = D + E + T + H + Bonus − Abzug − zusätzlicher Abzug
 also
 
 ```
-MarkTTT_G/1000 = DifficultyT_G/10 + ETotalT_G/10 + TimeTMS_G/1000
+MarkTTT_G/1000 = DifficultyT_G/10 + E + TimeTMS_G/1000
                  + Displacement_G/100 + BonusT/10
                  − PenaltyT/10 − DPenaltyT/10
 ```
+
+wobei `E` der einzige Wert mit einer Sonderregel ist – siehe das nächste
+Kapitel. Bei den Reglements 2017 und 2022 ist es einfach `ETotalT_G/10`.
+
+**Geprüft an allen 2 073 veröffentlichten Übungen aus fünf Events** (CBI 2024,
+World Cup Cottbus 2024, Deutschland Cup 2025, 3. Wölfe Open 2024, Offene Kölner
+Pokalwettkämpfe 2026) sowie an allen **15 258 Zeilen** des fertigen
+Datenbestands – überall stimmt die Summe auf die dritte Dezimalstelle.
 
 Gegenprobe Rayan Dutra, CBI 2024, Qualifikation TRA, Übung 1:
 
@@ -445,10 +490,86 @@ D 0,0  +  E 15,8  −  DPenalty 12,0  =  3,80            ✓ = MarkTTT_G 3800
 
 Dieses zweite Beispiel ist der Grund, warum `DPenaltyT` mit muss: die
 Beispiel-Erweiterung `vmixLivesportTRA.js` von sporttech wertet nur `PenaltyT`
-aus und kommt bei solchen Übungen auf das falsche Ergebnis.
+aus und kommt bei solchen Übungen auf das falsche Ergebnis (15,80 statt 3,80).
 
-**Alle 342 veröffentlichten Übungen des CBI 2024 stimmen mit dieser Formel auf
-die dritte Dezimalstelle.** Der JUnit-Test aus Schritt 5 prüft genau das.
+Der JUnit-Test aus Schritt 5 prüft die Formel gegen die gespeicherten
+Beispieldateien.
+
+#### Die E-Note ist der eine Wert mit einer echten Sonderregel
+
+`ETotalT_G / 10` stimmt bei den meisten Events – aber nicht bei allen. Bei 200
+von 15 258 Zeilen des fertigen Datenbestands ging die Summe damit nicht auf.
+
+Beispiel: Offene Kölner Pokalwettkämpfe 2026, Wettkampf WK13, erste Übung von
+Elia Altinova (Frame 312):
+
+```
+MarkTTT_G      = 28100   ->  Gesamt   28,100
+DifficultyT_G  =     0   ->  D         0,0
+TimeTMS_G      =  8600   ->  T         8,600
+Displacement_G =     0   ->  H         0,00
+ETotalT_G      =    65   ->  E = ?
+```
+
+Damit die Summe aufgeht, muss E = **19,5** sein, also `65 × 3 / 10` und nicht
+`65 / 10`.
+
+Die maßgebliche Regel steht in sporttechs eigener Anzeige-Logik im Bundle
+`/static/TRA/script.min.js`:
+
+```js
+M.filter("EScore", function(f, m) {
+    var s = <Stage des Frames>;
+    var subtype = common.filters.getSubtype(m.Event.RulesCode);
+    if (subtype != "2017" && subtype != "2022") {
+        return ETotalFilter(EMultipliedFilter(f), s);   // EMultiplied = ETotalT_G * 3
+    }
+    if (f.Discipline_G != SYN) { return ETotalFilter(f.ETotalT_G, s); }
+    return SynETotalFilter(f.ETotalT_G);
+});
+
+M.filter("ETotal", function(n, s) {
+    if (hasCalcOption(s, CalcCroppedAvg) || hasCalcOption(s, CalcAvgX2)
+            || hasCalcOption(s, CalcAvgX3)) {
+        return formatDDD(n);     // n / 1000
+    }
+    return formatD(n);           // n / 10
+});
+
+getSubtype = function(rulesCode) {
+    var parts = rulesCode.split(".");
+    if (parts.length != 4) { return; }
+    return parts[2];
+};
+```
+
+Also:
+
+1. **Subtyp bestimmen:** `Event.RulesCode` an den Punkten zerlegen. Nur wenn
+   genau vier Teile herauskommen, ist der dritte der Subtyp.
+   `TRA.FIG.2022.2024-06-26` → `"2022"`.
+2. **Faktor:** bei Subtyp `2017` oder `2022` mal 1, bei **jedem anderen** mal 3.
+3. **Teiler:** 10 – außer der Durchgang hat eine der Rechenoptionen
+   `CalcCroppedAvg` (3), `CalcAvgX2` (16) oder `CalcAvgX3` (17) in
+   `Stage.CalcOptions`, dann 1000.
+
+Beim Kölner Event ist der `RulesCode` übrigens `TRA.FIG..2026-06-28` – vier
+Teile, aber der dritte ist **leer**. Damit greift Punkt 2 und der Faktor ist 3.
+
+Mit dieser Regel stimmen alle 15 258 Zeilen des Datenbestands. Die
+Rechenoptionen sind in `TRA.shadow.CalcKinds` im Bundle definiert; umgesetzt ist
+das Ganze in `crawler/src/main/java/de/wertungssuche/Reglement.java`.
+
+#### `DifficultyT_G == -1` heißt „keine D-Note"
+
+sporttech.io benutzt **−1 als Marker für „nicht gesetzt"** – man sieht das auch
+bei Feldern wie `DefaultNElements` oder `JudgesPanelID`. Bei der D-Note kommt
+das wirklich vor: Frame 1016 des 3. Wölfe Open 2024 hat
+`DifficultyT_G == -1`, und das Gesamtergebnis rechnet mit 0.
+
+Wichtig: eine D-Note von echten **0,0** gibt es daneben auch, und zwar häufig
+(Anfängerübungen in Nachwuchswettkämpfen). Die darf nicht mit dem Marker
+verwechselt werden. In unseren Daten wird aus −1 ein `null`, aus 0 eine 0,0.
 
 #### Sonderfall Synchronspringen (`Discipline == 1`)
 
@@ -514,14 +635,24 @@ Weitere nutzbare Routen derselben App: `/stages/:stageID/startlist`,
 | `wettkampf` | `Competition.Title` |
 | `durchgang` | `Stage.Kind` → Name, plus Übungsnummer bei `PerfomanceFramesLimit > 1` |
 | `platz` | `Performance.Rank_G` |
-| `d` | `Frame.DifficultyT_G / 10` |
-| `e` | `Frame.ETotalT_G / 10` (SYN: `/1000`) |
-| `h` | `Frame.Displacement_G / 100` (DMT/TUM: `null`) |
-| `t` | `Frame.TimeTMS_G / 1000` (SYN: `2 × /100`; DMT/TUM: `null`) |
+| `d` | `Frame.DifficultyT_G / 10`; bei `−1` → `null` |
+| `e` | `Frame.ETotalT_G` mit der Reglement-Regel von oben (SYN: `/1000`) |
+| `h` | `Frame.Displacement_G / 100`; bei 0 → `null` (DMT/TUM und Wettkämpfe ohne HD-Wertung) |
+| `t` | `Frame.TimeTMS_G / 1000`; bei 0 → `null` (SYN: `2 × /100`) |
 | `abzug` | `(Frame.PenaltyT + Frame.DPenaltyT) / 10` |
 | `gesamt` | `Frame.MarkTTT_G / 1000` |
 | `gesamtDurchgang` | `Performance.MarkTTT_G / 1000` – Ergebnis des gesamten Durchgangs |
 | `link` | `https://sporttech.io/events/<eventId>/ovs/stages/<stageId>/results` |
+
+Warum `h` und `t` bei 0 zu `null` werden: es gibt Wettkämpfe, die weder
+Flugzeit noch Verlagerung messen. Bei den Deutschen Hochschulmeisterschaften
+2024 ist `TimeTMS_G` in allen sechs Wettkämpfen durchgehend 0, bei 13
+Wettkämpfen des Datenbestands gilt dasselbe für `Displacement_G`. Eine „0,00"
+auf der Website würde dort eine Wertung vorgeben, die es gar nicht gibt.
+
+Der Preis dafür: bei einer abgebrochenen Übung, deren Flugzeit wirklich
+praktisch 0 ist, steht ebenfalls `null`. Das betrifft eine Handvoll Zeilen und
+ist der bessere Kompromiss.
 
 Zwei Felder habe ich gegenüber der Aufgabenstellung **ergänzt**, weil die echten
 Daten es verlangen:
@@ -536,35 +667,67 @@ Daten es verlangen:
 
 ---
 
-## 6. Mengen – und warum das die Dateiaufteilung betrifft
+## 6. Mengen und die gebaute Dateistruktur
 
-Gemessen an den drei Beispiel-Events (Zeilen = Athlet × veröffentlichte Übung):
+### Entscheidung über den Umfang
 
-| Event | veröffentlichte Frames | Zeilen |
-|---|---|---|
-| CBI 2024 | 342 | 381 |
-| FIG World Cup Cottbus 2024 | 483 | 585 |
-| Deutschland Cup 2025 | 607 | 607 |
+Weltweit gibt es 2 029 Trampolin-Events. Gemessen an echten Events ergeben die
+etwa **524 Zeilen pro Event**, also rund **1,06 Millionen Zeilen** bzw. 600 MB
+mit Einrückung. Das trägt die Aufteilung nach dem ersten Nachnamen-Buchstaben
+nicht, weil die Verteilung zu schief ist (S 14,2 %, M 11,3 %) – `s.json` wären
+rund 40 MB in einer Datei.
 
-Das sind **durchschnittlich 524 Zeilen pro Event**. Hochgerechnet auf 2 029
-Trampolin-Events:
+Gesammelt wird deshalb ein klar abgegrenzter Ausschnitt:
 
-```
-≈ 1 060 000 Wertungszeilen
-≈ 566 Byte pro Zeile mit Einrückung   →  ca. 600 MB
-≈ 446 Byte pro Zeile kompakt          →  ca. 470 MB
-```
+* **nur Events, die in Deutschland ausgerichtet werden** (`country_id == 276`
+  der ausrichtenden Organisation)
+* **nur ab dem 01.01.2024**
+* **nur Trampolin Einzel** (`Competition.Discipline == 0`); Synchron,
+  Doppel-Minitrampolin und Tumbling fallen weg
+* zusätzlich **einzeln nachladbare Events** für wichtige Wettkämpfe im Ausland,
+  siehe `README.md`
 
-Die Aufteilung nach dem **ersten** Buchstaben des Nachnamens trägt diese Menge
-nicht, weil sie extrem ungleich ist:
+### Was dabei herauskommt
 
-```
-S 14,2 %   M 11,3 %   B 7,2 %   P 6,7 %   A 6,0 %   K 5,9 %
-```
+Stand 11.10.2026, ein vollständiger Lauf über alle 71 deutschen Events:
 
-`s.json` wären also ~150 000 Zeilen bzw. ~40 MB in einer Datei – die lädt kein
-Handy. Auch zwei Buchstaben helfen nur begrenzt (`sc` = 4,6 % ≈ 13 MB).
+| | |
+|---|---|
+| Events geladen | 71, davon 0 mit Fehler |
+| übersprungen (falsche Disziplin) | 454 Durchgänge |
+| übersprungen (nicht veröffentlicht) | 1 044 Übungen |
+| **Wertungszeilen** | **15 258** |
+| **Personen** | **3 981** |
+| Zeitraum | 2024: 3 781 · 2025: 4 922 · 2026: 6 555 |
+| Gesamtgröße `docs/data/` | 9,1 MB |
+| größte Datei | `s.json` mit 1,4 MB |
+| HTTP-Anfragen | 73 (Eventliste, Länderliste, 71 Events) |
+| Laufzeit | rund 2 Minuten bei einer Anfrage pro Sekunde |
 
-Deshalb braucht es vor Schritt 2 eine Entscheidung über den Umfang. Die Optionen
-stehen im Protokoll der Rückfrage; sobald sie getroffen ist, wird dieses Kapitel
-durch die tatsächlich gebaute Struktur ersetzt.
+Damit funktioniert die ursprünglich geplante, einfache Aufteilung: die Website
+lädt für eine Suche genau eine Datei, im schlechtesten Fall 1,4 MB – und
+GitHub Pages liefert die komprimiert aus.
+
+### Die Dateien unter `docs/data/`
+
+| Datei | Inhalt |
+|---|---|
+| `a.json` … `z.json` | die Wertungen, nach dem ersten Buchstaben des Nachnamens in der Vergleichsform (Ä→a, Ö→o, Ü→u, Akzente entfernt) |
+| `other.json` | alles, was nicht mit a–z beginnt – zum Beispiel kyrillische Namen |
+| `events.json` | der Merkzettel des Crawlers: welche Events verarbeitet wurden, mit Status, Datum und Anzahl der Wertungen |
+| `meta.json` | Stand der Daten und Kennzahlen; die Website zeigt daraus das Datum der letzten Aktualisierung |
+
+Sortiert wird innerhalb einer Datei nach Nachname, Vorname, Datum absteigend.
+Das hält die Git-Diffs klein: ein neues Event fügt an wenigen Stellen ein,
+statt die ganze Datei umzusortieren.
+
+Dass dieselbe Wertung nicht zweimal auftaucht, sichern zwei Dinge ab:
+
+1. Beim erneuten Laden eines Events werden **zuerst alle alten Zeilen dieses
+   Events entfernt** und dann die neuen eingefügt. So verschwindet eine
+   zurückgezogene oder korrigierte Wertung wirklich, statt als Geisterzeile
+   stehen zu bleiben.
+2. Ein eindeutiger Schlüssel aus `eventId`, Durchgang, Wettkampf und
+   normalisiertem Namen plus Jahrgang. Der Name wird normalisiert, damit eine
+   korrigierte Schreibweise („Mueller" → „Müller") nicht als zweite Person
+   durchgeht.

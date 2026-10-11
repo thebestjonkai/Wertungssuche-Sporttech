@@ -1,0 +1,31 @@
+{
+  "_hinweis": "Einstellungen des Crawlers. Alle Zeiten in Millisekunden.",
+
+  "abDatum": "2024-01-01",
+  "laenderIds": [276],
+  "maxNeueEventsProLauf": 200,
+  "pauseZwischenAnfragenMs": 1000,
+  "erneutLadenTage": 14,
+
+  "zusaetzlicheEvents": [],
+
+  "nationFilter": [],
+  "vereinFilter": [],
+
+  "timeoutVerbindungMs": 15000,
+  "timeoutAntwortMs": 120000,
+  "versuche": 3,
+  "pauseNachFehlerMs": 5000,
+
+  "_doku": {
+    "abDatum": "Events, die vor diesem Tag beginnen, werden ignoriert (Format JJJJ-MM-TT).",
+    "laenderIds": "Numerische Laender-IDs der ausrichtenden Organisation. 276 = Deutschland. Leere Liste = alle Laender.",
+    "maxNeueEventsProLauf": "Obergrenze neuer Events pro Lauf, damit der GitHub-Workflow nicht in die Zeitgrenze laeuft. Der Rest kommt im naechsten Lauf.",
+    "pauseZwischenAnfragenMs": "Wartezeit zwischen zwei Anfragen an sporttech.io. 1000 = hoechstens eine Anfrage pro Sekunde.",
+    "erneutLadenTage": "Events, deren Enddatum weniger als so viele Tage zurueckliegt, werden erneut geladen, damit Korrekturen uebernommen werden.",
+    "zusaetzlicheEvents": "Event-IDs (UUIDs), die immer geladen werden - unabhaengig von Land und Datum. Fuer wichtige Wettkaempfe im Ausland.",
+    "nationFilter": "Nur Athleten dieser Nationen uebernehmen, z. B. [\"GER\"]. Leere Liste = alle.",
+    "vereinFilter": "Nur Athleten dieser Vereine uebernehmen (Teiltreffer, Gross-/Kleinschreibung egal). Leere Liste = alle.",
+    "versuche": "Anzahl Versuche pro Anfrage, bevor ein Event uebersprungen wird."
+  }
+}

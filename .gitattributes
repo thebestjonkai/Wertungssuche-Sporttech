@@ -1,0 +1,24 @@
+# Einheitliche Zeilenenden: LF im Repository.
+#
+# Wichtig für dieses Projekt: der Crawler läuft lokal unter Windows und in
+# GitHub Actions unter Linux. Ohne diese Datei schreibt Windows CRLF und Linux
+# LF in die JSON-Dateien unter docs/data – dann würde jeder Workflow-Lauf
+# scheinbar jede Zeile ändern, obwohl sich inhaltlich nichts getan hat.
+
+* text=auto eol=lf
+
+# Dateien, die immer LF behalten müssen
+*.json text eol=lf
+*.java text eol=lf
+*.xml  text eol=lf
+*.md   text eol=lf
+*.yml  text eol=lf
+*.html text eol=lf
+*.css  text eol=lf
+*.js   text eol=lf
+
+# Binärdateien nicht anfassen
+*.png binary
+*.jpg binary
+*.ico binary
+*.jar binary

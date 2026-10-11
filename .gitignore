@@ -1,5 +1,7 @@
 # Maven
 crawler/target/
+# erzeugt das shade-Plugin beim Bauen der crawler.jar
+crawler/dependency-reduced-pom.xml
 
 # IDE
 .idea/
