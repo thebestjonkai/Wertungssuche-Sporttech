@@ -1,5 +1,5 @@
 {
-  "aktualisiert": "2026-10-12T18:23:51Z",
+  "aktualisiert": "2026-10-12T18:26:38Z",
   "events": {
     "03afebf7-8a57-4ba2-4940-72a51e677747": {
       "name": "25. Barmstedt Cup 2026",
@@ -959,6 +959,15 @@
       "zuletztGeladen": "2026-10-11",
       "standSporttech": "2026-06-13T17:36:51.012866Z",
       "wertungen": 60
+    },
+    "fb955184-a1d8-4ffa-7ff4-e6f1e50a33db": {
+      "name": "Scalabiscup 26",
+      "beginn": "2026-07-09",
+      "ende": "2026-07-11",
+      "status": "abgeschlossen",
+      "manuell": true,
+      "zuletztGeladen": "2026-10-12",
+      "wertungen": 938
     }
   }
 }
