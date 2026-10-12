@@ -1,5 +1,5 @@
 {
-  "aktualisiert": "2026-10-12T18:31:21Z",
+  "aktualisiert": "2026-10-12T18:37:51Z",
   "events": {
     "03afebf7-8a57-4ba2-4940-72a51e677747": {
       "name": "25. Barmstedt Cup 2026",
@@ -24,6 +24,15 @@
       "zuletztGeladen": "2026-10-11",
       "standSporttech": "2026-04-19T11:28:29.738848Z",
       "wertungen": 251
+    },
+    "07c0713d-64e3-4039-6ea4-61110ad3c4f1": {
+      "name": "53rd Nissen Cup Junior Competition - ID 18495",
+      "beginn": "2026-06-25",
+      "ende": "2026-06-27",
+      "status": "abgeschlossen",
+      "manuell": true,
+      "zuletztGeladen": "2026-10-12",
+      "wertungen": 143
     },
     "0ac7d767-bc36-4b21-435e-522ff73b279f": {
       "name": "Badische Mannschaftsmeisterschaften 2026",

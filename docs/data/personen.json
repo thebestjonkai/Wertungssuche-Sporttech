@@ -841,6 +841,20 @@
     "letzterWettkampf": "2024-03-22"
   },
   {
+    "vorname": "Ryley",
+    "nachname": "ALLMAN",
+    "jahrgang": 2011,
+    "vereine": [
+      "Altius Gymnastics, GBR"
+    ],
+    "nationen": [],
+    "datei": "a",
+    "anzahl": 2,
+    "wettkaempfe": 1,
+    "bestGesamt": 41.21,
+    "letzterWettkampf": "2026-06-25"
+  },
+  {
     "vorname": "Wagner",
     "nachname": "Alma Franziska",
     "jahrgang": 2016,
@@ -1755,6 +1769,20 @@
     "letzterWettkampf": "2026-10-09"
   },
   {
+    "vorname": "Tommaso",
+    "nachname": "ARIENTI",
+    "jahrgang": 2012,
+    "vereine": [
+      "Ginnastica Sampietrina ASD Italy, ITA"
+    ],
+    "nationen": [],
+    "datei": "a",
+    "anzahl": 3,
+    "wettkaempfe": 1,
+    "bestGesamt": 49.62,
+    "letzterWettkampf": "2026-06-27"
+  },
+  {
     "vorname": "Aleyna",
     "nachname": "Arifi",
     "jahrgang": 1999,
@@ -1924,6 +1952,20 @@
     "wettkaempfe": 2,
     "bestGesamt": 34.22,
     "letzterWettkampf": "2026-06-21"
+  },
+  {
+    "vorname": "Mailys",
+    "nachname": "ASCHWANDEN",
+    "jahrgang": 2011,
+    "vereine": [
+      "GymVaud, SUI"
+    ],
+    "nationen": [],
+    "datei": "a",
+    "anzahl": 2,
+    "wettkaempfe": 1,
+    "bestGesamt": 34.97,
+    "letzterWettkampf": "2026-06-25"
   },
   {
     "vorname": "Anissa",
@@ -5732,14 +5774,15 @@
     "vereine": [
       "GER, STB",
       "MTV Stuttgart",
+      "Schwäbischer Turnverband, GER",
       "MTV Stuttgart 1843 e.V.",
       "BW, Schwäbischer Turnerbund",
       "GER, MTV Stuttgart"
     ],
     "nationen": [],
     "datei": "b",
-    "anzahl": 35,
-    "wettkaempfe": 12,
+    "anzahl": 38,
+    "wettkaempfe": 13,
     "bestGesamt": 49.8,
     "letzterWettkampf": "2026-10-10"
   },
@@ -5787,6 +5830,20 @@
     "wettkaempfe": 3,
     "bestGesamt": 32.34,
     "letzterWettkampf": "2026-07-04"
+  },
+  {
+    "vorname": "Amelia",
+    "nachname": "BURGESS",
+    "jahrgang": 2011,
+    "vereine": [
+      "Altius Gymnastics, GBR"
+    ],
+    "nationen": [],
+    "datei": "b",
+    "anzahl": 3,
+    "wettkaempfe": 1,
+    "bestGesamt": 52.8,
+    "letzterWettkampf": "2026-06-27"
   },
   {
     "vorname": "Raphael",
@@ -5981,6 +6038,20 @@
     "wettkaempfe": 1,
     "bestGesamt": 36.565,
     "letzterWettkampf": "2026-06-13"
+  },
+  {
+    "vorname": "George",
+    "nachname": "BUTLER",
+    "jahrgang": 2010,
+    "vereine": [
+      "Altius Gymnastics, GBR"
+    ],
+    "nationen": [],
+    "datei": "b",
+    "anzahl": 2,
+    "wettkaempfe": 1,
+    "bestGesamt": 42.78,
+    "letzterWettkampf": "2026-06-25"
   },
   {
     "vorname": "Viktoriya",
@@ -7072,6 +7143,20 @@
     "letzterWettkampf": "2026-07-10"
   },
   {
+    "vorname": "Adam",
+    "nachname": "COLCLOUGH",
+    "jahrgang": 2010,
+    "vereine": [
+      "Altius Gymnastics, GBR"
+    ],
+    "nationen": [],
+    "datei": "c",
+    "anzahl": 3,
+    "wettkaempfe": 1,
+    "bestGesamt": 51.05,
+    "letzterWettkampf": "2026-06-27"
+  },
+  {
     "vorname": "Jody",
     "nachname": "Collatz",
     "jahrgang": 2008,
@@ -7141,6 +7226,34 @@
     "wettkaempfe": 1,
     "bestGesamt": 41.69,
     "letzterWettkampf": "2026-07-09"
+  },
+  {
+    "vorname": "Sebastian",
+    "nachname": "CONTE",
+    "jahrgang": 2010,
+    "vereine": [
+      "Torino, ITA"
+    ],
+    "nationen": [],
+    "datei": "c",
+    "anzahl": 2,
+    "wettkaempfe": 1,
+    "bestGesamt": 41.16,
+    "letzterWettkampf": "2026-06-25"
+  },
+  {
+    "vorname": "Isabella",
+    "nachname": "COOK",
+    "jahrgang": 2012,
+    "vereine": [
+      "Altius Gymnastics, GBR"
+    ],
+    "nationen": [],
+    "datei": "c",
+    "anzahl": 3,
+    "wettkaempfe": 1,
+    "bestGesamt": 50.51,
+    "letzterWettkampf": "2026-06-27"
   },
   {
     "vorname": "Avery",
@@ -9051,6 +9164,20 @@
     "letzterWettkampf": "2026-07-10"
   },
   {
+    "vorname": "Anna",
+    "nachname": "DOVGALYOVA",
+    "jahrgang": 2005,
+    "vereine": [
+      "Mykolaiv’s Area Trampoline Federation, UKR"
+    ],
+    "nationen": [],
+    "datei": "d",
+    "anzahl": 2,
+    "wettkaempfe": 1,
+    "bestGesamt": 41.52,
+    "letzterWettkampf": "2026-06-25"
+  },
+  {
     "vorname": "Eliza",
     "nachname": "DOYLE",
     "jahrgang": null,
@@ -9493,6 +9620,20 @@
     "wettkaempfe": 1,
     "bestGesamt": 15.7,
     "letzterWettkampf": "2025-02-22"
+  },
+  {
+    "vorname": "Lias",
+    "nachname": "EGLINGER",
+    "jahrgang": 2011,
+    "vereine": [
+      "TV Möriken-Wildegg, SUI"
+    ],
+    "nationen": [],
+    "datei": "e",
+    "anzahl": 2,
+    "wettkaempfe": 1,
+    "bestGesamt": 44.3,
+    "letzterWettkampf": "2026-06-25"
   },
   {
     "vorname": "Arthur",
@@ -10268,6 +10409,7 @@
     "vereine": [
       "GER, STB",
       "MTV Stuttgart",
+      "Schwäbischer Turnverband, GER",
       "MTV Stuttgart 1843 e.V.",
       "BW, Schwäbischer Turnerbund",
       "Turnverein Nellingen 1893 e.V.",
@@ -10276,8 +10418,8 @@
     ],
     "nationen": [],
     "datei": "e",
-    "anzahl": 31,
-    "wettkaempfe": 10,
+    "anzahl": 34,
+    "wettkaempfe": 11,
     "bestGesamt": 49.06,
     "letzterWettkampf": "2026-10-10"
   },
@@ -10467,6 +10609,20 @@
     "wettkaempfe": 3,
     "bestGesamt": 37.22,
     "letzterWettkampf": "2026-07-04"
+  },
+  {
+    "vorname": "Emma",
+    "nachname": "ERE",
+    "jahrgang": 2011,
+    "vereine": [
+      "Espoon telinetaiturit, FIN"
+    ],
+    "nationen": [],
+    "datei": "e",
+    "anzahl": 3,
+    "wettkaempfe": 1,
+    "bestGesamt": 46.54,
+    "letzterWettkampf": "2026-06-27"
   },
   {
     "vorname": "Simon",
@@ -10863,6 +11019,20 @@
     "wettkaempfe": 1,
     "bestGesamt": 25.3,
     "letzterWettkampf": "2025-11-29"
+  },
+  {
+    "vorname": "Grace",
+    "nachname": "FAIRWEATHER",
+    "jahrgang": 2010,
+    "vereine": [
+      "Altius Gymnastics, GBR"
+    ],
+    "nationen": [],
+    "datei": "f",
+    "anzahl": 3,
+    "wettkaempfe": 1,
+    "bestGesamt": 49.15,
+    "letzterWettkampf": "2026-06-27"
   },
   {
     "vorname": "Jakob",
@@ -11300,6 +11470,20 @@
     "wettkaempfe": 1,
     "bestGesamt": 35.535,
     "letzterWettkampf": "2025-10-05"
+  },
+  {
+    "vorname": "Jacopo",
+    "nachname": "FERRARI",
+    "jahrgang": 2011,
+    "vereine": [
+      "Ginnastica Sampietrina ASD Italy, ITA"
+    ],
+    "nationen": [],
+    "datei": "f",
+    "anzahl": 3,
+    "wettkaempfe": 1,
+    "bestGesamt": 47.37,
+    "letzterWettkampf": "2026-06-27"
   },
   {
     "vorname": "Santiago",
@@ -12042,6 +12226,20 @@
     "wettkaempfe": 1,
     "bestGesamt": 24.1,
     "letzterWettkampf": "2024-09-28"
+  },
+  {
+    "vorname": "Louis",
+    "nachname": "FORTINO",
+    "jahrgang": 2010,
+    "vereine": [],
+    "nationen": [
+      "CAN"
+    ],
+    "datei": "f",
+    "anzahl": 2,
+    "wettkaempfe": 1,
+    "bestGesamt": 40.21,
+    "letzterWettkampf": "2026-06-25"
   },
   {
     "vorname": "Pascal",
@@ -12977,6 +13175,20 @@
     "letzterWettkampf": "2026-10-10"
   },
   {
+    "vorname": "Ecaterina",
+    "nachname": "GASINA",
+    "jahrgang": 2011,
+    "vereine": [],
+    "nationen": [
+      "MDA"
+    ],
+    "datei": "g",
+    "anzahl": 2,
+    "wettkaempfe": 1,
+    "bestGesamt": 42.06,
+    "letzterWettkampf": "2026-06-25"
+  },
+  {
     "vorname": "Mathea",
     "nachname": "Gassmann",
     "jahrgang": 2015,
@@ -13019,6 +13231,20 @@
     "wettkaempfe": 1,
     "bestGesamt": 32.19,
     "letzterWettkampf": "2026-10-10"
+  },
+  {
+    "vorname": "Anatole",
+    "nachname": "GAUJOUX",
+    "jahrgang": 2013,
+    "vereine": [
+      "Torino, ITA"
+    ],
+    "nationen": [],
+    "datei": "g",
+    "anzahl": 2,
+    "wettkaempfe": 1,
+    "bestGesamt": 45.64,
+    "letzterWettkampf": "2026-06-25"
   },
   {
     "vorname": "Elisabeth",
@@ -14434,10 +14660,12 @@
       "GER, TV Breckenheim",
       "GER, Hessischer Turnverband"
     ],
-    "nationen": [],
+    "nationen": [
+      "GER"
+    ],
     "datei": "g",
-    "anzahl": 38,
-    "wettkaempfe": 11,
+    "anzahl": 40,
+    "wettkaempfe": 12,
     "bestGesamt": 52.24,
     "letzterWettkampf": "2026-10-10"
   },
@@ -15072,6 +15300,20 @@
     "letzterWettkampf": "2026-06-27"
   },
   {
+    "vorname": "Mario",
+    "nachname": "GUGLIERI",
+    "jahrgang": 2013,
+    "vereine": [
+      "FGI Club S.G. Milano 2000, ITA"
+    ],
+    "nationen": [],
+    "datei": "g",
+    "anzahl": 3,
+    "wettkaempfe": 1,
+    "bestGesamt": 45.05,
+    "letzterWettkampf": "2026-06-27"
+  },
+  {
     "vorname": "Leonor",
     "nachname": "GUIDO",
     "jahrgang": 2012,
@@ -15186,6 +15428,34 @@
     "letzterWettkampf": "2024-10-26"
   },
   {
+    "vorname": "Aleksei",
+    "nachname": "GURIN",
+    "jahrgang": 2011,
+    "vereine": [],
+    "nationen": [
+      "RUS"
+    ],
+    "datei": "g",
+    "anzahl": 2,
+    "wettkaempfe": 1,
+    "bestGesamt": 45.36,
+    "letzterWettkampf": "2026-06-25"
+  },
+  {
+    "vorname": "Lorenzo",
+    "nachname": "GURZI",
+    "jahrgang": 2012,
+    "vereine": [
+      "Torino, ITA"
+    ],
+    "nationen": [],
+    "datei": "g",
+    "anzahl": 3,
+    "wettkaempfe": 1,
+    "bestGesamt": 46.48,
+    "letzterWettkampf": "2026-06-27"
+  },
+  {
     "vorname": "Mia",
     "nachname": "Gütle",
     "jahrgang": 2013,
@@ -15256,6 +15526,20 @@
     "wettkaempfe": 1,
     "bestGesamt": 14.7,
     "letzterWettkampf": "2025-02-22"
+  },
+  {
+    "vorname": "Enni",
+    "nachname": "HAARA",
+    "jahrgang": 2011,
+    "vereine": [
+      "Espoon telinetaiturit, FIN"
+    ],
+    "nationen": [],
+    "datei": "h",
+    "anzahl": 2,
+    "wettkaempfe": 1,
+    "bestGesamt": 46.97,
+    "letzterWettkampf": "2026-06-25"
   },
   {
     "vorname": "Sonja",
@@ -15687,6 +15971,20 @@
     "wettkaempfe": 1,
     "bestGesamt": 42.67,
     "letzterWettkampf": "2026-10-09"
+  },
+  {
+    "vorname": "Elliott",
+    "nachname": "HARES",
+    "jahrgang": 2010,
+    "vereine": [
+      "Altius Gymnastics, GBR"
+    ],
+    "nationen": [],
+    "datei": "h",
+    "anzahl": 2,
+    "wettkaempfe": 1,
+    "bestGesamt": 43.43,
+    "letzterWettkampf": "2026-06-25"
   },
   {
     "vorname": "Luisa",
@@ -21423,6 +21721,20 @@
     "letzterWettkampf": "2024-06-22"
   },
   {
+    "vorname": "Timur",
+    "nachname": "KIVA",
+    "jahrgang": 2013,
+    "vereine": [],
+    "nationen": [
+      "RUS"
+    ],
+    "datei": "k",
+    "anzahl": 3,
+    "wettkaempfe": 1,
+    "bestGesamt": 54.92,
+    "letzterWettkampf": "2026-06-27"
+  },
+  {
     "vorname": "Benjamin",
     "nachname": "KJAER",
     "jahrgang": null,
@@ -24818,10 +25130,12 @@
       "TG Münster",
       "NW, Westfälischer Turnerbund"
     ],
-    "nationen": [],
+    "nationen": [
+      "GER"
+    ],
     "datei": "l",
-    "anzahl": 34,
-    "wettkaempfe": 11,
+    "anzahl": 37,
+    "wettkaempfe": 12,
     "bestGesamt": 52.525,
     "letzterWettkampf": "2026-10-09"
   },
@@ -25580,6 +25894,20 @@
     "wettkaempfe": 1,
     "bestGesamt": 35.625,
     "letzterWettkampf": "2026-06-13"
+  },
+  {
+    "vorname": "Lotta",
+    "nachname": "LIESIROVA",
+    "jahrgang": 2012,
+    "vereine": [
+      "Espoon telinetaiturit, FIN"
+    ],
+    "nationen": [],
+    "datei": "l",
+    "anzahl": 3,
+    "wettkaempfe": 1,
+    "bestGesamt": 44.55,
+    "letzterWettkampf": "2026-06-27"
   },
   {
     "vorname": "Laudien",
@@ -27557,12 +27885,13 @@
     "nachname": "Mann",
     "jahrgang": 2012,
     "vereine": [
-      "SUI, TV Grenchen"
+      "SUI, TV Grenchen",
+      "TV Grenchen, SUI"
     ],
     "nationen": [],
     "datei": "m",
-    "anzahl": 3,
-    "wettkaempfe": 1,
+    "anzahl": 5,
+    "wettkaempfe": 2,
     "bestGesamt": 45.59,
     "letzterWettkampf": "2026-09-27"
   },
@@ -28238,6 +28567,20 @@
     "wettkaempfe": 1,
     "bestGesamt": 51.35,
     "letzterWettkampf": "2026-10-10"
+  },
+  {
+    "vorname": "Emma",
+    "nachname": "MASON",
+    "jahrgang": 2011,
+    "vereine": [
+      "Altius Gymnastics, GBR"
+    ],
+    "nationen": [],
+    "datei": "m",
+    "anzahl": 3,
+    "wettkaempfe": 1,
+    "bestGesamt": 50.62,
+    "letzterWettkampf": "2026-06-27"
   },
   {
     "vorname": "Leticia",
@@ -29088,6 +29431,20 @@
     "wettkaempfe": 4,
     "bestGesamt": 38.4,
     "letzterWettkampf": "2026-07-04"
+  },
+  {
+    "vorname": "Lotta",
+    "nachname": "MERILAMPI",
+    "jahrgang": 2010,
+    "vereine": [
+      "Espoon telinetaiturit, FIN"
+    ],
+    "nationen": [],
+    "datei": "m",
+    "anzahl": 2,
+    "wettkaempfe": 1,
+    "bestGesamt": 39.89,
+    "letzterWettkampf": "2026-06-25"
   },
   {
     "vorname": "Duarte",
@@ -32761,6 +33118,20 @@
     "letzterWettkampf": "2026-10-09"
   },
   {
+    "vorname": "Teresa",
+    "nachname": "NYHOLM",
+    "jahrgang": 2010,
+    "vereine": [
+      "Espoon telinetaiturit, FIN"
+    ],
+    "nationen": [],
+    "datei": "n",
+    "anzahl": 2,
+    "wettkaempfe": 1,
+    "bestGesamt": 43.64,
+    "letzterWettkampf": "2026-06-25"
+  },
+  {
     "vorname": "Julian",
     "nachname": "O Brien",
     "jahrgang": 2016,
@@ -33679,6 +34050,20 @@
     "wettkaempfe": 1,
     "bestGesamt": 44.705,
     "letzterWettkampf": "2025-05-17"
+  },
+  {
+    "vorname": "Blaine",
+    "nachname": "PATEL",
+    "jahrgang": 2010,
+    "vereine": [],
+    "nationen": [
+      "CAN"
+    ],
+    "datei": "p",
+    "anzahl": 3,
+    "wettkaempfe": 1,
+    "bestGesamt": 53.94,
+    "letzterWettkampf": "2026-06-27"
   },
   {
     "vorname": "Samuele",
@@ -35282,10 +35667,12 @@
       "GER, Hessischer Turnverband",
       "Frankfurt FLYERS 2003 e.V."
     ],
-    "nationen": [],
+    "nationen": [
+      "GER"
+    ],
     "datei": "p",
-    "anzahl": 34,
-    "wettkaempfe": 9,
+    "anzahl": 36,
+    "wettkaempfe": 10,
     "bestGesamt": 49.0,
     "letzterWettkampf": "2026-10-03"
   },
@@ -35447,6 +35834,20 @@
     "wettkaempfe": 4,
     "bestGesamt": 43.56,
     "letzterWettkampf": "2026-09-27"
+  },
+  {
+    "vorname": "Filip",
+    "nachname": "PROCNER",
+    "jahrgang": 2010,
+    "vereine": [],
+    "nationen": [
+      "POL"
+    ],
+    "datei": "p",
+    "anzahl": 3,
+    "wettkaempfe": 1,
+    "bestGesamt": 54.43,
+    "letzterWettkampf": "2026-06-27"
   },
   {
     "vorname": "Mykola",
@@ -35831,6 +36232,20 @@
     "wettkaempfe": 1,
     "bestGesamt": 30.96,
     "letzterWettkampf": "2026-06-26"
+  },
+  {
+    "vorname": "Sofia",
+    "nachname": "RADAELLI",
+    "jahrgang": 2012,
+    "vereine": [
+      "FGI Club S.G. Milano 2000, ITA"
+    ],
+    "nationen": [],
+    "datei": "r",
+    "anzahl": 3,
+    "wettkaempfe": 1,
+    "bestGesamt": 50.29,
+    "letzterWettkampf": "2026-06-27"
   },
   {
     "vorname": "Mirja Carina",
@@ -38288,6 +38703,20 @@
     "letzterWettkampf": "2026-02-07"
   },
   {
+    "vorname": "Axel",
+    "nachname": "ROUX",
+    "jahrgang": 2012,
+    "vereine": [],
+    "nationen": [
+      "SUI"
+    ],
+    "datei": "r",
+    "anzahl": 3,
+    "wettkaempfe": 1,
+    "bestGesamt": 49.26,
+    "letzterWettkampf": "2026-06-27"
+  },
+  {
     "vorname": "Isaac",
     "nachname": "ROWLEY",
     "jahrgang": null,
@@ -38443,6 +38872,20 @@
     "wettkaempfe": 1,
     "bestGesamt": 35.805,
     "letzterWettkampf": "2026-05-01"
+  },
+  {
+    "vorname": "Mari",
+    "nachname": "RUEFENACHT",
+    "jahrgang": 2012,
+    "vereine": [],
+    "nationen": [
+      "SUI"
+    ],
+    "datei": "r",
+    "anzahl": 3,
+    "wettkaempfe": 1,
+    "bestGesamt": 48.42,
+    "letzterWettkampf": "2026-06-27"
   },
   {
     "vorname": "Taís",
@@ -39365,6 +39808,20 @@
     "wettkaempfe": 1,
     "bestGesamt": 47.425,
     "letzterWettkampf": "2026-02-14"
+  },
+  {
+    "vorname": "Seren",
+    "nachname": "SARGEANT",
+    "jahrgang": 2012,
+    "vereine": [
+      "Altius Gymnastics, GBR"
+    ],
+    "nationen": [],
+    "datei": "s",
+    "anzahl": 3,
+    "wettkaempfe": 1,
+    "bestGesamt": 50.42,
+    "letzterWettkampf": "2026-06-27"
   },
   {
     "vorname": "Noah",
@@ -40378,10 +40835,12 @@
       "GER, VT Rinteln",
       "VT Rinteln"
     ],
-    "nationen": [],
+    "nationen": [
+      "GER"
+    ],
     "datei": "s",
-    "anzahl": 38,
-    "wettkaempfe": 11,
+    "anzahl": 40,
+    "wettkaempfe": 12,
     "bestGesamt": 52.26,
     "letzterWettkampf": "2026-10-10"
   },
@@ -40839,6 +41298,20 @@
     "letzterWettkampf": "2025-10-05"
   },
   {
+    "vorname": "Leni",
+    "nachname": "SCHNEIDER",
+    "jahrgang": 2013,
+    "vereine": [
+      "Schwäbischer Turnverband, GER"
+    ],
+    "nationen": [],
+    "datei": "s",
+    "anzahl": 3,
+    "wettkaempfe": 1,
+    "bestGesamt": 44.85,
+    "letzterWettkampf": "2026-06-27"
+  },
+  {
     "vorname": "Leni Caroline",
     "nachname": "Schneider",
     "jahrgang": 2013,
@@ -40869,6 +41342,20 @@
     "wettkaempfe": 2,
     "bestGesamt": 38.91,
     "letzterWettkampf": "2025-06-29"
+  },
+  {
+    "vorname": "Luise",
+    "nachname": "SCHNEIDER",
+    "jahrgang": 2011,
+    "vereine": [
+      "Schwäbischer Turnverband, GER"
+    ],
+    "nationen": [],
+    "datei": "s",
+    "anzahl": 2,
+    "wettkaempfe": 1,
+    "bestGesamt": 38.04,
+    "letzterWettkampf": "2026-06-25"
   },
   {
     "vorname": "Luise Annette",
@@ -42434,19 +42921,21 @@
   },
   {
     "vorname": "Maya",
-    "nachname": "Seidner",
+    "nachname": "SEIDNER",
     "jahrgang": 2010,
     "vereine": [
       "TB Ruit 1892 e.V.",
       "BW, Schwäbischer Turnerbund",
       "TB Ruit"
     ],
-    "nationen": [],
+    "nationen": [
+      "GER"
+    ],
     "datei": "s",
-    "anzahl": 29,
-    "wettkaempfe": 8,
+    "anzahl": 32,
+    "wettkaempfe": 9,
     "bestGesamt": 49.26,
-    "letzterWettkampf": "2026-06-21"
+    "letzterWettkampf": "2026-06-27"
   },
   {
     "vorname": "Emma",
@@ -43336,6 +43825,20 @@
     "wettkaempfe": 3,
     "bestGesamt": 32.28,
     "letzterWettkampf": "2026-06-21"
+  },
+  {
+    "vorname": "Arianna",
+    "nachname": "SLUGA",
+    "jahrgang": 2010,
+    "vereine": [],
+    "nationen": [
+      "CAN"
+    ],
+    "datei": "s",
+    "anzahl": 2,
+    "wettkaempfe": 1,
+    "bestGesamt": 41.98,
+    "letzterWettkampf": "2026-06-25"
   },
   {
     "vorname": "Mette",
@@ -44243,19 +44746,21 @@
     "letzterWettkampf": "2026-10-10"
   },
   {
-    "vorname": "Noël",
-    "nachname": "Steck",
+    "vorname": "Noel",
+    "nachname": "STECK",
     "jahrgang": 2010,
     "vereine": [
       "NKL Liestal",
       "SUI, NKL Liestal"
     ],
-    "nationen": [],
+    "nationen": [
+      "SUI"
+    ],
     "datei": "s",
-    "anzahl": 7,
-    "wettkaempfe": 3,
+    "anzahl": 9,
+    "wettkaempfe": 4,
     "bestGesamt": 48.37,
-    "letzterWettkampf": "2026-06-20"
+    "letzterWettkampf": "2026-06-25"
   },
   {
     "vorname": "Kim",
@@ -45155,17 +45660,19 @@
   },
   {
     "vorname": "Luna",
-    "nachname": "Sulzer",
+    "nachname": "SULZER",
     "jahrgang": 2011,
     "vereine": [
       "Zuercher Turnverband ZTV"
     ],
-    "nationen": [],
+    "nationen": [
+      "SUI"
+    ],
     "datei": "s",
-    "anzahl": 2,
-    "wettkaempfe": 1,
-    "bestGesamt": 41.13,
-    "letzterWettkampf": "2026-06-20"
+    "anzahl": 4,
+    "wettkaempfe": 2,
+    "bestGesamt": 46.28,
+    "letzterWettkampf": "2026-06-25"
   },
   {
     "vorname": "Yeva",
@@ -46534,6 +47041,20 @@
     "letzterWettkampf": "2024-10-26"
   },
   {
+    "vorname": "Ellie",
+    "nachname": "TOMPKINS",
+    "jahrgang": 2011,
+    "vereine": [
+      "Altius Gymnastics, GBR"
+    ],
+    "nationen": [],
+    "datei": "t",
+    "anzahl": 3,
+    "wettkaempfe": 1,
+    "bestGesamt": 47.81,
+    "letzterWettkampf": "2026-06-27"
+  },
+  {
     "vorname": "Federico",
     "nachname": "Tonelli",
     "jahrgang": 2009,
@@ -46560,6 +47081,20 @@
     "wettkaempfe": 1,
     "bestGesamt": 56.2,
     "letzterWettkampf": "2025-09-20"
+  },
+  {
+    "vorname": "Davyd",
+    "nachname": "TONIAN",
+    "jahrgang": 2010,
+    "vereine": [
+      "Centre performance Genève, UKR"
+    ],
+    "nationen": [],
+    "datei": "t",
+    "anzahl": 3,
+    "wettkaempfe": 1,
+    "bestGesamt": 53.74,
+    "letzterWettkampf": "2026-06-27"
   },
   {
     "vorname": "Juli",
@@ -46662,6 +47197,20 @@
     "wettkaempfe": 1,
     "bestGesamt": 35.32,
     "letzterWettkampf": "2026-07-12"
+  },
+  {
+    "vorname": "Zofia",
+    "nachname": "TRACZ",
+    "jahrgang": 2011,
+    "vereine": [],
+    "nationen": [
+      "POL"
+    ],
+    "datei": "t",
+    "anzahl": 3,
+    "wettkaempfe": 1,
+    "bestGesamt": 46.27,
+    "letzterWettkampf": "2026-06-27"
   },
   {
     "vorname": "Lynn",
@@ -47703,6 +48252,20 @@
     "letzterWettkampf": "2026-10-10"
   },
   {
+    "vorname": "Vittoria",
+    "nachname": "VANTINI",
+    "jahrgang": 2010,
+    "vereine": [
+      "FGI Club S.G. Milano 2000, ITA"
+    ],
+    "nationen": [],
+    "datei": "v",
+    "anzahl": 2,
+    "wettkaempfe": 1,
+    "bestGesamt": 37.44,
+    "letzterWettkampf": "2026-06-25"
+  },
+  {
     "vorname": "Joana",
     "nachname": "VAZ",
     "jahrgang": 2017,
@@ -47830,17 +48393,18 @@
   },
   {
     "vorname": "Lucien",
-    "nachname": "Verbiest",
+    "nachname": "VERBIEST",
     "jahrgang": 2013,
     "vereine": [
+      "STV Winterthur, SUI",
       "Zuercher Turnverband ZTV"
     ],
     "nationen": [],
     "datei": "v",
-    "anzahl": 6,
-    "wettkaempfe": 2,
-    "bestGesamt": 45.21,
-    "letzterWettkampf": "2026-06-20"
+    "anzahl": 9,
+    "wettkaempfe": 3,
+    "bestGesamt": 46.16,
+    "letzterWettkampf": "2026-06-27"
   },
   {
     "vorname": "Maria",
@@ -47897,6 +48461,20 @@
     "wettkaempfe": 1,
     "bestGesamt": 45.5,
     "letzterWettkampf": "2026-07-11"
+  },
+  {
+    "vorname": "Lika",
+    "nachname": "VERSHININA",
+    "jahrgang": 2011,
+    "vereine": [],
+    "nationen": [
+      "RUS"
+    ],
+    "datei": "v",
+    "anzahl": 2,
+    "wettkaempfe": 1,
+    "bestGesamt": 43.4,
+    "letzterWettkampf": "2026-06-25"
   },
   {
     "vorname": "Oona",
@@ -48396,6 +48974,20 @@
     "letzterWettkampf": "2026-09-27"
   },
   {
+    "vorname": "Grigorii",
+    "nachname": "VOLKOV",
+    "jahrgang": 2010,
+    "vereine": [],
+    "nationen": [
+      "RUS"
+    ],
+    "datei": "v",
+    "anzahl": 3,
+    "wettkaempfe": 1,
+    "bestGesamt": 57.47,
+    "letzterWettkampf": "2026-06-27"
+  },
+  {
     "vorname": "Nikola",
     "nachname": "Volska",
     "jahrgang": 2008,
@@ -48666,6 +49258,20 @@
     "wettkaempfe": 1,
     "bestGesamt": 38.62,
     "letzterWettkampf": "2026-06-21"
+  },
+  {
+    "vorname": "Elisha",
+    "nachname": "WAEHRER",
+    "jahrgang": 2010,
+    "vereine": [
+      "TV Möriken-Wildegg, SUI"
+    ],
+    "nationen": [],
+    "datei": "w",
+    "anzahl": 2,
+    "wettkaempfe": 1,
+    "bestGesamt": 44.66,
+    "letzterWettkampf": "2026-06-25"
   },
   {
     "vorname": "Alma",
@@ -49437,10 +50043,12 @@
       "GER, TV Unterbach 1905 e.V.",
       "TV 1905 Unterbach e.V."
     ],
-    "nationen": [],
+    "nationen": [
+      "GER"
+    ],
     "datei": "w",
-    "anzahl": 35,
-    "wettkaempfe": 10,
+    "anzahl": 38,
+    "wettkaempfe": 11,
     "bestGesamt": 52.275,
     "letzterWettkampf": "2026-10-03"
   },
@@ -50344,17 +50952,19 @@
   },
   {
     "vorname": "Oliwier",
-    "nachname": "Wojciechowski",
+    "nachname": "WOJCIECHOWSKI",
     "jahrgang": 2010,
     "vereine": [
       "POL, MKS Victoria Jawor"
     ],
-    "nationen": [],
+    "nationen": [
+      "POL"
+    ],
     "datei": "w",
-    "anzahl": 2,
-    "wettkaempfe": 1,
-    "bestGesamt": 45.94,
-    "letzterWettkampf": "2024-10-26"
+    "anzahl": 5,
+    "wettkaempfe": 2,
+    "bestGesamt": 48.26,
+    "letzterWettkampf": "2026-06-27"
   },
   {
     "vorname": "Kilian",
@@ -50872,6 +51482,20 @@
     "wettkaempfe": 2,
     "bestGesamt": 32.49,
     "letzterWettkampf": "2026-06-28"
+  },
+  {
+    "vorname": "Glafira",
+    "nachname": "ZAIKO",
+    "jahrgang": 2011,
+    "vereine": [],
+    "nationen": [
+      "RUS"
+    ],
+    "datei": "z",
+    "anzahl": 3,
+    "wettkaempfe": 1,
+    "bestGesamt": 55.63,
+    "letzterWettkampf": "2026-06-27"
   },
   {
     "vorname": "van der Veldt",
