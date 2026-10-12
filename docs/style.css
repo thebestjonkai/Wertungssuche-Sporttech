@@ -904,6 +904,116 @@ thead th.trenner { border-left-color: var(--schrift-3); }
   }
 }
 
+/* ------------------------------------------------- Wettkampf nachladen --- */
+
+/* Zugeklappt eine unauffällige Zeile unter den Ergebnissen - das ist der
+   Ausnahmefall, nicht der Alltag. */
+.nachladen {
+  margin-top: 2.5rem;
+  background: var(--flaeche);
+  border: 1px solid var(--linie);
+  border-radius: 14px;
+  overflow: hidden;
+}
+.nachladen[open] {
+  border-color: var(--schrift-3);
+  box-shadow: var(--schatten);
+}
+
+.nachladen-kopf {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: .25rem 1rem;
+  padding: .9rem 1.25rem;
+  cursor: pointer;
+  list-style: none;
+}
+.nachladen-kopf::-webkit-details-marker { display: none; }
+.nachladen-kopf:hover { background: var(--flaeche-2); }
+.nachladen-kopf:focus-visible { outline: 2px solid var(--fokus); outline-offset: -2px; }
+
+.nachladen-titel {
+  font-size: .9375rem;
+  font-weight: 650;
+}
+.nachladen-unten {
+  flex: 1 1 auto;
+  font-size: .8125rem;
+  color: var(--schrift-3);
+}
+
+.nachladen-inhalt {
+  padding: 0 1.25rem 1.25rem;
+  border-top: 1px solid var(--linie-2);
+  max-width: 34rem;
+}
+
+.nachladen-text,
+.nachladen-fuss {
+  font-size: .8125rem;
+  color: var(--schrift-2);
+  margin: 1rem 0;
+}
+.nachladen-fuss { color: var(--schrift-3); margin-bottom: 0; }
+
+.feld-block { display: block; margin-bottom: .9rem; }
+
+.feld-titel {
+  display: block;
+  font-size: .625rem;
+  font-weight: 650;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--schrift-3);
+  margin-bottom: .3rem;
+}
+
+.feld-klein {
+  display: block;
+  width: 100%;
+  font: inherit;
+  font-size: .875rem;
+  color: var(--schrift);
+  background: var(--flaeche-2);
+  border: 1px solid var(--linie);
+  border-radius: 8px;
+  padding: .55rem .7rem;
+}
+.feld-klein:focus {
+  outline: none;
+  border-color: var(--fokus);
+  box-shadow: 0 0 0 3px var(--akzent-hell);
+}
+
+.nachladen-hinweis {
+  margin: 0 0 .75rem;
+  font-size: .8125rem;
+  color: var(--schrift-2);
+  min-height: 1.2em;
+}
+.nachladen-hinweis.fehler { color: var(--n-abzug); }
+
+.nachladen-knopf {
+  font: inherit;
+  font-size: .875rem;
+  font-weight: 650;
+  color: #fff;
+  background: var(--akzent);
+  border: 0;
+  border-radius: 8px;
+  padding: .6rem 1.2rem;
+  cursor: pointer;
+}
+.nachladen-knopf:hover { filter: brightness(1.1); }
+.nachladen-knopf:focus-visible { outline: 2px solid var(--fokus); outline-offset: 2px; }
+
+/* Im dunklen Schema ist der Akzent hell - dann braucht die Schrift dunkel. */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .nachladen-knopf { color: #0f1216; }
+}
+:root[data-theme="dark"] .nachladen-knopf { color: #0f1216; }
+
 /* ----------------------------------------------------------------- Fuß --- */
 
 .fuss {

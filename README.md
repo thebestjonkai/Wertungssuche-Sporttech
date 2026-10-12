@@ -237,6 +237,29 @@ https://sporttech.io/events/d613f43d-fb1c-4beb-4770-9e684e2e0a8e/ovs/scoreboards
 
 Eine nackte ID geht genauso.
 
+### Am bequemsten: über die Website
+
+Auf der Seite ganz unten **„Wettkampf nachladen"** aufklappen, den Link von
+sporttech.io einfügen, Passwort eintippen, *Nachladen starten*. Dann öffnet
+sich GitHub mit einer fertig ausgefüllten Nachricht – dort einmal auf den
+grünen Knopf, und der Crawler läuft los. Das Ergebnis kommt als Antwort auf
+dieselbe Nachricht, danach wird sie automatisch geschlossen.
+
+**Das Passwort steht in** [`.github/workflows/nachladen.yml`](.github/workflows/nachladen.yml)
+unter `ERWARTETES_PASSWORT`, aktuell `trampolin-nachladen`. Dort lässt es sich
+auch ändern.
+
+> **Was das Passwort leistet – und was nicht.** Es steht offen im Repo, ist
+> also keine echte Schranke. Es verhindert nur, dass jemand versehentlich
+> draufdrückt. Die eigentliche Hürde ist, dass GitHub einen Account verlangt:
+> jeder Start ist einer Person zuzuordnen. Wer gar keinen Zugriff haben soll,
+> dem gibst du schlicht das Passwort nicht.
+>
+> Warum es nicht ohne diesen Zwischenschritt geht: die Website ist eine
+> statische Datei auf GitHub Pages. Sie könnte keinen Zugangsschlüssel
+> verwahren, ohne ihn für jeden lesbar zu machen – und darf den Crawler
+> deshalb nicht selbst starten.
+
 ### Von Hand, lokal
 
 ```powershell
@@ -578,6 +601,8 @@ freundliches Angebot von sporttech.io, kein Selbstbedienungsladen.
 └── .github/
     ├── workflows/
     │   ├── crawl.yml         Fr/Sa/So/Mo 03:00 UTC, holt die Wertungen
+    │   ├── nachladen.yml     laedt einen einzelnen Wettkampf, per Issue
+    │   │                     angestossen von der Website aus
     │   └── build.yml         bei jedem Push: kompilieren und testen
     └── scripts/
         └── daten_pruefen.py  prüft docs/data

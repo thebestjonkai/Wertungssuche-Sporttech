@@ -844,6 +844,98 @@ async function starten() {
   }
 }
 
+/* ------------------------------------------------- Wettkampf nachladen --- */
+
+/** Das Repository, in dem der Crawler und diese Seite liegen. */
+const REPO = 'thebestjonkai/Wertungssuche-Sporttech';
+
+/**
+ * Dieselbe Erkennung wie im Crawler (Main.eventIdAus): Muster 8-4-4-4-12.
+ *
+ * Bewusst nicht die strenge UUID-Form - sporttech.io benutzt Gruppen wie
+ * "4770" an der Stelle, an der eine echte UUID Version und Variante kodiert.
+ */
+const EVENT_ID_MUSTER =
+  /[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}/g;
+
+/** Holt alle Event-IDs aus einem Text, ohne Dubletten. */
+function eventIdsAus(text) {
+  const treffer = String(text || '').match(EVENT_ID_MUSTER) || [];
+  return [...new Set(treffer.map(id => id.toLowerCase()))];
+}
+
+/**
+ * Baut die vorausgefüllte GitHub-Nachricht und öffnet sie.
+ *
+ * Warum der Umweg: diese Seite ist eine statische Datei. Sie kann keinen
+ * Zugangsschlüssel verwahren, ohne ihn für jeden lesbar zu machen, und darf
+ * den Crawler deshalb nicht selbst starten. Über ein GitHub-Issue übernimmt
+ * GitHub die Anmeldung - die Seite muss nur den Text vorbereiten.
+ */
+function nachladenStarten() {
+  const linkFeld = document.getElementById('nachladenLink');
+  const passwortFeld = document.getElementById('nachladenPasswort');
+  const hinweis = document.getElementById('nachladenHinweis');
+
+  const ids = eventIdsAus(linkFeld.value);
+  const passwort = passwortFeld.value.trim();
+
+  const meldung = (text, istFehler) => {
+    hinweis.textContent = text;
+    hinweis.className = 'nachladen-hinweis' + (istFehler ? ' fehler' : '');
+  };
+
+  if (ids.length === 0) {
+    meldung('In dem Link steckt keine Event-Nummer. Bitte die komplette '
+      + 'Adresse von sporttech.io einfügen, zum Beispiel '
+      + 'https://sporttech.io/events/…/ovs/', true);
+    linkFeld.focus();
+    return;
+  }
+  if (passwort === '') {
+    meldung('Bitte das Passwort eintragen.', true);
+    passwortFeld.focus();
+    return;
+  }
+
+  const titel = 'Crawler: Wettkampf nachladen';
+  const text =
+    'Passwort: ' + passwort + '\n\n'
+    + 'Event:\n'
+    + ids.map(id => 'https://sporttech.io/events/' + id + '/ovs/').join('\n')
+    + '\n\n---\nAutomatisch erzeugt von der Wertungssuche. '
+    + 'Zum Starten unten auf den grünen Knopf klicken.';
+
+  const adresse = 'https://github.com/' + REPO + '/issues/new'
+    + '?title=' + encodeURIComponent(titel)
+    + '&body=' + encodeURIComponent(text);
+
+  window.open(adresse, '_blank', 'noopener');
+
+  meldung(ids.length === 1
+    ? 'GitHub wurde geöffnet. Dort noch einmal auf den grünen Knopf – dann läuft es.'
+    : ids.length + ' Wettkämpfe vorbereitet. Auf GitHub noch einmal bestätigen.',
+    false);
+}
+
+function nachladenVerdrahten() {
+  const knopf = document.getElementById('nachladenKnopf');
+  if (!knopf) {
+    return;
+  }
+  knopf.addEventListener('click', nachladenStarten);
+
+  // Enter in einem der beiden Felder startet ebenfalls.
+  for (const id of ['nachladenLink', 'nachladenPasswort']) {
+    document.getElementById(id).addEventListener('keydown', ereignis => {
+      if (ereignis.key === 'Enter') {
+        ereignis.preventDefault();
+        nachladenStarten();
+      }
+    });
+  }
+}
+
 /* -------------------------------------------------------------- Verdrahtung */
 
 // Kleine Verzögerung beim Tippen: so wird nicht nach jedem Buchstaben die
@@ -871,4 +963,5 @@ knoten.leeren.addEventListener('click', () => {
   suchen();
 });
 
+nachladenVerdrahten();
 starten();

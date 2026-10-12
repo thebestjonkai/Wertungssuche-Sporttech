@@ -1,0 +1,186 @@
+name: Wettkampf nachladen
+
+# Laedt einen einzelnen Wettkampf nach, angestossen ueber ein GitHub-Issue.
+#
+# Warum ueber ein Issue und nicht direkt von der Website: die Website liegt als
+# statische Datei auf GitHub Pages und kann kein Geheimnis verwahren. Sie kann
+# den Crawler deshalb nicht selbst starten. Ueber ein Issue uebernimmt GitHub
+# die Anmeldung - die Website muss nur die Nachricht vorbereiten.
+#
+# Ablauf:
+#   1. Website baut ein vorausgefuelltes Issue (Link + Passwort im Text)
+#   2. Nutzer bestaetigt es auf GitHub
+#   3. Dieser Workflow prueft das Passwort, laedt das Event, kommentiert das
+#      Ergebnis und schliesst das Issue
+#
+# Das Passwort steht absichtlich offen im Repo. Es ist keine echte Schranke,
+# sondern verhindert nur versehentliches Ausloesen. Die eigentliche Huerde ist
+# der GitHub-Account, den das Anlegen eines Issues verlangt - jeder Start ist
+# damit einer Person zuzuordnen.
+
+on:
+  issues:
+    types: [opened]
+
+permissions:
+  contents: write   # die geholten Wertungen committen
+  issues: write     # antworten und schliessen
+
+concurrency:
+  group: crawl      # nie gleichzeitig mit dem geplanten Lauf
+  cancel-in-progress: false
+
+jobs:
+  nachladen:
+    # Nur Issues mit dieser Markierung im Titel - alle anderen Issues sollen
+    # ganz normal Issues bleiben.
+    if: startsWith(github.event.issue.title, 'Crawler:')
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+
+    env:
+      # Das Passwort. Hier aendern, wenn es ein anderes sein soll.
+      ERWARTETES_PASSWORT: trampolin-nachladen
+      # Niemals direkt in eine Shell-Zeile schreiben - der Text kommt von
+      # aussen und koennte sonst als Befehl ausgefuehrt werden.
+      ISSUE_TEXT: ${{ github.event.issue.body }}
+
+    steps:
+      - name: Passwort und Event-Link aus dem Issue lesen
+        id: lesen
+        run: |
+          # Passwort: die Zeile, die mit "Passwort:" beginnt.
+          PASSWORT=$(printf '%s' "$ISSUE_TEXT" \
+            | grep -i -m1 '^[[:space:]]*Passwort:' \
+            | sed 's/^[[:space:]]*[Pp]asswort:[[:space:]]*//' \
+            | tr -d '\r' \
+            | sed 's/[[:space:]]*$//')
+
+          # Event-IDs: alles, was wie eine sporttech.io-ID aussieht. Damit ist
+          # auch die komplette Adresse erlaubt, und es kann nichts anderes
+          # durchrutschen.
+          EVENTS=$(printf '%s' "$ISSUE_TEXT" \
+            | grep -oE '[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}' \
+            | sort -u | paste -sd, -)
+
+          if [ "$PASSWORT" != "$ERWARTETES_PASSWORT" ]; then
+            echo "ergebnis=falsches-passwort" >> "$GITHUB_OUTPUT"
+            echo "Das Passwort stimmt nicht."
+          elif [ -z "$EVENTS" ]; then
+            echo "ergebnis=keine-events" >> "$GITHUB_OUTPUT"
+            echo "Im Text steckt keine Event-ID."
+          else
+            echo "ergebnis=ok" >> "$GITHUB_OUTPUT"
+            echo "events=$EVENTS" >> "$GITHUB_OUTPUT"
+            echo "Erkannte Event-IDs: $EVENTS"
+          fi
+
+      - name: Repository auschecken
+        if: steps.lesen.outputs.ergebnis == 'ok'
+        uses: actions/checkout@v4
+
+      - name: Java 21 einrichten
+        if: steps.lesen.outputs.ergebnis == 'ok'
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '21'
+          cache: maven
+
+      - name: Crawler bauen
+        if: steps.lesen.outputs.ergebnis == 'ok'
+        run: mvn --batch-mode --no-transfer-progress -f crawler/pom.xml package
+
+      - name: Wettkampf laden
+        if: steps.lesen.outputs.ergebnis == 'ok'
+        id: laden
+        run: |
+          # --nur-events: die grosse Eventliste wird gar nicht erst abgerufen,
+          # der Lauf dauert damit Sekunden statt Minuten.
+          java -jar crawler/target/crawler.jar \
+            --nur-events --event "${{ steps.lesen.outputs.events }}" \
+            | tee lauf.log
+
+          {
+            echo 'bericht<<ENDE'
+            grep -E '^\[|Wertungen,|FEHLER|Wertungen insgesamt|Personen insgesamt' lauf.log || true
+            echo 'ENDE'
+          } >> "$GITHUB_OUTPUT"
+
+      - name: Aenderungen committen
+        if: steps.lesen.outputs.ergebnis == 'ok'
+        id: commit
+        run: |
+          if [ -z "$(git status --porcelain docs/data)" ]; then
+            echo "geaendert=nein" >> "$GITHUB_OUTPUT"
+            echo "Nichts geaendert."
+            exit 0
+          fi
+          echo "geaendert=ja" >> "$GITHUB_OUTPUT"
+
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add docs/data
+
+          NACHRICHT=$(python3 -c "import json; m=json.load(open('docs/data/meta.json')); print(f\"Wettkampf nachgeladen: {m['anzahlWertungen']} Wertungen, {m['anzahlPersonen']} Personen, {m['anzahlEvents']} Events\")")
+          git commit -m "$NACHRICHT (Issue #${{ github.event.issue.number }})"
+
+          git pull --rebase --autostash origin "${{ github.event.repository.default_branch }}"
+          git push origin "HEAD:${{ github.event.repository.default_branch }}"
+
+      - name: Ergebnis ins Issue schreiben und schliessen
+        if: always()
+        env:
+          GH_TOKEN: ${{ github.token }}
+          ERGEBNIS: ${{ steps.lesen.outputs.ergebnis }}
+          BERICHT: ${{ steps.laden.outputs.bericht }}
+          GEAENDERT: ${{ steps.commit.outputs.geaendert }}
+          NUMMER: ${{ github.event.issue.number }}
+        run: |
+          # Der Kommentar wird in eine Datei geschrieben statt in eine
+          # Shell-Variable: mehrzeiliger Text mit Code-Bloecken laesst sich in
+          # einem YAML-Block nicht sauber einruecken.
+          PROTOKOLL="${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
+
+          case "$ERGEBNIS" in
+            falsches-passwort)
+              printf '%s\n' \
+                'Das Passwort stimmt nicht.' \
+                '' \
+                'Es steht in `.github/workflows/nachladen.yml` unter `ERWARTETES_PASSWORT`.' \
+                > kommentar.md
+              ;;
+            keine-events)
+              printf '%s\n' \
+                'In der Nachricht steckt keine Event-Nummer.' \
+                '' \
+                'Bitte die komplette Adresse des Wettkampfs von sporttech.io einfügen, zum Beispiel:' \
+                '`https://sporttech.io/events/d613f43d-fb1c-4beb-4770-9e684e2e0a8e/ovs/`' \
+                > kommentar.md
+              ;;
+            ok)
+              if [ "$GEAENDERT" = "ja" ]; then
+                printf '%s\n' \
+                  'Erledigt – die Wertungen sind geladen und committet.' \
+                  'Die Website zeigt sie in ein bis zwei Minuten.' \
+                  '' '```' > kommentar.md
+              else
+                printf '%s\n' \
+                  'Der Wettkampf wurde geladen, es hat sich aber nichts geändert –' \
+                  'die Wertungen waren schon da, oder es gibt noch keine.' \
+                  '' '```' > kommentar.md
+              fi
+              printf '%s\n' "$BERICHT" >> kommentar.md
+              printf '%s\n' '```' >> kommentar.md
+              ;;
+            *)
+              printf '%s\n' \
+                'Der Lauf ist abgebrochen.' \
+                '' \
+                "Einzelheiten stehen im [Protokoll]($PROTOKOLL)." \
+                > kommentar.md
+              ;;
+          esac
+
+          gh issue comment "$NUMMER" --body-file kommentar.md
+          gh issue close "$NUMMER"

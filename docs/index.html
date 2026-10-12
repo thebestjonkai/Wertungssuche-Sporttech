@@ -90,6 +90,57 @@
   <!-- Hierhin schreibt app.js die Ergebnisse -->
   <div id="ergebnisse"></div>
 
+  <!--
+    Einen einzelnen Wettkampf nachladen.
+
+    Die Seite kann den Crawler nicht selbst starten - sie liegt als statische
+    Datei auf GitHub Pages und könnte keinen Zugangsschlüssel verwahren, ohne
+    ihn für alle lesbar zu machen. Stattdessen bereitet sie eine Nachricht an
+    GitHub vor; dort übernimmt GitHub die Anmeldung.
+  -->
+  <details class="nachladen" id="nachladen">
+    <summary class="nachladen-kopf">
+      <span class="nachladen-titel">Wettkampf nachladen</span>
+      <span class="nachladen-unten">Fehlt ein Wettkampf? Link einfügen und starten.</span>
+      <span class="person-pfeil"></span>
+    </summary>
+
+    <div class="nachladen-inhalt">
+      <p class="nachladen-text">
+        Gesammelt werden Wettkämpfe, die in Deutschland ausgerichtet werden.
+        Alles andere – und Wettkämpfe, die sporttech.io nicht öffentlich
+        listet – lässt sich hier einzeln nachholen. Einmal nachgeladen, bleibt
+        ein Wettkampf dauerhaft dabei.
+      </p>
+
+      <label class="feld-block">
+        <span class="feld-titel">Link des Wettkampfs auf sporttech.io</span>
+        <input type="url" id="nachladenLink" class="feld-klein"
+               placeholder="https://sporttech.io/events/…/ovs/"
+               autocomplete="off" spellcheck="false">
+      </label>
+
+      <label class="feld-block">
+        <span class="feld-titel">Passwort</span>
+        <input type="password" id="nachladenPasswort" class="feld-klein"
+               autocomplete="current-password">
+      </label>
+
+      <p id="nachladenHinweis" class="nachladen-hinweis" role="status" aria-live="polite"></p>
+
+      <button type="button" id="nachladenKnopf" class="nachladen-knopf">
+        Nachladen starten
+      </button>
+
+      <p class="nachladen-fuss">
+        Es öffnet sich GitHub mit einer fertig ausgefüllten Nachricht – dort
+        noch einmal auf den grünen Knopf, fertig. Das Ergebnis kommt als
+        Antwort auf dieselbe Nachricht. Mehrere Links auf einmal gehen auch,
+        einfach untereinander einfügen.
+      </p>
+    </div>
+  </details>
+
 </main>
 
 <footer class="fuss">
