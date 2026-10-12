@@ -4,9 +4,17 @@ name: Wertungen holen
 # Dateien unter docs/data zurueck ins Repository.
 on:
   schedule:
-    # Taeglich um 03:00 UTC. GitHub startet geplante Laeufe oft mit einigen
-    # Minuten Verzoegerung - das ist hier egal.
-    - cron: '0 3 * * *'
+    # In den Naechten auf Freitag, Samstag, Sonntag und Montag, jeweils um
+    # 03:00 UTC. Das sind die Morgen NACH den Wettkampftagen - Wettkaempfe
+    # finden am Wochenende statt, und die Ergebnisse stehen abends drin.
+    #
+    # Die Wochentage sind die des Laufs selbst: 5 = Freitag, 6 = Samstag,
+    # 0 = Sonntag, 1 = Montag. Um 03:00 UTC ist es in Deutschland 04:00 (MEZ)
+    # beziehungsweise 05:00 (MESZ), also derselbe Kalendertag.
+    #
+    # GitHub startet geplante Laeufe oft mit einigen Minuten Verzoegerung -
+    # das ist hier egal.
+    - cron: '0 3 * * 0,1,5,6'
 
   # Manueller Start: Actions -> "Wertungen holen" -> "Run workflow"
   workflow_dispatch:

@@ -79,9 +79,14 @@ Es gibt keinen Server und keine Datenbank – alles läuft auf GitHub:
    Browser  ───────────── sucht selbst in den JSON-Dateien
 ```
 
-Der Crawler läuft **täglich um 03:00 UTC** und committet nur, wenn sich wirklich
-etwas geändert hat. Die Website ist reines HTML, CSS und JavaScript – kein
-Framework, keine Bauwerkzeuge, keine Webfonts, keine externen Dienste.
+Der Crawler läuft **in den Nächten auf Freitag, Samstag, Sonntag und Montag**,
+jeweils um 03:00 UTC – also an den Morgen nach den Wettkampftagen. Er committet
+nur, wenn sich wirklich etwas geändert hat. Die Website ist reines HTML, CSS und
+JavaScript – kein Framework, keine Bauwerkzeuge, keine Webfonts, keine externen
+Dienste.
+
+Zwischendurch lässt sich der Lauf jederzeit
+[von Hand auslösen](#workflow-von-hand-auslösen).
 
 ---
 
@@ -572,7 +577,7 @@ freundliches Angebot von sporttech.io, kein Selbstbedienungsladen.
 │
 └── .github/
     ├── workflows/
-    │   ├── crawl.yml         täglich 03:00 UTC, holt die Wertungen
+    │   ├── crawl.yml         Fr/Sa/So/Mo 03:00 UTC, holt die Wertungen
     │   └── build.yml         bei jedem Push: kompilieren und testen
     └── scripts/
         └── daten_pruefen.py  prüft docs/data
