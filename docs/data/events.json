@@ -1,5 +1,5 @@
 {
-  "aktualisiert": "2026-10-12T18:26:38Z",
+  "aktualisiert": "2026-10-12T18:31:21Z",
   "events": {
     "03afebf7-8a57-4ba2-4940-72a51e677747": {
       "name": "25. Barmstedt Cup 2026",
@@ -146,6 +146,15 @@
       "zuletztGeladen": "2026-10-11",
       "standSporttech": "2025-01-12T14:31:33.507581Z",
       "wertungen": 5
+    },
+    "26cec7c7-c3d9-487b-7a9b-3e5dc10a7c44": {
+      "name": "FIG TRA World Cup - 53rd Nissen Cup - ID 18300",
+      "beginn": "2026-06-26",
+      "ende": "2026-06-27",
+      "status": "abgeschlossen",
+      "manuell": true,
+      "zuletztGeladen": "2026-10-12",
+      "wertungen": 262
     },
     "2bbedc57-db84-4b70-7ce7-024ea9c141f3": {
       "name": "Schülerliga erster Vorkampf",
