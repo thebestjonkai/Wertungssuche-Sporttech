@@ -34,7 +34,21 @@ public class EventListe {
         /** Reglement, bei Trampolin immer mit Prefix {@code TRA}. */
         public String rules;
         public String updated_at;
+        /**
+         * Die beteiligten Organisationen mit ihrer Rolle.
+         *
+         * <p><b>Fehlt</b>, wenn das Event über
+         * {@code /api/organizations/<id>?fetch_events=true} geholt wurde –
+         * dort ist der Ausrichter ja schon durch die Anfrage bestimmt. Der
+         * Crawler trägt ihn in dem Fall selbst nach.
+         */
         public List<Teilnahme> organizations;
+        /**
+         * Die Organisation, die das Event angelegt hat. In allen geprüften
+         * Fällen ist das der Ausrichter – dient als Rückfallebene, wenn
+         * {@link #organizations} fehlt.
+         */
+        public String created_by;
     }
 
     /** Verknüpfung Event -> Organisation, mit der Rolle der Organisation. */

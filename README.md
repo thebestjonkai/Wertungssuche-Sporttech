@@ -14,7 +14,7 @@ letzten Starts. So findet man bei einem häufigen Namen schnell die richtige
 Person und klappt dann nur diese auf. Die Wertungen werden erst beim Aufklappen
 geladen.
 
-**Stand des Datenbestands:** 15 258 Wertungen von 2 932 Personen aus 71
+**Stand des Datenbestands:** 15 448 Wertungen von 2 987 Personen aus 78
 Wettkämpfen (2024 bis 2026).
 
 ---
@@ -50,7 +50,7 @@ Wettkämpfe stehen zwar in denselben Events, werden aber übersprungen.
 Warum diese Einschränkung: weltweit gibt es auf sporttech.io 2 029
 Trampolin-Events. Daraus würden rund **1,06 Millionen Wertungszeilen** und
 etwa **600 MB** – das ist weder für ein Git-Repository noch für einen Browser
-zu gebrauchen. Mit dem obigen Zuschnitt sind es 15 258 Zeilen und 10 MB, und die
+zu gebrauchen. Mit dem obigen Zuschnitt sind es 15 448 Zeilen und 10 MB, und die
 Website lädt pro Suche höchstens 1,4 MB. Die Rechnung dazu steht in
 [`DATENSTRUKTUR.md`](DATENSTRUKTUR.md), Kapitel 6.
 
@@ -161,10 +161,11 @@ mvn -f crawler\pom.xml package
 java -jar crawler\target\crawler.jar
 ```
 
-Der erste vollständige Lauf dauert rund zwei Minuten (71 Events, eine Anfrage
-pro Sekunde). Danach werden nur noch Events geladen, die neu sind, die gerade
-laufen oder die in den letzten 14 Tagen zu Ende gegangen sind – spätere Läufe
-sind also deutlich kürzer.
+Der erste vollständige Lauf dauert rund fünf Minuten – 78 Events plus rund 130
+Organisationen, bei einer Anfrage pro Sekunde. Danach werden nur noch Events
+geladen, die neu sind, die gerade laufen oder die in den letzten 14 Tagen zu
+Ende gegangen sind; der Organisationsscan bleibt, er ist der einzige Weg zu den
+nicht gelisteten Wettkämpfen.
 
 ### Nützliche Optionen
 
@@ -211,15 +212,25 @@ Beenden mit <kbd>Strg</kbd>+<kbd>C</kbd>.
 
 ## Einzelne Wettkämpfe von Hand aufnehmen
 
-Manche Wettkämpfe im Ausland sind wichtig, fallen aber durch das Raster
-(Deutschland, ab 2024). Die lassen sich einzeln aufnehmen.
+Zwei Fälle brauchen das:
 
-**Die Event-ID** steht in der Adresse der Ergebnisseite auf sporttech.io:
+1. **Wettkämpfe im Ausland**, die durch das Raster fallen (Deutschland, ab 2024).
+2. **Wettkämpfe, die sporttech.io nicht listet.** Die Eventliste gibt nur
+   Events mit `highlight: true` heraus. Der Crawler sucht deshalb zusätzlich
+   über alle deutschen Organisationen nach den übrigen – aber eine
+   Organisation, die *ausschließlich* nicht gelistete Events ausrichtet, ist
+   selbst nirgends verzeichnet. Dann hilft nur die Event-ID. Details in
+   [`DATENSTRUKTUR.md`](DATENSTRUKTUR.md), Kapitel 1.1.
+
+**Es reicht, die Adresse aus der Browser-Zeile zu kopieren** – der Crawler holt
+sich die ID selbst heraus:
 
 ```
-https://sporttech.io/events/91f733c2-17e1-402f-74d8-60b7dfbf28b7/ovs/event/TRA
+https://sporttech.io/events/d613f43d-fb1c-4beb-4770-9e684e2e0a8e/ovs/scoreboards/
                             └─────────── das ist die ID ────────────┘
 ```
+
+Eine nackte ID geht genauso.
 
 ### Von Hand, lokal
 
@@ -261,13 +272,53 @@ So aufgenommene Events bekommen in `docs/data/events.json` das Kennzeichen
 
 **Sie laufen danach in jedem Lauf automatisch mit** – man muss die ID also nur
 einmal angeben. Soll ein Event dauerhaft dabei sein, kann man es auch direkt in
-[`crawler/config.json`](crawler/config.json) eintragen:
+[`crawler/config.json`](crawler/config.json) eintragen (ID oder Adresse):
 
 ```json
 "zusaetzlicheEvents": [
-  "91f733c2-17e1-402f-74d8-60b7dfbf28b7"
+  "d613f43d-fb1c-4beb-4770-9e684e2e0a8e"
 ]
 ```
+
+### Eine Event-ID schaltet den ganzen Ausrichter frei
+
+Der Crawler merkt sich zu jedem von Hand aufgenommenen Event die
+**ausrichtende Organisation** (`ausrichterId` in `events.json`) und durchsucht
+sie ab dann in jedem Lauf nach weiteren nicht gelisteten Wettkämpfen.
+
+Beispiel: die eingetragene *WAGC / JWM Qualifikation* gehört dem
+„Deutschen Turner-Bund (DTB)". Diese Organisation richtet ausschließlich nicht
+gelistete Events aus und ist deshalb selbst nirgends verzeichnet. Seit sie
+bekannt ist, kam die *EM/JEM Qualifikation* desselben Ausrichters von allein
+dazu – und künftige Qualifikationswettkämpfe kommen ebenso.
+
+Eine Organisation lässt sich auch direkt eintragen, ohne den Umweg über ein
+Event:
+
+```json
+"zusaetzlicheOrganisationen": [
+  "d51afe92-51c2-4fad-6291-847304396a49"
+]
+```
+
+### Probeläufe werden übersprungen
+
+Veranstalter richten vor einem Wettkampf Testdurchläufe ein, um ihre
+Kampfrichteranlage zu prüfen, und benennen sie selbst eindeutig:
+„Testwettkampf", „Liga Test", „Landes Einzel Testversion". Der Organisationsscan
+findet die auch – 16 Stück mit zusammen 199 erfundenen Wertungen.
+
+Deshalb überspringt der Crawler Events, deren Name `test` enthält. Das lässt
+sich in `crawler/config.json` ändern oder mit einer leeren Liste abschalten:
+
+```json
+"ignorierenWennName": ["test"]
+```
+
+Der Filter wirkt auch rückwirkend: wird er geändert, verschwinden die betroffenen
+Wertungen beim nächsten Lauf aus dem Datenbestand. **Von Hand aufgenommene
+Events sind nie betroffen** – wer eine ID ausdrücklich einträgt, will sie auch
+haben.
 
 > **Hinweis:** sporttech.io schaltet die Datenbank älterer oder selten
 > aufgerufener Events zeitweise ab. Dann kommt ein `HTTP 500` und das Event
@@ -311,7 +362,10 @@ Alles in [`crawler/config.json`](crawler/config.json):
 | `maxNeueEventsProLauf` | `200` | Obergrenze neuer Events pro Lauf, damit der Workflow nicht in die Zeitgrenze läuft |
 | `pauseZwischenAnfragenMs` | `1000` | Wartezeit zwischen zwei Anfragen. Bitte nicht verkleinern |
 | `erneutLadenTage` | `14` | So lange nach Eventende wird neu geladen, damit Nachkorrekturen ankommen |
-| `zusaetzlicheEvents` | `[]` | Event-IDs, die immer mitlaufen |
+| `organisationenScannen` | `true` | Sucht über die Organisationen nach Events, die nicht in der Eventliste stehen. Kostet eine Anfrage je Organisation, bei Deutschland rund 130 |
+| `ignorierenWennName` | `["test"]` | Events mit diesem Text im Namen überspringen. Leere Liste = Filter aus |
+| `zusaetzlicheEvents` | `[]` | Event-IDs oder Adressen, die immer mitlaufen |
+| `zusaetzlicheOrganisationen` | `[]` | Organisationen, die zusätzlich durchsucht werden |
 | `nationFilter` | `[]` | Nur diese Nationen übernehmen, z. B. `["GER"]` |
 | `vereinFilter` | `[]` | Nur diese Vereine übernehmen (Teiltreffer) |
 | `versuche` | `3` | Versuche pro Anfrage, bevor ein Event übersprungen wird |
@@ -439,13 +493,13 @@ Anfangsbuchstaben.
 Veranstalter „TV Voerde" oder „TV Voerde 1920 e.V.". Personen werden deshalb
 über **Nachname, Vorname und Jahrgang** zusammengefasst, nicht über den Verein.
 Die Karte zeigt alle Vereinsangaben, neueste zuerst. Ohne diese Regel hätten
-696 von 2 932 Personen mehrere Karten statt einer.
+696 von 2 987 Personen mehrere Karten statt einer.
 
 Die Kehrseite: zwei verschiedene Personen mit gleichem Namen **und** gleichem
 Jahrgang landen auf einer Karte. Weil dann beide Vereine nebeneinander stehen,
 fällt es auf.
 
-**Der Jahrgang fehlt manchmal.** Bei 2 193 von 15 258 Zeilen – FIG-Wettkämpfe
+**Der Jahrgang fehlt manchmal.** Bei 2 382 von 15 448 Zeilen – FIG-Wettkämpfe
 veröffentlichen das Geburtsdatum oft nicht. Dann steht `null`.
 
 **Nicht jeder Wettkampf misst alles.** Bei den Deutschen

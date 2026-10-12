@@ -33,6 +33,34 @@ public class SporttechApi {
             BASIS + "/api/events/?fetch_organizations=true&year=";
 
     /**
+     * Einzelnes Event aus dem Portal – <b>auch wenn es nicht in der Liste
+     * steht</b>.
+     *
+     * <p>Liefert dieselben Felder wie ein Listeneintrag, also {@code sport},
+     * {@code rules}, {@code begin_date} und über {@code fetch_organizations}
+     * auch den Ausrichter samt Land. Damit lässt sich ein von Hand
+     * aufgenommenes Event genauso prüfen und einordnen wie ein gelistetes.
+     */
+    public static String eventInfoUrl(String eventId) {
+        return BASIS + "/api/events/" + eventId + "?fetch_organizations=true";
+    }
+
+    /**
+     * Alle Events einer Organisation – <b>einschließlich der nicht
+     * gelisteten</b>.
+     *
+     * <p>Das ist der Weg zu Wettkämpfen, die {@link #URL_EVENTLISTE} nicht
+     * zeigt. Die Eventliste gibt nur Events mit {@code highlight: true}
+     * heraus; über die Organisation kommen auch die anderen.
+     *
+     * <p>Der Parameter {@code fetch_events} stammt aus der Liste der
+     * fetch-Parameter im JavaScript-Bundle von sporttech.io.
+     */
+    public static String organisationUrl(String organisationId) {
+        return BASIS + "/api/organizations/" + organisationId + "?fetch_events=true";
+    }
+
+    /**
      * Die Abfrageparameter für die Event-Struktur.
      *
      * <p>{@code fetch_panels} ist bewusst nicht dabei: das sind die
@@ -64,7 +92,15 @@ public class SporttechApi {
         return BASIS + "/events/" + eventId + "/ovs/stages/" + stageId + "/results";
     }
 
-    /** Lädt die Liste aller Events. */
+    /**
+     * Lädt die Liste aller Events.
+     *
+     * <p><b>Achtung:</b> dieser Endpunkt gibt nur Events mit
+     * {@code highlight: true} heraus – Stand 10/2026 sind das 2 775 von
+     * mindestens 2 815. Wettkämpfe ohne dieses Kennzeichen fehlen hier
+     * vollständig, obwohl ihre Ergebnisse öffentlich sind. Siehe
+     * {@link #organisationEvents(String)}.
+     */
     public EventListe eventListeLaden() throws IOException {
         String json = lader.holen(URL_EVENTLISTE);
         EventListe liste = parsen(json, EventListe.class);
@@ -72,6 +108,35 @@ public class SporttechApi {
             throw new IOException("Eventliste hatte nicht die erwartete Form.");
         }
         return liste;
+    }
+
+    /**
+     * Lädt die Stammdaten eines einzelnen Events aus dem Portal, auch wenn es
+     * nicht in der Eventliste steht.
+     */
+    public EventListe eventInfoLaden(String eventId) throws IOException {
+        String json = lader.holen(eventInfoUrl(eventId));
+        EventListe antwort = parsen(json, EventListe.class);
+        if (antwort == null || antwort.event == null) {
+            throw new IOException("Event " + eventId + " hatte nicht die erwartete Form.");
+        }
+        return antwort;
+    }
+
+    /**
+     * Lädt alle Events einer Organisation – auch die nicht gelisteten.
+     *
+     * <p>Die Antwort hat dieselbe Form wie die Eventliste, enthält aber nur
+     * die Events dieser einen Organisation.
+     */
+    public EventListe organisationEvents(String organisationId) throws IOException {
+        String json = lader.holen(organisationUrl(organisationId));
+        EventListe antwort = parsen(json, EventListe.class);
+        if (antwort == null) {
+            throw new IOException("Organisation " + organisationId
+                    + " hatte nicht die erwartete Form.");
+        }
+        return antwort;
     }
 
     /**

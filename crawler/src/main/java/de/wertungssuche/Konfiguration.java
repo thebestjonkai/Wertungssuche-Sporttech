@@ -40,6 +40,43 @@ public class Konfiguration {
     /** Event-IDs, die immer geladen werden – unabhängig von Land und Datum. */
     public List<String> zusaetzlicheEvents = new ArrayList<>();
 
+    /**
+     * Zusätzlich zu durchsuchende Organisationen (UUIDs).
+     *
+     * <p>Nur nötig für Organisationen, die <b>ausschließlich</b> nicht
+     * gelistete Events ausrichten – die tauchen sonst nirgends auf. Wird ein
+     * Event von Hand aufgenommen, merkt sich der Crawler dessen Ausrichter
+     * von selbst, siehe {@link EventStatus.Eintrag#ausrichterId}.
+     */
+    public List<String> zusaetzlicheOrganisationen = new ArrayList<>();
+
+    /**
+     * Ob die Organisationen nach nicht gelisteten Events durchsucht werden.
+     *
+     * <p>Die Eventliste von sporttech.io zeigt nur Events mit
+     * {@code highlight: true}. Über {@code /api/organizations/<id>
+     * ?fetch_events=true} kommt man auch an die anderen. Das kostet eine
+     * Anfrage je Organisation – bei den deutschen sind das rund 130, also
+     * gut zwei Minuten zusätzlich pro Lauf.
+     */
+    public boolean organisationenScannen = true;
+
+    /**
+     * Events, deren Name einen dieser Textbausteine enthält, werden
+     * übersprungen (Groß-/Kleinschreibung egal).
+     *
+     * <p>Hintergrund: der Organisationsscan findet auch die Probeläufe, mit
+     * denen Veranstalter ihre Kampfrichteranlage einrichten. Gemessen am
+     * Datenbestand sind das 16 Events mit zusammen 199 Wertungen – echte
+     * Namen, aber erfundene Ergebnisse, die in einer Laufbahn nichts zu
+     * suchen haben.
+     *
+     * <p>Die Veranstalter benennen diese Events selbst eindeutig:
+     * „Testwettkampf", „Test 2", „Liga Test", „Landes Einzel Testversion".
+     * Eine leere Liste schaltet den Filter ab.
+     */
+    public List<String> ignorierenWennName = new ArrayList<>(List.of("test"));
+
     /** Nur Athleten dieser Nationen übernehmen. Leer = alle. */
     public List<String> nationFilter = new ArrayList<>();
 
@@ -75,8 +112,12 @@ public class Konfiguration {
         }
         if (k.laenderIds == null) k.laenderIds = new ArrayList<>();
         if (k.zusaetzlicheEvents == null) k.zusaetzlicheEvents = new ArrayList<>();
+        if (k.zusaetzlicheOrganisationen == null) {
+            k.zusaetzlicheOrganisationen = new ArrayList<>();
+        }
         if (k.nationFilter == null) k.nationFilter = new ArrayList<>();
         if (k.vereinFilter == null) k.vereinFilter = new ArrayList<>();
+        if (k.ignorierenWennName == null) k.ignorierenWennName = new ArrayList<>();
         if (k.abDatum == null || k.abDatum.isBlank()) k.abDatum = "1900-01-01";
         if (k.pauseZwischenAnfragenMs < 0) k.pauseZwischenAnfragenMs = 1000;
         if (k.versuche < 1) k.versuche = 1;

@@ -7,7 +7,13 @@
   "pauseZwischenAnfragenMs": 1000,
   "erneutLadenTage": 14,
 
-  "zusaetzlicheEvents": [],
+  "organisationenScannen": true,
+  "ignorierenWennName": ["test"],
+
+  "zusaetzlicheEvents": [
+    "d613f43d-fb1c-4beb-4770-9e684e2e0a8e"
+  ],
+  "zusaetzlicheOrganisationen": [],
 
   "nationFilter": [],
   "vereinFilter": [],
@@ -19,11 +25,14 @@
 
   "_doku": {
     "abDatum": "Events, die vor diesem Tag beginnen, werden ignoriert (Format JJJJ-MM-TT).",
-    "laenderIds": "Numerische Laender-IDs der ausrichtenden Organisation. 276 = Deutschland. Leere Liste = alle Laender.",
-    "maxNeueEventsProLauf": "Obergrenze neuer Events pro Lauf, damit der GitHub-Workflow nicht in die Zeitgrenze laeuft. Der Rest kommt im naechsten Lauf.",
+    "laenderIds": "Numerische Laender-IDs der ausrichtenden Organisation. 276 = Deutschland, leere Liste = alle Laender.",
+    "maxNeueEventsProLauf": "Obergrenze neuer Events pro Lauf, damit der Workflow nicht in die Zeitgrenze laeuft. Der Rest kommt im naechsten Lauf.",
     "pauseZwischenAnfragenMs": "Wartezeit zwischen zwei Anfragen an sporttech.io. 1000 = hoechstens eine Anfrage pro Sekunde.",
     "erneutLadenTage": "Events, deren Enddatum weniger als so viele Tage zurueckliegt, werden erneut geladen, damit Korrekturen uebernommen werden.",
-    "zusaetzlicheEvents": "Event-IDs (UUIDs), die immer geladen werden - unabhaengig von Land und Datum. Fuer wichtige Wettkaempfe im Ausland.",
+    "organisationenScannen": "Sucht zusaetzlich ueber die Organisationen nach Events, die NICHT in der Eventliste von sporttech.io stehen. Die Liste gibt naemlich nur Events mit highlight=true heraus. Kostet eine Anfrage je Organisation, bei Deutschland rund 130.",
+    "ignorierenWennName": "Events, deren Name einen dieser Textbausteine enthaelt, werden uebersprungen (Gross-/Kleinschreibung egal). Veranstalter richten vor einem Wettkampf Probelaeufe ein und benennen sie selbst eindeutig: Testwettkampf, Liga Test, Landes Einzel Testversion. Leere Liste schaltet den Filter ab. Von Hand aufgenommene Events sind nie betroffen.",
+    "zusaetzlicheEvents": "Event-IDs, die immer geladen werden - unabhaengig von Land und Datum. Fuer wichtige Wettkaempfe im Ausland und fuer nicht gelistete Events. Statt der ID darf auch die komplette sporttech.io-Adresse eingetragen werden.",
+    "zusaetzlicheOrganisationen": "Organisations-IDs, die zusaetzlich nach nicht gelisteten Events durchsucht werden. Nur noetig fuer Organisationen, die ausschliesslich nicht gelistete Events ausrichten. Der Ausrichter eines von Hand aufgenommenen Events wird automatisch gemerkt.",
     "nationFilter": "Nur Athleten dieser Nationen uebernehmen, z. B. [\"GER\"]. Leere Liste = alle.",
     "vereinFilter": "Nur Athleten dieser Vereine uebernehmen (Teiltreffer, Gross-/Kleinschreibung egal). Leere Liste = alle.",
     "versuche": "Anzahl Versuche pro Anfrage, bevor ein Event uebersprungen wird."

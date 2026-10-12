@@ -9,7 +9,9 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.time.LocalDate;
 import java.util.LinkedHashMap;
+import java.util.LinkedHashSet;
 import java.util.Map;
+import java.util.Set;
 import java.util.TreeMap;
 
 /**
@@ -45,6 +47,15 @@ public class EventStatus {
         public String ende;
         /** Name der ausrichtenden Organisation. */
         public String ausrichter;
+        /**
+         * ID der ausrichtenden Organisation.
+         *
+         * <p>Wichtig für von Hand aufgenommene Events: über diese ID findet
+         * der Crawler in Folgeläufen auch die <b>anderen</b> nicht gelisteten
+         * Events derselben Organisation. Eine einmal von Hand eingetragene
+         * Event-ID schaltet damit dauerhaft den ganzen Ausrichter frei.
+         */
+        public String ausrichterId;
         /** Numerische Länder-ID des Ausrichters (276 = Deutschland). */
         public Integer land;
         /** Einer der Werte {@link #ABGESCHLOSSEN}, {@link #OFFEN}, ... */
@@ -152,6 +163,25 @@ public class EventStatus {
             }
         }
         return ergebnis;
+    }
+
+    /**
+     * Die Ausrichter aller von Hand aufgenommenen Events.
+     *
+     * <p>Diese Organisationen werden in jedem Lauf nach weiteren, nicht
+     * gelisteten Events durchsucht. So reicht es, ein Event einer
+     * Organisation einmal einzutragen – alle künftigen Wettkämpfe desselben
+     * Ausrichters kommen dann von selbst dazu.
+     */
+    public Set<String> ausrichterManuellerEvents() {
+        Set<String> ids = new LinkedHashSet<>();
+        for (Eintrag e : events.values()) {
+            if (e != null && e.manuell && e.ausrichterId != null
+                    && !e.ausrichterId.isBlank()) {
+                ids.add(e.ausrichterId);
+            }
+        }
+        return ids;
     }
 
     /** Wandelt {@code JJJJ-MM-TT} in ein Datum, oder {@code null}. */

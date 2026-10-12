@@ -1,5 +1,5 @@
 {
-  "aktualisiert": "2026-10-12T10:14:40Z",
+  "aktualisiert": "2026-10-12T17:03:34Z",
   "events": {
     "03afebf7-8a57-4ba2-4940-72a51e677747": {
       "name": "25. Barmstedt Cup 2026",
@@ -61,18 +61,6 @@
       "standSporttech": "2026-04-24T10:07:46.828541Z",
       "wertungen": 0
     },
-    "18dd5493-976a-4912-6d1d-9e02eec476ec": {
-      "name": "Testwettkampf",
-      "beginn": "2025-11-02",
-      "ende": "2025-11-02",
-      "ausrichter": "Testverein",
-      "land": 276,
-      "status": "ohne-wertungen",
-      "manuell": false,
-      "zuletztGeladen": "2026-10-11",
-      "standSporttech": "2025-11-01T19:06:42.119492Z",
-      "wertungen": 0
-    },
     "1aa84ff5-0b01-4d7b-4a06-0f14e70f635f": {
       "name": "Bundesliga Finale 2025",
       "beginn": "2025-12-06",
@@ -102,6 +90,7 @@
       "beginn": "2026-10-10",
       "ende": "2026-10-10",
       "ausrichter": "Badischer Turnerbund",
+      "ausrichterId": "965526b7-2463-4824-5c59-a84de032d81e",
       "land": 276,
       "status": "offen",
       "manuell": false,
@@ -145,6 +134,19 @@
       "standSporttech": "2025-06-02T21:11:29.827836Z",
       "wertungen": 424
     },
+    "266b83ac-8f4b-422f-6aca-9e54cbfc5a67": {
+      "name": "BCup 2025",
+      "beginn": "2025-01-12",
+      "ende": "2025-02-10",
+      "ausrichter": "Barmstedter MTV von 1864 e. V.",
+      "ausrichterId": "a7207a2d-5002-48bd-77a1-7210eead2c6c",
+      "land": 276,
+      "status": "abgeschlossen",
+      "manuell": false,
+      "zuletztGeladen": "2026-10-11",
+      "standSporttech": "2025-01-12T14:31:33.507581Z",
+      "wertungen": 5
+    },
     "2bbedc57-db84-4b70-7ce7-024ea9c141f3": {
       "name": "Schülerliga erster Vorkampf",
       "beginn": "2026-04-25",
@@ -162,6 +164,7 @@
       "beginn": "2026-10-03",
       "ende": "2026-10-03",
       "ausrichter": "Deutscher Turner-Bund",
+      "ausrichterId": "051d15da-ba4a-42e5-50de-43c77eaeebb3",
       "land": 276,
       "status": "offen",
       "manuell": false,
@@ -180,6 +183,32 @@
       "zuletztGeladen": "2026-10-11",
       "standSporttech": "2026-09-09T10:55:25.126926Z",
       "wertungen": 252
+    },
+    "325ea6bf-c4d5-4774-6f94-5ad093174d3d": {
+      "name": "Bundesliga Finale",
+      "beginn": "2025-12-06",
+      "ende": "2025-12-06",
+      "ausrichter": "Deutscher Turner-Bund",
+      "ausrichterId": "051d15da-ba4a-42e5-50de-43c77eaeebb3",
+      "land": 276,
+      "status": "ohne-wertungen",
+      "manuell": false,
+      "zuletztGeladen": "2026-10-11",
+      "standSporttech": "2025-12-06T09:36:45.71924Z",
+      "wertungen": 0
+    },
+    "354d4203-05da-4b48-48d1-7dad83b892ed": {
+      "name": "Bezirkseinsteigerwettkampf",
+      "beginn": "2024-06-08",
+      "ende": "2024-06-08",
+      "ausrichter": "Bezirkseinsteigerwettkämpfe",
+      "ausrichterId": "9039830b-d745-4e9d-4c54-6de3c5e98fdd",
+      "land": 276,
+      "status": "ohne-wertungen",
+      "manuell": false,
+      "zuletztGeladen": "2026-10-11",
+      "standSporttech": "2025-11-01T19:59:18.588315Z",
+      "wertungen": 0
     },
     "389afcfe-80f0-4a0f-66dd-09db7e671270": {
       "name": "Vereinsmeisterschaften TSV Mannheim 2025",
@@ -258,6 +287,7 @@
       "beginn": "2026-10-24",
       "ende": "2026-10-24",
       "ausrichter": "Deutscher Turner-Bund",
+      "ausrichterId": "051d15da-ba4a-42e5-50de-43c77eaeebb3",
       "land": 276,
       "status": "offen",
       "manuell": false,
@@ -300,6 +330,19 @@
       "zuletztGeladen": "2026-10-11",
       "standSporttech": "2026-07-07T18:36:10.347176Z",
       "wertungen": 66
+    },
+    "5d950dec-f9fc-4d8d-6473-dee92813d319": {
+      "name": "Landes Vereins Mannschaft",
+      "beginn": "2025-11-28",
+      "ende": "2025-11-28",
+      "ausrichter": "Saarländischer Turnerbund",
+      "ausrichterId": "ca2950e3-a39a-473c-480e-6dac7c7beee8",
+      "land": 276,
+      "status": "ohne-wertungen",
+      "manuell": false,
+      "zuletztGeladen": "2026-10-11",
+      "standSporttech": "2025-11-13T11:58:49.716823Z",
+      "wertungen": 0
     },
     "5fba6ad2-97d9-4544-4e7c-7a9f1c6b76c9": {
       "name": "Gaumeisterschaften Frankfurt",
@@ -421,6 +464,19 @@
       "standSporttech": "2026-06-15T06:16:55.671527Z",
       "wertungen": 0
     },
+    "771c296f-c301-4440-649c-30677669e3cd": {
+      "name": "Offener Kölner Mannschaftspokal 20261",
+      "beginn": "2026-07-12",
+      "ende": "2026-07-12",
+      "ausrichter": "Turnverband Köln",
+      "ausrichterId": "1c4cbb08-8eb7-4a74-781e-1a21b206b7a1",
+      "land": 276,
+      "status": "ohne-wertungen",
+      "manuell": false,
+      "zuletztGeladen": "2026-10-11",
+      "standSporttech": "2026-07-07T18:36:09.213166Z",
+      "wertungen": 0
+    },
     "80c26a2a-6a39-4b12-799d-0fac6ee8e9f1": {
       "name": "3. Wölfe Open 2024",
       "beginn": "2024-09-14",
@@ -510,6 +566,7 @@
       "beginn": "2026-09-26",
       "ende": "2026-09-27",
       "ausrichter": "SV Barnstorf",
+      "ausrichterId": "e704e50d-10eb-41e2-5c99-e72cd910504e",
       "land": 276,
       "status": "offen",
       "manuell": false,
@@ -618,6 +675,7 @@
       "beginn": "2026-10-10",
       "ende": "2026-10-10",
       "ausrichter": "ATV Hückeswagen 1850 e.V.",
+      "ausrichterId": "9db44701-4c04-4032-481d-c69bbe9d8743",
       "land": 276,
       "status": "offen",
       "manuell": false,
@@ -630,6 +688,7 @@
       "beginn": "2026-10-04",
       "ende": "2026-10-04",
       "ausrichter": "Deutscher Turner-Bund",
+      "ausrichterId": "051d15da-ba4a-42e5-50de-43c77eaeebb3",
       "land": 276,
       "status": "offen",
       "manuell": false,
@@ -684,6 +743,19 @@
       "zuletztGeladen": "2026-10-11",
       "standSporttech": "2026-09-19T18:01:46.970613Z",
       "wertungen": 76
+    },
+    "c8984d9f-063e-429e-516a-117f8dc6a551": {
+      "name": "EM/JEM Qualifikation",
+      "beginn": "2026-02-21",
+      "ende": "2026-02-21",
+      "ausrichter": "Deutscher Turner-Bund (DTB)",
+      "ausrichterId": "d51afe92-51c2-4fad-6291-847304396a49",
+      "land": 276,
+      "status": "abgeschlossen",
+      "manuell": false,
+      "zuletztGeladen": "2026-10-11",
+      "standSporttech": "2026-02-15T16:44:20.31037Z",
+      "wertungen": 41
     },
     "cab95cbe-3bf6-4eed-776b-f34f29d2d5f5": {
       "name": "NRW-Synchron Meisterschaften 2026 / Christian Stapf Pokal",
@@ -745,6 +817,19 @@
       "standSporttech": "2026-06-13T06:17:54.308684Z",
       "wertungen": 0
     },
+    "d613f43d-fb1c-4beb-4770-9e684e2e0a8e": {
+      "name": "WAGC / JWM Qualifikation",
+      "beginn": "2026-06-06",
+      "ende": "2026-06-06",
+      "ausrichter": "Deutscher Turner-Bund (DTB)",
+      "ausrichterId": "d51afe92-51c2-4fad-6291-847304396a49",
+      "land": 276,
+      "status": "abgeschlossen",
+      "manuell": true,
+      "zuletztGeladen": "2026-10-11",
+      "standSporttech": "2026-05-22T06:42:39.32109Z",
+      "wertungen": 144
+    },
     "d633d833-fe5e-4471-5b79-bce3ddf9c2a9": {
       "name": "Landes Jahrgangsbesten Wettkämpfe 2026",
       "beginn": "2026-05-31",
@@ -774,6 +859,7 @@
       "beginn": "2026-09-27",
       "ende": "2026-09-27",
       "ausrichter": "Turngau Blies",
+      "ausrichterId": "661b1bfa-157a-4a9f-5d51-13270a1a8a55",
       "land": 276,
       "status": "offen",
       "manuell": false,
@@ -786,6 +872,7 @@
       "beginn": "2026-10-10",
       "ende": "2026-10-10",
       "ausrichter": "Turnverband Düsseldorf",
+      "ausrichterId": "919e2086-ed26-468a-6eb0-1a2517376f24",
       "land": 276,
       "status": "offen",
       "manuell": false,
@@ -804,6 +891,19 @@
       "zuletztGeladen": "2026-10-11",
       "standSporttech": "2026-04-26T08:41:32.844367Z",
       "wertungen": 592
+    },
+    "e96efc9d-e210-4898-74c0-4e9d48fcc616": {
+      "name": "Kölner Herbstturnier 2026",
+      "beginn": "2026-11-07",
+      "ende": "2026-11-07",
+      "ausrichter": "Turnverband Köln",
+      "ausrichterId": "1c4cbb08-8eb7-4a74-781e-1a21b206b7a1",
+      "land": 276,
+      "status": "offen",
+      "manuell": false,
+      "zuletztGeladen": "2026-10-12",
+      "standSporttech": "2026-07-07T17:15:35.123043Z",
+      "wertungen": 0
     },
     "f0c0b10b-76d0-459d-555d-e153e3388339": {
       "name": "Wölfe Cup 2024",

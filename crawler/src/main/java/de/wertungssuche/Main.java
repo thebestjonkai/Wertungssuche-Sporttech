@@ -96,6 +96,16 @@ public class Main {
         bestand.laden();
         System.out.println();
 
+        // Schon gespeicherte Probeläufe wieder entfernen. Wird der Filter
+        // nachträglich eingeschaltet oder erweitert, verschwinden die Daten
+        // beim nächsten Lauf von selbst – sonst blieben sie für immer liegen.
+        int aufgeraeumt = probelaeufeEntfernen(konfig, status, bestand);
+        if (aufgeraeumt > 0) {
+            System.out.println(aufgeraeumt + " früher geladene Probeläufe wurden "
+                    + "aus dem Datenbestand entfernt.");
+            System.out.println();
+        }
+
         // --- Schritt 1: entscheiden, was geladen wird ---
         LocalDate heute = LocalDate.now(ZoneOffset.UTC);
         Auswahl auswahl = auswaehlen(api, konfig, status, arg, heute);
@@ -107,6 +117,10 @@ public class Main {
             if (!arg.trockenlauf) {
                 status.aktualisiert = ZEITSTEMPEL.format(Instant.now());
                 status.speichern(statusDatei);
+                // Wurde aufgeräumt, müssen die Wertungsdateien mit raus.
+                if (aufgeraeumt > 0) {
+                    bestand.speichern();
+                }
                 Personenindex.schreiben(bestand.alleWertungen(),
                         datenOrdner.resolve("personen.json"));
                 bestand.metaSpeichern(datenOrdner.resolve("meta.json"),
@@ -139,6 +153,7 @@ public class Main {
             neu.beginn = kandidat.beginn;
             neu.ende = kandidat.ende;
             neu.ausrichter = kandidat.ausrichter;
+            neu.ausrichterId = kandidat.ausrichterId;
             neu.land = kandidat.land;
             neu.manuell = kandidat.manuell;
             neu.standSporttech = kandidat.standSporttech;
@@ -185,6 +200,13 @@ public class Main {
                     neu.zuletztGeladen = alt.zuletztGeladen;
                     if (neu.name == null) {
                         neu.name = alt.name;
+                    }
+                    // Den Ausrichter nicht verlieren - über ihn findet der
+                    // Crawler die nicht gelisteten Events dieser Organisation.
+                    if (neu.ausrichterId == null) {
+                        neu.ausrichterId = alt.ausrichterId;
+                        neu.ausrichter = alt.ausrichter;
+                        neu.land = alt.land;
                     }
                 }
                 System.out.println("      FEHLER: " + e.getMessage());
@@ -263,10 +285,19 @@ public class Main {
 
         Auswahl auswahl = new Auswahl();
 
-        // Alle von Hand gewünschten IDs sammeln.
+        // Alle von Hand gewünschten IDs sammeln. In der config.json darf statt
+        // der ID auch die komplette sporttech.io-Adresse stehen.
         Set<String> manuelle = new LinkedHashSet<>();
         manuelle.addAll(arg.eventIds);
-        manuelle.addAll(konfig.zusaetzlicheEvents);
+        for (String eintrag : konfig.zusaetzlicheEvents) {
+            String id = eventIdAus(eintrag);
+            if (id != null) {
+                manuelle.add(id);
+            } else if (eintrag != null && !eintrag.isBlank()) {
+                System.out.println("zusaetzlicheEvents: keine Event-ID erkannt in "
+                        + eintrag);
+            }
+        }
         manuelle.addAll(status.manuelleEvents().keySet());
 
         if (arg.nurEvents) {
@@ -298,6 +329,18 @@ public class Main {
                 + (liste.organization == null ? 0 : liste.organization.size())
                 + " Organisationen.");
 
+        // Alle bekannten Events und Organisationen in einem Topf sammeln.
+        Map<String, EventListe.Event> alleEvents = new LinkedHashMap<>(liste.event);
+        Map<String, EventListe.Organisation> alleOrgs =
+                new LinkedHashMap<>(liste.organization == null
+                        ? Map.of() : liste.organization);
+
+        int ausOrganisationen = 0;
+        if (konfig.organisationenScannen) {
+            ausOrganisationen = organisationenDurchsuchen(
+                    api, konfig, status, alleEvents, alleOrgs);
+        }
+
         // Die Kandidaten im Raster, sortiert nach Beginn – so werden beim
         // Erstaufbau die ältesten zuerst abgearbeitet und die Reihenfolge ist
         // über mehrere Läufe stabil.
@@ -306,8 +349,9 @@ public class Main {
         int nichtTrampolin = 0;
         int falschesLand = 0;
         int zuAlt = 0;
+        List<String> ignoriert = new ArrayList<>();
 
-        for (Map.Entry<String, EventListe.Event> e : liste.event.entrySet()) {
+        for (Map.Entry<String, EventListe.Event> e : alleEvents.entrySet()) {
             String id = e.getKey();
             EventListe.Event ev = e.getValue();
             if (ev == null) {
@@ -323,10 +367,14 @@ public class Main {
                 zuAlt++;
                 continue;
             }
-            Kandidat k = kandidatAus(id, ev, liste);
+            Kandidat k = kandidatAus(ev, alleOrgs);
             if (!konfig.laenderIds.isEmpty()
                     && (k.land == null || !konfig.laenderIds.contains(k.land))) {
                 falschesLand++;
+                continue;
+            }
+            if (nameIgnorieren(k.name, konfig)) {
+                ignoriert.add(k.name + "  (" + k.beginn + ", " + k.ausrichter + ")");
                 continue;
             }
             imRaster.add(Map.entry(id, k));
@@ -339,26 +387,56 @@ public class Main {
             return c != 0 ? c : a.getKey().compareTo(b.getKey());
         });
 
+        System.out.println("  Events insgesamt geprüft:     " + alleEvents.size()
+                + (ausOrganisationen > 0
+                   ? " (" + ausOrganisationen + " davon nicht in der Eventliste)" : ""));
         System.out.println("  davon keine Trampolin-Events: " + nichtTrampolin);
         System.out.println("  davon vor " + konfig.abDatum + ":    " + zuAlt);
         System.out.println("  davon anderes Land:           " + falschesLand);
+        if (!ignoriert.isEmpty()) {
+            System.out.println("  davon Probeläufe:             " + ignoriert.size()
+                    + "  (Name enthält " + konfig.ignorierenWennName + ")");
+            for (String name : ignoriert) {
+                System.out.println("      übersprungen: " + name);
+            }
+        }
         System.out.println("  im Raster:                    " + imRaster.size());
 
         // Von Hand gewünschte Events zuerst – die sollen nie an der
         // Obergrenze für neue Events scheitern.
         for (String id : manuelle) {
-            EventListe.Event ev = liste.event.get(id);
-            Kandidat k = (ev != null) ? kandidatAus(id, ev, liste) : new Kandidat();
+            EventListe.Event ev = alleEvents.get(id);
+
+            // Nicht gelistet und auch über keine Organisation gefunden? Dann
+            // die Stammdaten direkt beim Portal nachfragen - das geht auch
+            // für Events, die in keiner Liste stehen.
+            if (ev == null) {
+                try {
+                    EventListe antwort = api.eventInfoLaden(id);
+                    ev = antwort.event.get(id);
+                    if (antwort.organization != null) {
+                        alleOrgs.putAll(antwort.organization);
+                    }
+                } catch (IOException fehler) {
+                    System.out.println("  Stammdaten zu " + id
+                            + " nicht abrufbar (" + fehler.getMessage()
+                            + "), das Event wird trotzdem geladen.");
+                }
+            }
+
+            Kandidat k = (ev != null) ? kandidatAus(ev, alleOrgs) : new Kandidat();
             k.manuell = true;
+
             if (ev == null) {
                 EventStatus.Eintrag alt = status.get(id);
                 if (alt != null) {
                     k.name = alt.name;
                     k.beginn = alt.beginn;
                     k.ende = alt.ende;
+                    k.ausrichter = alt.ausrichter;
+                    k.ausrichterId = alt.ausrichterId;
+                    k.land = alt.land;
                 }
-                System.out.println("  Hinweis: Event " + id
-                        + " steht nicht in der Eventliste, wird aber direkt geladen.");
             }
             if (status.mussGeladenWerden(id, k.standSporttech, heute, konfig.erneutLadenTage)) {
                 auswahl.zuLaden.put(id, k);
@@ -392,6 +470,102 @@ public class Main {
         return auswahl;
     }
 
+    /**
+     * Holt die Event-ID aus einer Eingabe.
+     *
+     * <p>Akzeptiert sowohl die nackte UUID als auch eine beliebige
+     * sporttech.io-Adresse, denn genau die hat man beim Zuschauen im Browser
+     * in der Adresszeile:
+     *
+     * <pre>
+     * d613f43d-fb1c-4beb-4770-9e684e2e0a8e
+     * https://sporttech.io/events/d613f43d-fb1c-4beb-4770-9e684e2e0a8e/ovs/
+     * https://sporttech.io/events/d613f43d-fb1c-4beb-4770-9e684e2e0a8e/ovs/scoreboards/
+     * https://sporttech.io/events/d613f43d-fb1c-4beb-4770-9e684e2e0a8e/ovs/stages/5/results
+     * </pre>
+     *
+     * @return die ID, oder {@code null} wenn in der Eingabe keine steckt
+     */
+    static String eventIdAus(String eingabe) {
+        if (eingabe == null) {
+            return null;
+        }
+        var treffer = UUID_MUSTER.matcher(eingabe.trim());
+        return treffer.find() ? treffer.group().toLowerCase(Locale.ROOT) : null;
+    }
+
+    /**
+     * Eine UUID in der Schreibweise von sporttech.io.
+     *
+     * <p>Bewusst nicht die strenge RFC-Form: sporttech.io benutzt Gruppen wie
+     * {@code 4770} an der Stelle, an der eine echte UUID Version und Variante
+     * kodiert. Geprüft wird deshalb nur das Muster 8-4-4-4-12.
+     */
+    private static final java.util.regex.Pattern UUID_MUSTER =
+            java.util.regex.Pattern.compile(
+                    "[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}"
+                    + "-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}");
+
+    /**
+     * Entfernt Events, die früher geladen wurden, inzwischen aber unter den
+     * Namensfilter fallen – samt ihrer Wertungen.
+     *
+     * <p>Ohne das hier würden einmal eingesammelte Probeläufe für immer im
+     * Datenbestand bleiben, weil der Filter nur bei der Auswahl greift und
+     * abgeschlossene Events gar nicht mehr angefasst werden.
+     *
+     * <p>Von Hand aufgenommene Events bleiben unangetastet.
+     *
+     * @return wie viele Events entfernt wurden
+     */
+    private static int probelaeufeEntfernen(Konfiguration konfig, EventStatus status,
+                                            Datenbestand bestand) {
+        if (konfig.ignorierenWennName.isEmpty()) {
+            return 0;
+        }
+        List<String> weg = new ArrayList<>();
+        for (Map.Entry<String, EventStatus.Eintrag> e : status.events.entrySet()) {
+            EventStatus.Eintrag eintrag = e.getValue();
+            if (eintrag == null || eintrag.manuell) {
+                continue;
+            }
+            if (nameIgnorieren(eintrag.name, konfig)) {
+                weg.add(e.getKey());
+            }
+        }
+        for (String eventId : weg) {
+            EventStatus.Eintrag eintrag = status.events.remove(eventId);
+            bestand.eventEntfernen(eventId);
+            System.out.println("  entfernt: " + (eintrag == null ? eventId : eintrag.name));
+        }
+        return weg.size();
+    }
+
+    /**
+     * Soll dieses Event wegen seines Namens übersprungen werden?
+     *
+     * <p>Veranstalter richten vor einem Wettkampf Probeläufe ein, um ihre
+     * Kampfrichteranlage zu prüfen. Die benennen sie selbst eindeutig –
+     * „Testwettkampf", „Liga Test", „Landes Einzel Testversion" – und die
+     * Ergebnisse darin sind erfunden.
+     *
+     * <p>Von Hand aufgenommene Events sind davon <b>nicht</b> betroffen: wer
+     * eine Event-ID ausdrücklich einträgt, will sie auch haben.
+     */
+    static boolean nameIgnorieren(String name, Konfiguration konfig) {
+        if (name == null || konfig.ignorierenWennName.isEmpty()) {
+            return false;
+        }
+        String klein = name.toLowerCase(Locale.ROOT);
+        for (String baustein : konfig.ignorierenWennName) {
+            if (baustein != null && !baustein.isBlank()
+                    && klein.contains(baustein.toLowerCase(Locale.ROOT))) {
+                return true;
+            }
+        }
+        return false;
+    }
+
     /** Ist das ein Trampolin-Event? Zwei Felder, doppelt abgesichert. */
     static boolean istTrampolin(EventListe.Event ev) {
         boolean sportPasst = "Trampoline".equalsIgnoreCase(
@@ -401,39 +575,154 @@ public class Main {
         return sportPasst && reglementPasst;
     }
 
-    /** Baut einen Kandidaten aus einem Listeneintrag, inklusive Ausrichterland. */
-    private static Kandidat kandidatAus(String id, EventListe.Event ev, EventListe liste) {
+    /**
+     * Sucht über die Organisationen nach Events, die nicht in der Eventliste
+     * stehen.
+     *
+     * <h2>Warum das nötig ist</h2>
+     *
+     * <p>{@code /api/events/} gibt nur Events mit {@code highlight: true}
+     * heraus. Wettkämpfe ohne dieses Kennzeichen fehlen dort vollständig,
+     * obwohl ihre Ergebnisseiten öffentlich sind – zum Beispiel die
+     * WAGC/JWM-Qualifikation des DTB vom 06.06.2026 mit 51 Starterinnen und
+     * Startern.
+     *
+     * <p>{@code /api/organizations/<id>?fetch_events=true} liefert dagegen
+     * <b>alle</b> Events einer Organisation, auch die nicht gelisteten.
+     *
+     * <h2>Welche Organisationen durchsucht werden</h2>
+     *
+     * <ol>
+     *   <li>alle aus der Eventliste bekannten Organisationen, deren Land
+     *       passt (bei {@code laenderIds: [276]} rund 130 deutsche)</li>
+     *   <li>die Ausrichter aller von Hand aufgenommenen Events – siehe
+     *       {@link EventStatus#ausrichterManuellerEvents()}</li>
+     *   <li>alles aus {@code zusaetzlicheOrganisationen} in der config.json</li>
+     * </ol>
+     *
+     * <p>Punkt 2 ist der wichtige Teil: eine Organisation, die
+     * <b>ausschließlich</b> nicht gelistete Events ausrichtet, steht selbst
+     * in keiner Liste und ist auf keinem anderen Weg zu finden. Trägt man ein
+     * einziges ihrer Events von Hand ein, merkt sich der Crawler den
+     * Ausrichter – und findet ab dann alle weiteren Wettkämpfe dieser
+     * Organisation von selbst.
+     *
+     * @return wie viele bisher unbekannte Events dazugekommen sind
+     */
+    private static int organisationenDurchsuchen(
+            SporttechApi api, Konfiguration konfig, EventStatus status,
+            Map<String, EventListe.Event> alleEvents,
+            Map<String, EventListe.Organisation> alleOrgs) {
+
+        Set<String> zuPruefen = new LinkedHashSet<>();
+
+        for (Map.Entry<String, EventListe.Organisation> e : alleOrgs.entrySet()) {
+            EventListe.Organisation o = e.getValue();
+            if (o == null) {
+                continue;
+            }
+            if (konfig.laenderIds.isEmpty()
+                    || (o.country_id != null && konfig.laenderIds.contains(o.country_id))) {
+                zuPruefen.add(e.getKey());
+            }
+        }
+        zuPruefen.addAll(status.ausrichterManuellerEvents());
+        zuPruefen.addAll(konfig.zusaetzlicheOrganisationen);
+
+        if (zuPruefen.isEmpty()) {
+            return 0;
+        }
+        System.out.println("Organisationen werden nach nicht gelisteten Events "
+                + "durchsucht (" + zuPruefen.size() + ") ...");
+
+        int neue = 0;
+        int fehler = 0;
+
+        for (String orgId : zuPruefen) {
+            try {
+                EventListe antwort = api.organisationEvents(orgId);
+                if (antwort.organization != null) {
+                    // Auch neue Organisationen merken, damit kandidatAus()
+                    // später das Land findet.
+                    for (Map.Entry<String, EventListe.Organisation> o
+                            : antwort.organization.entrySet()) {
+                        alleOrgs.putIfAbsent(o.getKey(), o.getValue());
+                    }
+                }
+                if (antwort.event == null) {
+                    continue;
+                }
+                for (Map.Entry<String, EventListe.Event> e : antwort.event.entrySet()) {
+                    EventListe.Event ev = e.getValue();
+                    // Events aus diesem Abruf tragen kein organizations-Feld -
+                    // der Ausrichter steckt in der Anfrage. Wir tragen ihn
+                    // nach, sonst fiele das Event später durch den Länderfilter.
+                    if (ev != null && ev.organizations == null) {
+                        EventListe.Teilnahme t = new EventListe.Teilnahme();
+                        t.organization_id = orgId;
+                        t.participation = "host";
+                        ev.organizations = List.of(t);
+                    }
+                    if (alleEvents.putIfAbsent(e.getKey(), ev) == null) {
+                        neue++;
+                    }
+                }
+            } catch (IOException | RuntimeException e) {
+                // Eine kaputte Organisation darf den Lauf nicht aufhalten.
+                fehler++;
+            }
+        }
+
+        System.out.println("  nicht gelistete Events gefunden: " + neue
+                + (fehler > 0 ? " (" + fehler + " Organisationen nicht abrufbar)" : ""));
+        return neue;
+    }
+
+    /**
+     * Baut einen Kandidaten aus einem Listeneintrag, inklusive Ausrichter
+     * und dessen Land.
+     *
+     * <p>Das Land steht nicht im Event selbst, sondern nur in der
+     * ausrichtenden Organisation – darum wird {@code fetch_organizations}
+     * gebraucht und die Organisationen werden über alle Abrufe hinweg
+     * gesammelt.
+     */
+    private static Kandidat kandidatAus(EventListe.Event ev,
+                                        Map<String, EventListe.Organisation> orgs) {
         Kandidat k = new Kandidat();
         k.name = Namen.aufraeumen(ev.en_name);
         k.beginn = WertungsExtraktor.datumAusZeitstempel(ev.begin_date);
         k.ende = WertungsExtraktor.datumAusZeitstempel(ev.end_date);
         k.standSporttech = ev.updated_at;
 
-        // Das Land steht nicht im Event, sondern nur in der ausrichtenden
-        // Organisation. Darum wird fetch_organizations=true gebraucht.
-        if (ev.organizations != null && liste.organization != null) {
-            EventListe.Organisation ausrichter = null;
-            EventListe.Organisation ersatz = null;
+        String ausrichterId = null;
+        String ersatzId = null;
+        if (ev.organizations != null) {
             for (EventListe.Teilnahme t : ev.organizations) {
                 if (t == null || t.organization_id == null) {
                     continue;
                 }
-                EventListe.Organisation o = liste.organization.get(t.organization_id);
-                if (o == null) {
-                    continue;
-                }
                 if ("host".equalsIgnoreCase(t.participation)) {
-                    ausrichter = o;
+                    ausrichterId = t.organization_id;
                     break;
                 }
-                if (ersatz == null) {
-                    ersatz = o;
+                if (ersatzId == null) {
+                    ersatzId = t.organization_id;
                 }
             }
-            EventListe.Organisation benutzt = (ausrichter != null) ? ausrichter : ersatz;
-            if (benutzt != null) {
-                k.ausrichter = Namen.aufraeumen(benutzt.en_name);
-                k.land = benutzt.country_id;
+        }
+        // Rückfallebene: wer das Event angelegt hat, ist in allen geprüften
+        // Fällen auch der Ausrichter.
+        if (ausrichterId == null && ersatzId == null) {
+            ersatzId = ev.created_by;
+        }
+        String benutztId = (ausrichterId != null) ? ausrichterId : ersatzId;
+        if (benutztId != null) {
+            k.ausrichterId = benutztId;
+            EventListe.Organisation o = orgs.get(benutztId);
+            if (o != null) {
+                k.ausrichter = Namen.aufraeumen(o.en_name);
+                k.land = o.country_id;
             }
         }
         return k;
@@ -490,6 +779,8 @@ public class Main {
         String beginn;
         String ende;
         String ausrichter;
+        /** ID der ausrichtenden Organisation – schaltet nicht gelistete Events frei. */
+        String ausrichterId;
         Integer land;
         String standSporttech;
         boolean manuell;
@@ -526,9 +817,11 @@ public class Main {
                         // Mehrere IDs dürfen mit Komma getrennt übergeben werden,
                         // damit der GitHub-Workflow eine einzige Eingabe reichen kann.
                         for (String teil : naechstes(args, ++i, s).split("[,;\\s]+")) {
-                            String id = teil.trim();
-                            if (!id.isEmpty()) {
+                            String id = eventIdAus(teil);
+                            if (id != null) {
                                 a.eventIds.add(id);
+                            } else if (!teil.isBlank()) {
+                                System.out.println("Keine Event-ID erkannt in: " + teil);
                             }
                         }
                     }

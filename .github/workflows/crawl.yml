@@ -12,7 +12,7 @@ on:
   workflow_dispatch:
     inputs:
       events:
-        description: 'Zusaetzliche Event-IDs, mit Komma getrennt. Werden dauerhaft aufgenommen, auch wenn sie nicht in Deutschland stattfinden.'
+        description: 'Event-IDs oder komplette sporttech.io-Adressen, mit Komma getrennt. Werden dauerhaft aufgenommen - auch Wettkaempfe im Ausland und solche, die nicht in der Eventliste stehen.'
         required: false
         default: ''
       nurEvents:
@@ -69,10 +69,17 @@ jobs:
         run: |
           ARGS=""
           if [ -n "$EINGABE_EVENTS" ]; then
-            # Nur Zeichen zulassen, die in UUIDs und Trennern vorkommen.
-            SAUBER=$(printf '%s' "$EINGABE_EVENTS" | tr -cd '0-9a-fA-F,;-')
+            # Aus der Eingabe nur die Event-IDs herausziehen. Damit darf man
+            # auch die komplette Adresse aus der Browser-Zeile einfuegen, und
+            # alles andere kann gar nicht erst als Befehl landen.
+            SAUBER=$(printf '%s' "$EINGABE_EVENTS" \
+              | grep -oE '[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}' \
+              | paste -sd, -)
             if [ -n "$SAUBER" ]; then
               ARGS="$ARGS --event $SAUBER"
+              echo "Erkannte Event-IDs: $SAUBER"
+            else
+              echo "In der Eingabe steckt keine Event-ID, sie wird ignoriert."
             fi
           fi
           if [ "$EINGABE_NUR_EVENTS" = "true" ]; then

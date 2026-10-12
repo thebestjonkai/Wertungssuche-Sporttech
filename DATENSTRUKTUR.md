@@ -98,8 +98,76 @@ ergibt das für Trampolin ab dem 01.01.2024:
 | Neuseeland | 56 |
 | Schweden | 29 |
 
-Die 71 deutschen Events reichen von Vereinsmeisterschaften über Landes- und
+Die 71 gelisteten deutschen Events reichen von Vereinsmeisterschaften über Landes- und
 Deutsche Meisterschaften bis zum FIG World Cup Cottbus.
+
+#### ⚠️ Die Liste zeigt nicht alle Events
+
+Dieser Endpunkt gibt **nur Events mit `highlight: true` heraus**. Geprüft: alle
+2 775 Einträge der Antwort haben dieses Kennzeichen, ausnahmslos.
+
+Events ohne das Kennzeichen fehlen in der Liste vollständig – obwohl ihre
+Ergebnisseiten ganz normal öffentlich sind und die API sie auf direkte Nachfrage
+herausgibt. Beispiel:
+
+```
+https://sporttech.io/events/d613f43d-fb1c-4beb-4770-9e684e2e0a8e/ovs/
+```
+
+Das ist die *WAGC / JWM Qualifikation* des DTB vom 06.06.2026 am
+Bundesstützpunkt Stuttgart, mit 51 Starterinnen und Startern und 144
+veröffentlichten Übungen. In der Eventliste: nicht vorhanden. Direkt abgefragt:
+
+```
+GET https://sporttech.io/api/events/d613f43d-fb1c-4beb-4770-9e684e2e0a8e?fetch_organizations=true
+→ { "highlight": false, "sport": "Trampoline", "rules": "TRA FIG 2022", … }
+```
+
+Alle Filterkriterien treffen zu, nur gelistet ist es eben nicht.
+
+Mit Parametern lässt sich das nicht aufheben – `highlight=false`, `all=true`,
+`fetch_all=true` und `organization_id=…` werden samt und sonders ignoriert, die
+Antwort bleibt bei denselben 2 775 Events.
+
+#### Der Weg zu den nicht gelisteten Events: über die Organisation
+
+```
+GET https://sporttech.io/api/organizations/<ORGANISATIONS-ID>?fetch_events=true
+```
+
+Dieser Aufruf liefert **alle** Events einer Organisation, auch die ohne
+`highlight`. Der Parameter `fetch_events` stammt aus der Liste der
+fetch-Parameter im JavaScript-Bundle.
+
+Die Antwort hat dieselbe Form wie die Eventliste (`event` + `organization`), mit
+einem Unterschied: **die Events tragen kein `organizations`-Feld.** Der
+Ausrichter ist ja schon durch die Anfrage bestimmt. Wer das übersieht, verliert
+genau diese Events wieder am Länderfilter. Als Rückfallebene steht im Feld
+`created_by` die anlegende Organisation – in allen geprüften Fällen der
+Ausrichter.
+
+Ergebnis des Scans über alle 133 deutschen Organisationen: **43 Events, die in
+der Eventliste fehlen.**
+
+#### Was dabei *nicht* geht
+
+Eine Organisation, die **ausschließlich** nicht gelistete Events ausrichtet,
+steht selbst in keiner Liste – die Organisationen der Eventliste sind ja nur
+die, die von gelisteten Events referenziert werden. Genau das ist beim DTB der
+Fall: die Organisation `d51afe92-…` („Deutscher Turner-Bund (DTB)") richtet drei
+Events aus, alle drei ohne `highlight`, und taucht deshalb in den 1 048
+Organisationen der Eventliste nicht auf.
+
+Ein Verzeichnis der Organisationen gibt es nicht: `/api/organizations/` ohne ID
+antwortet mit `405`, und eine Suche wie bei den Personen
+(`autocomplete_prefix`) existiert für Organisationen nicht.
+
+**Es bleibt also eine Lücke, die nur von Hand zu schließen ist.** Der Crawler
+macht daraus aber einen einmaligen Handgriff: trägt man eine Event-ID einer
+solchen Organisation ein, merkt er sich deren Ausrichter in `events.json`
+(`ausrichterId`) und durchsucht ihn ab dann in jedem Lauf. Die eine von Hand
+eingetragene WAGC-Qualifikation hat so die EM/JEM-Qualifikation desselben
+Ausrichters von selbst nachgezogen.
 
 #### So erkennt man Trampolin
 
@@ -733,19 +801,20 @@ Gesammelt wird deshalb ein klar abgegrenzter Ausschnitt:
 
 ### Was dabei herauskommt
 
-Stand 11.10.2026, ein vollständiger Lauf über alle 71 deutschen Events:
+Stand 11.10.2026, ein vollständiger Lauf über alle 78 deutschen Events
+(71 gelistete plus 7 über den Organisationsscan gefundene):
 
 | | |
 |---|---|
 | Events geladen | 71, davon 0 mit Fehler |
 | übersprungen (falsche Disziplin) | 454 Durchgänge |
 | übersprungen (nicht veröffentlicht) | 1 044 Übungen |
-| **Wertungszeilen** | **15 258** |
+| **Wertungszeilen** | **15 448** |
 | **Personen** | **3 981** |
 | Zeitraum | 2024: 3 781 · 2025: 4 922 · 2026: 6 555 |
 | Gesamtgröße `docs/data/` | 10,2 MB (davon 0,8 MB Suchindex) |
 | größte Datei | `s.json` mit 1,4 MB |
-| HTTP-Anfragen | 73 (Eventliste, Länderliste, 71 Events) |
+| HTTP-Anfragen | rund 210 (Eventliste, Länderliste, 133 Organisationen, 78 Events) |
 | Laufzeit | rund 2 Minuten bei einer Anfrage pro Sekunde |
 
 Damit funktioniert die ursprünglich geplante, einfache Aufteilung: die Website
