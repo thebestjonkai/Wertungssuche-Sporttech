@@ -111,14 +111,28 @@ public class Main {
         Auswahl auswahl = auswaehlen(api, konfig, status, arg, heute);
 
         if (auswahl.zuLaden.isEmpty()) {
-            System.out.println("Nichts zu tun – alle Events sind aktuell.");
+            if (!arg.nurAbgleich) {
+                System.out.println("Nichts zu tun – alle Events sind aktuell.");
+            }
+            // Auch ohne neue Events abgleichen: die Regeln können sich geändert
+            // haben, dann wird der Altbestand nachgezogen. Der Abgleich ändert
+            // nur den Speicher, geschrieben wird erst weiter unten – deshalb
+            // darf er auch im Trockenlauf laufen.
+            System.out.println();
+            var abgleich = bestand.namenAbgleichen();
+            abgleichMelden(abgleich);
+
             // Trotzdem meta.json und den Suchindex aktualisieren, damit der
             // Zeitstempel stimmt und ein fehlender Index nachgezogen wird.
-            if (!arg.trockenlauf) {
+            if (arg.trockenlauf) {
+                System.out.println();
+                System.out.println("Trockenlauf – es wird nichts geschrieben.");
+            } else {
                 status.aktualisiert = ZEITSTEMPEL.format(Instant.now());
                 status.speichern(statusDatei);
-                // Wurde aufgeräumt, müssen die Wertungsdateien mit raus.
-                if (aufgeraeumt > 0) {
+                // Wurde aufgeräumt oder angeglichen, müssen die Wertungsdateien
+                // mit raus.
+                if (aufgeraeumt > 0 || abgleich.etwasGeaendert()) {
                     bestand.speichern();
                 }
                 Personenindex.schreiben(bestand.alleWertungen(),
@@ -216,7 +230,12 @@ public class Main {
             status.events.put(eventId, neu);
         }
 
-        // --- Schritt 3: schreiben ---
+        // --- Schritt 3: Personen abgleichen und schreiben ---
+        System.out.println();
+        // Der Abgleich läuft auch im Trockenlauf, damit man vorher sieht, was
+        // er anfassen würde.
+        abgleichMelden(bestand.namenAbgleichen());
+
         System.out.println();
         if (arg.trockenlauf) {
             System.out.println("Trockenlauf – es wird nichts geschrieben.");
@@ -284,6 +303,14 @@ public class Main {
                                       LocalDate heute) throws IOException {
 
         Auswahl auswahl = new Auswahl();
+
+        // --nur-abgleich: nichts laden. Die leere Auswahl führt dazu, dass nur
+        // der Personenabgleich läuft und die Dateien neu geschrieben werden.
+        if (arg.nurAbgleich) {
+            System.out.println("--nur-abgleich: es wird nichts geladen, "
+                    + "nur der vorhandene Datenbestand aufgeräumt.");
+            return auswahl;
+        }
 
         // Alle von Hand gewünschten IDs sammeln. In der config.json darf statt
         // der ID auch die komplette sporttech.io-Adresse stehen.
@@ -518,6 +545,55 @@ public class Main {
      *
      * @return wie viele Events entfernt wurden
      */
+    /**
+     * Schreibt ins Protokoll, was der Personenabgleich geändert hat. Die Zeile
+     * mit den kaputten Umlauten ist ein Hinweis, kein Fehler – diese Namen
+     * kommen schon so von sporttech.io, siehe {@link Personenabgleich}.
+     */
+    private static void abgleichMelden(Personenabgleich.Bericht b) {
+        System.out.println("=== Personen abgleichen ===");
+        if (!b.etwasGeaendert()) {
+            System.out.println("  Nichts zu korrigieren.");
+        } else {
+            if (b.namenGeteilt() > 0) {
+                System.out.println("  " + b.namenGeteilt()
+                        + " Zeilen: ganzer Name stand in einem Feld, aufgeteilt");
+            }
+            if (b.vertauschteEvents() > 0) {
+                System.out.println("  " + b.vertauschteEvents()
+                        + " Wettkampf/Wettkaempfe waren komplett verdreht eingetragen"
+                        + " (Vorname im Nachnamenfeld) und wurden ganz gedreht");
+            }
+            if (b.namenGedreht() > 0) {
+                System.out.println("  " + b.namenGedreht()
+                        + " Zeilen: Vor- und Nachname waren vertauscht, gedreht");
+            }
+            if (b.schreibweiseAngeglichen() > 0) {
+                System.out.println("  " + b.schreibweiseAngeglichen()
+                        + " Zeilen: Schreibweise an die übrigen Wettkämpfe angeglichen");
+            }
+            if (b.jahrgangErgaenzt() > 0) {
+                System.out.println("  " + b.jahrgangErgaenzt()
+                        + " Zeilen: fehlender Jahrgang aus anderen Wettkämpfen ergänzt");
+            }
+            if (b.jahrgangKorrigiert() > 0) {
+                System.out.println("  " + b.jahrgangKorrigiert()
+                        + " Zeilen: widersprüchlicher Jahrgang vereinheitlicht");
+            }
+            System.out.println("  Personen: " + b.personenVorher() + " -> "
+                    + b.personenNachher()
+                    + " (" + (b.personenVorher() - b.personenNachher())
+                    + " Doppelungen zusammengefasst)");
+        }
+        if (b.namenMitErsatzzeichen() > 0) {
+            System.out.println("  Hinweis: " + b.namenMitErsatzzeichen()
+                    + " Namen enthalten ein Ersatzzeichen (z. B. \"F"
+                    + Personenabgleich.ERSATZZEICHEN + "rster\")."
+                    + " Die kommen schon kaputt von sporttech.io"
+                    + " und bleiben unverändert.");
+        }
+    }
+
     private static int probelaeufeEntfernen(Konfiguration konfig, EventStatus status,
                                             Datenbestand bestand) {
         if (konfig.ignorierenWennName.isEmpty()) {
@@ -801,6 +877,7 @@ public class Main {
         Integer maxNeueEvents;
         final List<String> eventIds = new ArrayList<>();
         boolean nurEvents;
+        boolean nurAbgleich;
         boolean trockenlauf;
         boolean hilfe;
 
@@ -826,6 +903,7 @@ public class Main {
                         }
                     }
                     case "--nur-events" -> a.nurEvents = true;
+                    case "--nur-abgleich" -> a.nurAbgleich = true;
                     case "--trockenlauf" -> a.trockenlauf = true;
                     case "--hilfe", "-h", "--help" -> a.hilfe = true;
                     default -> {
@@ -864,6 +942,11 @@ public class Main {
                                       Folgeläufen automatisch mitlaufen.
                   --nur-events        nur die mit --event angegebenen Events laden,
                                       die Eventliste wird gar nicht abgerufen
+                  --nur-abgleich      nichts laden, nur den vorhandenen
+                                      Datenbestand aufräumen: vertauschte
+                                      Namensfelder, Namen in einem Feld,
+                                      fehlende und widersprüchliche Jahrgänge.
+                                      Dafür braucht es kein Netz.
                   --trockenlauf       alles ausrechnen, aber nichts schreiben
                   --hilfe             diese Übersicht
                 """);

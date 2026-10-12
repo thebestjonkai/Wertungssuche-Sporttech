@@ -184,6 +184,39 @@ public class Datenbestand {
         Files.writeString(datei, gson.toJson(meta) + "\n", StandardCharsets.UTF_8);
     }
 
+    /**
+     * Räumt die Personenangaben auf: vertauschte Namensfelder, ganze Namen in
+     * einem Feld, fehlende und widersprüchliche Jahrgänge. Warum das nötig ist
+     * und nach welchen Regeln zusammengeführt wird, steht in
+     * {@link Personenabgleich}.
+     *
+     * <p>Muss <b>vor</b> {@link #speichern()} und vor dem Personenindex
+     * laufen. Weil sich dabei Nachnamen ändern, gehören manche Wertungen
+     * danach in eine andere Datei – die Aufteilung wird deshalb komplett neu
+     * gemacht. Die Schlüsselliste zur Duplikaterkennung wird mit neu
+     * aufgebaut, weil {@link Wertung#schluessel()} den Namen enthält.
+     *
+     * @return was geändert wurde, für das Protokoll
+     */
+    public Personenabgleich.Bericht namenAbgleichen() {
+        List<Wertung> alle = alleWertungen();
+        Personenabgleich.Bericht bericht = Personenabgleich.abgleichen(alle);
+
+        dateien.clear();
+        schluessel.clear();
+        for (Wertung w : alle) {
+            // Nach dem Angleichen können zwei Zeilen denselben Schlüssel haben:
+            // etwa wenn dasselbe Event eine Person zweimal mit unterschiedlicher
+            // Schreibweise gemeldet hat. Dann ist eine davon ein Duplikat.
+            if (!schluessel.add(w.schluessel())) {
+                duplikate++;
+                continue;
+            }
+            dateien.computeIfAbsent(w.datei(), k -> new ArrayList<>()).add(w);
+        }
+        return bericht;
+    }
+
     /** Alle Dateinamen, die es geben kann: a–z plus die Sammeldatei. */
     static List<String> moeglicheDateinamen() {
         List<String> namen = new ArrayList<>(27);
