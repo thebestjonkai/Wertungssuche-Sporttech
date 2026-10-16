@@ -1,5 +1,5 @@
 {
-  "aktualisiert": "2026-10-12T19:06:07Z",
+  "aktualisiert": "2026-10-16T07:52:49Z",
   "events": {
     "03afebf7-8a57-4ba2-4940-72a51e677747": {
       "name": "25. Barmstedt Cup 2026",
@@ -103,9 +103,22 @@
       "land": 276,
       "status": "offen",
       "manuell": false,
-      "zuletztGeladen": "2026-10-12",
+      "zuletztGeladen": "2026-10-16",
       "standSporttech": "2026-10-01T21:13:01.799196Z",
       "wertungen": 214
+    },
+    "1d53811b-c3b5-4bfc-78d9-751d8bf78f9c": {
+      "name": "Fig World Cup 2026 Cottbus",
+      "beginn": "2026-10-17",
+      "ende": "2026-10-18",
+      "ausrichter": "Cottbus OC",
+      "ausrichterId": "08236a11-0d49-4a49-4e88-da5671dbafe5",
+      "land": 276,
+      "status": "offen",
+      "manuell": false,
+      "zuletztGeladen": "2026-10-16",
+      "standSporttech": "2026-10-15T20:01:14.409837Z",
+      "wertungen": 0
     },
     "208965ec-548d-481d-447a-84205d215608": {
       "name": "Offene Kölner Synchronwettkämpfe 2026",
@@ -186,7 +199,7 @@
       "land": 276,
       "status": "offen",
       "manuell": false,
-      "zuletztGeladen": "2026-10-12",
+      "zuletztGeladen": "2026-10-16",
       "standSporttech": "2026-09-14T06:37:00.804917Z",
       "wertungen": 290
     },
@@ -309,7 +322,7 @@
       "land": 276,
       "status": "offen",
       "manuell": false,
-      "zuletztGeladen": "2026-10-12",
+      "zuletztGeladen": "2026-10-16",
       "standSporttech": "2026-10-01T12:26:44.837339Z",
       "wertungen": 0
     },
@@ -499,9 +512,13 @@
       "name": "53rd International Trampoline Friendship Cup 2026",
       "beginn": "2026-10-08",
       "ende": "2026-10-10",
+      "ausrichter": "Česká gymnastická federace",
+      "ausrichterId": "62256efd-add9-4662-5e9e-7d54f54c25bf",
+      "land": 203,
       "status": "offen",
       "manuell": true,
-      "zuletztGeladen": "2026-10-12",
+      "zuletztGeladen": "2026-10-16",
+      "standSporttech": "2026-09-28T18:08:18.811451Z",
       "wertungen": 617
     },
     "80c26a2a-6a39-4b12-799d-0fac6ee8e9f1": {
@@ -706,7 +723,7 @@
       "land": 276,
       "status": "offen",
       "manuell": false,
-      "zuletztGeladen": "2026-10-12",
+      "zuletztGeladen": "2026-10-16",
       "standSporttech": "2026-10-10T09:20:15.37986Z",
       "wertungen": 0
     },
@@ -719,7 +736,7 @@
       "land": 276,
       "status": "offen",
       "manuell": false,
-      "zuletztGeladen": "2026-10-12",
+      "zuletztGeladen": "2026-10-16",
       "standSporttech": "2026-09-14T06:37:16.970512Z",
       "wertungen": 0
     },
@@ -901,7 +918,7 @@
       "land": 276,
       "status": "offen",
       "manuell": false,
-      "zuletztGeladen": "2026-10-12",
+      "zuletztGeladen": "2026-10-16",
       "standSporttech": "2026-10-09T11:40:06.725771Z",
       "wertungen": 0
     },
@@ -926,7 +943,7 @@
       "land": 276,
       "status": "offen",
       "manuell": false,
-      "zuletztGeladen": "2026-10-12",
+      "zuletztGeladen": "2026-10-16",
       "standSporttech": "2026-07-07T17:15:35.123043Z",
       "wertungen": 0
     },
