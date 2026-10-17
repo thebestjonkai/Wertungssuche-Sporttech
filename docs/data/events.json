@@ -1,5 +1,5 @@
 {
-  "aktualisiert": "2026-10-16T07:52:49Z",
+  "aktualisiert": "2026-10-17T07:30:45Z",
   "events": {
     "03afebf7-8a57-4ba2-4940-72a51e677747": {
       "name": "25. Barmstedt Cup 2026",
@@ -103,7 +103,7 @@
       "land": 276,
       "status": "offen",
       "manuell": false,
-      "zuletztGeladen": "2026-10-16",
+      "zuletztGeladen": "2026-10-17",
       "standSporttech": "2026-10-01T21:13:01.799196Z",
       "wertungen": 214
     },
@@ -116,7 +116,7 @@
       "land": 276,
       "status": "offen",
       "manuell": false,
-      "zuletztGeladen": "2026-10-16",
+      "zuletztGeladen": "2026-10-17",
       "standSporttech": "2026-10-15T20:01:14.409837Z",
       "wertungen": 0
     },
@@ -199,7 +199,7 @@
       "land": 276,
       "status": "offen",
       "manuell": false,
-      "zuletztGeladen": "2026-10-16",
+      "zuletztGeladen": "2026-10-17",
       "standSporttech": "2026-09-14T06:37:00.804917Z",
       "wertungen": 290
     },
@@ -322,7 +322,7 @@
       "land": 276,
       "status": "offen",
       "manuell": false,
-      "zuletztGeladen": "2026-10-16",
+      "zuletztGeladen": "2026-10-17",
       "standSporttech": "2026-10-01T12:26:44.837339Z",
       "wertungen": 0
     },
@@ -517,7 +517,7 @@
       "land": 203,
       "status": "offen",
       "manuell": true,
-      "zuletztGeladen": "2026-10-16",
+      "zuletztGeladen": "2026-10-17",
       "standSporttech": "2026-09-28T18:08:18.811451Z",
       "wertungen": 617
     },
@@ -723,7 +723,7 @@
       "land": 276,
       "status": "offen",
       "manuell": false,
-      "zuletztGeladen": "2026-10-16",
+      "zuletztGeladen": "2026-10-17",
       "standSporttech": "2026-10-10T09:20:15.37986Z",
       "wertungen": 0
     },
@@ -736,7 +736,7 @@
       "land": 276,
       "status": "offen",
       "manuell": false,
-      "zuletztGeladen": "2026-10-16",
+      "zuletztGeladen": "2026-10-17",
       "standSporttech": "2026-09-14T06:37:16.970512Z",
       "wertungen": 0
     },
@@ -918,7 +918,7 @@
       "land": 276,
       "status": "offen",
       "manuell": false,
-      "zuletztGeladen": "2026-10-16",
+      "zuletztGeladen": "2026-10-17",
       "standSporttech": "2026-10-09T11:40:06.725771Z",
       "wertungen": 0
     },
@@ -943,7 +943,7 @@
       "land": 276,
       "status": "offen",
       "manuell": false,
-      "zuletztGeladen": "2026-10-16",
+      "zuletztGeladen": "2026-10-17",
       "standSporttech": "2026-07-07T17:15:35.123043Z",
       "wertungen": 0
     },
