@@ -25,10 +25,10 @@
       "AZE"
     ],
     "datei": "a",
-    "anzahl": 13,
-    "wettkaempfe": 5,
-    "bestGesamt": 58.26,
-    "letzterWettkampf": "2026-07-11"
+    "anzahl": 15,
+    "wettkaempfe": 6,
+    "bestGesamt": 58.94,
+    "letzterWettkampf": "2026-10-17"
   },
   {
     "vorname": "Tristan",
@@ -56,24 +56,24 @@
       "NED"
     ],
     "datei": "a",
-    "anzahl": 9,
-    "wettkaempfe": 3,
-    "bestGesamt": 58.54,
-    "letzterWettkampf": "2026-10-10"
+    "anzahl": 11,
+    "wettkaempfe": 4,
+    "bestGesamt": 59.32,
+    "letzterWettkampf": "2026-10-17"
   },
   {
     "vorname": "Diogo",
     "nachname": "ABREU",
-    "jahrgang": null,
+    "jahrgang": 1993,
     "vereine": [],
     "nationen": [
       "POR"
     ],
     "datei": "a",
-    "anzahl": 3,
-    "wettkaempfe": 1,
-    "bestGesamt": 58.59,
-    "letzterWettkampf": "2024-03-23"
+    "anzahl": 5,
+    "wettkaempfe": 2,
+    "bestGesamt": 59.51,
+    "letzterWettkampf": "2026-10-17"
   },
   {
     "vorname": "Elias",
@@ -570,10 +570,10 @@
       "POR"
     ],
     "datei": "a",
-    "anzahl": 8,
-    "wettkaempfe": 2,
-    "bestGesamt": 64.55,
-    "letzterWettkampf": "2026-06-27"
+    "anzahl": 10,
+    "wettkaempfe": 3,
+    "bestGesamt": 64.75,
+    "letzterWettkampf": "2026-10-17"
   },
   {
     "vorname": "Luisa",
@@ -1179,10 +1179,10 @@
       "POL"
     ],
     "datei": "a",
-    "anzahl": 7,
-    "wettkaempfe": 3,
-    "bestGesamt": 52.17,
-    "letzterWettkampf": "2026-06-26"
+    "anzahl": 9,
+    "wettkaempfe": 4,
+    "bestGesamt": 53.25,
+    "letzterWettkampf": "2026-10-17"
   },
   {
     "vorname": "Duarte",
@@ -2348,10 +2348,10 @@
       "CAN"
     ],
     "datei": "b",
-    "anzahl": 2,
-    "wettkaempfe": 1,
-    "bestGesamt": 55.93,
-    "letzterWettkampf": "2026-06-26"
+    "anzahl": 4,
+    "wettkaempfe": 2,
+    "bestGesamt": 56.4,
+    "letzterWettkampf": "2026-10-17"
   },
   {
     "vorname": "Alissa",
@@ -3203,10 +3203,10 @@
       "BEL"
     ],
     "datei": "b",
-    "anzahl": 5,
-    "wettkaempfe": 2,
+    "anzahl": 7,
+    "wettkaempfe": 3,
     "bestGesamt": 58.02,
-    "letzterWettkampf": "2026-06-26"
+    "letzterWettkampf": "2026-10-17"
   },
   {
     "vorname": "Vilhelm",
@@ -4446,17 +4446,19 @@
   },
   {
     "vorname": "Janis Luca",
-    "nachname": "Braun",
+    "nachname": "BRAUN",
     "jahrgang": 2007,
     "vereine": [
       "TV Nellingen e.V."
     ],
-    "nationen": [],
+    "nationen": [
+      "GER"
+    ],
     "datei": "b",
-    "anzahl": 3,
-    "wettkaempfe": 1,
-    "bestGesamt": 54.465,
-    "letzterWettkampf": "2025-10-05"
+    "anzahl": 5,
+    "wettkaempfe": 2,
+    "bestGesamt": 57.04,
+    "letzterWettkampf": "2026-10-17"
   },
   {
     "vorname": "Janis-Luca",
@@ -5769,6 +5771,20 @@
     "letzterWettkampf": "2026-09-27"
   },
   {
+    "vorname": "Yunzhu",
+    "nachname": "CAO",
+    "jahrgang": 2003,
+    "vereine": [],
+    "nationen": [
+      "CHN"
+    ],
+    "datei": "c",
+    "anzahl": 2,
+    "wettkaempfe": 1,
+    "bestGesamt": 56.02,
+    "letzterWettkampf": "2026-10-17"
+  },
+  {
     "vorname": "Elias",
     "nachname": "CARBALLO",
     "jahrgang": 2007,
@@ -6614,10 +6630,10 @@
       "POR"
     ],
     "datei": "c",
-    "anzahl": 5,
-    "wettkaempfe": 2,
+    "anzahl": 7,
+    "wettkaempfe": 3,
     "bestGesamt": 55.53,
-    "letzterWettkampf": "2026-06-27"
+    "letzterWettkampf": "2026-10-17"
   },
   {
     "vorname": "Sofia",
@@ -7014,16 +7030,16 @@
   {
     "vorname": "Emirhan",
     "nachname": "DANIS",
-    "jahrgang": null,
+    "jahrgang": 2005,
     "vereine": [],
     "nationen": [
       "TUR"
     ],
     "datei": "d",
-    "anzahl": 2,
-    "wettkaempfe": 1,
-    "bestGesamt": 17.38,
-    "letzterWettkampf": "2024-03-22"
+    "anzahl": 4,
+    "wettkaempfe": 2,
+    "bestGesamt": 54.05,
+    "letzterWettkampf": "2026-10-17"
   },
   {
     "vorname": "Tina",
@@ -9049,10 +9065,10 @@
       "GER"
     ],
     "datei": "e",
-    "anzahl": 4,
-    "wettkaempfe": 2,
+    "anzahl": 6,
+    "wettkaempfe": 3,
     "bestGesamt": 52.9,
-    "letzterWettkampf": "2026-06-26"
+    "letzterWettkampf": "2026-10-17"
   },
   {
     "vorname": "Aurelia",
@@ -9452,6 +9468,20 @@
     "letzterWettkampf": "2026-06-27"
   },
   {
+    "vorname": "Havva Esin",
+    "nachname": "ERGUN",
+    "jahrgang": 2007,
+    "vereine": [],
+    "nationen": [
+      "TUR"
+    ],
+    "datei": "e",
+    "anzahl": 2,
+    "wettkaempfe": 1,
+    "bestGesamt": 53.42,
+    "letzterWettkampf": "2026-10-17"
+  },
+  {
     "vorname": "Simon",
     "nachname": "Erhart",
     "jahrgang": 2010,
@@ -9576,10 +9606,10 @@
       "TUR"
     ],
     "datei": "e",
-    "anzahl": 6,
-    "wettkaempfe": 3,
+    "anzahl": 8,
+    "wettkaempfe": 4,
     "bestGesamt": 53.35,
-    "letzterWettkampf": "2026-06-26"
+    "letzterWettkampf": "2026-10-17"
   },
   {
     "vorname": "Anoek",
@@ -10162,16 +10192,16 @@
   {
     "vorname": "Santiago",
     "nachname": "FERRARI",
-    "jahrgang": null,
+    "jahrgang": 2003,
     "vereine": [],
     "nationen": [
       "ARG"
     ],
     "datei": "f",
-    "anzahl": 2,
-    "wettkaempfe": 1,
-    "bestGesamt": 55.55,
-    "letzterWettkampf": "2024-03-22"
+    "anzahl": 4,
+    "wettkaempfe": 2,
+    "bestGesamt": 60.2,
+    "letzterWettkampf": "2026-10-17"
   },
   {
     "vorname": "Arthur",
@@ -10238,10 +10268,10 @@
       "POR"
     ],
     "datei": "f",
-    "anzahl": 7,
-    "wettkaempfe": 2,
-    "bestGesamt": 61.42,
-    "letzterWettkampf": "2026-06-27"
+    "anzahl": 9,
+    "wettkaempfe": 3,
+    "bestGesamt": 61.57,
+    "letzterWettkampf": "2026-10-17"
   },
   {
     "vorname": "Eloise",
@@ -11155,10 +11185,10 @@
       "AUT"
     ],
     "datei": "f",
-    "anzahl": 4,
-    "wettkaempfe": 2,
-    "bestGesamt": 53.73,
-    "letzterWettkampf": "2026-06-26"
+    "anzahl": 6,
+    "wettkaempfe": 3,
+    "bestGesamt": 55.55,
+    "letzterWettkampf": "2026-10-17"
   },
   {
     "vorname": "Fleur",
@@ -11649,12 +11679,14 @@
       "SC Cottbus Turnen e.V",
       "GER, SC Cottbus Turnen e.V."
     ],
-    "nationen": [],
+    "nationen": [
+      "GER"
+    ],
     "datei": "g",
-    "anzahl": 25,
-    "wettkaempfe": 8,
+    "anzahl": 27,
+    "wettkaempfe": 9,
     "bestGesamt": 58.76,
-    "letzterWettkampf": "2026-09-27"
+    "letzterWettkampf": "2026-10-17"
   },
   {
     "vorname": "Ileana",
@@ -15485,16 +15517,16 @@
   {
     "vorname": "Angel",
     "nachname": "HERNANDEZ",
-    "jahrgang": null,
+    "jahrgang": 1995,
     "vereine": [],
     "nationen": [
       "COL"
     ],
     "datei": "h",
-    "anzahl": 3,
-    "wettkaempfe": 1,
-    "bestGesamt": 58.19,
-    "letzterWettkampf": "2024-03-23"
+    "anzahl": 5,
+    "wettkaempfe": 2,
+    "bestGesamt": 60.03,
+    "letzterWettkampf": "2026-10-17"
   },
   {
     "vorname": "Ava",
@@ -15656,10 +15688,10 @@
       "CZE"
     ],
     "datei": "h",
-    "anzahl": 8,
-    "wettkaempfe": 4,
+    "anzahl": 10,
+    "wettkaempfe": 5,
     "bestGesamt": 53.08,
-    "letzterWettkampf": "2026-10-09"
+    "letzterWettkampf": "2026-10-17"
   },
   {
     "vorname": "Carolin",
@@ -16400,16 +16432,16 @@
   {
     "vorname": "Georg",
     "nachname": "HOPFGARTNER",
-    "jahrgang": null,
+    "jahrgang": 2002,
     "vereine": [],
     "nationen": [
       "AUT"
     ],
     "datei": "h",
-    "anzahl": 4,
-    "wettkaempfe": 2,
-    "bestGesamt": 31.9,
-    "letzterWettkampf": "2025-09-20"
+    "anzahl": 6,
+    "wettkaempfe": 3,
+    "bestGesamt": 56.15,
+    "letzterWettkampf": "2026-10-17"
   },
   {
     "vorname": "Annika",
@@ -16676,10 +16708,24 @@
       "CZE"
     ],
     "datei": "h",
-    "anzahl": 15,
-    "wettkaempfe": 6,
+    "anzahl": 17,
+    "wettkaempfe": 7,
     "bestGesamt": 51.81,
-    "letzterWettkampf": "2026-10-10"
+    "letzterWettkampf": "2026-10-17"
+  },
+  {
+    "vorname": "Keying",
+    "nachname": "HU",
+    "jahrgang": 2009,
+    "vereine": [],
+    "nationen": [
+      "CHN"
+    ],
+    "datei": "h",
+    "anzahl": 2,
+    "wettkaempfe": 1,
+    "bestGesamt": 57.42,
+    "letzterWettkampf": "2026-10-17"
   },
   {
     "vorname": "Yicheng",
@@ -18051,10 +18097,10 @@
       "CZE"
     ],
     "datei": "j",
-    "anzahl": 11,
-    "wettkaempfe": 4,
+    "anzahl": 13,
+    "wettkaempfe": 5,
     "bestGesamt": 55.51,
-    "letzterWettkampf": "2026-10-10"
+    "letzterWettkampf": "2026-10-17"
   },
   {
     "vorname": "Alma",
@@ -19113,6 +19159,20 @@
     "wettkaempfe": 5,
     "bestGesamt": 37.75,
     "letzterWettkampf": "2026-07-04"
+  },
+  {
+    "vorname": "Daiki",
+    "nachname": "KISHI",
+    "jahrgang": 1994,
+    "vereine": [],
+    "nationen": [
+      "JPN"
+    ],
+    "datei": "k",
+    "anzahl": 2,
+    "wettkaempfe": 1,
+    "bestGesamt": 62.29,
+    "letzterWettkampf": "2026-10-17"
   },
   {
     "vorname": "Konrad",
@@ -20853,10 +20913,10 @@
       "CZE"
     ],
     "datei": "k",
-    "anzahl": 15,
-    "wettkaempfe": 6,
+    "anzahl": 17,
+    "wettkaempfe": 7,
     "bestGesamt": 55.45,
-    "letzterWettkampf": "2026-10-10"
+    "letzterWettkampf": "2026-10-17"
   },
   {
     "vorname": "Frieda",
@@ -21028,10 +21088,10 @@
       "CZE"
     ],
     "datei": "k",
-    "anzahl": 11,
-    "wettkaempfe": 4,
+    "anzahl": 13,
+    "wettkaempfe": 5,
     "bestGesamt": 60.27,
-    "letzterWettkampf": "2026-10-10"
+    "letzterWettkampf": "2026-10-17"
   },
   {
     "vorname": "Maria",
@@ -22009,24 +22069,24 @@
       "GER"
     ],
     "datei": "l",
-    "anzahl": 8,
-    "wettkaempfe": 3,
-    "bestGesamt": 59.67,
-    "letzterWettkampf": "2026-09-27"
+    "anzahl": 10,
+    "wettkaempfe": 4,
+    "bestGesamt": 60.43,
+    "letzterWettkampf": "2026-10-17"
   },
   {
     "vorname": "Marco",
     "nachname": "LAVINO",
-    "jahrgang": null,
+    "jahrgang": 2001,
     "vereine": [],
     "nationen": [
       "ITA"
     ],
     "datei": "l",
-    "anzahl": 2,
-    "wettkaempfe": 1,
-    "bestGesamt": 17.52,
-    "letzterWettkampf": "2024-03-22"
+    "anzahl": 4,
+    "wettkaempfe": 2,
+    "bestGesamt": 45.54,
+    "letzterWettkampf": "2026-10-17"
   },
   {
     "vorname": "Iana",
@@ -22708,6 +22768,20 @@
     "letzterWettkampf": "2026-03-07"
   },
   {
+    "vorname": "Yuming",
+    "nachname": "LI",
+    "jahrgang": 2005,
+    "vereine": [],
+    "nationen": [
+      "CHN"
+    ],
+    "datei": "l",
+    "anzahl": 2,
+    "wettkaempfe": 1,
+    "bestGesamt": 62.35,
+    "letzterWettkampf": "2026-10-17"
+  },
+  {
     "vorname": "Vivien",
     "nachname": "Lichtenstern",
     "jahrgang": 2013,
@@ -22891,10 +22965,10 @@
       "CHN"
     ],
     "datei": "l",
-    "anzahl": 3,
-    "wettkaempfe": 1,
-    "bestGesamt": 61.32,
-    "letzterWettkampf": "2026-06-27"
+    "anzahl": 5,
+    "wettkaempfe": 2,
+    "bestGesamt": 61.78,
+    "letzterWettkampf": "2026-10-17"
   },
   {
     "vorname": "Livia",
@@ -23234,6 +23308,20 @@
     "wettkaempfe": 2,
     "bestGesamt": 36.8,
     "letzterWettkampf": "2026-06-21"
+  },
+  {
+    "vorname": "Noa",
+    "nachname": "LOFTY-EATON",
+    "jahrgang": 2007,
+    "vereine": [],
+    "nationen": [
+      "NAM"
+    ],
+    "datei": "l",
+    "anzahl": 2,
+    "wettkaempfe": 1,
+    "bestGesamt": 18.63,
+    "letzterWettkampf": "2026-10-17"
   },
   {
     "vorname": "Sara",
@@ -23902,10 +23990,10 @@
       "AZE"
     ],
     "datei": "m",
-    "anzahl": 12,
-    "wettkaempfe": 3,
-    "bestGesamt": 61.01,
-    "letzterWettkampf": "2026-07-11"
+    "anzahl": 14,
+    "wettkaempfe": 4,
+    "bestGesamt": 62.79,
+    "letzterWettkampf": "2026-10-17"
   },
   {
     "vorname": "Seljan",
@@ -23918,10 +24006,10 @@
       "AZE"
     ],
     "datei": "m",
-    "anzahl": 12,
-    "wettkaempfe": 4,
+    "anzahl": 14,
+    "wettkaempfe": 5,
     "bestGesamt": 57.19,
-    "letzterWettkampf": "2026-07-11"
+    "letzterWettkampf": "2026-10-17"
   },
   {
     "vorname": "Jascha",
@@ -24064,6 +24152,20 @@
     "letzterWettkampf": "2024-03-22"
   },
   {
+    "vorname": "Batuhan Meric",
+    "nachname": "MAMUR",
+    "jahrgang": 2009,
+    "vereine": [],
+    "nationen": [
+      "TUR"
+    ],
+    "datei": "m",
+    "anzahl": 2,
+    "wettkaempfe": 1,
+    "bestGesamt": 55.74,
+    "letzterWettkampf": "2026-10-17"
+  },
+  {
     "vorname": "Vanessa",
     "nachname": "Mancevic",
     "jahrgang": 2013,
@@ -24196,16 +24298,16 @@
   {
     "vorname": "Catarina",
     "nachname": "MARIANITO NUNES",
-    "jahrgang": null,
+    "jahrgang": 2000,
     "vereine": [],
     "nationen": [
       "POR"
     ],
     "datei": "m",
-    "anzahl": 2,
-    "wettkaempfe": 1,
-    "bestGesamt": 51.75,
-    "letzterWettkampf": "2024-03-22"
+    "anzahl": 4,
+    "wettkaempfe": 2,
+    "bestGesamt": 52.25,
+    "letzterWettkampf": "2026-10-17"
   },
   {
     "vorname": "Hugo",
@@ -24441,10 +24543,10 @@
       "ESP"
     ],
     "datei": "m",
-    "anzahl": 4,
-    "wettkaempfe": 2,
-    "bestGesamt": 58.04,
-    "letzterWettkampf": "2026-06-26"
+    "anzahl": 6,
+    "wettkaempfe": 3,
+    "bestGesamt": 61.42,
+    "letzterWettkampf": "2026-10-17"
   },
   {
     "vorname": "Pablo",
@@ -24756,6 +24858,20 @@
     "wettkaempfe": 1,
     "bestGesamt": 37.755,
     "letzterWettkampf": "2026-04-25"
+  },
+  {
+    "vorname": "Yusei",
+    "nachname": "MATSUMOTO",
+    "jahrgang": 2006,
+    "vereine": [],
+    "nationen": [
+      "JPN"
+    ],
+    "datei": "m",
+    "anzahl": 2,
+    "wettkaempfe": 1,
+    "bestGesamt": 63.76,
+    "letzterWettkampf": "2026-10-17"
   },
   {
     "vorname": "Anna",
@@ -25798,6 +25914,20 @@
     "letzterWettkampf": "2026-09-26"
   },
   {
+    "vorname": "Sophie",
+    "nachname": "MILLICAN",
+    "jahrgang": 2009,
+    "vereine": [],
+    "nationen": [
+      "GBR"
+    ],
+    "datei": "m",
+    "anzahl": 2,
+    "wettkaempfe": 1,
+    "bestGesamt": 53.4,
+    "letzterWettkampf": "2026-10-17"
+  },
+  {
     "vorname": "Malea",
     "nachname": "Minacapilli",
     "jahrgang": 2015,
@@ -26004,16 +26134,16 @@
   {
     "vorname": "Maya",
     "nachname": "MOELLER",
-    "jahrgang": null,
+    "jahrgang": 2007,
     "vereine": [],
     "nationen": [
       "GER"
     ],
     "datei": "m",
-    "anzahl": 2,
-    "wettkaempfe": 1,
-    "bestGesamt": 51.15,
-    "letzterWettkampf": "2024-03-22"
+    "anzahl": 4,
+    "wettkaempfe": 2,
+    "bestGesamt": 52.9,
+    "letzterWettkampf": "2026-10-17"
   },
   {
     "vorname": "Ida",
@@ -26112,10 +26242,10 @@
       "NED"
     ],
     "datei": "m",
-    "anzahl": 10,
-    "wettkaempfe": 3,
+    "anzahl": 12,
+    "wettkaempfe": 4,
     "bestGesamt": 58.5,
-    "letzterWettkampf": "2026-07-11"
+    "letzterWettkampf": "2026-10-17"
   },
   {
     "vorname": "Lena",
@@ -28971,17 +29101,19 @@
   },
   {
     "vorname": "Stanislaw",
-    "nachname": "Palecki",
+    "nachname": "PALECKI",
     "jahrgang": 2007,
     "vereine": [
       "POL, AZS Warszawa"
     ],
-    "nationen": [],
+    "nationen": [
+      "POL"
+    ],
     "datei": "p",
-    "anzahl": 2,
-    "wettkaempfe": 1,
+    "anzahl": 4,
+    "wettkaempfe": 2,
     "bestGesamt": 51.56,
-    "letzterWettkampf": "2024-10-26"
+    "letzterWettkampf": "2026-10-17"
   },
   {
     "vorname": "Stanisław",
@@ -29212,10 +29344,10 @@
       "ITA"
     ],
     "datei": "p",
-    "anzahl": 5,
-    "wettkaempfe": 2,
+    "anzahl": 7,
+    "wettkaempfe": 3,
     "bestGesamt": 60.44,
-    "letzterWettkampf": "2026-06-27"
+    "letzterWettkampf": "2026-10-17"
   },
   {
     "vorname": "Diana",
@@ -29732,10 +29864,10 @@
       "GBR"
     ],
     "datei": "p",
-    "anzahl": 10,
-    "wettkaempfe": 3,
-    "bestGesamt": 61.39,
-    "letzterWettkampf": "2026-06-27"
+    "anzahl": 12,
+    "wettkaempfe": 4,
+    "bestGesamt": 62.64,
+    "letzterWettkampf": "2026-10-17"
   },
   {
     "vorname": "Sina",
@@ -30804,10 +30936,10 @@
       "CZE"
     ],
     "datei": "p",
-    "anzahl": 10,
-    "wettkaempfe": 4,
+    "anzahl": 12,
+    "wettkaempfe": 5,
     "bestGesamt": 52.26,
-    "letzterWettkampf": "2026-10-09"
+    "letzterWettkampf": "2026-10-17"
   },
   {
     "vorname": "Cintia",
@@ -31024,6 +31156,20 @@
     "wettkaempfe": 2,
     "bestGesamt": 39.07,
     "letzterWettkampf": "2025-10-05"
+  },
+  {
+    "vorname": "Noa",
+    "nachname": "PUENTE-DODD",
+    "jahrgang": 2002,
+    "vereine": [],
+    "nationen": [
+      "ESP"
+    ],
+    "datei": "p",
+    "anzahl": 2,
+    "wettkaempfe": 1,
+    "bestGesamt": 49.36,
+    "letzterWettkampf": "2026-10-17"
   },
   {
     "vorname": "Lea",
@@ -31321,10 +31467,10 @@
       "ITA"
     ],
     "datei": "r",
-    "anzahl": 2,
-    "wettkaempfe": 1,
-    "bestGesamt": 30.96,
-    "letzterWettkampf": "2026-06-26"
+    "anzahl": 4,
+    "wettkaempfe": 2,
+    "bestGesamt": 53.61,
+    "letzterWettkampf": "2026-10-17"
   },
   {
     "vorname": "Sofia",
@@ -32112,18 +32258,20 @@
     "letzterWettkampf": "2026-06-20"
   },
   {
-    "vorname": "Inês",
+    "vorname": "Ines",
     "nachname": "REIS",
     "jahrgang": 2008,
     "vereine": [
       "POR, AGDS"
     ],
-    "nationen": [],
+    "nationen": [
+      "POR"
+    ],
     "datei": "r",
-    "anzahl": 2,
-    "wettkaempfe": 1,
+    "anzahl": 4,
+    "wettkaempfe": 2,
     "bestGesamt": 46.67,
-    "letzterWettkampf": "2026-07-09"
+    "letzterWettkampf": "2026-10-17"
   },
   {
     "vorname": "Mia",
@@ -33179,16 +33327,16 @@
   {
     "vorname": "Melania",
     "nachname": "RODRIGUEZ",
-    "jahrgang": null,
+    "jahrgang": 2001,
     "vereine": [],
     "nationen": [
       "ESP"
     ],
     "datei": "r",
-    "anzahl": 3,
-    "wettkaempfe": 1,
-    "bestGesamt": 53.82,
-    "letzterWettkampf": "2024-03-23"
+    "anzahl": 5,
+    "wettkaempfe": 2,
+    "bestGesamt": 54.27,
+    "letzterWettkampf": "2026-10-17"
   },
   {
     "vorname": "Jay",
@@ -33213,10 +33361,10 @@
       "GER"
     ],
     "datei": "r",
-    "anzahl": 7,
-    "wettkaempfe": 3,
+    "anzahl": 9,
+    "wettkaempfe": 4,
     "bestGesamt": 53.76,
-    "letzterWettkampf": "2026-06-26"
+    "letzterWettkampf": "2026-10-17"
   },
   {
     "vorname": "Sophie",
@@ -34212,16 +34360,16 @@
   {
     "vorname": "Ryosuke",
     "nachname": "SAKAI",
-    "jahrgang": null,
+    "jahrgang": 1997,
     "vereine": [],
     "nationen": [
       "JPN"
     ],
     "datei": "s",
-    "anzahl": 3,
-    "wettkaempfe": 1,
-    "bestGesamt": 58.17,
-    "letzterWettkampf": "2024-03-23"
+    "anzahl": 5,
+    "wettkaempfe": 2,
+    "bestGesamt": 60.43,
+    "letzterWettkampf": "2026-10-17"
   },
   {
     "vorname": "Lana",
@@ -34572,10 +34720,10 @@
       "POR"
     ],
     "datei": "s",
-    "anzahl": 4,
-    "wettkaempfe": 2,
+    "anzahl": 6,
+    "wettkaempfe": 3,
     "bestGesamt": 59.23,
-    "letzterWettkampf": "2026-07-09"
+    "letzterWettkampf": "2026-10-17"
   },
   {
     "vorname": "Valentina",
@@ -36970,16 +37118,16 @@
   {
     "vorname": "Matthias",
     "nachname": "SCHULDT",
-    "jahrgang": null,
+    "jahrgang": 2000,
     "vereine": [],
     "nationen": [
       "GER"
     ],
     "datei": "s",
-    "anzahl": 7,
-    "wettkaempfe": 2,
-    "bestGesamt": 60.61,
-    "letzterWettkampf": "2025-09-21"
+    "anzahl": 9,
+    "wettkaempfe": 3,
+    "bestGesamt": 61.15,
+    "letzterWettkampf": "2026-10-17"
   },
   {
     "vorname": "Hanna",
@@ -38256,17 +38404,19 @@
   },
   {
     "vorname": "Manuel",
-    "nachname": "Sierra",
+    "nachname": "SIERRA",
     "jahrgang": 2004,
     "vereine": [
       "COL, Colombia"
     ],
-    "nationen": [],
+    "nationen": [
+      "COL"
+    ],
     "datei": "s",
-    "anzahl": 4,
-    "wettkaempfe": 1,
+    "anzahl": 6,
+    "wettkaempfe": 2,
     "bestGesamt": 56.57,
-    "letzterWettkampf": "2026-10-10"
+    "letzterWettkampf": "2026-10-17"
   },
   {
     "vorname": "Emil",
@@ -39441,12 +39591,14 @@
       "CZE, Czechia",
       "CZE, Trampolíny Liberec"
     ],
-    "nationen": [],
+    "nationen": [
+      "CZE"
+    ],
     "datei": "s",
-    "anzahl": 6,
-    "wettkaempfe": 2,
-    "bestGesamt": 50.42,
-    "letzterWettkampf": "2026-10-10"
+    "anzahl": 8,
+    "wettkaempfe": 3,
+    "bestGesamt": 51.09,
+    "letzterWettkampf": "2026-10-17"
   },
   {
     "vorname": "Noël",
@@ -39583,12 +39735,14 @@
       "GER, Hessischer Turnverband",
       "Frankfurt FLYERS 2003 e.V."
     ],
-    "nationen": [],
+    "nationen": [
+      "GER"
+    ],
     "datei": "s",
-    "anzahl": 39,
-    "wettkaempfe": 11,
-    "bestGesamt": 51.635,
-    "letzterWettkampf": "2026-10-03"
+    "anzahl": 41,
+    "wettkaempfe": 12,
+    "bestGesamt": 51.91,
+    "letzterWettkampf": "2026-10-17"
   },
   {
     "vorname": "Ronja",
@@ -42063,6 +42217,20 @@
     "letzterWettkampf": "2026-10-09"
   },
   {
+    "vorname": "Hiroto",
+    "nachname": "UNNO",
+    "jahrgang": 2000,
+    "vereine": [],
+    "nationen": [
+      "JPN"
+    ],
+    "datei": "u",
+    "anzahl": 2,
+    "wettkaempfe": 1,
+    "bestGesamt": 59.5,
+    "letzterWettkampf": "2026-10-17"
+  },
+  {
     "vorname": "Liliana",
     "nachname": "Unterthiner",
     "jahrgang": 2017,
@@ -42713,6 +42881,20 @@
     "letzterWettkampf": "2024-10-26"
   },
   {
+    "vorname": "Ralph",
+    "nachname": "VAN TILBORG",
+    "jahrgang": 2004,
+    "vereine": [],
+    "nationen": [
+      "NED"
+    ],
+    "datei": "v",
+    "anzahl": 2,
+    "wettkaempfe": 1,
+    "bestGesamt": 53.9,
+    "letzterWettkampf": "2026-10-17"
+  },
+  {
     "vorname": "Kim",
     "nachname": "van Veen",
     "jahrgang": 2008,
@@ -42827,16 +43009,16 @@
   {
     "vorname": "David",
     "nachname": "VEGA",
-    "jahrgang": null,
+    "jahrgang": 1998,
     "vereine": [],
     "nationen": [
       "ESP"
     ],
     "datei": "v",
-    "anzahl": 3,
-    "wettkaempfe": 1,
+    "anzahl": 5,
+    "wettkaempfe": 2,
     "bestGesamt": 58.17,
-    "letzterWettkampf": "2024-03-23"
+    "letzterWettkampf": "2026-10-17"
   },
   {
     "vorname": "Rick",
@@ -42952,6 +43134,20 @@
     "wettkaempfe": 1,
     "bestGesamt": 44.21,
     "letzterWettkampf": "2026-07-09"
+  },
+  {
+    "vorname": "Gloria",
+    "nachname": "VERDEJO",
+    "jahrgang": 2008,
+    "vereine": [],
+    "nationen": [
+      "ESP"
+    ],
+    "datei": "v",
+    "anzahl": 2,
+    "wettkaempfe": 1,
+    "bestGesamt": 50.57,
+    "letzterWettkampf": "2026-10-17"
   },
   {
     "vorname": "Quinten",
@@ -43152,16 +43348,16 @@
   {
     "vorname": "Robert",
     "nachname": "VILARASAU",
-    "jahrgang": null,
+    "jahrgang": 2001,
     "vereine": [],
     "nationen": [
       "ESP"
     ],
     "datei": "v",
-    "anzahl": 2,
-    "wettkaempfe": 1,
-    "bestGesamt": 57.32,
-    "letzterWettkampf": "2024-03-22"
+    "anzahl": 4,
+    "wettkaempfe": 2,
+    "bestGesamt": 60.11,
+    "letzterWettkampf": "2026-10-17"
   },
   {
     "vorname": "Annabell",
@@ -43231,10 +43427,10 @@
       "ESP"
     ],
     "datei": "v",
-    "anzahl": 6,
-    "wettkaempfe": 2,
+    "anzahl": 8,
+    "wettkaempfe": 3,
     "bestGesamt": 59.43,
-    "letzterWettkampf": "2026-07-11"
+    "letzterWettkampf": "2026-10-17"
   },
   {
     "vorname": "Samantha",
@@ -43917,10 +44113,10 @@
       "GBR"
     ],
     "datei": "w",
-    "anzahl": 10,
-    "wettkaempfe": 3,
-    "bestGesamt": 59.64,
-    "letzterWettkampf": "2026-06-27"
+    "anzahl": 12,
+    "wettkaempfe": 4,
+    "bestGesamt": 60.68,
+    "letzterWettkampf": "2026-10-17"
   },
   {
     "vorname": "Larissa",
@@ -45055,10 +45251,10 @@
       "NED"
     ],
     "datei": "w",
-    "anzahl": 8,
-    "wettkaempfe": 3,
+    "anzahl": 10,
+    "wettkaempfe": 4,
     "bestGesamt": 54.73,
-    "letzterWettkampf": "2026-07-11"
+    "letzterWettkampf": "2026-10-17"
   },
   {
     "vorname": "Samira",
@@ -45428,10 +45624,10 @@
       "POL"
     ],
     "datei": "w",
-    "anzahl": 2,
-    "wettkaempfe": 1,
-    "bestGesamt": 57.04,
-    "letzterWettkampf": "2026-06-26"
+    "anzahl": 4,
+    "wettkaempfe": 2,
+    "bestGesamt": 57.69,
+    "letzterWettkampf": "2026-10-17"
   },
   {
     "vorname": "Stephan",
@@ -45533,6 +45729,20 @@
     "wettkaempfe": 1,
     "bestGesamt": 34.63,
     "letzterWettkampf": "2026-10-10"
+  },
+  {
+    "vorname": "Benny",
+    "nachname": "WIZANI",
+    "jahrgang": 2001,
+    "vereine": [],
+    "nationen": [
+      "AUT"
+    ],
+    "datei": "w",
+    "anzahl": 2,
+    "wettkaempfe": 1,
+    "bestGesamt": 57.58,
+    "letzterWettkampf": "2026-10-17"
   },
   {
     "vorname": "Mala",
@@ -45880,10 +46090,10 @@
       "TUR"
     ],
     "datei": "y",
-    "anzahl": 6,
-    "wettkaempfe": 3,
+    "anzahl": 8,
+    "wettkaempfe": 4,
     "bestGesamt": 53.92,
-    "letzterWettkampf": "2026-06-26"
+    "letzterWettkampf": "2026-10-17"
   },
   {
     "vorname": "Medina",
@@ -45982,10 +46192,10 @@
       "TUR"
     ],
     "datei": "y",
-    "anzahl": 3,
-    "wettkaempfe": 1,
+    "anzahl": 5,
+    "wettkaempfe": 2,
     "bestGesamt": 58.13,
-    "letzterWettkampf": "2026-06-27"
+    "letzterWettkampf": "2026-10-17"
   },
   {
     "vorname": "Tessa",
@@ -46340,10 +46550,10 @@
       "CHN"
     ],
     "datei": "z",
-    "anzahl": 3,
-    "wettkaempfe": 1,
+    "anzahl": 5,
+    "wettkaempfe": 2,
     "bestGesamt": 56.93,
-    "letzterWettkampf": "2026-06-27"
+    "letzterWettkampf": "2026-10-17"
   },
   {
     "vorname": "Yu",
@@ -46354,10 +46564,10 @@
       "CHN"
     ],
     "datei": "z",
-    "anzahl": 4,
-    "wettkaempfe": 1,
+    "anzahl": 6,
+    "wettkaempfe": 2,
     "bestGesamt": 57.01,
-    "letzterWettkampf": "2026-06-27"
+    "letzterWettkampf": "2026-10-17"
   },
   {
     "vorname": "Daniel",
