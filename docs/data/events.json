@@ -1,5 +1,5 @@
 {
-  "aktualisiert": "2026-10-19T08:27:27Z",
+  "aktualisiert": "2026-10-23T08:14:31Z",
   "events": {
     "03afebf7-8a57-4ba2-4940-72a51e677747": {
       "name": "25. Barmstedt Cup 2026",
@@ -103,7 +103,7 @@
       "land": 276,
       "status": "offen",
       "manuell": false,
-      "zuletztGeladen": "2026-10-19",
+      "zuletztGeladen": "2026-10-23",
       "standSporttech": "2026-10-01T21:13:01.799196Z",
       "wertungen": 214
     },
@@ -116,7 +116,7 @@
       "land": 276,
       "status": "offen",
       "manuell": false,
-      "zuletztGeladen": "2026-10-19",
+      "zuletztGeladen": "2026-10-23",
       "standSporttech": "2026-10-15T20:01:14.409837Z",
       "wertungen": 180
     },
@@ -148,12 +148,12 @@
       "name": "NTB Landesaltersgruppenwettkämpfe 2026",
       "beginn": "2026-11-07",
       "ende": "2026-11-07",
-      "ausrichter": "Bezirkseinsteigerwettkämpfe",
+      "ausrichter": "Niedersächsischer Turnerbund",
       "ausrichterId": "9039830b-d745-4e9d-4c54-6de3c5e98fdd",
       "land": 276,
       "status": "offen",
       "manuell": false,
-      "zuletztGeladen": "2026-10-19",
+      "zuletztGeladen": "2026-10-23",
       "standSporttech": "2026-10-18T17:19:56.46911Z",
       "wertungen": 0
     },
@@ -326,6 +326,19 @@
       "standSporttech": "2025-11-04T17:22:17.139125Z",
       "wertungen": 850
     },
+    "5042ad1e-35f6-430e-7ee4-535e200e8466": {
+      "name": "Karischein",
+      "beginn": "2026-10-20",
+      "ende": "2027-10-20",
+      "ausrichter": "Rheinischer Turnerbund e.V.",
+      "ausrichterId": "cd2e10de-8575-4001-771e-fdef6d21f80d",
+      "land": 276,
+      "status": "offen",
+      "manuell": false,
+      "zuletztGeladen": "2026-10-23",
+      "standSporttech": "2026-10-20T12:19:07.332879Z",
+      "wertungen": 0
+    },
     "50e6c9f4-d3ca-48fc-7edb-574bfc7d7989": {
       "name": "Deutschland Cup 2026",
       "beginn": "2026-10-24",
@@ -335,7 +348,7 @@
       "land": 276,
       "status": "offen",
       "manuell": false,
-      "zuletztGeladen": "2026-10-19",
+      "zuletztGeladen": "2026-10-23",
       "standSporttech": "2026-10-01T12:26:44.837339Z",
       "wertungen": 0
     },
@@ -362,6 +375,19 @@
       "zuletztGeladen": "2026-10-11",
       "standSporttech": "2025-09-04T06:31:54.003728Z",
       "wertungen": 349
+    },
+    "5501ae27-7748-475d-50c4-f3382ed1d9b5": {
+      "name": "Bezirksdoppelminimeisterschaften TB Hannover",
+      "beginn": "2026-12-05",
+      "ende": "2026-12-05",
+      "ausrichter": "Niedersächsischer Turnerbund",
+      "ausrichterId": "9039830b-d745-4e9d-4c54-6de3c5e98fdd",
+      "land": 276,
+      "status": "offen",
+      "manuell": false,
+      "zuletztGeladen": "2026-10-23",
+      "standSporttech": "2026-10-22T09:42:25.392472Z",
+      "wertungen": 0
     },
     "58b4f384-a7f5-4af8-5497-3012b3f403f1": {
       "name": "Offener Kölner Mannschaftspokal 2026",
@@ -404,12 +430,12 @@
       "name": "NTB Landesseniorenmeisterschaften 2026",
       "beginn": "2026-11-07",
       "ende": "2026-11-07",
-      "ausrichter": "Bezirkseinsteigerwettkämpfe",
+      "ausrichter": "Niedersächsischer Turnerbund",
       "ausrichterId": "9039830b-d745-4e9d-4c54-6de3c5e98fdd",
       "land": 276,
       "status": "offen",
       "manuell": false,
-      "zuletztGeladen": "2026-10-19",
+      "zuletztGeladen": "2026-10-23",
       "standSporttech": "2026-10-18T17:47:19.446465Z",
       "wertungen": 0
     },
@@ -544,7 +570,7 @@
       "land": 203,
       "status": "offen",
       "manuell": true,
-      "zuletztGeladen": "2026-10-19",
+      "zuletztGeladen": "2026-10-23",
       "standSporttech": "2026-09-28T18:08:18.811451Z",
       "wertungen": 617
     },
@@ -750,7 +776,7 @@
       "land": 276,
       "status": "offen",
       "manuell": false,
-      "zuletztGeladen": "2026-10-19",
+      "zuletztGeladen": "2026-10-23",
       "standSporttech": "2026-10-10T09:20:15.37986Z",
       "wertungen": 0
     },
@@ -945,7 +971,7 @@
       "land": 276,
       "status": "offen",
       "manuell": false,
-      "zuletztGeladen": "2026-10-19",
+      "zuletztGeladen": "2026-10-23",
       "standSporttech": "2026-10-09T11:40:06.725771Z",
       "wertungen": 0
     },
@@ -970,8 +996,8 @@
       "land": 276,
       "status": "offen",
       "manuell": false,
-      "zuletztGeladen": "2026-10-19",
-      "standSporttech": "2026-07-07T17:15:35.123043Z",
+      "zuletztGeladen": "2026-10-23",
+      "standSporttech": "2026-10-21T11:07:52.306105Z",
       "wertungen": 0
     },
     "f0c0b10b-76d0-459d-555d-e153e3388339": {
