@@ -970,16 +970,16 @@
     "nachname": "Ammenn",
     "jahrgang": 2003,
     "vereine": [
+      "TSV Mannheim von 1846 e.V.",
       "TSV Mannheim",
-      "UNI Heidelberg",
-      "TSV Mannheim von 1846 e.V."
+      "UNI Heidelberg"
     ],
     "nationen": [],
     "datei": "a",
-    "anzahl": 13,
-    "wettkaempfe": 5,
+    "anzahl": 15,
+    "wettkaempfe": 6,
     "bestGesamt": 43.07,
-    "letzterWettkampf": "2026-06-20"
+    "letzterWettkampf": "2026-10-24"
   },
   {
     "vorname": "Klara",
@@ -1360,14 +1360,15 @@
     "nachname": "Arndt",
     "jahrgang": 2015,
     "vereine": [
+      "ESV Lokomotive Zwickau",
       "SN, Sächsischer Turn-Verband"
     ],
     "nationen": [],
     "datei": "a",
-    "anzahl": 5,
-    "wettkaempfe": 2,
-    "bestGesamt": 37.215,
-    "letzterWettkampf": "2026-05-01"
+    "anzahl": 8,
+    "wettkaempfe": 3,
+    "bestGesamt": 38.62,
+    "letzterWettkampf": "2026-10-24"
   },
   {
     "vorname": "Lele",
@@ -1532,16 +1533,16 @@
     "nachname": "Atac",
     "jahrgang": 2014,
     "vereine": [
-      "Brühler TV",
       "TV Blecher 1904",
+      "Brühler TV",
       "NW, Rheinischer TB"
     ],
     "nationen": [],
     "datei": "a",
-    "anzahl": 15,
-    "wettkaempfe": 6,
+    "anzahl": 17,
+    "wettkaempfe": 7,
     "bestGesamt": 42.84,
-    "letzterWettkampf": "2026-07-12"
+    "letzterWettkampf": "2026-10-24"
   },
   {
     "vorname": "Luisa",
@@ -1836,10 +1837,10 @@
     ],
     "nationen": [],
     "datei": "b",
-    "anzahl": 3,
-    "wettkaempfe": 1,
-    "bestGesamt": 38.35,
-    "letzterWettkampf": "2026-05-14"
+    "anzahl": 6,
+    "wettkaempfe": 2,
+    "bestGesamt": 39.52,
+    "letzterWettkampf": "2026-10-24"
   },
   {
     "vorname": "Neo Titus",
@@ -2420,14 +2421,15 @@
     "nachname": "Beck",
     "jahrgang": 2014,
     "vereine": [
+      "TV 1860 Immenstadt",
       "BY, Bayerischer Turnverband"
     ],
     "nationen": [],
     "datei": "b",
-    "anzahl": 2,
-    "wettkaempfe": 1,
+    "anzahl": 5,
+    "wettkaempfe": 2,
     "bestGesamt": 41.01,
-    "letzterWettkampf": "2026-05-01"
+    "letzterWettkampf": "2026-10-24"
   },
   {
     "vorname": "Amelie",
@@ -2898,10 +2900,10 @@
     ],
     "nationen": [],
     "datei": "b",
-    "anzahl": 3,
-    "wettkaempfe": 1,
-    "bestGesamt": 38.96,
-    "letzterWettkampf": "2026-05-14"
+    "anzahl": 6,
+    "wettkaempfe": 2,
+    "bestGesamt": 39.92,
+    "letzterWettkampf": "2026-10-24"
   },
   {
     "vorname": "Sophie",
@@ -2912,10 +2914,10 @@
     ],
     "nationen": [],
     "datei": "b",
-    "anzahl": 3,
-    "wettkaempfe": 1,
-    "bestGesamt": 36.84,
-    "letzterWettkampf": "2026-05-14"
+    "anzahl": 6,
+    "wettkaempfe": 2,
+    "bestGesamt": 37.07,
+    "letzterWettkampf": "2026-10-24"
   },
   {
     "vorname": "Eitan",
@@ -3284,15 +3286,15 @@
     "nachname": "Binn",
     "jahrgang": 2009,
     "vereine": [
-      "NW, Rheinischer TB",
-      "TV Utfort-Eick 1981 e. V."
+      "TV Utfort-Eick 1981 e. V.",
+      "NW, Rheinischer TB"
     ],
     "nationen": [],
     "datei": "b",
-    "anzahl": 10,
-    "wettkaempfe": 4,
+    "anzahl": 12,
+    "wettkaempfe": 5,
     "bestGesamt": 46.865,
-    "letzterWettkampf": "2026-05-02"
+    "letzterWettkampf": "2026-10-24"
   },
   {
     "vorname": "Linda",
@@ -3319,10 +3321,10 @@
     ],
     "nationen": [],
     "datei": "b",
-    "anzahl": 4,
-    "wettkaempfe": 2,
-    "bestGesamt": 36.32,
-    "letzterWettkampf": "2025-10-05"
+    "anzahl": 6,
+    "wettkaempfe": 3,
+    "bestGesamt": 37.82,
+    "letzterWettkampf": "2026-10-24"
   },
   {
     "vorname": "Caro",
@@ -3480,6 +3482,20 @@
     "wettkaempfe": 2,
     "bestGesamt": 30.74,
     "letzterWettkampf": "2026-06-28"
+  },
+  {
+    "vorname": "Sascha",
+    "nachname": "Blondet",
+    "jahrgang": 2016,
+    "vereine": [
+      "MTG Wangen e.V."
+    ],
+    "nationen": [],
+    "datei": "b",
+    "anzahl": 3,
+    "wettkaempfe": 1,
+    "bestGesamt": 36.29,
+    "letzterWettkampf": "2026-10-24"
   },
   {
     "vorname": "Amelie",
@@ -4098,14 +4114,15 @@
     "nachname": "Born",
     "jahrgang": 2013,
     "vereine": [
+      "Turngemeinde Biberach e.V.",
       "TG Biberach 1847 e.V."
     ],
     "nationen": [],
     "datei": "b",
-    "anzahl": 3,
-    "wettkaempfe": 1,
-    "bestGesamt": 40.59,
-    "letzterWettkampf": "2026-06-21"
+    "anzahl": 6,
+    "wettkaempfe": 2,
+    "bestGesamt": 40.63,
+    "letzterWettkampf": "2026-10-24"
   },
   {
     "vorname": "Monika",
@@ -4631,10 +4648,10 @@
     ],
     "nationen": [],
     "datei": "b",
-    "anzahl": 5,
-    "wettkaempfe": 1,
+    "anzahl": 8,
+    "wettkaempfe": 2,
     "bestGesamt": 35.12,
-    "letzterWettkampf": "2026-05-14"
+    "letzterWettkampf": "2026-10-24"
   },
   {
     "vorname": "Annika",
@@ -4702,10 +4719,10 @@
     ],
     "nationen": [],
     "datei": "b",
-    "anzahl": 2,
-    "wettkaempfe": 1,
-    "bestGesamt": 44.4,
-    "letzterWettkampf": "2025-10-05"
+    "anzahl": 4,
+    "wettkaempfe": 2,
+    "bestGesamt": 44.97,
+    "letzterWettkampf": "2026-10-24"
   },
   {
     "vorname": "Harriet",
@@ -4783,14 +4800,15 @@
     "nachname": "Brkic",
     "jahrgang": 2013,
     "vereine": [
+      "Brühler TV 1879",
       "Brühler Turnverein 1879 e.V."
     ],
     "nationen": [],
     "datei": "b",
-    "anzahl": 2,
-    "wettkaempfe": 1,
+    "anzahl": 4,
+    "wettkaempfe": 2,
     "bestGesamt": 34.99,
-    "letzterWettkampf": "2026-04-25"
+    "letzterWettkampf": "2026-10-24"
   },
   {
     "vorname": "Juna",
@@ -4876,10 +4894,10 @@
     ],
     "nationen": [],
     "datei": "b",
-    "anzahl": 21,
-    "wettkaempfe": 8,
+    "anzahl": 24,
+    "wettkaempfe": 9,
     "bestGesamt": 41.75,
-    "letzterWettkampf": "2026-10-10"
+    "letzterWettkampf": "2026-10-24"
   },
   {
     "vorname": "Clea",
@@ -5149,25 +5167,25 @@
     ],
     "nationen": [],
     "datei": "b",
-    "anzahl": 7,
-    "wettkaempfe": 3,
+    "anzahl": 9,
+    "wettkaempfe": 4,
     "bestGesamt": 40.76,
-    "letzterWettkampf": "2026-05-15"
+    "letzterWettkampf": "2026-10-24"
   },
   {
     "vorname": "Liara",
     "nachname": "Buckenheu",
     "jahrgang": 2014,
     "vereine": [
-      "TSV Neu-Ulm",
-      "TSV 1880 Neu-Ulm"
+      "TSV 1880 Neu-Ulm",
+      "TSV Neu-Ulm"
     ],
     "nationen": [],
     "datei": "b",
-    "anzahl": 9,
-    "wettkaempfe": 3,
-    "bestGesamt": 38.45,
-    "letzterWettkampf": "2026-06-21"
+    "anzahl": 11,
+    "wettkaempfe": 4,
+    "bestGesamt": 39.15,
+    "letzterWettkampf": "2026-10-24"
   },
   {
     "vorname": "Andrei",
@@ -5763,10 +5781,10 @@
     ],
     "nationen": [],
     "datei": "c",
-    "anzahl": 9,
-    "wettkaempfe": 3,
-    "bestGesamt": 39.95,
-    "letzterWettkampf": "2026-09-27"
+    "anzahl": 12,
+    "wettkaempfe": 4,
+    "bestGesamt": 40.17,
+    "letzterWettkampf": "2026-10-24"
   },
   {
     "vorname": "Yunzhu",
@@ -7766,6 +7784,20 @@
     "letzterWettkampf": "2026-06-20"
   },
   {
+    "vorname": "Ylvie",
+    "nachname": "Diehl",
+    "jahrgang": 2017,
+    "vereine": [
+      "TV 1848 Erlangen"
+    ],
+    "nationen": [],
+    "datei": "d",
+    "anzahl": 2,
+    "wettkaempfe": 1,
+    "bestGesamt": 35.13,
+    "letzterWettkampf": "2026-10-24"
+  },
+  {
     "vorname": "Marlene",
     "nachname": "Diekmeyer",
     "jahrgang": 2014,
@@ -8156,10 +8188,10 @@
     ],
     "nationen": [],
     "datei": "d",
-    "anzahl": 25,
-    "wettkaempfe": 7,
+    "anzahl": 27,
+    "wettkaempfe": 8,
     "bestGesamt": 43.685,
-    "letzterWettkampf": "2026-09-26"
+    "letzterWettkampf": "2026-10-24"
   },
   {
     "vorname": "Nora",
@@ -8180,15 +8212,15 @@
     "nachname": "Doenitz",
     "jahrgang": 2014,
     "vereine": [
-      "BY, Bayerischer Turnverband",
-      "TV 1848 Erlangen"
+      "TV 1848 Erlangen",
+      "BY, Bayerischer Turnverband"
     ],
     "nationen": [],
     "datei": "d",
-    "anzahl": 6,
-    "wettkaempfe": 3,
-    "bestGesamt": 42.13,
-    "letzterWettkampf": "2026-05-01"
+    "anzahl": 9,
+    "wettkaempfe": 4,
+    "bestGesamt": 42.3,
+    "letzterWettkampf": "2026-10-24"
   },
   {
     "vorname": "Mara",
@@ -8284,10 +8316,10 @@
     ],
     "nationen": [],
     "datei": "d",
-    "anzahl": 9,
-    "wettkaempfe": 3,
+    "anzahl": 11,
+    "wettkaempfe": 4,
     "bestGesamt": 37.7,
-    "letzterWettkampf": "2026-06-21"
+    "letzterWettkampf": "2026-10-24"
   },
   {
     "vorname": "Alexander",
@@ -8753,6 +8785,20 @@
     "letzterWettkampf": "2026-09-26"
   },
   {
+    "vorname": "Jana",
+    "nachname": "Eberl",
+    "jahrgang": 2010,
+    "vereine": [
+      "DTV Die Kängurus"
+    ],
+    "nationen": [],
+    "datei": "e",
+    "anzahl": 2,
+    "wettkaempfe": 1,
+    "bestGesamt": 36.49,
+    "letzterWettkampf": "2026-10-24"
+  },
+  {
     "vorname": "Lara",
     "nachname": "Eberwein",
     "jahrgang": 2009,
@@ -8917,10 +8963,10 @@
     ],
     "nationen": [],
     "datei": "e",
-    "anzahl": 2,
-    "wettkaempfe": 1,
-    "bestGesamt": 31.36,
-    "letzterWettkampf": "2026-09-26"
+    "anzahl": 4,
+    "wettkaempfe": 2,
+    "bestGesamt": 33.89,
+    "letzterWettkampf": "2026-10-24"
   },
   {
     "vorname": "Maja",
@@ -9297,15 +9343,15 @@
     "nachname": "Enger",
     "jahrgang": 2013,
     "vereine": [
-      "TSG Münchhausenstadt Bodenwerder",
-      "TSG Münchhausenstadt Bodenwerder e. V."
+      "TSG Münchhausenstadt Bodenwerder e. V.",
+      "TSG Münchhausenstadt Bodenwerder"
     ],
     "nationen": [],
     "datei": "e",
-    "anzahl": 5,
-    "wettkaempfe": 2,
-    "bestGesamt": 42.04,
-    "letzterWettkampf": "2026-09-19"
+    "anzahl": 8,
+    "wettkaempfe": 3,
+    "bestGesamt": 44.68,
+    "letzterWettkampf": "2026-10-24"
   },
   {
     "vorname": "Rosalie",
@@ -9716,10 +9762,10 @@
     ],
     "nationen": [],
     "datei": "e",
-    "anzahl": 11,
-    "wettkaempfe": 2,
+    "anzahl": 14,
+    "wettkaempfe": 3,
     "bestGesamt": 41.82,
-    "letzterWettkampf": "2026-05-14"
+    "letzterWettkampf": "2026-10-24"
   },
   {
     "vorname": "Johanna",
@@ -9731,10 +9777,10 @@
     ],
     "nationen": [],
     "datei": "e",
-    "anzahl": 14,
-    "wettkaempfe": 3,
-    "bestGesamt": 41.6,
-    "letzterWettkampf": "2026-05-14"
+    "anzahl": 17,
+    "wettkaempfe": 4,
+    "bestGesamt": 42.02,
+    "letzterWettkampf": "2026-10-24"
   },
   {
     "vorname": "Kyara",
@@ -10375,15 +10421,16 @@
     "nachname": "Findeisen",
     "jahrgang": 2017,
     "vereine": [
+      "ATV v.1850 Hückeswagen",
       "ATV Hückeswagen 1850 e.V.",
       "ATV Hückeswagen e.V."
     ],
     "nationen": [],
     "datei": "f",
-    "anzahl": 10,
-    "wettkaempfe": 4,
+    "anzahl": 12,
+    "wettkaempfe": 5,
     "bestGesamt": 38.4,
-    "letzterWettkampf": "2026-07-04"
+    "letzterWettkampf": "2026-10-24"
   },
   {
     "vorname": "Mikka",
@@ -11161,6 +11208,20 @@
     "letzterWettkampf": "2026-03-29"
   },
   {
+    "vorname": "Maja",
+    "nachname": "Fritzmann",
+    "jahrgang": 2013,
+    "vereine": [
+      "TV Weingarten 1861 e.V."
+    ],
+    "nationen": [],
+    "datei": "f",
+    "anzahl": 2,
+    "wettkaempfe": 1,
+    "bestGesamt": 32.46,
+    "letzterWettkampf": "2026-10-24"
+  },
+  {
     "vorname": "Jaliah Emily",
     "nachname": "Froehlich",
     "jahrgang": 2013,
@@ -11616,10 +11677,10 @@
     ],
     "nationen": [],
     "datei": "g",
-    "anzahl": 11,
-    "wettkaempfe": 4,
+    "anzahl": 13,
+    "wettkaempfe": 5,
     "bestGesamt": 43.23,
-    "letzterWettkampf": "2026-07-04"
+    "letzterWettkampf": "2026-10-24"
   },
   {
     "vorname": "Chiara",
@@ -11781,10 +11842,10 @@
     ],
     "nationen": [],
     "datei": "g",
-    "anzahl": 19,
-    "wettkaempfe": 8,
+    "anzahl": 21,
+    "wettkaempfe": 9,
     "bestGesamt": 38.12,
-    "letzterWettkampf": "2026-10-10"
+    "letzterWettkampf": "2026-10-24"
   },
   {
     "vorname": "Mica",
@@ -12513,6 +12574,20 @@
     "letzterWettkampf": "2026-09-26"
   },
   {
+    "vorname": "Alina Marie",
+    "nachname": "Glomb",
+    "jahrgang": 2013,
+    "vereine": [
+      "Eintracht Frankfurt"
+    ],
+    "nationen": [],
+    "datei": "g",
+    "anzahl": 2,
+    "wettkaempfe": 1,
+    "bestGesamt": 36.95,
+    "letzterWettkampf": "2026-10-24"
+  },
+  {
     "vorname": "Miguel",
     "nachname": "GLÓRIA",
     "jahrgang": 2010,
@@ -12991,10 +13066,10 @@
     ],
     "nationen": [],
     "datei": "g",
-    "anzahl": 11,
-    "wettkaempfe": 5,
+    "anzahl": 13,
+    "wettkaempfe": 6,
     "bestGesamt": 38.22,
-    "letzterWettkampf": "2026-10-10"
+    "letzterWettkampf": "2026-10-24"
   },
   {
     "vorname": "Juna",
@@ -13201,10 +13276,10 @@
     ],
     "nationen": [],
     "datei": "g",
-    "anzahl": 11,
-    "wettkaempfe": 5,
+    "anzahl": 13,
+    "wettkaempfe": 6,
     "bestGesamt": 40.51,
-    "letzterWettkampf": "2026-09-27"
+    "letzterWettkampf": "2026-10-24"
   },
   {
     "vorname": "Lena",
@@ -13468,14 +13543,15 @@
     "nachname": "Groha",
     "jahrgang": 2008,
     "vereine": [
+      "S.K.G. Rodgau 1888 e.V.",
       "S.K.G Rodgau"
     ],
     "nationen": [],
     "datei": "g",
-    "anzahl": 2,
-    "wettkaempfe": 1,
-    "bestGesamt": 46.73,
-    "letzterWettkampf": "2026-06-20"
+    "anzahl": 5,
+    "wettkaempfe": 2,
+    "bestGesamt": 49.0,
+    "letzterWettkampf": "2026-10-24"
   },
   {
     "vorname": "Martin",
@@ -13532,6 +13608,20 @@
     "wettkaempfe": 1,
     "bestGesamt": 34.245,
     "letzterWettkampf": "2026-03-29"
+  },
+  {
+    "vorname": "Malte",
+    "nachname": "Groß",
+    "jahrgang": 2010,
+    "vereine": [
+      "TV Weingarten 1861 e.V."
+    ],
+    "nationen": [],
+    "datei": "g",
+    "anzahl": 3,
+    "wettkaempfe": 1,
+    "bestGesamt": 41.54,
+    "letzterWettkampf": "2026-10-24"
   },
   {
     "vorname": "Lisa Malin",
@@ -14019,16 +14109,16 @@
     "nachname": "Güvenli",
     "jahrgang": 2016,
     "vereine": [
-      "TSV Mannheim",
       "TSV Mannheim von 1846 e.V.",
+      "TSV Mannheim",
       "BW, Badischer Turner-Bund e.V."
     ],
     "nationen": [],
     "datei": "g",
-    "anzahl": 19,
-    "wettkaempfe": 7,
+    "anzahl": 22,
+    "wettkaempfe": 8,
     "bestGesamt": 40.14,
-    "letzterWettkampf": "2026-10-10"
+    "letzterWettkampf": "2026-10-24"
   },
   {
     "vorname": "Luise",
@@ -14632,10 +14722,10 @@
     ],
     "nationen": [],
     "datei": "h",
-    "anzahl": 14,
-    "wettkaempfe": 5,
+    "anzahl": 16,
+    "wettkaempfe": 6,
     "bestGesamt": 46.65,
-    "letzterWettkampf": "2026-10-10"
+    "letzterWettkampf": "2026-10-24"
   },
   {
     "vorname": "Cosmus",
@@ -14733,10 +14823,10 @@
     ],
     "nationen": [],
     "datei": "h",
-    "anzahl": 6,
-    "wettkaempfe": 2,
+    "anzahl": 9,
+    "wettkaempfe": 3,
     "bestGesamt": 41.01,
-    "letzterWettkampf": "2026-09-20"
+    "letzterWettkampf": "2026-10-24"
   },
   {
     "vorname": "Maya",
@@ -14975,10 +15065,10 @@
     ],
     "nationen": [],
     "datei": "h",
-    "anzahl": 2,
-    "wettkaempfe": 1,
-    "bestGesamt": 35.125,
-    "letzterWettkampf": "2025-10-05"
+    "anzahl": 5,
+    "wettkaempfe": 2,
+    "bestGesamt": 39.42,
+    "letzterWettkampf": "2026-10-24"
   },
   {
     "vorname": "Pia",
@@ -15008,6 +15098,20 @@
     "wettkaempfe": 2,
     "bestGesamt": 38.71,
     "letzterWettkampf": "2026-06-21"
+  },
+  {
+    "vorname": "Raphael Ian Yannik",
+    "nachname": "Heine",
+    "jahrgang": 2010,
+    "vereine": [
+      "S.K.G. Rodgau 1888 e.V."
+    ],
+    "nationen": [],
+    "datei": "h",
+    "anzahl": 3,
+    "wettkaempfe": 1,
+    "bestGesamt": 41.61,
+    "letzterWettkampf": "2026-10-24"
   },
   {
     "vorname": "Anastasia",
@@ -15046,10 +15150,10 @@
     ],
     "nationen": [],
     "datei": "h",
-    "anzahl": 2,
-    "wettkaempfe": 1,
-    "bestGesamt": 35.84,
-    "letzterWettkampf": "2025-10-05"
+    "anzahl": 5,
+    "wettkaempfe": 2,
+    "bestGesamt": 38.59,
+    "letzterWettkampf": "2026-10-24"
   },
   {
     "vorname": "Luna",
@@ -15135,10 +15239,10 @@
     ],
     "nationen": [],
     "datei": "h",
-    "anzahl": 6,
-    "wettkaempfe": 3,
+    "anzahl": 9,
+    "wettkaempfe": 4,
     "bestGesamt": 39.61,
-    "letzterWettkampf": "2026-09-20"
+    "letzterWettkampf": "2026-10-24"
   },
   {
     "vorname": "Theo",
@@ -15235,10 +15339,10 @@
     ],
     "nationen": [],
     "datei": "h",
-    "anzahl": 9,
-    "wettkaempfe": 4,
+    "anzahl": 12,
+    "wettkaempfe": 5,
     "bestGesamt": 41.32,
-    "letzterWettkampf": "2026-07-04"
+    "letzterWettkampf": "2026-10-24"
   },
   {
     "vorname": "Wessel",
@@ -15638,10 +15742,10 @@
     ],
     "nationen": [],
     "datei": "h",
-    "anzahl": 4,
-    "wettkaempfe": 2,
+    "anzahl": 7,
+    "wettkaempfe": 3,
     "bestGesamt": 45.03,
-    "letzterWettkampf": "2026-05-14"
+    "letzterWettkampf": "2026-10-24"
   },
   {
     "vorname": "Lukas",
@@ -15662,16 +15766,16 @@
     "nachname": "Hesse",
     "jahrgang": 2001,
     "vereine": [
+      "TSV Mannheim von 1846 e.V.",
       "TSV Mannheim",
-      "UNI Mannheim",
-      "TSV Mannheim von 1846 e.V."
+      "UNI Mannheim"
     ],
     "nationen": [],
     "datei": "h",
-    "anzahl": 12,
-    "wettkaempfe": 4,
+    "anzahl": 15,
+    "wettkaempfe": 5,
     "bestGesamt": 45.295,
-    "letzterWettkampf": "2026-10-10"
+    "letzterWettkampf": "2026-10-24"
   },
   {
     "vorname": "Daniel",
@@ -15775,6 +15879,20 @@
     "wettkaempfe": 1,
     "bestGesamt": 33.6,
     "letzterWettkampf": "2026-06-28"
+  },
+  {
+    "vorname": "Anna",
+    "nachname": "Hildebrand",
+    "jahrgang": 2014,
+    "vereine": [
+      "TV 1860 Immenstadt"
+    ],
+    "nationen": [],
+    "datei": "h",
+    "anzahl": 2,
+    "wettkaempfe": 1,
+    "bestGesamt": 38.02,
+    "letzterWettkampf": "2026-10-24"
   },
   {
     "vorname": "Ole",
@@ -16283,16 +16401,16 @@
     "nachname": "Holsing",
     "jahrgang": 2011,
     "vereine": [
-      "TSV Mannheim",
       "TSV Mannheim von 1846 e.V.",
+      "TSV Mannheim",
       "BW, Badischer Turner-Bund e.V."
     ],
     "nationen": [],
     "datei": "h",
-    "anzahl": 29,
-    "wettkaempfe": 10,
+    "anzahl": 32,
+    "wettkaempfe": 11,
     "bestGesamt": 42.48,
-    "letzterWettkampf": "2026-10-11"
+    "letzterWettkampf": "2026-10-24"
   },
   {
     "vorname": "Amy",
@@ -16534,15 +16652,15 @@
     "nachname": "Hornung",
     "jahrgang": 2012,
     "vereine": [
-      "TSG Wiesloch",
-      "TSG 1885 Wiesloch e.V."
+      "TSG 1885 Wiesloch e.V.",
+      "TSG Wiesloch"
     ],
     "nationen": [],
     "datei": "h",
-    "anzahl": 5,
-    "wettkaempfe": 2,
+    "anzahl": 7,
+    "wettkaempfe": 3,
     "bestGesamt": 38.19,
-    "letzterWettkampf": "2026-10-10"
+    "letzterWettkampf": "2026-10-24"
   },
   {
     "vorname": "Lennard",
@@ -16766,10 +16884,10 @@
     ],
     "nationen": [],
     "datei": "h",
-    "anzahl": 9,
-    "wettkaempfe": 4,
+    "anzahl": 11,
+    "wettkaempfe": 5,
     "bestGesamt": 39.68,
-    "letzterWettkampf": "2026-09-27"
+    "letzterWettkampf": "2026-10-24"
   },
   {
     "vorname": "Cynthia",
@@ -16784,6 +16902,20 @@
     "wettkaempfe": 1,
     "bestGesamt": 45.48,
     "letzterWettkampf": "2026-09-27"
+  },
+  {
+    "vorname": "Marlon",
+    "nachname": "Huber",
+    "jahrgang": 2016,
+    "vereine": [
+      "DTV Die Kängurus"
+    ],
+    "nationen": [],
+    "datei": "h",
+    "anzahl": 2,
+    "wettkaempfe": 1,
+    "bestGesamt": 30.1,
+    "letzterWettkampf": "2026-10-24"
   },
   {
     "vorname": "Maxima",
@@ -16976,15 +17108,15 @@
     "nachname": "Ickenstein",
     "jahrgang": 2013,
     "vereine": [
-      "TG Biberach 1847 e.V.",
-      "Turngemeinde Biberach e.V."
+      "Turngemeinde Biberach e.V.",
+      "TG Biberach 1847 e.V."
     ],
     "nationen": [],
     "datei": "i",
-    "anzahl": 6,
-    "wettkaempfe": 2,
+    "anzahl": 8,
+    "wettkaempfe": 3,
     "bestGesamt": 39.83,
-    "letzterWettkampf": "2026-06-21"
+    "letzterWettkampf": "2026-10-24"
   },
   {
     "vorname": "Carlotta",
@@ -17042,6 +17174,20 @@
     "wettkaempfe": 1,
     "bestGesamt": 37.4,
     "letzterWettkampf": "2026-06-20"
+  },
+  {
+    "vorname": "Carlotta Marie",
+    "nachname": "Ikert",
+    "jahrgang": 2015,
+    "vereine": [
+      "Eintracht Frankfurt"
+    ],
+    "nationen": [],
+    "datei": "i",
+    "anzahl": 2,
+    "wettkaempfe": 1,
+    "bestGesamt": 38.8,
+    "letzterWettkampf": "2026-10-24"
   },
   {
     "vorname": "Francisca",
@@ -17567,7 +17713,7 @@
     "datei": "j",
     "anzahl": 18,
     "wettkaempfe": 7,
-    "bestGesamt": 46.725,
+    "bestGesamt": 36.68,
     "letzterWettkampf": "2026-10-24"
   },
   {
@@ -17951,10 +18097,10 @@
     ],
     "nationen": [],
     "datei": "j",
-    "anzahl": 20,
-    "wettkaempfe": 6,
+    "anzahl": 22,
+    "wettkaempfe": 7,
     "bestGesamt": 42.82,
-    "letzterWettkampf": "2026-10-10"
+    "letzterWettkampf": "2026-10-24"
   },
   {
     "vorname": "Elli",
@@ -17967,10 +18113,10 @@
     ],
     "nationen": [],
     "datei": "j",
-    "anzahl": 9,
-    "wettkaempfe": 4,
+    "anzahl": 11,
+    "wettkaempfe": 5,
     "bestGesamt": 39.4,
-    "letzterWettkampf": "2026-09-26"
+    "letzterWettkampf": "2026-10-24"
   },
   {
     "vorname": "Marie Sofie",
@@ -18181,10 +18327,10 @@
     ],
     "nationen": [],
     "datei": "k",
-    "anzahl": 6,
-    "wettkaempfe": 3,
-    "bestGesamt": 37.78,
-    "letzterWettkampf": "2026-09-26"
+    "anzahl": 8,
+    "wettkaempfe": 4,
+    "bestGesamt": 40.01,
+    "letzterWettkampf": "2026-10-24"
   },
   {
     "vorname": "Philippa",
@@ -18196,10 +18342,10 @@
     ],
     "nationen": [],
     "datei": "k",
-    "anzahl": 6,
-    "wettkaempfe": 2,
+    "anzahl": 8,
+    "wettkaempfe": 3,
     "bestGesamt": 37.0,
-    "letzterWettkampf": "2026-09-27"
+    "letzterWettkampf": "2026-10-24"
   },
   {
     "vorname": "Jonas",
@@ -18239,29 +18385,30 @@
     "nachname": "Kalberlah",
     "jahrgang": 2013,
     "vereine": [
-      "VfL Grasdorf",
-      "VFL Grasdorf 1896 e.V."
+      "VFL Grasdorf 1896 e.V.",
+      "VfL Grasdorf"
     ],
     "nationen": [],
     "datei": "k",
-    "anzahl": 7,
-    "wettkaempfe": 3,
-    "bestGesamt": 40.46,
-    "letzterWettkampf": "2026-09-19"
+    "anzahl": 10,
+    "wettkaempfe": 4,
+    "bestGesamt": 42.42,
+    "letzterWettkampf": "2026-10-24"
   },
   {
     "vorname": "Sofia",
     "nachname": "Kalberlah",
     "jahrgang": 2016,
     "vereine": [
+      "VFL Grasdorf 1896 e.V.",
       "VfL Grasdorf"
     ],
     "nationen": [],
     "datei": "k",
-    "anzahl": 5,
-    "wettkaempfe": 2,
-    "bestGesamt": 31.81,
-    "letzterWettkampf": "2026-09-19"
+    "anzahl": 7,
+    "wettkaempfe": 3,
+    "bestGesamt": 37.45,
+    "letzterWettkampf": "2026-10-24"
   },
   {
     "vorname": "Merle",
@@ -18333,6 +18480,20 @@
     "wettkaempfe": 1,
     "bestGesamt": 39.81,
     "letzterWettkampf": "2026-09-27"
+  },
+  {
+    "vorname": "Lilia Rosa-Maria",
+    "nachname": "Kammer",
+    "jahrgang": 2013,
+    "vereine": [
+      "Eintracht Frankfurt"
+    ],
+    "nationen": [],
+    "datei": "k",
+    "anzahl": 2,
+    "wettkaempfe": 1,
+    "bestGesamt": 37.75,
+    "letzterWettkampf": "2026-10-24"
   },
   {
     "vorname": "Paul",
@@ -18727,10 +18888,10 @@
     ],
     "nationen": [],
     "datei": "k",
-    "anzahl": 2,
-    "wettkaempfe": 1,
+    "anzahl": 3,
+    "wettkaempfe": 2,
     "bestGesamt": 41.165,
-    "letzterWettkampf": "2025-10-05"
+    "letzterWettkampf": "2026-10-24"
   },
   {
     "vorname": "Anna Elisa",
@@ -18894,6 +19055,7 @@
     "nachname": "Khankishiyev",
     "jahrgang": 2011,
     "vereine": [
+      "ATV v.1850 Hückeswagen",
       "ATV Hückeswagen 1850 e.V.",
       "NW, Rheinischer TB",
       "ATV Hückeswagen e.V.",
@@ -18901,10 +19063,10 @@
     ],
     "nationen": [],
     "datei": "k",
-    "anzahl": 14,
-    "wettkaempfe": 6,
+    "anzahl": 16,
+    "wettkaempfe": 7,
     "bestGesamt": 41.42,
-    "letzterWettkampf": "2026-07-04"
+    "letzterWettkampf": "2026-10-24"
   },
   {
     "vorname": "Minara",
@@ -19875,6 +20037,20 @@
     "letzterWettkampf": "2026-10-10"
   },
   {
+    "vorname": "Estefania Annina",
+    "nachname": "Koch",
+    "jahrgang": 2010,
+    "vereine": [
+      "TV Ichenheim"
+    ],
+    "nationen": [],
+    "datei": "k",
+    "anzahl": 3,
+    "wettkaempfe": 1,
+    "bestGesamt": 43.07,
+    "letzterWettkampf": "2026-10-24"
+  },
+  {
     "vorname": "Lena",
     "nachname": "Koch",
     "jahrgang": 2018,
@@ -19964,16 +20140,16 @@
     "nachname": "Köhler",
     "jahrgang": 2013,
     "vereine": [
-      "Brühler TV",
       "Brühler TV 1879",
+      "Brühler TV",
       "Brühler Turnverein 1879 e.V."
     ],
     "nationen": [],
     "datei": "k",
-    "anzahl": 16,
-    "wettkaempfe": 7,
-    "bestGesamt": 37.85,
-    "letzterWettkampf": "2026-07-12"
+    "anzahl": 18,
+    "wettkaempfe": 8,
+    "bestGesamt": 38.83,
+    "letzterWettkampf": "2026-10-24"
   },
   {
     "vorname": "Linda",
@@ -20119,10 +20295,10 @@
     ],
     "nationen": [],
     "datei": "k",
-    "anzahl": 8,
-    "wettkaempfe": 3,
+    "anzahl": 10,
+    "wettkaempfe": 4,
     "bestGesamt": 44.34,
-    "letzterWettkampf": "2026-06-21"
+    "letzterWettkampf": "2026-10-24"
   },
   {
     "vorname": "Daniel",
@@ -20501,10 +20677,10 @@
     ],
     "nationen": [],
     "datei": "k",
-    "anzahl": 32,
-    "wettkaempfe": 8,
+    "anzahl": 35,
+    "wettkaempfe": 9,
     "bestGesamt": 43.58,
-    "letzterWettkampf": "2026-09-27"
+    "letzterWettkampf": "2026-10-24"
   },
   {
     "vorname": "Kirill",
@@ -20588,10 +20764,10 @@
     ],
     "nationen": [],
     "datei": "k",
-    "anzahl": 4,
-    "wettkaempfe": 2,
+    "anzahl": 6,
+    "wettkaempfe": 3,
     "bestGesamt": 37.52,
-    "letzterWettkampf": "2026-09-26"
+    "letzterWettkampf": "2026-10-24"
   },
   {
     "vorname": "Oliviia",
@@ -20879,10 +21055,10 @@
     ],
     "nationen": [],
     "datei": "k",
-    "anzahl": 5,
-    "wettkaempfe": 2,
+    "anzahl": 7,
+    "wettkaempfe": 3,
     "bestGesamt": 39.73,
-    "letzterWettkampf": "2026-06-05"
+    "letzterWettkampf": "2026-10-24"
   },
   {
     "vorname": "Borbála",
@@ -20893,10 +21069,10 @@
     ],
     "nationen": [],
     "datei": "k",
-    "anzahl": 2,
-    "wettkaempfe": 1,
-    "bestGesamt": 0.0,
-    "letzterWettkampf": "2025-10-05"
+    "anzahl": 5,
+    "wettkaempfe": 2,
+    "bestGesamt": 42.95,
+    "letzterWettkampf": "2026-10-24"
   },
   {
     "vorname": "Max",
@@ -21372,16 +21548,16 @@
   {
     "vorname": "Inola",
     "nachname": "Kurbanov",
-    "jahrgang": null,
+    "jahrgang": 2014,
     "vereine": [
       "MTV Bad Kreuznach 1877 e.V."
     ],
     "nationen": [],
     "datei": "k",
-    "anzahl": 2,
-    "wettkaempfe": 1,
-    "bestGesamt": 31.695,
-    "letzterWettkampf": "2026-06-05"
+    "anzahl": 4,
+    "wettkaempfe": 2,
+    "bestGesamt": 35.65,
+    "letzterWettkampf": "2026-10-24"
   },
   {
     "vorname": "Jonas",
@@ -21476,15 +21652,15 @@
     "nachname": "Küster",
     "jahrgang": 2009,
     "vereine": [
-      "TSG Münchhausenstadt Bodenwerder",
-      "TSG Münchhausenstadt Bodenwerder e. V."
+      "TSG Münchhausenstadt Bodenwerder e. V.",
+      "TSG Münchhausenstadt Bodenwerder"
     ],
     "nationen": [],
     "datei": "k",
-    "anzahl": 20,
-    "wettkaempfe": 5,
+    "anzahl": 22,
+    "wettkaempfe": 6,
     "bestGesamt": 45.965,
-    "letzterWettkampf": "2026-09-19"
+    "letzterWettkampf": "2026-10-24"
   },
   {
     "vorname": "Ronja",
@@ -21555,6 +21731,20 @@
     "wettkaempfe": 2,
     "bestGesamt": 26.2,
     "letzterWettkampf": "2025-11-08"
+  },
+  {
+    "vorname": "Mathilda",
+    "nachname": "Lacher",
+    "jahrgang": 2010,
+    "vereine": [
+      "TSG 1861 Bad Wurzach e.V."
+    ],
+    "nationen": [],
+    "datei": "l",
+    "anzahl": 3,
+    "wettkaempfe": 1,
+    "bestGesamt": 37.33,
+    "letzterWettkampf": "2026-10-24"
   },
   {
     "vorname": "Leon",
@@ -22110,10 +22300,10 @@
     ],
     "nationen": [],
     "datei": "l",
-    "anzahl": 3,
-    "wettkaempfe": 1,
-    "bestGesamt": 44.43,
-    "letzterWettkampf": "2026-05-14"
+    "anzahl": 6,
+    "wettkaempfe": 2,
+    "bestGesamt": 44.64,
+    "letzterWettkampf": "2026-10-24"
   },
   {
     "vorname": "Greta",
@@ -22232,14 +22422,15 @@
     "nachname": "Leibing",
     "jahrgang": 2017,
     "vereine": [
+      "TSV 1880 Neu-Ulm",
       "TSV Neu-Ulm"
     ],
     "nationen": [],
     "datei": "l",
-    "anzahl": 6,
-    "wettkaempfe": 2,
+    "anzahl": 8,
+    "wettkaempfe": 3,
     "bestGesamt": 38.86,
-    "letzterWettkampf": "2026-06-21"
+    "letzterWettkampf": "2026-10-24"
   },
   {
     "vorname": "Lucia",
@@ -22683,15 +22874,15 @@
     "nachname": "Levering",
     "jahrgang": 2013,
     "vereine": [
-      "Brühler TV",
-      "Brühler TV 1879"
+      "Brühler TV 1879",
+      "Brühler TV"
     ],
     "nationen": [],
     "datei": "l",
-    "anzahl": 9,
-    "wettkaempfe": 4,
+    "anzahl": 11,
+    "wettkaempfe": 5,
     "bestGesamt": 35.22,
-    "letzterWettkampf": "2026-07-12"
+    "letzterWettkampf": "2026-10-24"
   },
   {
     "vorname": "Benjamin",
@@ -23196,6 +23387,20 @@
   },
   {
     "vorname": "Eliza",
+    "nachname": "Llugaxhija",
+    "jahrgang": 2017,
+    "vereine": [
+      "Bayreuther Turnerschaft 1861"
+    ],
+    "nationen": [],
+    "datei": "l",
+    "anzahl": 2,
+    "wettkaempfe": 1,
+    "bestGesamt": 35.84,
+    "letzterWettkampf": "2026-10-24"
+  },
+  {
+    "vorname": "Eliza",
     "nachname": "Llughaxija",
     "jahrgang": 2017,
     "vereine": [
@@ -23302,10 +23507,10 @@
     ],
     "nationen": [],
     "datei": "l",
-    "anzahl": 5,
-    "wettkaempfe": 2,
-    "bestGesamt": 36.8,
-    "letzterWettkampf": "2026-06-21"
+    "anzahl": 8,
+    "wettkaempfe": 3,
+    "bestGesamt": 38.18,
+    "letzterWettkampf": "2026-10-24"
   },
   {
     "vorname": "Noa",
@@ -25101,15 +25306,15 @@
     "nachname": "Meier",
     "jahrgang": 2013,
     "vereine": [
-      "TSV Turnerbund München e.V.",
-      "TSV Turnerbund München"
+      "TSV Turnerbund München",
+      "TSV Turnerbund München e.V."
     ],
     "nationen": [],
     "datei": "m",
-    "anzahl": 10,
-    "wettkaempfe": 3,
+    "anzahl": 12,
+    "wettkaempfe": 4,
     "bestGesamt": 39.4,
-    "letzterWettkampf": "2026-06-21"
+    "letzterWettkampf": "2026-10-24"
   },
   {
     "vorname": "Jesca",
@@ -25425,6 +25630,20 @@
     "wettkaempfe": 3,
     "bestGesamt": 48.995,
     "letzterWettkampf": "2026-02-14"
+  },
+  {
+    "vorname": "Matteo",
+    "nachname": "Meroth",
+    "jahrgang": 2016,
+    "vereine": [
+      "MTG Wangen e.V."
+    ],
+    "nationen": [],
+    "datei": "m",
+    "anzahl": 2,
+    "wettkaempfe": 1,
+    "bestGesamt": 34.34,
+    "letzterWettkampf": "2026-10-24"
   },
   {
     "vorname": "Amelie",
@@ -26311,14 +26530,15 @@
     "nachname": "Molter",
     "jahrgang": 2011,
     "vereine": [
+      "TSV Turnerbund München",
       "TSV Turnerbund München e.V."
     ],
     "nationen": [],
     "datei": "m",
-    "anzahl": 6,
-    "wettkaempfe": 2,
+    "anzahl": 8,
+    "wettkaempfe": 3,
     "bestGesamt": 40.42,
-    "letzterWettkampf": "2026-06-21"
+    "letzterWettkampf": "2026-10-24"
   },
   {
     "vorname": "Marie-Louise",
@@ -26473,6 +26693,20 @@
     "wettkaempfe": 2,
     "bestGesamt": 56.91,
     "letzterWettkampf": "2026-06-27"
+  },
+  {
+    "vorname": "Egzon",
+    "nachname": "Morina",
+    "jahrgang": 2016,
+    "vereine": [
+      "TV Weingarten 1861 e.V."
+    ],
+    "nationen": [],
+    "datei": "m",
+    "anzahl": 3,
+    "wettkaempfe": 1,
+    "bestGesamt": 34.77,
+    "letzterWettkampf": "2026-10-24"
   },
   {
     "vorname": "Benjamin",
@@ -26651,15 +26885,15 @@
     "nachname": "Müller",
     "jahrgang": 2016,
     "vereine": [
-      "Brühler TV",
-      "Brühler TV 1879"
+      "Brühler TV 1879",
+      "Brühler TV"
     ],
     "nationen": [],
     "datei": "m",
-    "anzahl": 10,
-    "wettkaempfe": 4,
+    "anzahl": 12,
+    "wettkaempfe": 5,
     "bestGesamt": 38.77,
-    "letzterWettkampf": "2026-07-12"
+    "letzterWettkampf": "2026-10-24"
   },
   {
     "vorname": "Chazz",
@@ -26823,16 +27057,16 @@
     "nachname": "Müller",
     "jahrgang": 2014,
     "vereine": [
-      "TSV Neu-Ulm",
       "TSV 1880 Neu-Ulm",
+      "TSV Neu-Ulm",
       "BY, Bayerischer Turnverband"
     ],
     "nationen": [],
     "datei": "m",
-    "anzahl": 21,
-    "wettkaempfe": 8,
+    "anzahl": 23,
+    "wettkaempfe": 9,
     "bestGesamt": 40.72,
-    "letzterWettkampf": "2026-09-26"
+    "letzterWettkampf": "2026-10-24"
   },
   {
     "vorname": "Ben",
@@ -27077,10 +27311,10 @@
     ],
     "nationen": [],
     "datei": "n",
-    "anzahl": 18,
-    "wettkaempfe": 6,
+    "anzahl": 21,
+    "wettkaempfe": 7,
     "bestGesamt": 45.4,
-    "letzterWettkampf": "2026-09-26"
+    "letzterWettkampf": "2026-10-24"
   },
   {
     "vorname": "Simeon",
@@ -27426,10 +27660,10 @@
     ],
     "nationen": [],
     "datei": "n",
-    "anzahl": 17,
-    "wettkaempfe": 7,
-    "bestGesamt": 43.355,
-    "letzterWettkampf": "2026-09-26"
+    "anzahl": 20,
+    "wettkaempfe": 8,
+    "bestGesamt": 43.56,
+    "letzterWettkampf": "2026-10-24"
   },
   {
     "vorname": "Marion",
@@ -27456,10 +27690,10 @@
     ],
     "nationen": [],
     "datei": "n",
-    "anzahl": 15,
-    "wettkaempfe": 6,
+    "anzahl": 18,
+    "wettkaempfe": 7,
     "bestGesamt": 42.81,
-    "letzterWettkampf": "2026-09-27"
+    "letzterWettkampf": "2026-10-24"
   },
   {
     "vorname": "Hannah",
@@ -27489,6 +27723,20 @@
     "wettkaempfe": 1,
     "bestGesamt": 33.42,
     "letzterWettkampf": "2026-10-10"
+  },
+  {
+    "vorname": "Oscar Lennart",
+    "nachname": "Niederer",
+    "jahrgang": 2014,
+    "vereine": [
+      "ASV Wolfartsweier"
+    ],
+    "nationen": [],
+    "datei": "n",
+    "anzahl": 2,
+    "wettkaempfe": 1,
+    "bestGesamt": 33.76,
+    "letzterWettkampf": "2026-10-24"
   },
   {
     "vorname": "Lucienne",
@@ -27535,6 +27783,20 @@
     "wettkaempfe": 5,
     "bestGesamt": 38.29,
     "letzterWettkampf": "2026-07-04"
+  },
+  {
+    "vorname": "Lenya Marie",
+    "nachname": "Niedermeier",
+    "jahrgang": 2014,
+    "vereine": [
+      "ATV v.1850 Hückeswagen"
+    ],
+    "nationen": [],
+    "datei": "n",
+    "anzahl": 2,
+    "wettkaempfe": 1,
+    "bestGesamt": 34.75,
+    "letzterWettkampf": "2026-10-24"
   },
   {
     "vorname": "Samira",
@@ -27633,10 +27895,10 @@
     ],
     "nationen": [],
     "datei": "n",
-    "anzahl": 7,
-    "wettkaempfe": 3,
+    "anzahl": 9,
+    "wettkaempfe": 4,
     "bestGesamt": 41.795,
-    "letzterWettkampf": "2026-06-05"
+    "letzterWettkampf": "2026-10-24"
   },
   {
     "vorname": "Louis",
@@ -27944,10 +28206,10 @@
     ],
     "nationen": [],
     "datei": "n",
-    "anzahl": 15,
-    "wettkaempfe": 6,
+    "anzahl": 17,
+    "wettkaempfe": 7,
     "bestGesamt": 40.58,
-    "letzterWettkampf": "2026-10-10"
+    "letzterWettkampf": "2026-10-24"
   },
   {
     "vorname": "Amy",
@@ -28141,14 +28403,15 @@
     "nachname": "Nothdurft",
     "jahrgang": 2014,
     "vereine": [
+      "VFL Grasdorf 1896 e.V.",
       "VfL Grasdorf"
     ],
     "nationen": [],
     "datei": "n",
-    "anzahl": 2,
-    "wettkaempfe": 1,
+    "anzahl": 4,
+    "wettkaempfe": 2,
     "bestGesamt": 35.23,
-    "letzterWettkampf": "2025-02-08"
+    "letzterWettkampf": "2026-10-24"
   },
   {
     "vorname": "Philipp",
@@ -28598,6 +28861,20 @@
     "letzterWettkampf": "2026-06-20"
   },
   {
+    "vorname": "Ida Jasmin",
+    "nachname": "Offermann",
+    "jahrgang": 2016,
+    "vereine": [
+      "ATV v.1850 Hückeswagen"
+    ],
+    "nationen": [],
+    "datei": "o",
+    "anzahl": 2,
+    "wettkaempfe": 1,
+    "bestGesamt": 31.2,
+    "letzterWettkampf": "2026-10-24"
+  },
+  {
     "vorname": "Mira",
     "nachname": "Offermann",
     "jahrgang": 2016,
@@ -28611,6 +28888,20 @@
     "wettkaempfe": 3,
     "bestGesamt": 36.42,
     "letzterWettkampf": "2026-03-07"
+  },
+  {
+    "vorname": "Mira Sophie",
+    "nachname": "Offermann",
+    "jahrgang": 2016,
+    "vereine": [
+      "ATV v.1850 Hückeswagen"
+    ],
+    "nationen": [],
+    "datei": "o",
+    "anzahl": 2,
+    "wettkaempfe": 1,
+    "bestGesamt": 33.87,
+    "letzterWettkampf": "2026-10-24"
   },
   {
     "vorname": "Yuna",
@@ -28872,16 +29163,16 @@
   {
     "vorname": "Mayari",
     "nachname": "Opp",
-    "jahrgang": null,
+    "jahrgang": 2016,
     "vereine": [
       "MTV Bad Kreuznach 1877 e.V."
     ],
     "nationen": [],
     "datei": "o",
-    "anzahl": 3,
-    "wettkaempfe": 1,
+    "anzahl": 5,
+    "wettkaempfe": 2,
     "bestGesamt": 36.965,
-    "letzterWettkampf": "2026-06-05"
+    "letzterWettkampf": "2026-10-24"
   },
   {
     "vorname": "Laura",
@@ -29070,6 +29361,20 @@
     "letzterWettkampf": "2026-06-26"
   },
   {
+    "vorname": "Jana",
+    "nachname": "Pak",
+    "jahrgang": 2017,
+    "vereine": [
+      "Bayreuther Turnerschaft 1861"
+    ],
+    "nationen": [],
+    "datei": "p",
+    "anzahl": 2,
+    "wettkaempfe": 1,
+    "bestGesamt": 32.66,
+    "letzterWettkampf": "2026-10-24"
+  },
+  {
     "vorname": "Anna Valentina",
     "nachname": "Pal",
     "jahrgang": null,
@@ -29138,10 +29443,10 @@
     ],
     "nationen": [],
     "datei": "p",
-    "anzahl": 13,
-    "wettkaempfe": 5,
+    "anzahl": 15,
+    "wettkaempfe": 6,
     "bestGesamt": 39.09,
-    "letzterWettkampf": "2026-07-04"
+    "letzterWettkampf": "2026-10-24"
   },
   {
     "vorname": "Veda",
@@ -29280,16 +29585,30 @@
     "nachname": "Paschke",
     "jahrgang": 2007,
     "vereine": [
-      "NW, Rheinischer TB",
       "TV Utfort-Eick 1981 e. V.",
+      "NW, Rheinischer TB",
       "TV Utfort-Eick 1981 e.V."
     ],
     "nationen": [],
     "datei": "p",
-    "anzahl": 17,
-    "wettkaempfe": 6,
-    "bestGesamt": 47.365,
-    "letzterWettkampf": "2026-05-02"
+    "anzahl": 20,
+    "wettkaempfe": 7,
+    "bestGesamt": 47.82,
+    "letzterWettkampf": "2026-10-24"
+  },
+  {
+    "vorname": "Benno",
+    "nachname": "Paschold",
+    "jahrgang": 2017,
+    "vereine": [
+      "S.K.G. Rodgau 1888 e.V."
+    ],
+    "nationen": [],
+    "datei": "p",
+    "anzahl": 2,
+    "wettkaempfe": 1,
+    "bestGesamt": 33.3,
+    "letzterWettkampf": "2026-10-24"
   },
   {
     "vorname": "Diana",
@@ -29460,10 +29779,10 @@
     ],
     "nationen": [],
     "datei": "p",
-    "anzahl": 7,
-    "wettkaempfe": 3,
+    "anzahl": 9,
+    "wettkaempfe": 4,
     "bestGesamt": 37.935,
-    "letzterWettkampf": "2026-05-16"
+    "letzterWettkampf": "2026-10-24"
   },
   {
     "vorname": "Jule",
@@ -29931,14 +30250,15 @@
     "nachname": "Petek",
     "jahrgang": 2015,
     "vereine": [
+      "S.K.G. Rodgau 1888 e.V.",
       "SKG Rodgau"
     ],
     "nationen": [],
     "datei": "p",
-    "anzahl": 2,
-    "wettkaempfe": 1,
-    "bestGesamt": 17.44,
-    "letzterWettkampf": "2024-06-23"
+    "anzahl": 4,
+    "wettkaempfe": 2,
+    "bestGesamt": 36.57,
+    "letzterWettkampf": "2026-10-24"
   },
   {
     "vorname": "Leonhard",
@@ -30476,14 +30796,15 @@
     "nachname": "Plagge",
     "jahrgang": 2009,
     "vereine": [
+      "Delmenhorster TV v. 1856",
       "GVO Oldenburg e.V."
     ],
     "nationen": [],
     "datei": "p",
-    "anzahl": 2,
-    "wettkaempfe": 1,
+    "anzahl": 3,
+    "wettkaempfe": 2,
     "bestGesamt": 42.98,
-    "letzterWettkampf": "2025-10-05"
+    "letzterWettkampf": "2026-10-24"
   },
   {
     "vorname": "Anna",
@@ -31558,6 +31879,20 @@
     "letzterWettkampf": "2026-09-19"
   },
   {
+    "vorname": "Eva",
+    "nachname": "Radovanlija",
+    "jahrgang": 2013,
+    "vereine": [
+      "TV Weingarten 1861 e.V."
+    ],
+    "nationen": [],
+    "datei": "r",
+    "anzahl": 2,
+    "wettkaempfe": 1,
+    "bestGesamt": 31.39,
+    "letzterWettkampf": "2026-10-24"
+  },
+  {
     "vorname": "Lina",
     "nachname": "Raffai",
     "jahrgang": 2015,
@@ -32120,10 +32455,10 @@
     ],
     "nationen": [],
     "datei": "r",
-    "anzahl": 3,
-    "wettkaempfe": 1,
+    "anzahl": 5,
+    "wettkaempfe": 2,
     "bestGesamt": 35.08,
-    "letzterWettkampf": "2026-05-14"
+    "letzterWettkampf": "2026-10-24"
   },
   {
     "vorname": "Zoey",
@@ -32623,15 +32958,15 @@
     "nachname": "Rhein",
     "jahrgang": 2015,
     "vereine": [
-      "TSV Mannheim",
-      "TSV Mannheim von 1846 e.V."
+      "TSV Mannheim von 1846 e.V.",
+      "TSV Mannheim"
     ],
     "nationen": [],
     "datei": "r",
-    "anzahl": 9,
-    "wettkaempfe": 3,
+    "anzahl": 11,
+    "wettkaempfe": 4,
     "bestGesamt": 39.78,
-    "letzterWettkampf": "2026-06-21"
+    "letzterWettkampf": "2026-10-24"
   },
   {
     "vorname": "Roman",
@@ -32657,10 +32992,10 @@
     ],
     "nationen": [],
     "datei": "r",
-    "anzahl": 5,
-    "wettkaempfe": 2,
+    "anzahl": 6,
+    "wettkaempfe": 3,
     "bestGesamt": 42.495,
-    "letzterWettkampf": "2025-10-05"
+    "letzterWettkampf": "2026-10-24"
   },
   {
     "vorname": "Alice",
@@ -32903,10 +33238,10 @@
     ],
     "nationen": [],
     "datei": "r",
-    "anzahl": 5,
-    "wettkaempfe": 2,
+    "anzahl": 7,
+    "wettkaempfe": 3,
     "bestGesamt": 40.79,
-    "letzterWettkampf": "2026-05-15"
+    "letzterWettkampf": "2026-10-24"
   },
   {
     "vorname": "Liv",
@@ -33973,14 +34308,15 @@
     "nachname": "Rudolph",
     "jahrgang": 2016,
     "vereine": [
+      "TV Burgkunstadt",
       "BY, Bayerischer Turnverband"
     ],
     "nationen": [],
     "datei": "r",
-    "anzahl": 3,
-    "wettkaempfe": 1,
-    "bestGesamt": 35.805,
-    "letzterWettkampf": "2026-05-01"
+    "anzahl": 6,
+    "wettkaempfe": 2,
+    "bestGesamt": 36.34,
+    "letzterWettkampf": "2026-10-24"
   },
   {
     "vorname": "Mari",
@@ -34819,10 +35155,10 @@
     ],
     "nationen": [],
     "datei": "s",
-    "anzahl": 13,
-    "wettkaempfe": 5,
-    "bestGesamt": 41.58,
-    "letzterWettkampf": "2026-10-10"
+    "anzahl": 16,
+    "wettkaempfe": 6,
+    "bestGesamt": 41.93,
+    "letzterWettkampf": "2026-10-24"
   },
   {
     "vorname": "Reina",
@@ -35304,10 +35640,10 @@
     ],
     "nationen": [],
     "datei": "s",
-    "anzahl": 2,
-    "wettkaempfe": 1,
-    "bestGesamt": 43.565,
-    "letzterWettkampf": "2025-10-05"
+    "anzahl": 5,
+    "wettkaempfe": 2,
+    "bestGesamt": 44.51,
+    "letzterWettkampf": "2026-10-24"
   },
   {
     "vorname": "Thea",
@@ -35358,16 +35694,16 @@
     "nachname": "Schienke",
     "jahrgang": 1999,
     "vereine": [
+      "TV Breckenheim 1890",
       "TV Breckenheim",
-      "UNI Tübingen",
-      "TV Breckenheim 1890"
+      "UNI Tübingen"
     ],
     "nationen": [],
     "datei": "s",
-    "anzahl": 9,
-    "wettkaempfe": 3,
+    "anzahl": 12,
+    "wettkaempfe": 4,
     "bestGesamt": 46.015,
-    "letzterWettkampf": "2026-06-20"
+    "letzterWettkampf": "2026-10-24"
   },
   {
     "vorname": "Paula",
@@ -35420,7 +35756,7 @@
     ],
     "nationen": [],
     "datei": "s",
-    "anzahl": 12,
+    "anzahl": 13,
     "wettkaempfe": 3,
     "bestGesamt": 38.4,
     "letzterWettkampf": "2026-10-24"
@@ -35572,6 +35908,20 @@
     "letzterWettkampf": "2026-05-01"
   },
   {
+    "vorname": "Frieda",
+    "nachname": "Schlee",
+    "jahrgang": 2015,
+    "vereine": [
+      "TV Burgkunstadt"
+    ],
+    "nationen": [],
+    "datei": "s",
+    "anzahl": 2,
+    "wettkaempfe": 1,
+    "bestGesamt": 37.75,
+    "letzterWettkampf": "2026-10-24"
+  },
+  {
     "vorname": "Tabea",
     "nachname": "Schlei",
     "jahrgang": 2014,
@@ -35595,10 +35945,10 @@
     ],
     "nationen": [],
     "datei": "s",
-    "anzahl": 5,
-    "wettkaempfe": 2,
-    "bestGesamt": 39.97,
-    "letzterWettkampf": "2026-05-14"
+    "anzahl": 8,
+    "wettkaempfe": 3,
+    "bestGesamt": 41.79,
+    "letzterWettkampf": "2026-10-24"
   },
   {
     "vorname": "Charlotte",
@@ -35693,10 +36043,10 @@
     ],
     "nationen": [],
     "datei": "s",
-    "anzahl": 7,
-    "wettkaempfe": 3,
+    "anzahl": 9,
+    "wettkaempfe": 4,
     "bestGesamt": 40.33,
-    "letzterWettkampf": "2026-06-21"
+    "letzterWettkampf": "2026-10-24"
   },
   {
     "vorname": "Sven",
@@ -35718,15 +36068,15 @@
     "nachname": "Schlundt",
     "jahrgang": 2008,
     "vereine": [
-      "BY, Bayerischer Turnverband",
-      "TV 1848 Erlangen"
+      "TV 1848 Erlangen",
+      "BY, Bayerischer Turnverband"
     ],
     "nationen": [],
     "datei": "s",
-    "anzahl": 8,
-    "wettkaempfe": 3,
-    "bestGesamt": 46.795,
-    "letzterWettkampf": "2026-05-02"
+    "anzahl": 10,
+    "wettkaempfe": 4,
+    "bestGesamt": 47.45,
+    "letzterWettkampf": "2026-10-24"
   },
   {
     "vorname": "Hanna",
@@ -35885,10 +36235,10 @@
     ],
     "nationen": [],
     "datei": "s",
-    "anzahl": 2,
-    "wettkaempfe": 1,
-    "bestGesamt": 29.56,
-    "letzterWettkampf": "2026-05-14"
+    "anzahl": 4,
+    "wettkaempfe": 2,
+    "bestGesamt": 33.76,
+    "letzterWettkampf": "2026-10-24"
   },
   {
     "vorname": "Annabell",
@@ -35945,10 +36295,10 @@
     ],
     "nationen": [],
     "datei": "s",
-    "anzahl": 12,
-    "wettkaempfe": 4,
-    "bestGesamt": 46.14,
-    "letzterWettkampf": "2026-07-04"
+    "anzahl": 15,
+    "wettkaempfe": 5,
+    "bestGesamt": 46.98,
+    "letzterWettkampf": "2026-10-24"
   },
   {
     "vorname": "Emilia",
@@ -36134,10 +36484,10 @@
     ],
     "nationen": [],
     "datei": "s",
-    "anzahl": 18,
-    "wettkaempfe": 5,
+    "anzahl": 20,
+    "wettkaempfe": 6,
     "bestGesamt": 50.065,
-    "letzterWettkampf": "2026-09-27"
+    "letzterWettkampf": "2026-10-24"
   },
   {
     "vorname": "Florian",
@@ -36172,15 +36522,16 @@
     "nachname": "Schmitz",
     "jahrgang": 2007,
     "vereine": [
+      "ATV v.1850 Hückeswagen",
       "ATV Hückeswagen e.V.",
       "ATV Hückeswagen"
     ],
     "nationen": [],
     "datei": "s",
-    "anzahl": 5,
-    "wettkaempfe": 2,
+    "anzahl": 8,
+    "wettkaempfe": 3,
     "bestGesamt": 46.91,
-    "letzterWettkampf": "2025-11-29"
+    "letzterWettkampf": "2026-10-24"
   },
   {
     "vorname": "Emilia",
@@ -36213,16 +36564,16 @@
   {
     "vorname": "Thea",
     "nachname": "Schneberger",
-    "jahrgang": null,
+    "jahrgang": 2017,
     "vereine": [
       "MTV Bad Kreuznach 1877 e.V."
     ],
     "nationen": [],
     "datei": "s",
-    "anzahl": 3,
-    "wettkaempfe": 1,
-    "bestGesamt": 38.685,
-    "letzterWettkampf": "2026-06-05"
+    "anzahl": 6,
+    "wettkaempfe": 2,
+    "bestGesamt": 39.13,
+    "letzterWettkampf": "2026-10-24"
   },
   {
     "vorname": "Anna",
@@ -36561,14 +36912,15 @@
     "nachname": "Scholz",
     "jahrgang": 2015,
     "vereine": [
+      "DTV Die Kängurus",
       "DTV Die Kängurus e. V."
     ],
     "nationen": [],
     "datei": "s",
-    "anzahl": 3,
-    "wettkaempfe": 1,
-    "bestGesamt": 38.275,
-    "letzterWettkampf": "2025-10-05"
+    "anzahl": 6,
+    "wettkaempfe": 2,
+    "bestGesamt": 41.26,
+    "letzterWettkampf": "2026-10-24"
   },
   {
     "vorname": "Sophie",
@@ -36654,15 +37006,16 @@
     "nachname": "Schöneberger",
     "jahrgang": 2016,
     "vereine": [
+      "TV 1888 Büttelborn",
       "TV 1888 Büttelborn e.V.",
       "HE, Hessischer Turnverband"
     ],
     "nationen": [],
     "datei": "s",
-    "anzahl": 9,
-    "wettkaempfe": 3,
-    "bestGesamt": 43.715,
-    "letzterWettkampf": "2026-09-27"
+    "anzahl": 12,
+    "wettkaempfe": 4,
+    "bestGesamt": 45.08,
+    "letzterWettkampf": "2026-10-24"
   },
   {
     "vorname": "Thilda Malea",
@@ -37017,10 +37370,10 @@
     ],
     "nationen": [],
     "datei": "s",
-    "anzahl": 12,
-    "wettkaempfe": 4,
-    "bestGesamt": 41.13,
-    "letzterWettkampf": "2026-06-20"
+    "anzahl": 15,
+    "wettkaempfe": 5,
+    "bestGesamt": 41.73,
+    "letzterWettkampf": "2026-10-24"
   },
   {
     "vorname": "Kilian",
@@ -37447,6 +37800,20 @@
     "letzterWettkampf": "2025-11-08"
   },
   {
+    "vorname": "Clara",
+    "nachname": "Schuster",
+    "jahrgang": 2014,
+    "vereine": [
+      "Eintracht Frankfurt"
+    ],
+    "nationen": [],
+    "datei": "s",
+    "anzahl": 2,
+    "wettkaempfe": 1,
+    "bestGesamt": 21.59,
+    "letzterWettkampf": "2026-10-24"
+  },
+  {
     "vorname": "Felix",
     "nachname": "Schuster",
     "jahrgang": 2013,
@@ -37599,10 +37966,10 @@
     ],
     "nationen": [],
     "datei": "s",
-    "anzahl": 13,
-    "wettkaempfe": 2,
-    "bestGesamt": 43.11,
-    "letzterWettkampf": "2026-09-27"
+    "anzahl": 16,
+    "wettkaempfe": 3,
+    "bestGesamt": 43.63,
+    "letzterWettkampf": "2026-10-24"
   },
   {
     "vorname": "Neele Sophie",
@@ -38142,15 +38509,16 @@
     "nachname": "Serwach",
     "jahrgang": 2015,
     "vereine": [
+      "TV Weingarten 1861 e.V.",
       "BW, Schwäbischer Turnerbund",
       "TV Weingarten"
     ],
     "nationen": [],
     "datei": "s",
-    "anzahl": 5,
-    "wettkaempfe": 2,
-    "bestGesamt": 40.61,
-    "letzterWettkampf": "2026-05-01"
+    "anzahl": 8,
+    "wettkaempfe": 3,
+    "bestGesamt": 41.48,
+    "letzterWettkampf": "2026-10-24"
   },
   {
     "vorname": "Derya Nur",
@@ -38882,10 +39250,10 @@
     ],
     "nationen": [],
     "datei": "s",
-    "anzahl": 14,
-    "wettkaempfe": 5,
+    "anzahl": 16,
+    "wettkaempfe": 6,
     "bestGesamt": 39.51,
-    "letzterWettkampf": "2026-06-21"
+    "letzterWettkampf": "2026-10-24"
   },
   {
     "vorname": "Henrique",
@@ -39374,10 +39742,10 @@
     ],
     "nationen": [],
     "datei": "s",
-    "anzahl": 7,
-    "wettkaempfe": 3,
+    "anzahl": 10,
+    "wettkaempfe": 4,
     "bestGesamt": 41.05,
-    "letzterWettkampf": "2026-06-05"
+    "letzterWettkampf": "2026-10-24"
   },
   {
     "vorname": "Ingmar",
@@ -39402,10 +39770,10 @@
     ],
     "nationen": [],
     "datei": "s",
-    "anzahl": 4,
-    "wettkaempfe": 2,
-    "bestGesamt": 34.05,
-    "letzterWettkampf": "2025-10-05"
+    "anzahl": 6,
+    "wettkaempfe": 3,
+    "bestGesamt": 44.66,
+    "letzterWettkampf": "2026-10-24"
   },
   {
     "vorname": "Marie",
@@ -39434,6 +39802,20 @@
     "wettkaempfe": 2,
     "bestGesamt": 34.39,
     "letzterWettkampf": "2026-09-26"
+  },
+  {
+    "vorname": "Jola Milou",
+    "nachname": "Staab",
+    "jahrgang": 2015,
+    "vereine": [
+      "Eintracht Frankfurt"
+    ],
+    "nationen": [],
+    "datei": "s",
+    "anzahl": 2,
+    "wettkaempfe": 1,
+    "bestGesamt": 35.61,
+    "letzterWettkampf": "2026-10-24"
   },
   {
     "vorname": "Maja",
@@ -39775,15 +40157,15 @@
     "nachname": "Steinmayr",
     "jahrgang": 2016,
     "vereine": [
-      "TSV Turnerbund München e.V.",
-      "TSV Turnerbund München"
+      "TSV Turnerbund München",
+      "TSV Turnerbund München e.V."
     ],
     "nationen": [],
     "datei": "s",
-    "anzahl": 10,
-    "wettkaempfe": 3,
+    "anzahl": 12,
+    "wettkaempfe": 4,
     "bestGesamt": 36.02,
-    "letzterWettkampf": "2026-06-21"
+    "letzterWettkampf": "2026-10-24"
   },
   {
     "vorname": "František",
@@ -40498,6 +40880,20 @@
     "letzterWettkampf": "2026-10-10"
   },
   {
+    "vorname": "Jonathan",
+    "nachname": "Sust",
+    "jahrgang": 2013,
+    "vereine": [
+      "TV Weingarten 1861 e.V."
+    ],
+    "nationen": [],
+    "datei": "s",
+    "anzahl": 2,
+    "wettkaempfe": 1,
+    "bestGesamt": 37.49,
+    "letzterWettkampf": "2026-10-24"
+  },
+  {
     "vorname": "Henrieke Theodora",
     "nachname": "Sütfels",
     "jahrgang": 2015,
@@ -41030,14 +41426,15 @@
     "nachname": "Thamer",
     "jahrgang": 2012,
     "vereine": [
+      "DTV Die Kängurus",
       "DTV Die Kängurus e. V."
     ],
     "nationen": [],
     "datei": "t",
-    "anzahl": 2,
-    "wettkaempfe": 1,
-    "bestGesamt": 37.03,
-    "letzterWettkampf": "2025-10-05"
+    "anzahl": 4,
+    "wettkaempfe": 2,
+    "bestGesamt": 38.94,
+    "letzterWettkampf": "2026-10-24"
   },
   {
     "vorname": "Jenna",
@@ -41080,10 +41477,10 @@
     ],
     "nationen": [],
     "datei": "t",
-    "anzahl": 11,
-    "wettkaempfe": 4,
+    "anzahl": 14,
+    "wettkaempfe": 5,
     "bestGesamt": 42.675,
-    "letzterWettkampf": "2026-05-14"
+    "letzterWettkampf": "2026-10-24"
   },
   {
     "vorname": "Lina",
@@ -41185,10 +41582,10 @@
     ],
     "nationen": [],
     "datei": "t",
-    "anzahl": 10,
-    "wettkaempfe": 5,
+    "anzahl": 12,
+    "wettkaempfe": 6,
     "bestGesamt": 37.29,
-    "letzterWettkampf": "2026-09-26"
+    "letzterWettkampf": "2026-10-24"
   },
   {
     "vorname": "Claire",
@@ -41331,10 +41728,10 @@
     ],
     "nationen": [],
     "datei": "t",
-    "anzahl": 3,
-    "wettkaempfe": 1,
-    "bestGesamt": 40.43,
-    "letzterWettkampf": "2026-06-21"
+    "anzahl": 6,
+    "wettkaempfe": 2,
+    "bestGesamt": 41.75,
+    "letzterWettkampf": "2026-10-24"
   },
   {
     "vorname": "Kuzey",
@@ -41521,6 +41918,20 @@
     "wettkaempfe": 1,
     "bestGesamt": 37.85,
     "letzterWettkampf": "2026-06-20"
+  },
+  {
+    "vorname": "Sofia Aylin",
+    "nachname": "Tokay",
+    "jahrgang": 2015,
+    "vereine": [
+      "Eintracht Frankfurt"
+    ],
+    "nationen": [],
+    "datei": "t",
+    "anzahl": 2,
+    "wettkaempfe": 1,
+    "bestGesamt": 39.06,
+    "letzterWettkampf": "2026-10-24"
   },
   {
     "vorname": "Julian",
@@ -41741,14 +42152,15 @@
     "nachname": "Tran",
     "jahrgang": 2016,
     "vereine": [
+      "ESV Lokomotive Zwickau",
       "ESV Lokomotive Zwickau e.V."
     ],
     "nationen": [],
     "datei": "t",
-    "anzahl": 3,
-    "wettkaempfe": 1,
-    "bestGesamt": 24.985,
-    "letzterWettkampf": "2024-09-14"
+    "anzahl": 5,
+    "wettkaempfe": 2,
+    "bestGesamt": 35.77,
+    "letzterWettkampf": "2026-10-24"
   },
   {
     "vorname": "Theresa",
@@ -41885,14 +42297,15 @@
     "nachname": "Tröster",
     "jahrgang": 2017,
     "vereine": [
+      "TV Burgkunstadt",
       "BY, Bayerischer Turnverband"
     ],
     "nationen": [],
     "datei": "t",
-    "anzahl": 2,
-    "wettkaempfe": 1,
-    "bestGesamt": 36.775,
-    "letzterWettkampf": "2026-05-01"
+    "anzahl": 5,
+    "wettkaempfe": 2,
+    "bestGesamt": 37.87,
+    "letzterWettkampf": "2026-10-24"
   },
   {
     "vorname": "Lisa",
@@ -42016,10 +42429,10 @@
     ],
     "nationen": [],
     "datei": "t",
-    "anzahl": 6,
-    "wettkaempfe": 3,
-    "bestGesamt": 41.31,
-    "letzterWettkampf": "2026-06-20"
+    "anzahl": 9,
+    "wettkaempfe": 4,
+    "bestGesamt": 41.59,
+    "letzterWettkampf": "2026-10-24"
   },
   {
     "vorname": "Joris",
@@ -43998,10 +44411,10 @@
     ],
     "nationen": [],
     "datei": "w",
-    "anzahl": 4,
-    "wettkaempfe": 1,
+    "anzahl": 6,
+    "wettkaempfe": 2,
     "bestGesamt": 38.62,
-    "letzterWettkampf": "2026-06-21"
+    "letzterWettkampf": "2026-10-24"
   },
   {
     "vorname": "Elisha",
@@ -44172,10 +44585,10 @@
     ],
     "nationen": [],
     "datei": "w",
-    "anzahl": 2,
-    "wettkaempfe": 1,
-    "bestGesamt": 37.63,
-    "letzterWettkampf": "2026-06-20"
+    "anzahl": 4,
+    "wettkaempfe": 2,
+    "bestGesamt": 40.23,
+    "letzterWettkampf": "2026-10-24"
   },
   {
     "vorname": "Emma",
@@ -44314,10 +44727,10 @@
     ],
     "nationen": [],
     "datei": "w",
-    "anzahl": 11,
-    "wettkaempfe": 4,
+    "anzahl": 14,
+    "wettkaempfe": 5,
     "bestGesamt": 42.77,
-    "letzterWettkampf": "2026-07-04"
+    "letzterWettkampf": "2026-10-24"
   },
   {
     "vorname": "Alina",
@@ -44610,10 +45023,10 @@
     ],
     "nationen": [],
     "datei": "w",
-    "anzahl": 17,
-    "wettkaempfe": 7,
-    "bestGesamt": 44.55,
-    "letzterWettkampf": "2026-09-27"
+    "anzahl": 20,
+    "wettkaempfe": 8,
+    "bestGesamt": 45.71,
+    "letzterWettkampf": "2026-10-24"
   },
   {
     "vorname": "Emil",
@@ -44670,10 +45083,10 @@
     ],
     "nationen": [],
     "datei": "w",
-    "anzahl": 8,
-    "wettkaempfe": 3,
-    "bestGesamt": 39.32,
-    "letzterWettkampf": "2026-06-21"
+    "anzahl": 11,
+    "wettkaempfe": 4,
+    "bestGesamt": 41.02,
+    "letzterWettkampf": "2026-10-24"
   },
   {
     "vorname": "Greta",
@@ -45850,15 +46263,16 @@
     "nachname": "Wolff",
     "jahrgang": 2012,
     "vereine": [
+      "S.K.G. Rodgau 1888 e.V.",
       "S.K.G Rodgau",
       "SKG Rodgau"
     ],
     "nationen": [],
     "datei": "w",
-    "anzahl": 7,
-    "wettkaempfe": 2,
+    "anzahl": 9,
+    "wettkaempfe": 3,
     "bestGesamt": 42.43,
-    "letzterWettkampf": "2026-06-21"
+    "letzterWettkampf": "2026-10-24"
   },
   {
     "vorname": "Philipp",
@@ -45992,6 +46406,20 @@
     "wettkaempfe": 2,
     "bestGesamt": 25.9,
     "letzterWettkampf": "2025-11-08"
+  },
+  {
+    "vorname": "Liv Sigrid",
+    "nachname": "Wüstefeld",
+    "jahrgang": 2016,
+    "vereine": [
+      "DTV Die Kängurus"
+    ],
+    "nationen": [],
+    "datei": "w",
+    "anzahl": 2,
+    "wettkaempfe": 1,
+    "bestGesamt": 36.56,
+    "letzterWettkampf": "2026-10-24"
   },
   {
     "vorname": "Lotta",
@@ -46443,16 +46871,16 @@
     "nachname": "Zeimer",
     "jahrgang": 2015,
     "vereine": [
-      "TSV Mannheim",
       "TSV Mannheim von 1846 e.V.",
+      "TSV Mannheim",
       "BW, Badischer Turner-Bund e.V."
     ],
     "nationen": [],
     "datei": "z",
-    "anzahl": 26,
-    "wettkaempfe": 9,
+    "anzahl": 28,
+    "wettkaempfe": 10,
     "bestGesamt": 39.97,
-    "letzterWettkampf": "2026-10-10"
+    "letzterWettkampf": "2026-10-24"
   },
   {
     "vorname": "Ronja",
@@ -46501,15 +46929,15 @@
     "nachname": "Zemke",
     "jahrgang": 2015,
     "vereine": [
-      "VfL Grasdorf",
-      "VFL Grasdorf 1896 e.V."
+      "VFL Grasdorf 1896 e.V.",
+      "VfL Grasdorf"
     ],
     "nationen": [],
     "datei": "z",
-    "anzahl": 9,
-    "wettkaempfe": 4,
-    "bestGesamt": 36.305,
-    "letzterWettkampf": "2026-09-19"
+    "anzahl": 12,
+    "wettkaempfe": 5,
+    "bestGesamt": 41.43,
+    "letzterWettkampf": "2026-10-24"
   },
   {
     "vorname": "Leonhard",
@@ -46631,15 +47059,15 @@
     "nachname": "Ziegler",
     "jahrgang": 2015,
     "vereine": [
-      "HE, Hessischer Turnverband",
-      "TV 1843 Dillenburg"
+      "TV 1843 Dillenburg",
+      "HE, Hessischer Turnverband"
     ],
     "nationen": [],
     "datei": "z",
-    "anzahl": 6,
-    "wettkaempfe": 2,
-    "bestGesamt": 38.95,
-    "letzterWettkampf": "2026-05-01"
+    "anzahl": 9,
+    "wettkaempfe": 3,
+    "bestGesamt": 39.91,
+    "letzterWettkampf": "2026-10-24"
   },
   {
     "vorname": "Sophie",
@@ -46650,10 +47078,10 @@
     ],
     "nationen": [],
     "datei": "z",
-    "anzahl": 2,
-    "wettkaempfe": 1,
-    "bestGesamt": 36.965,
-    "letzterWettkampf": "2025-10-05"
+    "anzahl": 4,
+    "wettkaempfe": 2,
+    "bestGesamt": 39.71,
+    "letzterWettkampf": "2026-10-24"
   },
   {
     "vorname": "Moritz",
