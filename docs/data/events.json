@@ -1,5 +1,5 @@
 {
-  "aktualisiert": "2026-10-31T09:15:06Z",
+  "aktualisiert": "2026-11-01T10:01:37Z",
   "events": {
     "03afebf7-8a57-4ba2-4940-72a51e677747": {
       "name": "25. Barmstedt Cup 2026",
@@ -43,7 +43,7 @@
       "land": 276,
       "status": "offen",
       "manuell": false,
-      "zuletztGeladen": "2026-10-31",
+      "zuletztGeladen": "2026-11-01",
       "standSporttech": "2026-10-26T15:20:00.181363Z",
       "wertungen": 0
     },
@@ -129,7 +129,7 @@
       "land": 276,
       "status": "offen",
       "manuell": false,
-      "zuletztGeladen": "2026-10-31",
+      "zuletztGeladen": "2026-11-01",
       "standSporttech": "2026-10-15T20:01:14.409837Z",
       "wertungen": 180
     },
@@ -336,7 +336,7 @@
       "land": 276,
       "status": "offen",
       "manuell": false,
-      "zuletztGeladen": "2026-10-31",
+      "zuletztGeladen": "2026-11-01",
       "standSporttech": "2026-10-29T14:31:01.666648Z",
       "wertungen": 5
     },
@@ -361,7 +361,7 @@
       "land": 276,
       "status": "offen",
       "manuell": false,
-      "zuletztGeladen": "2026-10-31",
+      "zuletztGeladen": "2026-11-01",
       "standSporttech": "2026-10-20T12:19:07.332879Z",
       "wertungen": 0
     },
@@ -374,7 +374,7 @@
       "land": 276,
       "status": "offen",
       "manuell": false,
-      "zuletztGeladen": "2026-10-31",
+      "zuletztGeladen": "2026-11-01",
       "standSporttech": "2026-10-01T12:26:44.837339Z",
       "wertungen": 362
     },
@@ -411,7 +411,7 @@
       "land": 276,
       "status": "offen",
       "manuell": false,
-      "zuletztGeladen": "2026-10-31",
+      "zuletztGeladen": "2026-11-01",
       "standSporttech": "2026-10-22T09:42:25.392472Z",
       "wertungen": 0
     },
@@ -550,7 +550,7 @@
       "wertungen": 334
     },
     "7618eb5e-3669-4962-4349-56ea4b6a27d7": {
-      "name": "Offenen Doppelmini Meisterschaften",
+      "name": "Offenen Doppelmini Meisterschaft 2026",
       "beginn": "2026-09-06",
       "ende": "2026-09-06",
       "ausrichter": "Turngau Saar- Mosel",
@@ -558,8 +558,8 @@
       "land": 276,
       "status": "ohne-wertungen",
       "manuell": false,
-      "zuletztGeladen": "2026-10-18",
-      "standSporttech": "2026-10-17T07:59:53.486686Z",
+      "zuletztGeladen": "2026-11-01",
+      "standSporttech": "2026-10-31T09:36:48.208258Z",
       "wertungen": 0
     },
     "76b1cb83-e87b-47ae-631b-16c4e6cd8962": {
@@ -710,15 +710,16 @@
       "wertungen": 0
     },
     "a0e507ff-5e98-4219-7944-b851f5ceafa7": {
-      "name": "Landes Einzel Meisterschaften 2026",
+      "name": "Landes Einzel Meisterschaft 2026",
       "beginn": "2026-03-29",
       "ende": "2026-03-29",
       "ausrichter": "Saarländischer Turnerbund",
+      "ausrichterId": "ca2950e3-a39a-473c-480e-6dac7c7beee8",
       "land": 276,
       "status": "abgeschlossen",
       "manuell": false,
-      "zuletztGeladen": "2026-10-11",
-      "standSporttech": "2026-03-29T17:34:22.779687Z",
+      "zuletztGeladen": "2026-11-01",
+      "standSporttech": "2026-10-31T09:37:06.734143Z",
       "wertungen": 155
     },
     "a26c8f36-f2aa-4ffc-7478-eadd9a5f059d": {
@@ -762,11 +763,25 @@
       "beginn": "2026-05-09",
       "ende": "2026-05-09",
       "ausrichter": "Saarländischer Turnerbund",
+      "ausrichterId": "ca2950e3-a39a-473c-480e-6dac7c7beee8",
       "land": 276,
       "status": "ohne-wertungen",
       "manuell": false,
-      "zuletztGeladen": "2026-10-11",
-      "standSporttech": "2026-06-26T18:40:02.566963Z",
+      "zuletztGeladen": "2026-11-01",
+      "standSporttech": "2026-10-31T09:37:28.459031Z",
+      "wertungen": 0
+    },
+    "ad60424d-69b1-4f1d-6b5f-a86836c1ee93": {
+      "name": "Landes Vereinsmannschaft Meisterschaft 2026",
+      "beginn": "2026-11-14",
+      "ende": "2026-11-14",
+      "ausrichter": "Saarländischer Turnerbund",
+      "ausrichterId": "ca2950e3-a39a-473c-480e-6dac7c7beee8",
+      "land": 276,
+      "status": "offen",
+      "manuell": false,
+      "zuletztGeladen": "2026-11-01",
+      "standSporttech": "2026-10-31T09:36:25.743925Z",
       "wertungen": 0
     },
     "b21b0783-c667-42b4-7108-ba41ab7f1121": {
@@ -983,10 +998,10 @@
       "ausrichter": "Turngau Blies",
       "ausrichterId": "661b1bfa-157a-4a9f-5d51-13270a1a8a55",
       "land": 276,
-      "status": "offen",
+      "status": "abgeschlossen",
       "manuell": false,
-      "zuletztGeladen": "2026-10-11",
-      "standSporttech": "2026-09-26T12:38:07.538131Z",
+      "zuletztGeladen": "2026-11-01",
+      "standSporttech": "2026-10-31T09:29:43.915081Z",
       "wertungen": 70
     },
     "e57c31ca-75b4-441c-658b-9330334b303e": {
@@ -1023,7 +1038,7 @@
       "land": 276,
       "status": "offen",
       "manuell": false,
-      "zuletztGeladen": "2026-10-31",
+      "zuletztGeladen": "2026-11-01",
       "standSporttech": "2026-10-21T11:07:52.306105Z",
       "wertungen": 0
     },
