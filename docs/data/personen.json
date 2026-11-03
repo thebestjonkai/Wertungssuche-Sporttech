@@ -677,6 +677,20 @@
     "letzterWettkampf": "2024-03-22"
   },
   {
+    "vorname": "Madeline",
+    "nachname": "ALLEN",
+    "jahrgang": null,
+    "vereine": [
+      "Let It Shine"
+    ],
+    "nationen": [],
+    "datei": "a",
+    "anzahl": 2,
+    "wettkaempfe": 1,
+    "bestGesamt": 23.1,
+    "letzterWettkampf": "2026-10-24"
+  },
+  {
     "vorname": "Ryley",
     "nachname": "ALLMAN",
     "jahrgang": 2011,
@@ -889,6 +903,20 @@
     "wettkaempfe": 2,
     "bestGesamt": 40.03,
     "letzterWettkampf": "2026-05-31"
+  },
+  {
+    "vorname": "Maia",
+    "nachname": "AMANO",
+    "jahrgang": null,
+    "vereine": [
+      "Merino Trampoline Gymnastics Academy"
+    ],
+    "nationen": [],
+    "datei": "a",
+    "anzahl": 2,
+    "wettkaempfe": 1,
+    "bestGesamt": 52.45,
+    "letzterWettkampf": "2026-10-24"
   },
   {
     "vorname": "Aiden",
@@ -1456,6 +1484,20 @@
     "letzterWettkampf": "2026-07-10"
   },
   {
+    "vorname": "Katherine",
+    "nachname": "ARTHUR",
+    "jahrgang": null,
+    "vereine": [
+      "Let It Shine"
+    ],
+    "nationen": [],
+    "datei": "a",
+    "anzahl": 1,
+    "wettkaempfe": 1,
+    "bestGesamt": 12.067,
+    "letzterWettkampf": "2026-10-24"
+  },
+  {
     "vorname": "Angelina",
     "nachname": "Artykova",
     "jahrgang": 2007,
@@ -1783,6 +1825,34 @@
     "wettkaempfe": 1,
     "bestGesamt": 23.7,
     "letzterWettkampf": "2024-09-28"
+  },
+  {
+    "vorname": "Maisy",
+    "nachname": "BAILEY",
+    "jahrgang": null,
+    "vereine": [
+      "StarMakers"
+    ],
+    "nationen": [],
+    "datei": "b",
+    "anzahl": 1,
+    "wettkaempfe": 1,
+    "bestGesamt": 2.333,
+    "letzterWettkampf": "2026-10-24"
+  },
+  {
+    "vorname": "Bryce",
+    "nachname": "BAKER",
+    "jahrgang": null,
+    "vereine": [
+      "Let It Shine"
+    ],
+    "nationen": [],
+    "datei": "b",
+    "anzahl": 1,
+    "wettkaempfe": 1,
+    "bestGesamt": 11.267,
+    "letzterWettkampf": "2026-10-24"
   },
   {
     "vorname": "Ammar",
@@ -3021,6 +3091,20 @@
     "wettkaempfe": 4,
     "bestGesamt": 38.32,
     "letzterWettkampf": "2026-07-04"
+  },
+  {
+    "vorname": "Bella",
+    "nachname": "BERRA",
+    "jahrgang": null,
+    "vereine": [
+      "Let It Shine"
+    ],
+    "nationen": [],
+    "datei": "b",
+    "anzahl": 1,
+    "wettkaempfe": 1,
+    "bestGesamt": 14.533,
+    "letzterWettkampf": "2026-10-24"
   },
   {
     "vorname": "Mila",
@@ -5687,6 +5771,20 @@
     "letzterWettkampf": "2026-07-10"
   },
   {
+    "vorname": "PJ",
+    "nachname": "CALVILLO",
+    "jahrgang": null,
+    "vereine": [
+      "Merino Trampoline Gymnastics Academy"
+    ],
+    "nationen": [],
+    "datei": "c",
+    "anzahl": 1,
+    "wettkaempfe": 1,
+    "bestGesamt": 12.8,
+    "letzterWettkampf": "2026-10-24"
+  },
+  {
     "vorname": "Tristan",
     "nachname": "Camme",
     "jahrgang": 2016,
@@ -5769,6 +5867,20 @@
     "wettkaempfe": 1,
     "bestGesamt": 41.85,
     "letzterWettkampf": "2026-07-10"
+  },
+  {
+    "vorname": "Palmer",
+    "nachname": "CANNON",
+    "jahrgang": null,
+    "vereine": [
+      "StarMakers"
+    ],
+    "nationen": [],
+    "datei": "c",
+    "anzahl": 2,
+    "wettkaempfe": 1,
+    "bestGesamt": 25.2,
+    "letzterWettkampf": "2026-10-24"
   },
   {
     "vorname": "Liano",
@@ -5983,6 +6095,20 @@
     "letzterWettkampf": "2026-07-10"
   },
   {
+    "vorname": "Susana",
+    "nachname": "CASCARANO",
+    "jahrgang": null,
+    "vereine": [
+      "Let It Shine"
+    ],
+    "nationen": [],
+    "datei": "c",
+    "anzahl": 1,
+    "wettkaempfe": 1,
+    "bestGesamt": 12.133,
+    "letzterWettkampf": "2026-10-24"
+  },
+  {
     "vorname": "David",
     "nachname": "CASTILLO",
     "jahrgang": 2007,
@@ -6009,6 +6135,20 @@
     "wettkaempfe": 1,
     "bestGesamt": 37.62,
     "letzterWettkampf": "2026-07-10"
+  },
+  {
+    "vorname": "Kate",
+    "nachname": "CASTRO",
+    "jahrgang": null,
+    "vereine": [
+      "StarMakers"
+    ],
+    "nationen": [],
+    "datei": "c",
+    "anzahl": 2,
+    "wettkaempfe": 1,
+    "bestGesamt": 30.633,
+    "letzterWettkampf": "2026-10-24"
   },
   {
     "vorname": "Elif",
@@ -6184,6 +6324,20 @@
     "letzterWettkampf": "2026-06-26"
   },
   {
+    "vorname": "Shiloh",
+    "nachname": "CHILDS",
+    "jahrgang": null,
+    "vereine": [
+      "Merino Trampoline Gymnastics Academy"
+    ],
+    "nationen": [],
+    "datei": "c",
+    "anzahl": 1,
+    "wettkaempfe": 1,
+    "bestGesamt": 12.467,
+    "letzterWettkampf": "2026-10-24"
+  },
+  {
     "vorname": "Mario",
     "nachname": "Chirico",
     "jahrgang": 2016,
@@ -6241,6 +6395,20 @@
     "letzterWettkampf": "2026-07-12"
   },
   {
+    "vorname": "Natalie",
+    "nachname": "CICHON",
+    "jahrgang": null,
+    "vereine": [
+      "Let It Shine"
+    ],
+    "nationen": [],
+    "datei": "c",
+    "anzahl": 1,
+    "wettkaempfe": 1,
+    "bestGesamt": 14.267,
+    "letzterWettkampf": "2026-10-24"
+  },
+  {
     "vorname": "Leandra",
     "nachname": "Cioutsoucis",
     "jahrgang": 2017,
@@ -6295,6 +6463,20 @@
     "wettkaempfe": 1,
     "bestGesamt": 40.05,
     "letzterWettkampf": "2026-07-09"
+  },
+  {
+    "vorname": "Cate",
+    "nachname": "CLAYTON",
+    "jahrgang": null,
+    "vereine": [
+      "Let It Shine"
+    ],
+    "nationen": [],
+    "datei": "c",
+    "anzahl": 1,
+    "wettkaempfe": 1,
+    "bestGesamt": 0.0,
+    "letzterWettkampf": "2026-10-24"
   },
   {
     "vorname": "Lydia",
@@ -6396,6 +6578,34 @@
     "wettkaempfe": 1,
     "bestGesamt": 37.25,
     "letzterWettkampf": "2026-07-10"
+  },
+  {
+    "vorname": "Janee",
+    "nachname": "COGDELL",
+    "jahrgang": null,
+    "vereine": [
+      "StarMakers"
+    ],
+    "nationen": [],
+    "datei": "c",
+    "anzahl": 2,
+    "wettkaempfe": 1,
+    "bestGesamt": 28.7,
+    "letzterWettkampf": "2026-10-24"
+  },
+  {
+    "vorname": "Jimah",
+    "nachname": "COGDELL",
+    "jahrgang": null,
+    "vereine": [
+      "StarMakers"
+    ],
+    "nationen": [],
+    "datei": "c",
+    "anzahl": 2,
+    "wettkaempfe": 1,
+    "bestGesamt": 28.5,
+    "letzterWettkampf": "2026-10-24"
   },
   {
     "vorname": "Adam",
@@ -6523,6 +6733,20 @@
     "wettkaempfe": 1,
     "bestGesamt": 50.51,
     "letzterWettkampf": "2026-06-27"
+  },
+  {
+    "vorname": "Rafael",
+    "nachname": "COOK",
+    "jahrgang": null,
+    "vereine": [
+      "Merino Trampoline Gymnastics Academy"
+    ],
+    "nationen": [],
+    "datei": "c",
+    "anzahl": 2,
+    "wettkaempfe": 1,
+    "bestGesamt": 30.34,
+    "letzterWettkampf": "2026-10-24"
   },
   {
     "vorname": "Avery",
@@ -6753,6 +6977,20 @@
     "letzterWettkampf": "2026-07-10"
   },
   {
+    "vorname": "Ashlyn",
+    "nachname": "COX",
+    "jahrgang": null,
+    "vereine": [
+      "Merino Trampoline Gymnastics Academy"
+    ],
+    "nationen": [],
+    "datei": "c",
+    "anzahl": 1,
+    "wettkaempfe": 1,
+    "bestGesamt": 15.4,
+    "letzterWettkampf": "2026-10-24"
+  },
+  {
     "vorname": "Charlotte",
     "nachname": "Cramer",
     "jahrgang": 2016,
@@ -6782,6 +7020,20 @@
     "letzterWettkampf": "2026-02-07"
   },
   {
+    "vorname": "Ezra",
+    "nachname": "CRENSHAW",
+    "jahrgang": null,
+    "vereine": [
+      "Merino Trampoline Gymnastics Academy"
+    ],
+    "nationen": [],
+    "datei": "c",
+    "anzahl": 1,
+    "wettkaempfe": 1,
+    "bestGesamt": 14.133,
+    "letzterWettkampf": "2026-10-24"
+  },
+  {
     "vorname": "Hannah",
     "nachname": "Cronje",
     "jahrgang": 2007,
@@ -6808,6 +7060,20 @@
     "wettkaempfe": 1,
     "bestGesamt": 51.58,
     "letzterWettkampf": "2026-07-10"
+  },
+  {
+    "vorname": "Teddi Jae",
+    "nachname": "CUCCI",
+    "jahrgang": null,
+    "vereine": [
+      "Let It Shine"
+    ],
+    "nationen": [],
+    "datei": "c",
+    "anzahl": 1,
+    "wettkaempfe": 1,
+    "bestGesamt": 2.467,
+    "letzterWettkampf": "2026-10-24"
   },
   {
     "vorname": "Mauro",
@@ -7112,6 +7378,20 @@
     "wettkaempfe": 4,
     "bestGesamt": 38.74,
     "letzterWettkampf": "2026-09-06"
+  },
+  {
+    "vorname": "Isla",
+    "nachname": "DAVENPORT",
+    "jahrgang": null,
+    "vereine": [
+      "Let It Shine"
+    ],
+    "nationen": [],
+    "datei": "d",
+    "anzahl": 1,
+    "wettkaempfe": 1,
+    "bestGesamt": 0.0,
+    "letzterWettkampf": "2026-10-24"
   },
   {
     "vorname": "Madaline",
@@ -7538,6 +7818,20 @@
     "letzterWettkampf": "2026-10-10"
   },
   {
+    "vorname": "Vivian",
+    "nachname": "DENTON",
+    "jahrgang": null,
+    "vereine": [
+      "Let It Shine"
+    ],
+    "nationen": [],
+    "datei": "d",
+    "anzahl": 1,
+    "wettkaempfe": 1,
+    "bestGesamt": 12.933,
+    "letzterWettkampf": "2026-10-24"
+  },
+  {
     "vorname": "Jolie",
     "nachname": "Denzin",
     "jahrgang": 2015,
@@ -7592,6 +7886,20 @@
     "wettkaempfe": 1,
     "bestGesamt": 44.1,
     "letzterWettkampf": "2026-07-09"
+  },
+  {
+    "vorname": "Josslyn",
+    "nachname": "DESOUZA",
+    "jahrgang": null,
+    "vereine": [
+      "Let It Shine"
+    ],
+    "nationen": [],
+    "datei": "d",
+    "anzahl": 1,
+    "wettkaempfe": 1,
+    "bestGesamt": 13.533,
+    "letzterWettkampf": "2026-10-24"
   },
   {
     "vorname": "Maja",
@@ -8011,6 +8319,20 @@
     "wettkaempfe": 2,
     "bestGesamt": 40.735,
     "letzterWettkampf": "2026-02-14"
+  },
+  {
+    "vorname": "Ava",
+    "nachname": "DIXON",
+    "jahrgang": null,
+    "vereine": [
+      "Merino Trampoline Gymnastics Academy"
+    ],
+    "nationen": [],
+    "datei": "d",
+    "anzahl": 1,
+    "wettkaempfe": 1,
+    "bestGesamt": 12.6,
+    "letzterWettkampf": "2026-10-24"
   },
   {
     "vorname": "Jonas",
@@ -8927,6 +9249,20 @@
     "letzterWettkampf": "2026-06-26"
   },
   {
+    "vorname": "Liam",
+    "nachname": "EDWARDS",
+    "jahrgang": null,
+    "vereine": [
+      "Merino Trampoline Gymnastics Academy"
+    ],
+    "nationen": [],
+    "datei": "e",
+    "anzahl": 2,
+    "wettkaempfe": 1,
+    "bestGesamt": 28.5,
+    "letzterWettkampf": "2026-10-24"
+  },
+  {
     "vorname": "Kristina",
     "nachname": "Efimenko",
     "jahrgang": 2013,
@@ -8953,6 +9289,20 @@
     "wettkaempfe": 1,
     "bestGesamt": 44.3,
     "letzterWettkampf": "2026-06-25"
+  },
+  {
+    "vorname": "Victoria",
+    "nachname": "EGOROVA",
+    "jahrgang": null,
+    "vereine": [
+      "Tennessee Elite Gymnastics"
+    ],
+    "nationen": [],
+    "datei": "e",
+    "anzahl": 2,
+    "wettkaempfe": 1,
+    "bestGesamt": 45.3,
+    "letzterWettkampf": "2026-10-24"
   },
   {
     "vorname": "Arthur",
@@ -9909,6 +10259,20 @@
     "letzterWettkampf": "2024-03-22"
   },
   {
+    "vorname": "Ellie",
+    "nachname": "FARBER",
+    "jahrgang": null,
+    "vereine": [
+      "Let It Shine"
+    ],
+    "nationen": [],
+    "datei": "f",
+    "anzahl": 2,
+    "wettkaempfe": 1,
+    "bestGesamt": 30.1,
+    "letzterWettkampf": "2026-10-24"
+  },
+  {
     "vorname": "Maria",
     "nachname": "Faria",
     "jahrgang": 2016,
@@ -10050,6 +10414,20 @@
     "letzterWettkampf": "2025-11-29"
   },
   {
+    "vorname": "Brooks",
+    "nachname": "FEDERLE",
+    "jahrgang": null,
+    "vereine": [
+      "Let It Shine"
+    ],
+    "nationen": [],
+    "datei": "f",
+    "anzahl": 1,
+    "wettkaempfe": 1,
+    "bestGesamt": 14.067,
+    "letzterWettkampf": "2026-10-24"
+  },
+  {
     "vorname": "Anastasia",
     "nachname": "Felde",
     "jahrgang": 2011,
@@ -10162,6 +10540,20 @@
     "wettkaempfe": 1,
     "bestGesamt": 37.45,
     "letzterWettkampf": "2026-02-14"
+  },
+  {
+    "vorname": "Gabby",
+    "nachname": "FERDOWSI",
+    "jahrgang": null,
+    "vereine": [
+      "Let It Shine"
+    ],
+    "nationen": [],
+    "datei": "f",
+    "anzahl": 1,
+    "wettkaempfe": 1,
+    "bestGesamt": 12.8,
+    "letzterWettkampf": "2026-10-24"
   },
   {
     "vorname": "João",
@@ -10764,6 +11156,20 @@
     "letzterWettkampf": "2024-10-26"
   },
   {
+    "vorname": "Gigi",
+    "nachname": "FLORES",
+    "jahrgang": null,
+    "vereine": [
+      "Let It Shine"
+    ],
+    "nationen": [],
+    "datei": "f",
+    "anzahl": 1,
+    "wettkaempfe": 1,
+    "bestGesamt": 5.333,
+    "letzterWettkampf": "2026-10-24"
+  },
+  {
     "vorname": "Imogen",
     "nachname": "FLORIAN",
     "jahrgang": null,
@@ -11018,6 +11424,20 @@
     "wettkaempfe": 1,
     "bestGesamt": 33.02,
     "letzterWettkampf": "2026-06-21"
+  },
+  {
+    "vorname": "Addie",
+    "nachname": "FREDERICKS",
+    "jahrgang": null,
+    "vereine": [
+      "Let It Shine"
+    ],
+    "nationen": [],
+    "datei": "f",
+    "anzahl": 2,
+    "wettkaempfe": 1,
+    "bestGesamt": 42.39,
+    "letzterWettkampf": "2026-10-24"
   },
   {
     "vorname": "Giovanna",
@@ -11610,6 +12030,34 @@
     "wettkaempfe": 1,
     "bestGesamt": 38.425,
     "letzterWettkampf": "2026-02-07"
+  },
+  {
+    "vorname": "Margaret",
+    "nachname": "GADDIS",
+    "jahrgang": null,
+    "vereine": [
+      "Let It Shine"
+    ],
+    "nationen": [],
+    "datei": "g",
+    "anzahl": 1,
+    "wettkaempfe": 1,
+    "bestGesamt": 13.733,
+    "letzterWettkampf": "2026-10-24"
+  },
+  {
+    "vorname": "Meredith",
+    "nachname": "GADDIS",
+    "jahrgang": null,
+    "vereine": [
+      "Let It Shine"
+    ],
+    "nationen": [],
+    "datei": "g",
+    "anzahl": 1,
+    "wettkaempfe": 1,
+    "bestGesamt": 13.133,
+    "letzterWettkampf": "2026-10-24"
   },
   {
     "vorname": "Jana Paulina",
@@ -12250,6 +12698,20 @@
     "wettkaempfe": 1,
     "bestGesamt": 56.76,
     "letzterWettkampf": "2024-06-22"
+  },
+  {
+    "vorname": "Cody",
+    "nachname": "GESUELLI",
+    "jahrgang": null,
+    "vereine": [
+      "Merino Trampoline Gymnastics Academy"
+    ],
+    "nationen": [],
+    "datei": "g",
+    "anzahl": 2,
+    "wettkaempfe": 1,
+    "bestGesamt": 59.39,
+    "letzterWettkampf": "2026-10-24"
   },
   {
     "vorname": "Christina",
@@ -13496,6 +13958,34 @@
     "letzterWettkampf": "2025-06-29"
   },
   {
+    "vorname": "Clara",
+    "nachname": "GRINDSTAFF",
+    "jahrgang": null,
+    "vereine": [
+      "Let It Shine"
+    ],
+    "nationen": [],
+    "datei": "g",
+    "anzahl": 1,
+    "wettkaempfe": 1,
+    "bestGesamt": 6.867,
+    "letzterWettkampf": "2026-10-24"
+  },
+  {
+    "vorname": "Maggie",
+    "nachname": "GRINDSTAFF",
+    "jahrgang": null,
+    "vereine": [
+      "Let It Shine"
+    ],
+    "nationen": [],
+    "datei": "g",
+    "anzahl": 2,
+    "wettkaempfe": 1,
+    "bestGesamt": 27.5,
+    "letzterWettkampf": "2026-10-24"
+  },
+  {
     "vorname": "Emily",
     "nachname": "Grobolschek",
     "jahrgang": 2018,
@@ -14656,6 +15146,48 @@
     "letzterWettkampf": "2024-09-14"
   },
   {
+    "vorname": "Amelia",
+    "nachname": "HATHCOCK",
+    "jahrgang": null,
+    "vereine": [
+      "Merino Trampoline Gymnastics Academy"
+    ],
+    "nationen": [],
+    "datei": "h",
+    "anzahl": 1,
+    "wettkaempfe": 1,
+    "bestGesamt": 13.933,
+    "letzterWettkampf": "2026-10-24"
+  },
+  {
+    "vorname": "Caleb",
+    "nachname": "HATHCOCK",
+    "jahrgang": null,
+    "vereine": [
+      "Merino Trampoline Gymnastics Academy"
+    ],
+    "nationen": [],
+    "datei": "h",
+    "anzahl": 1,
+    "wettkaempfe": 1,
+    "bestGesamt": 12.2,
+    "letzterWettkampf": "2026-10-24"
+  },
+  {
+    "vorname": "Caroline",
+    "nachname": "HATHCOCK",
+    "jahrgang": null,
+    "vereine": [
+      "Merino Trampoline Gymnastics Academy"
+    ],
+    "nationen": [],
+    "datei": "h",
+    "anzahl": 1,
+    "wettkaempfe": 1,
+    "bestGesamt": 14.733,
+    "letzterWettkampf": "2026-10-24"
+  },
+  {
     "vorname": "Bernhard",
     "nachname": "Hauk",
     "jahrgang": null,
@@ -14728,6 +15260,20 @@
     "letzterWettkampf": "2026-10-24"
   },
   {
+    "vorname": "Abigail",
+    "nachname": "HAWK",
+    "jahrgang": null,
+    "vereine": [
+      "Let It Shine"
+    ],
+    "nationen": [],
+    "datei": "h",
+    "anzahl": 1,
+    "wettkaempfe": 1,
+    "bestGesamt": 13.667,
+    "letzterWettkampf": "2026-10-24"
+  },
+  {
     "vorname": "Cosmus",
     "nachname": "Hayakawa",
     "jahrgang": 2016,
@@ -14757,6 +15303,20 @@
     "wettkaempfe": 2,
     "bestGesamt": 37.145,
     "letzterWettkampf": "2025-02-08"
+  },
+  {
+    "vorname": "Palmer",
+    "nachname": "HAYMAN",
+    "jahrgang": null,
+    "vereine": [
+      "Let It Shine"
+    ],
+    "nationen": [],
+    "datei": "h",
+    "anzahl": 1,
+    "wettkaempfe": 1,
+    "bestGesamt": 13.133,
+    "letzterWettkampf": "2026-10-24"
   },
   {
     "vorname": "Alexandra",
@@ -15994,6 +16554,20 @@
     "letzterWettkampf": "2026-02-14"
   },
   {
+    "vorname": "Shaylee",
+    "nachname": "HINES",
+    "jahrgang": null,
+    "vereine": [
+      "StarMakers"
+    ],
+    "nationen": [],
+    "datei": "h",
+    "anzahl": 2,
+    "wettkaempfe": 1,
+    "bestGesamt": 37.31,
+    "letzterWettkampf": "2026-10-24"
+  },
+  {
     "vorname": "Lobke",
     "nachname": "Hinrichs",
     "jahrgang": 2010,
@@ -16094,6 +16668,20 @@
     "wettkaempfe": 2,
     "bestGesamt": 47.66,
     "letzterWettkampf": "2026-10-03"
+  },
+  {
+    "vorname": "Leo",
+    "nachname": "HISSONG",
+    "jahrgang": null,
+    "vereine": [
+      "Let It Shine"
+    ],
+    "nationen": [],
+    "datei": "h",
+    "anzahl": 1,
+    "wettkaempfe": 1,
+    "bestGesamt": 5.067,
+    "letzterWettkampf": "2026-10-24"
   },
   {
     "vorname": "Ava",
@@ -16397,6 +16985,34 @@
     "letzterWettkampf": "2025-11-08"
   },
   {
+    "vorname": "Sophia",
+    "nachname": "HOLLETT",
+    "jahrgang": null,
+    "vereine": [
+      "Let It Shine"
+    ],
+    "nationen": [],
+    "datei": "h",
+    "anzahl": 1,
+    "wettkaempfe": 1,
+    "bestGesamt": 12.8,
+    "letzterWettkampf": "2026-10-24"
+  },
+  {
+    "vorname": "Sylvia",
+    "nachname": "HOLLETT",
+    "jahrgang": null,
+    "vereine": [
+      "Let It Shine"
+    ],
+    "nationen": [],
+    "datei": "h",
+    "anzahl": 1,
+    "wettkaempfe": 1,
+    "bestGesamt": 9.533,
+    "letzterWettkampf": "2026-10-24"
+  },
+  {
     "vorname": "Amelie",
     "nachname": "Holsing",
     "jahrgang": 2011,
@@ -16410,6 +17026,20 @@
     "anzahl": 32,
     "wettkaempfe": 11,
     "bestGesamt": 42.48,
+    "letzterWettkampf": "2026-10-24"
+  },
+  {
+    "vorname": "Charlotte",
+    "nachname": "HOLT",
+    "jahrgang": null,
+    "vereine": [
+      "Let It Shine"
+    ],
+    "nationen": [],
+    "datei": "h",
+    "anzahl": 1,
+    "wettkaempfe": 1,
+    "bestGesamt": 12.2,
     "letzterWettkampf": "2026-10-24"
   },
   {
@@ -16558,6 +17188,20 @@
     "wettkaempfe": 3,
     "bestGesamt": 56.15,
     "letzterWettkampf": "2026-10-17"
+  },
+  {
+    "vorname": "Rain",
+    "nachname": "HOPKINS",
+    "jahrgang": null,
+    "vereine": [
+      "Merino Trampoline Gymnastics Academy"
+    ],
+    "nationen": [],
+    "datei": "h",
+    "anzahl": 1,
+    "wettkaempfe": 1,
+    "bestGesamt": 6.4,
+    "letzterWettkampf": "2026-10-24"
   },
   {
     "vorname": "Annika",
@@ -16961,6 +17605,20 @@
     "letzterWettkampf": "2026-05-16"
   },
   {
+    "vorname": "Amelia",
+    "nachname": "HUETSON",
+    "jahrgang": null,
+    "vereine": [
+      "Merino Trampoline Gymnastics Academy"
+    ],
+    "nationen": [],
+    "datei": "h",
+    "anzahl": 2,
+    "wettkaempfe": 1,
+    "bestGesamt": 29.167,
+    "letzterWettkampf": "2026-10-24"
+  },
+  {
     "vorname": "Lina-Cleo",
     "nachname": "Hugot",
     "jahrgang": 2008,
@@ -17088,6 +17746,20 @@
     "wettkaempfe": 1,
     "bestGesamt": 43.94,
     "letzterWettkampf": "2026-07-09"
+  },
+  {
+    "vorname": "Kaleigh",
+    "nachname": "HYCHE",
+    "jahrgang": null,
+    "vereine": [
+      "Let It Shine"
+    ],
+    "nationen": [],
+    "datei": "h",
+    "anzahl": 1,
+    "wettkaempfe": 1,
+    "bestGesamt": 14.0,
+    "letzterWettkampf": "2026-10-24"
   },
   {
     "vorname": "Brama",
@@ -17302,6 +17974,20 @@
     "letzterWettkampf": "2026-09-19"
   },
   {
+    "vorname": "Ava",
+    "nachname": "IRANMANESH",
+    "jahrgang": null,
+    "vereine": [
+      "Let It Shine"
+    ],
+    "nationen": [],
+    "datei": "i",
+    "anzahl": 1,
+    "wettkaempfe": 1,
+    "bestGesamt": 0.0,
+    "letzterWettkampf": "2026-10-24"
+  },
+  {
     "vorname": "Gustav",
     "nachname": "Isenberg",
     "jahrgang": 2017,
@@ -17399,6 +18085,20 @@
     "wettkaempfe": 1,
     "bestGesamt": 40.73,
     "letzterWettkampf": "2026-10-09"
+  },
+  {
+    "vorname": "Brianne",
+    "nachname": "JABLONSKI",
+    "jahrgang": null,
+    "vereine": [
+      "Merino Trampoline Gymnastics Academy"
+    ],
+    "nationen": [],
+    "datei": "j",
+    "anzahl": 2,
+    "wettkaempfe": 1,
+    "bestGesamt": 45.52,
+    "letzterWettkampf": "2026-10-24"
   },
   {
     "vorname": "Katharina",
@@ -17932,6 +18632,20 @@
     "wettkaempfe": 1,
     "bestGesamt": 48.68,
     "letzterWettkampf": "2026-07-10"
+  },
+  {
+    "vorname": "Kaia",
+    "nachname": "JOHNSTON",
+    "jahrgang": null,
+    "vereine": [
+      "Let It Shine"
+    ],
+    "nationen": [],
+    "datei": "j",
+    "anzahl": 2,
+    "wettkaempfe": 1,
+    "bestGesamt": 30.1,
+    "letzterWettkampf": "2026-10-24"
   },
   {
     "vorname": "Emily",
@@ -18964,6 +19678,34 @@
     "letzterWettkampf": "2026-07-12"
   },
   {
+    "vorname": "Sophie",
+    "nachname": "KENNEY",
+    "jahrgang": null,
+    "vereine": [
+      "Let It Shine"
+    ],
+    "nationen": [],
+    "datei": "k",
+    "anzahl": 1,
+    "wettkaempfe": 1,
+    "bestGesamt": 12.533,
+    "letzterWettkampf": "2026-10-24"
+  },
+  {
+    "vorname": "Vivian",
+    "nachname": "KENNEY",
+    "jahrgang": null,
+    "vereine": [
+      "Let It Shine"
+    ],
+    "nationen": [],
+    "datei": "k",
+    "anzahl": 1,
+    "wettkaempfe": 1,
+    "bestGesamt": 13.933,
+    "letzterWettkampf": "2026-10-24"
+  },
+  {
     "vorname": "Katharina",
     "nachname": "Keppner",
     "jahrgang": 2013,
@@ -19005,6 +19747,20 @@
     "wettkaempfe": 2,
     "bestGesamt": 27.4,
     "letzterWettkampf": "2026-06-28"
+  },
+  {
+    "vorname": "Sariah",
+    "nachname": "KESSLER",
+    "jahrgang": null,
+    "vereine": [
+      "StarMakers"
+    ],
+    "nationen": [],
+    "datei": "k",
+    "anzahl": 4,
+    "wettkaempfe": 1,
+    "bestGesamt": 29.567,
+    "letzterWettkampf": "2026-10-24"
   },
   {
     "vorname": "Emilia",
@@ -20007,6 +20763,34 @@
     "wettkaempfe": 2,
     "bestGesamt": 20.9,
     "letzterWettkampf": "2025-11-08"
+  },
+  {
+    "vorname": "Ayla",
+    "nachname": "KNOWLTON",
+    "jahrgang": null,
+    "vereine": [
+      "Merino Trampoline Gymnastics Academy"
+    ],
+    "nationen": [],
+    "datei": "k",
+    "anzahl": 1,
+    "wettkaempfe": 1,
+    "bestGesamt": 14.533,
+    "letzterWettkampf": "2026-10-24"
+  },
+  {
+    "vorname": "Knox",
+    "nachname": "KNOWLTON",
+    "jahrgang": null,
+    "vereine": [
+      "Merino Trampoline Gymnastics Academy"
+    ],
+    "nationen": [],
+    "datei": "k",
+    "anzahl": 1,
+    "wettkaempfe": 1,
+    "bestGesamt": 12.267,
+    "letzterWettkampf": "2026-10-24"
   },
   {
     "vorname": "Nela",
@@ -21817,6 +22601,20 @@
     "letzterWettkampf": "2026-02-14"
   },
   {
+    "vorname": "Savannah",
+    "nachname": "LAMBERT",
+    "jahrgang": null,
+    "vereine": [
+      "Let It Shine"
+    ],
+    "nationen": [],
+    "datei": "l",
+    "anzahl": 1,
+    "wettkaempfe": 1,
+    "bestGesamt": 1.133,
+    "letzterWettkampf": "2026-10-24"
+  },
+  {
     "vorname": "Luisa",
     "nachname": "Lamberty",
     "jahrgang": 2012,
@@ -23527,6 +24325,48 @@
     "letzterWettkampf": "2026-10-24"
   },
   {
+    "vorname": "Avery",
+    "nachname": "LOE",
+    "jahrgang": null,
+    "vereine": [
+      "Let It Shine"
+    ],
+    "nationen": [],
+    "datei": "l",
+    "anzahl": 1,
+    "wettkaempfe": 1,
+    "bestGesamt": 2.467,
+    "letzterWettkampf": "2026-10-24"
+  },
+  {
+    "vorname": "Rory",
+    "nachname": "LOE",
+    "jahrgang": null,
+    "vereine": [
+      "Let It Shine"
+    ],
+    "nationen": [],
+    "datei": "l",
+    "anzahl": 2,
+    "wettkaempfe": 1,
+    "bestGesamt": 43.79,
+    "letzterWettkampf": "2026-10-24"
+  },
+  {
+    "vorname": "Rowan",
+    "nachname": "LOE",
+    "jahrgang": null,
+    "vereine": [
+      "Let It Shine"
+    ],
+    "nationen": [],
+    "datei": "l",
+    "anzahl": 1,
+    "wettkaempfe": 1,
+    "bestGesamt": 11.267,
+    "letzterWettkampf": "2026-10-24"
+  },
+  {
     "vorname": "Noa",
     "nachname": "LOFTY-EATON",
     "jahrgang": 2007,
@@ -23911,6 +24751,20 @@
     "letzterWettkampf": "2025-02-22"
   },
   {
+    "vorname": "Nora",
+    "nachname": "LUNDEEN",
+    "jahrgang": null,
+    "vereine": [
+      "StarMakers"
+    ],
+    "nationen": [],
+    "datei": "l",
+    "anzahl": 2,
+    "wettkaempfe": 1,
+    "bestGesamt": 30.9,
+    "letzterWettkampf": "2026-10-24"
+  },
+  {
     "vorname": "Emma",
     "nachname": "Lüning",
     "jahrgang": 2015,
@@ -24038,6 +24892,20 @@
     "letzterWettkampf": "2026-02-14"
   },
   {
+    "vorname": "Ryan",
+    "nachname": "MACCAGNAN",
+    "jahrgang": null,
+    "vereine": [
+      "Merino Trampoline Gymnastics Academy"
+    ],
+    "nationen": [],
+    "datei": "m",
+    "anzahl": 2,
+    "wettkaempfe": 1,
+    "bestGesamt": 6.86,
+    "letzterWettkampf": "2026-10-24"
+  },
+  {
     "vorname": "Carolina",
     "nachname": "MACHADO",
     "jahrgang": 2014,
@@ -24064,6 +24932,20 @@
     "wettkaempfe": 1,
     "bestGesamt": 38.14,
     "letzterWettkampf": "2026-07-10"
+  },
+  {
+    "vorname": "Anslie",
+    "nachname": "MADDOX",
+    "jahrgang": null,
+    "vereine": [
+      "StarMakers"
+    ],
+    "nationen": [],
+    "datei": "m",
+    "anzahl": 2,
+    "wettkaempfe": 1,
+    "bestGesamt": 43.1,
+    "letzterWettkampf": "2026-10-24"
   },
   {
     "vorname": "Leonor",
@@ -24625,6 +25507,20 @@
     "letzterWettkampf": "2026-10-10"
   },
   {
+    "vorname": "Olivia",
+    "nachname": "MARKS",
+    "jahrgang": null,
+    "vereine": [
+      "Let It Shine"
+    ],
+    "nationen": [],
+    "datei": "m",
+    "anzahl": 1,
+    "wettkaempfe": 1,
+    "bestGesamt": 11.333,
+    "letzterWettkampf": "2026-10-24"
+  },
+  {
     "vorname": "Carolina",
     "nachname": "MARQUES",
     "jahrgang": null,
@@ -25161,6 +26057,20 @@
     "letzterWettkampf": "2026-02-14"
   },
   {
+    "vorname": "Reese",
+    "nachname": "MAXWELL",
+    "jahrgang": null,
+    "vereine": [
+      "Let It Shine"
+    ],
+    "nationen": [],
+    "datei": "m",
+    "anzahl": 1,
+    "wettkaempfe": 1,
+    "bestGesamt": 12.667,
+    "letzterWettkampf": "2026-10-24"
+  },
+  {
     "vorname": "Joe",
     "nachname": "Mayer",
     "jahrgang": 2016,
@@ -25245,6 +26155,20 @@
     "letzterWettkampf": "2026-07-10"
   },
   {
+    "vorname": "Mackenzie",
+    "nachname": "MCGAUGH",
+    "jahrgang": null,
+    "vereine": [
+      "Let It Shine"
+    ],
+    "nationen": [],
+    "datei": "m",
+    "anzahl": 2,
+    "wettkaempfe": 1,
+    "bestGesamt": 27.9,
+    "letzterWettkampf": "2026-10-24"
+  },
+  {
     "vorname": "Arelia",
     "nachname": "McKern",
     "jahrgang": null,
@@ -25285,6 +26209,20 @@
     "wettkaempfe": 1,
     "bestGesamt": 49.26,
     "letzterWettkampf": "2026-07-10"
+  },
+  {
+    "vorname": "Milana",
+    "nachname": "MEDINA STROGONOVA",
+    "jahrgang": null,
+    "vereine": [
+      "Let It Shine"
+    ],
+    "nationen": [],
+    "datei": "m",
+    "anzahl": 1,
+    "wettkaempfe": 1,
+    "bestGesamt": 12.4,
+    "letzterWettkampf": "2026-10-24"
   },
   {
     "vorname": "Maya",
@@ -25630,6 +26568,34 @@
     "wettkaempfe": 1,
     "bestGesamt": 40.98,
     "letzterWettkampf": "2026-07-10"
+  },
+  {
+    "vorname": "Kyla",
+    "nachname": "MERINO",
+    "jahrgang": null,
+    "vereine": [
+      "Merino Trampoline Gymnastics Academy"
+    ],
+    "nationen": [],
+    "datei": "m",
+    "anzahl": 2,
+    "wettkaempfe": 1,
+    "bestGesamt": 29.167,
+    "letzterWettkampf": "2026-10-24"
+  },
+  {
+    "vorname": "Maia",
+    "nachname": "MERINO",
+    "jahrgang": null,
+    "vereine": [
+      "Merino Trampoline Gymnastics Academy"
+    ],
+    "nationen": [],
+    "datei": "m",
+    "anzahl": 1,
+    "wettkaempfe": 1,
+    "bestGesamt": 14.067,
+    "letzterWettkampf": "2026-10-24"
   },
   {
     "vorname": "Finn",
@@ -26143,6 +27109,20 @@
     "wettkaempfe": 4,
     "bestGesamt": 41.67,
     "letzterWettkampf": "2026-09-26"
+  },
+  {
+    "vorname": "Mia",
+    "nachname": "MILLER",
+    "jahrgang": null,
+    "vereine": [
+      "Let It Shine"
+    ],
+    "nationen": [],
+    "datei": "m",
+    "anzahl": 1,
+    "wettkaempfe": 1,
+    "bestGesamt": 13.8,
+    "letzterWettkampf": "2026-10-24"
   },
   {
     "vorname": "Sophie",
@@ -27127,6 +28107,20 @@
     "letzterWettkampf": "2025-11-08"
   },
   {
+    "vorname": "Sara",
+    "nachname": "MUNEYASU",
+    "jahrgang": null,
+    "vereine": [
+      "Let It Shine"
+    ],
+    "nationen": [],
+    "datei": "m",
+    "anzahl": 1,
+    "wettkaempfe": 1,
+    "bestGesamt": 13.0,
+    "letzterWettkampf": "2026-10-24"
+  },
+  {
     "vorname": "Niklas",
     "nachname": "Münster",
     "jahrgang": null,
@@ -27153,6 +28147,20 @@
     "wettkaempfe": 1,
     "bestGesamt": 50.6,
     "letzterWettkampf": "2024-03-22"
+  },
+  {
+    "vorname": "Braylee",
+    "nachname": "MURRELL",
+    "jahrgang": null,
+    "vereine": [
+      "Let It Shine"
+    ],
+    "nationen": [],
+    "datei": "m",
+    "anzahl": 1,
+    "wettkaempfe": 1,
+    "bestGesamt": 11.8,
+    "letzterWettkampf": "2026-10-24"
   },
   {
     "vorname": "Danil",
@@ -27210,6 +28218,20 @@
     "wettkaempfe": 1,
     "bestGesamt": 42.77,
     "letzterWettkampf": "2024-03-22"
+  },
+  {
+    "vorname": "Gavin",
+    "nachname": "MYER",
+    "jahrgang": null,
+    "vereine": [
+      "Let It Shine"
+    ],
+    "nationen": [],
+    "datei": "m",
+    "anzahl": 2,
+    "wettkaempfe": 1,
+    "bestGesamt": 20.8,
+    "letzterWettkampf": "2026-10-24"
   },
   {
     "vorname": "Sven",
@@ -27313,6 +28335,20 @@
     "wettkaempfe": 3,
     "bestGesamt": 36.595,
     "letzterWettkampf": "2026-09-19"
+  },
+  {
+    "vorname": "Parker Kate",
+    "nachname": "NANCE",
+    "jahrgang": null,
+    "vereine": [
+      "StarMakers"
+    ],
+    "nationen": [],
+    "datei": "n",
+    "anzahl": 1,
+    "wettkaempfe": 1,
+    "bestGesamt": 10.733,
+    "letzterWettkampf": "2026-10-24"
   },
   {
     "vorname": "Jonas",
@@ -27648,6 +28684,20 @@
     "wettkaempfe": 1,
     "bestGesamt": 42.34,
     "letzterWettkampf": "2026-07-10"
+  },
+  {
+    "vorname": "Ryder",
+    "nachname": "NICHOLS",
+    "jahrgang": null,
+    "vereine": [
+      "Merino Trampoline Gymnastics Academy"
+    ],
+    "nationen": [],
+    "datei": "n",
+    "anzahl": 1,
+    "wettkaempfe": 1,
+    "bestGesamt": 1.133,
+    "letzterWettkampf": "2026-10-24"
   },
   {
     "vorname": "Daniel",
@@ -28283,6 +29333,20 @@
     "wettkaempfe": 2,
     "bestGesamt": 34.76,
     "letzterWettkampf": "2026-10-10"
+  },
+  {
+    "vorname": "Amelia",
+    "nachname": "NOONE",
+    "jahrgang": null,
+    "vereine": [
+      "StarMakers"
+    ],
+    "nationen": [],
+    "datei": "n",
+    "anzahl": 1,
+    "wettkaempfe": 1,
+    "bestGesamt": 12.533,
+    "letzterWettkampf": "2026-10-24"
   },
   {
     "vorname": "Jenne",
@@ -29461,6 +30525,20 @@
     "letzterWettkampf": "2025-05-18"
   },
   {
+    "vorname": "Hannah",
+    "nachname": "PAMPERIN",
+    "jahrgang": null,
+    "vereine": [
+      "Merino Trampoline Gymnastics Academy"
+    ],
+    "nationen": [],
+    "datei": "p",
+    "anzahl": 1,
+    "wettkaempfe": 1,
+    "bestGesamt": 14.933,
+    "letzterWettkampf": "2026-10-24"
+  },
+  {
     "vorname": "Lea-Sophie",
     "nachname": "Pander",
     "jahrgang": 2016,
@@ -29636,6 +30714,20 @@
     "anzahl": 2,
     "wettkaempfe": 1,
     "bestGesamt": 33.3,
+    "letzterWettkampf": "2026-10-24"
+  },
+  {
+    "vorname": "Alex",
+    "nachname": "PASQUALE",
+    "jahrgang": null,
+    "vereine": [
+      "Let It Shine"
+    ],
+    "nationen": [],
+    "datei": "p",
+    "anzahl": 2,
+    "wettkaempfe": 1,
+    "bestGesamt": 27.5,
     "letzterWettkampf": "2026-10-24"
   },
   {
@@ -31376,6 +32468,20 @@
     "letzterWettkampf": "2025-11-08"
   },
   {
+    "vorname": "Joey",
+    "nachname": "PRICE",
+    "jahrgang": null,
+    "vereine": [
+      "Let It Shine"
+    ],
+    "nationen": [],
+    "datei": "p",
+    "anzahl": 1,
+    "wettkaempfe": 1,
+    "bestGesamt": 12.533,
+    "letzterWettkampf": "2026-10-24"
+  },
+  {
     "vorname": "Marine",
     "nachname": "PRIEUR",
     "jahrgang": null,
@@ -32266,6 +33372,20 @@
     "wettkaempfe": 1,
     "bestGesamt": 33.46,
     "letzterWettkampf": "2026-09-06"
+  },
+  {
+    "vorname": "Athena",
+    "nachname": "RAY",
+    "jahrgang": null,
+    "vereine": [
+      "Let It Shine"
+    ],
+    "nationen": [],
+    "datei": "r",
+    "anzahl": 1,
+    "wettkaempfe": 1,
+    "bestGesamt": 6.2,
+    "letzterWettkampf": "2026-10-24"
   },
   {
     "vorname": "Till",
@@ -33531,6 +34651,34 @@
     "letzterWettkampf": "2025-06-29"
   },
   {
+    "vorname": "Emma",
+    "nachname": "RITTINER",
+    "jahrgang": null,
+    "vereine": [
+      "Let It Shine"
+    ],
+    "nationen": [],
+    "datei": "r",
+    "anzahl": 2,
+    "wettkaempfe": 1,
+    "bestGesamt": 24.1,
+    "letzterWettkampf": "2026-10-24"
+  },
+  {
+    "vorname": "Faith",
+    "nachname": "RIVAS",
+    "jahrgang": null,
+    "vereine": [
+      "Let It Shine"
+    ],
+    "nationen": [],
+    "datei": "r",
+    "anzahl": 1,
+    "wettkaempfe": 1,
+    "bestGesamt": 14.267,
+    "letzterWettkampf": "2026-10-24"
+  },
+  {
     "vorname": "Mila",
     "nachname": "Rivinius",
     "jahrgang": 2017,
@@ -33740,6 +34888,20 @@
     "wettkaempfe": 2,
     "bestGesamt": 33.445,
     "letzterWettkampf": "2026-02-14"
+  },
+  {
+    "vorname": "Madylin",
+    "nachname": "ROGERS",
+    "jahrgang": null,
+    "vereine": [
+      "StarMakers"
+    ],
+    "nationen": [],
+    "datei": "r",
+    "anzahl": 2,
+    "wettkaempfe": 1,
+    "bestGesamt": 40.86,
+    "letzterWettkampf": "2026-10-24"
   },
   {
     "vorname": "Aina",
@@ -38333,6 +39495,7 @@
     "nachname": "Seidner",
     "jahrgang": 2010,
     "vereine": [
+      "Merino Trampoline Gymnastics Academy",
       "TB Ruit 1892 e.V.",
       "BW, Schwäbischer Turnerbund",
       "TB Ruit"
@@ -38341,10 +39504,10 @@
       "GER"
     ],
     "datei": "s",
-    "anzahl": 32,
-    "wettkaempfe": 9,
-    "bestGesamt": 49.26,
-    "letzterWettkampf": "2026-06-27"
+    "anzahl": 34,
+    "wettkaempfe": 10,
+    "bestGesamt": 50.68,
+    "letzterWettkampf": "2026-10-24"
   },
   {
     "vorname": "Maythe",
@@ -38415,6 +39578,20 @@
     "wettkaempfe": 1,
     "bestGesamt": 42.07,
     "letzterWettkampf": "2026-10-09"
+  },
+  {
+    "vorname": "Braxton",
+    "nachname": "SENA",
+    "jahrgang": null,
+    "vereine": [
+      "Merino Trampoline Gymnastics Academy"
+    ],
+    "nationen": [],
+    "datei": "s",
+    "anzahl": 2,
+    "wettkaempfe": 1,
+    "bestGesamt": 48.73,
+    "letzterWettkampf": "2026-10-24"
   },
   {
     "vorname": "Paula",
@@ -39069,6 +40246,20 @@
     "letzterWettkampf": "2026-10-10"
   },
   {
+    "vorname": "Nevaeh",
+    "nachname": "SINGER",
+    "jahrgang": null,
+    "vereine": [
+      "Let It Shine"
+    ],
+    "nationen": [],
+    "datei": "s",
+    "anzahl": 1,
+    "wettkaempfe": 1,
+    "bestGesamt": 12.133,
+    "letzterWettkampf": "2026-10-24"
+  },
+  {
     "vorname": "Gabriella",
     "nachname": "Sitnichenko",
     "jahrgang": 2014,
@@ -39081,6 +40272,20 @@
     "wettkaempfe": 1,
     "bestGesamt": 32.585,
     "letzterWettkampf": "2026-06-20"
+  },
+  {
+    "vorname": "Felicity",
+    "nachname": "SITZ",
+    "jahrgang": null,
+    "vereine": [
+      "Let It Shine"
+    ],
+    "nationen": [],
+    "datei": "s",
+    "anzahl": 1,
+    "wettkaempfe": 1,
+    "bestGesamt": 13.733,
+    "letzterWettkampf": "2026-10-24"
   },
   {
     "vorname": "Lucie",
@@ -40040,6 +41245,20 @@
     "letzterWettkampf": "2026-07-09"
   },
   {
+    "vorname": "Jack",
+    "nachname": "STEFAN",
+    "jahrgang": null,
+    "vereine": [
+      "Merino Trampoline Gymnastics Academy"
+    ],
+    "nationen": [],
+    "datei": "s",
+    "anzahl": 2,
+    "wettkaempfe": 1,
+    "bestGesamt": 51.1,
+    "letzterWettkampf": "2026-10-24"
+  },
+  {
     "vorname": "Colin",
     "nachname": "Stefani",
     "jahrgang": 2009,
@@ -40682,6 +41901,20 @@
     "wettkaempfe": 1,
     "bestGesamt": 35.77,
     "letzterWettkampf": "2024-06-22"
+  },
+  {
+    "vorname": "Anna Franklin",
+    "nachname": "STROUD",
+    "jahrgang": null,
+    "vereine": [
+      "Merino Trampoline Gymnastics Academy"
+    ],
+    "nationen": [],
+    "datei": "s",
+    "anzahl": 1,
+    "wettkaempfe": 1,
+    "bestGesamt": 6.733,
+    "letzterWettkampf": "2026-10-24"
   },
   {
     "vorname": "Kezia",
@@ -41700,6 +42933,34 @@
     "letzterWettkampf": "2025-09-13"
   },
   {
+    "vorname": "Jade",
+    "nachname": "THOMAS",
+    "jahrgang": null,
+    "vereine": [
+      "Merino Trampoline Gymnastics Academy"
+    ],
+    "nationen": [],
+    "datei": "t",
+    "anzahl": 1,
+    "wettkaempfe": 1,
+    "bestGesamt": 11.667,
+    "letzterWettkampf": "2026-10-24"
+  },
+  {
+    "vorname": "Yvie",
+    "nachname": "THOMAS",
+    "jahrgang": null,
+    "vereine": [
+      "Merino Trampoline Gymnastics Academy"
+    ],
+    "nationen": [],
+    "datei": "t",
+    "anzahl": 1,
+    "wettkaempfe": 1,
+    "bestGesamt": 9.4,
+    "letzterWettkampf": "2026-10-24"
+  },
+  {
     "vorname": "Adrian",
     "nachname": "Thomson",
     "jahrgang": 2006,
@@ -41905,6 +43166,20 @@
     "letzterWettkampf": "2026-05-31"
   },
   {
+    "vorname": "Lexi",
+    "nachname": "TODD",
+    "jahrgang": null,
+    "vereine": [
+      "Let It Shine"
+    ],
+    "nationen": [],
+    "datei": "t",
+    "anzahl": 1,
+    "wettkaempfe": 1,
+    "bestGesamt": 2.333,
+    "letzterWettkampf": "2026-10-24"
+  },
+  {
     "vorname": "Lara",
     "nachname": "Toebe",
     "jahrgang": 2015,
@@ -42104,6 +43379,20 @@
     "wettkaempfe": 7,
     "bestGesamt": 44.39,
     "letzterWettkampf": "2026-09-26"
+  },
+  {
+    "vorname": "Victoria",
+    "nachname": "TOPPER",
+    "jahrgang": null,
+    "vereine": [
+      "Let It Shine"
+    ],
+    "nationen": [],
+    "datei": "t",
+    "anzahl": 1,
+    "wettkaempfe": 1,
+    "bestGesamt": 0.0,
+    "letzterWettkampf": "2026-10-24"
   },
   {
     "vorname": "Diego",
@@ -42564,6 +43853,20 @@
     "wettkaempfe": 3,
     "bestGesamt": 48.56,
     "letzterWettkampf": "2025-09-20"
+  },
+  {
+    "vorname": "Ayla",
+    "nachname": "TYSON",
+    "jahrgang": null,
+    "vereine": [
+      "Let It Shine"
+    ],
+    "nationen": [],
+    "datei": "t",
+    "anzahl": 1,
+    "wettkaempfe": 1,
+    "bestGesamt": 12.667,
+    "letzterWettkampf": "2026-10-24"
   },
   {
     "vorname": "Mila",
@@ -43930,6 +45233,20 @@
     "wettkaempfe": 5,
     "bestGesamt": 41.61,
     "letzterWettkampf": "2026-05-02"
+  },
+  {
+    "vorname": "Mai-Linh",
+    "nachname": "VO",
+    "jahrgang": null,
+    "vereine": [
+      "Let It Shine"
+    ],
+    "nationen": [],
+    "datei": "v",
+    "anzahl": 2,
+    "wettkaempfe": 1,
+    "bestGesamt": 28.267,
+    "letzterWettkampf": "2026-10-24"
   },
   {
     "vorname": "Flore",
@@ -45982,6 +47299,20 @@
     "letzterWettkampf": "2026-10-10"
   },
   {
+    "vorname": "Blake",
+    "nachname": "WINKELMAN",
+    "jahrgang": null,
+    "vereine": [
+      "Let It Shine"
+    ],
+    "nationen": [],
+    "datei": "w",
+    "anzahl": 1,
+    "wettkaempfe": 1,
+    "bestGesamt": 13.2,
+    "letzterWettkampf": "2026-10-24"
+  },
+  {
     "vorname": "Leonie",
     "nachname": "Winkler",
     "jahrgang": 2011,
@@ -46379,6 +47710,20 @@
     "letzterWettkampf": "2026-10-09"
   },
   {
+    "vorname": "Charlotte",
+    "nachname": "WORTISKA",
+    "jahrgang": null,
+    "vereine": [
+      "Let It Shine"
+    ],
+    "nationen": [],
+    "datei": "w",
+    "anzahl": 1,
+    "wettkaempfe": 1,
+    "bestGesamt": 12.8,
+    "letzterWettkampf": "2026-10-24"
+  },
+  {
     "vorname": "Ilse",
     "nachname": "Wouters",
     "jahrgang": 2009,
@@ -46592,6 +47937,20 @@
     "letzterWettkampf": "2026-06-27"
   },
   {
+    "vorname": "Charisma",
+    "nachname": "YANG",
+    "jahrgang": null,
+    "vereine": [
+      "StarMakers"
+    ],
+    "nationen": [],
+    "datei": "y",
+    "anzahl": 2,
+    "wettkaempfe": 1,
+    "bestGesamt": 43.53,
+    "letzterWettkampf": "2026-10-24"
+  },
+  {
     "vorname": "Katsiaryna",
     "nachname": "YARSHOVA",
     "jahrgang": 2003,
@@ -46664,6 +48023,20 @@
     "wettkaempfe": 2,
     "bestGesamt": 58.13,
     "letzterWettkampf": "2026-10-17"
+  },
+  {
+    "vorname": "Marley",
+    "nachname": "YOUNGREN",
+    "jahrgang": null,
+    "vereine": [
+      "Merino Trampoline Gymnastics Academy"
+    ],
+    "nationen": [],
+    "datei": "y",
+    "anzahl": 1,
+    "wettkaempfe": 1,
+    "bestGesamt": 11.667,
+    "letzterWettkampf": "2026-10-24"
   },
   {
     "vorname": "Tessa",
@@ -47461,6 +48834,62 @@
     "wettkaempfe": 1,
     "bestGesamt": 47.69,
     "letzterWettkampf": "2025-05-18"
+  },
+  {
+    "vorname": "Connor",
+    "nachname": "ZUPKO",
+    "jahrgang": null,
+    "vereine": [
+      "Merino Trampoline Gymnastics Academy"
+    ],
+    "nationen": [],
+    "datei": "z",
+    "anzahl": 1,
+    "wettkaempfe": 1,
+    "bestGesamt": 11.933,
+    "letzterWettkampf": "2026-10-24"
+  },
+  {
+    "vorname": "Isaac",
+    "nachname": "ZUPKO",
+    "jahrgang": null,
+    "vereine": [
+      "Merino Trampoline Gymnastics Academy"
+    ],
+    "nationen": [],
+    "datei": "z",
+    "anzahl": 2,
+    "wettkaempfe": 1,
+    "bestGesamt": 25.5,
+    "letzterWettkampf": "2026-10-24"
+  },
+  {
+    "vorname": "Amelia",
+    "nachname": "ZURICK",
+    "jahrgang": null,
+    "vereine": [
+      "Let It Shine"
+    ],
+    "nationen": [],
+    "datei": "z",
+    "anzahl": 2,
+    "wettkaempfe": 1,
+    "bestGesamt": 28.3,
+    "letzterWettkampf": "2026-10-24"
+  },
+  {
+    "vorname": "Evelyn",
+    "nachname": "ZURICK",
+    "jahrgang": null,
+    "vereine": [
+      "Let It Shine"
+    ],
+    "nationen": [],
+    "datei": "z",
+    "anzahl": 1,
+    "wettkaempfe": 1,
+    "bestGesamt": 13.267,
+    "letzterWettkampf": "2026-10-24"
   },
   {
     "vorname": "Emilia",
