@@ -1,5 +1,5 @@
 {
-  "aktualisiert": "2026-11-03T06:51:56Z",
+  "aktualisiert": "2026-11-06T10:20:27Z",
   "events": {
     "03afebf7-8a57-4ba2-4940-72a51e677747": {
       "name": "25. Barmstedt Cup 2026",
@@ -43,7 +43,7 @@
       "land": 276,
       "status": "offen",
       "manuell": false,
-      "zuletztGeladen": "2026-11-02",
+      "zuletztGeladen": "2026-11-06",
       "standSporttech": "2026-10-26T15:20:00.181363Z",
       "wertungen": 0
     },
@@ -336,9 +336,9 @@
       "land": 276,
       "status": "offen",
       "manuell": false,
-      "zuletztGeladen": "2026-11-02",
+      "zuletztGeladen": "2026-11-06",
       "standSporttech": "2026-10-29T14:31:01.666648Z",
-      "wertungen": 5
+      "wertungen": 19
     },
     "4df253ee-2188-4f40-4a66-4dfbff913130": {
       "name": "Deutsche Hochschulmeisterschaften 2025",
@@ -361,7 +361,7 @@
       "land": 276,
       "status": "offen",
       "manuell": false,
-      "zuletztGeladen": "2026-11-02",
+      "zuletztGeladen": "2026-11-06",
       "standSporttech": "2026-10-20T12:19:07.332879Z",
       "wertungen": 0
     },
@@ -374,7 +374,7 @@
       "land": 276,
       "status": "offen",
       "manuell": false,
-      "zuletztGeladen": "2026-11-02",
+      "zuletztGeladen": "2026-11-06",
       "standSporttech": "2026-10-01T12:26:44.837339Z",
       "wertungen": 362
     },
@@ -411,7 +411,7 @@
       "land": 276,
       "status": "offen",
       "manuell": false,
-      "zuletztGeladen": "2026-11-02",
+      "zuletztGeladen": "2026-11-06",
       "standSporttech": "2026-10-22T09:42:25.392472Z",
       "wertungen": 0
     },
@@ -456,9 +456,13 @@
       "name": "Merino Cup 2026",
       "beginn": "2026-10-24",
       "ende": "2026-10-24",
+      "ausrichter": "Merino Trampoline Gymnastics Academy",
+      "ausrichterId": "380934e9-5eea-4483-64aa-c8beb9329857",
+      "land": 840,
       "status": "offen",
       "manuell": true,
-      "zuletztGeladen": "2026-11-03",
+      "zuletztGeladen": "2026-11-06",
+      "standSporttech": "2026-10-26T15:21:15.927093Z",
       "wertungen": 140
     },
     "643609fc-4b23-4a25-79d0-67550ad871a6": {
@@ -787,7 +791,7 @@
       "land": 276,
       "status": "offen",
       "manuell": false,
-      "zuletztGeladen": "2026-11-02",
+      "zuletztGeladen": "2026-11-06",
       "standSporttech": "2026-10-31T09:36:25.743925Z",
       "wertungen": 0
     },
@@ -1045,7 +1049,7 @@
       "land": 276,
       "status": "offen",
       "manuell": false,
-      "zuletztGeladen": "2026-11-02",
+      "zuletztGeladen": "2026-11-06",
       "standSporttech": "2026-10-21T11:07:52.306105Z",
       "wertungen": 0
     },

@@ -8894,6 +8894,18 @@
     "letzterWettkampf": "2025-10-05"
   },
   {
+    "vorname": "Sprung",
+    "nachname": "dritter",
+    "jahrgang": null,
+    "vereine": [],
+    "nationen": [],
+    "datei": "d",
+    "anzahl": 1,
+    "wettkaempfe": 1,
+    "bestGesamt": 20.0,
+    "letzterWettkampf": "2026-11-04"
+  },
+  {
     "vorname": "Guilherme",
     "nachname": "DUARTE",
     "jahrgang": 2013,
@@ -14902,6 +14914,20 @@
     "letzterWettkampf": "2026-09-06"
   },
   {
+    "vorname": "Welt",
+    "nachname": "Hallo",
+    "jahrgang": null,
+    "vereine": [
+      "TSG Mutterstadt"
+    ],
+    "nationen": [],
+    "datei": "h",
+    "anzahl": 2,
+    "wettkaempfe": 1,
+    "bestGesamt": 41.821,
+    "letzterWettkampf": "2026-11-04"
+  },
+  {
     "vorname": "Amal",
     "nachname": "Hamameh",
     "jahrgang": 2010,
@@ -18983,10 +19009,10 @@
     ],
     "nationen": [],
     "datei": "k",
-    "anzahl": 1,
+    "anzahl": 3,
     "wettkaempfe": 1,
-    "bestGesamt": 17.3,
-    "letzterWettkampf": "2026-10-29"
+    "bestGesamt": 19.7,
+    "letzterWettkampf": "2026-11-03"
   },
   {
     "vorname": "Joana Elia",
@@ -25367,6 +25393,20 @@
     "letzterWettkampf": "2026-10-10"
   },
   {
+    "vorname": "neu",
+    "nachname": "manuel",
+    "jahrgang": null,
+    "vereine": [
+      "TSG Mutterstadt"
+    ],
+    "nationen": [],
+    "datei": "m",
+    "anzahl": 1,
+    "wettkaempfe": 1,
+    "bestGesamt": 21.11,
+    "letzterWettkampf": "2026-11-04"
+  },
+  {
     "vorname": "Leonor",
     "nachname": "MARCELINO",
     "jahrgang": 2012,
@@ -28600,6 +28640,18 @@
     "letzterWettkampf": "2025-11-08"
   },
   {
+    "vorname": "springer",
+    "nachname": "neuer",
+    "jahrgang": null,
+    "vereine": [],
+    "nationen": [],
+    "datei": "n",
+    "anzahl": 1,
+    "wettkaempfe": 1,
+    "bestGesamt": 16.4,
+    "letzterWettkampf": "2026-11-03"
+  },
+  {
     "vorname": "Silas",
     "nachname": "Neufeld",
     "jahrgang": 2012,
@@ -30405,10 +30457,10 @@
     ],
     "nationen": [],
     "datei": "p",
-    "anzahl": 2,
+    "anzahl": 3,
     "wettkaempfe": 1,
-    "bestGesamt": 18.3,
-    "letzterWettkampf": "2026-10-29"
+    "bestGesamt": 31.5,
+    "letzterWettkampf": "2026-11-05"
   },
   {
     "vorname": "Yara",
@@ -30799,6 +30851,20 @@
     "wettkaempfe": 1,
     "bestGesamt": 46.25,
     "letzterWettkampf": "2026-07-11"
+  },
+  {
+    "vorname": "Krieg",
+    "nachname": "Patrick",
+    "jahrgang": null,
+    "vereine": [
+      "TSG Mutterstadt"
+    ],
+    "nationen": [],
+    "datei": "p",
+    "anzahl": 3,
+    "wettkaempfe": 1,
+    "bestGesamt": 43.311,
+    "letzterWettkampf": "2026-11-04"
   },
   {
     "vorname": "Jesper",
@@ -42327,7 +42393,7 @@
     "anzahl": 2,
     "wettkaempfe": 1,
     "bestGesamt": 20.0,
-    "letzterWettkampf": "2026-10-30"
+    "letzterWettkampf": "2026-11-03"
   },
   {
     "vorname": "Larissa",
@@ -46476,6 +46542,18 @@
     "letzterWettkampf": "2026-09-19"
   },
   {
+    "vorname": "Stand",
+    "nachname": "weiterer",
+    "jahrgang": null,
+    "vereine": [],
+    "nationen": [],
+    "datei": "w",
+    "anzahl": 1,
+    "wettkaempfe": 1,
+    "bestGesamt": 20.0,
+    "letzterWettkampf": "2026-11-04"
+  },
+  {
     "vorname": "Tessa Helene",
     "nachname": "Weitkemper",
     "jahrgang": 2007,
@@ -48890,6 +48968,20 @@
     "wettkaempfe": 1,
     "bestGesamt": 13.267,
     "letzterWettkampf": "2026-10-24"
+  },
+  {
+    "vorname": "drei",
+    "nachname": "zwei",
+    "jahrgang": null,
+    "vereine": [
+      "TSG Mutterstadt"
+    ],
+    "nationen": [],
+    "datei": "z",
+    "anzahl": 2,
+    "wettkaempfe": 1,
+    "bestGesamt": 19.41,
+    "letzterWettkampf": "2026-11-05"
   },
   {
     "vorname": "Emilia",
