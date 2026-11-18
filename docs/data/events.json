@@ -1,6 +1,15 @@
 {
-  "aktualisiert": "2026-11-16T10:35:51Z",
+  "aktualisiert": "2026-11-18T10:43:01Z",
   "events": {
+    "01a1be6a-b476-781a-a380-de9079956fde": {
+      "name": "3rd Trampoline & Tumbling Junior World Championships and 32nd World Age Group Competitions",
+      "beginn": "2026-11-12",
+      "ende": "2026-11-15",
+      "status": "offen",
+      "manuell": true,
+      "zuletztGeladen": "2026-11-18",
+      "wertungen": 1159
+    },
     "03afebf7-8a57-4ba2-4940-72a51e677747": {
       "name": "25. Barmstedt Cup 2026",
       "beginn": "2026-02-14",
@@ -31,7 +40,7 @@
       "ende": "2026-06-27",
       "status": "abgeschlossen",
       "manuell": true,
-      "zuletztGeladen": "2026-11-03",
+      "zuletztGeladen": "2026-11-18",
       "wertungen": 143
     },
     "0876fc11-4300-439a-49f9-baa2fe8e6f18": {
@@ -201,7 +210,7 @@
       "ende": "2026-06-27",
       "status": "abgeschlossen",
       "manuell": true,
-      "zuletztGeladen": "2026-11-03",
+      "zuletztGeladen": "2026-11-18",
       "wertungen": 262
     },
     "2bbedc57-db84-4b70-7ce7-024ea9c141f3": {
@@ -457,12 +466,10 @@
       "beginn": "2026-10-24",
       "ende": "2026-10-24",
       "ausrichter": "Merino Trampoline Gymnastics Academy",
-      "ausrichterId": "380934e9-5eea-4483-64aa-c8beb9329857",
       "land": 840,
-      "status": "offen",
+      "status": "abgeschlossen",
       "manuell": true,
-      "zuletztGeladen": "2026-11-07",
-      "standSporttech": "2026-10-26T15:21:15.927093Z",
+      "zuletztGeladen": "2026-11-18",
       "wertungen": 140
     },
     "643609fc-4b23-4a25-79d0-67550ad871a6": {
@@ -608,7 +615,7 @@
       "land": 203,
       "status": "abgeschlossen",
       "manuell": true,
-      "zuletztGeladen": "2026-11-03",
+      "zuletztGeladen": "2026-11-18",
       "wertungen": 617
     },
     "80c26a2a-6a39-4b12-799d-0fac6ee8e9f1": {
@@ -988,7 +995,7 @@
       "land": 276,
       "status": "abgeschlossen",
       "manuell": true,
-      "zuletztGeladen": "2026-11-03",
+      "zuletztGeladen": "2026-11-18",
       "wertungen": 144
     },
     "d633d833-fe5e-4471-5b79-bce3ddf9c2a9": {
@@ -1133,7 +1140,7 @@
       "ende": "2026-07-11",
       "status": "abgeschlossen",
       "manuell": true,
-      "zuletztGeladen": "2026-11-03",
+      "zuletztGeladen": "2026-11-18",
       "wertungen": 938
     }
   }
