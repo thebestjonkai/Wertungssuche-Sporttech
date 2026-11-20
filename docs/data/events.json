@@ -1,5 +1,5 @@
 {
-  "aktualisiert": "2026-11-18T10:43:01Z",
+  "aktualisiert": "2026-11-20T10:54:18Z",
   "events": {
     "01a1be6a-b476-781a-a380-de9079956fde": {
       "name": "3rd Trampoline & Tumbling Junior World Championships and 32nd World Age Group Competitions",
@@ -7,7 +7,7 @@
       "ende": "2026-11-15",
       "status": "offen",
       "manuell": true,
-      "zuletztGeladen": "2026-11-18",
+      "zuletztGeladen": "2026-11-20",
       "wertungen": 1159
     },
     "03afebf7-8a57-4ba2-4940-72a51e677747": {
@@ -21,6 +21,19 @@
       "zuletztGeladen": "2026-10-11",
       "standSporttech": "2026-02-19T10:38:23.448026Z",
       "wertungen": 654
+    },
+    "03dbede3-2616-487c-6960-3b48dd285079": {
+      "name": "Düsseldorfer Mannschaftemeisterschaften",
+      "beginn": "2026-11-28",
+      "ende": "2028-11-28",
+      "ausrichter": "Turnverband Düsseldorf",
+      "ausrichterId": "919e2086-ed26-468a-6eb0-1a2517376f24",
+      "land": 276,
+      "status": "offen",
+      "manuell": false,
+      "zuletztGeladen": "2026-11-20",
+      "standSporttech": "2026-11-19T09:00:46.534548Z",
+      "wertungen": 0
     },
     "0575104d-7289-4d6e-4235-2c922050ed2f": {
       "name": "BaWü Einzel und Turnfestpokal 2026",
@@ -52,7 +65,7 @@
       "land": 276,
       "status": "offen",
       "manuell": false,
-      "zuletztGeladen": "2026-11-16",
+      "zuletztGeladen": "2026-11-20",
       "standSporttech": "2026-10-26T15:20:00.181363Z",
       "wertungen": 0
     },
@@ -141,6 +154,19 @@
       "zuletztGeladen": "2026-11-01",
       "standSporttech": "2026-10-15T20:01:14.409837Z",
       "wertungen": 180
+    },
+    "1ec9c23f-1d4b-43d0-601a-0aefd609e74f": {
+      "name": "Nikolaus-Meisterschaft",
+      "beginn": "2026-11-28",
+      "ende": "2026-11-28",
+      "ausrichter": "DJK-Vfl 1919 Willich e.V.",
+      "ausrichterId": "a7ac54c3-0505-4dce-50ba-ad33f41f8b2d",
+      "land": 276,
+      "status": "offen",
+      "manuell": false,
+      "zuletztGeladen": "2026-11-20",
+      "standSporttech": "2026-11-17T16:32:11.660724Z",
+      "wertungen": 0
     },
     "208965ec-548d-481d-447a-84205d215608": {
       "name": "Offene Kölner Synchronwettkämpfe 2026",
@@ -345,7 +371,7 @@
       "land": 276,
       "status": "offen",
       "manuell": false,
-      "zuletztGeladen": "2026-11-16",
+      "zuletztGeladen": "2026-11-20",
       "standSporttech": "2026-11-07T17:39:37.084927Z",
       "wertungen": 0
     },
@@ -370,7 +396,7 @@
       "land": 276,
       "status": "offen",
       "manuell": false,
-      "zuletztGeladen": "2026-11-16",
+      "zuletztGeladen": "2026-11-20",
       "standSporttech": "2026-10-20T12:19:07.332879Z",
       "wertungen": 0
     },
@@ -420,7 +446,7 @@
       "land": 276,
       "status": "offen",
       "manuell": false,
-      "zuletztGeladen": "2026-11-16",
+      "zuletztGeladen": "2026-11-20",
       "standSporttech": "2026-11-08T12:05:53.740023Z",
       "wertungen": 0
     },
@@ -798,7 +824,7 @@
       "land": 276,
       "status": "offen",
       "manuell": false,
-      "zuletztGeladen": "2026-11-16",
+      "zuletztGeladen": "2026-11-20",
       "standSporttech": "2026-11-12T11:20:09.089661Z",
       "wertungen": 0
     },
@@ -874,7 +900,7 @@
       "land": 276,
       "status": "offen",
       "manuell": false,
-      "zuletztGeladen": "2026-11-16",
+      "zuletztGeladen": "2026-11-20",
       "standSporttech": "2026-11-12T20:28:55.474746Z",
       "wertungen": 0
     },
@@ -1082,7 +1108,7 @@
       "land": 276,
       "status": "offen",
       "manuell": false,
-      "zuletztGeladen": "2026-11-16",
+      "zuletztGeladen": "2026-11-20",
       "standSporttech": "2026-10-21T11:07:52.306105Z",
       "wertungen": 138
     },
