@@ -1,5 +1,5 @@
 {
-  "aktualisiert": "2026-11-20T10:54:18Z",
+  "aktualisiert": "2026-11-21T10:37:55Z",
   "events": {
     "01a1be6a-b476-781a-a380-de9079956fde": {
       "name": "3rd Trampoline & Tumbling Junior World Championships and 32nd World Age Group Competitions",
@@ -7,7 +7,7 @@
       "ende": "2026-11-15",
       "status": "offen",
       "manuell": true,
-      "zuletztGeladen": "2026-11-20",
+      "zuletztGeladen": "2026-11-21",
       "wertungen": 1159
     },
     "03afebf7-8a57-4ba2-4940-72a51e677747": {
@@ -31,7 +31,7 @@
       "land": 276,
       "status": "offen",
       "manuell": false,
-      "zuletztGeladen": "2026-11-20",
+      "zuletztGeladen": "2026-11-21",
       "standSporttech": "2026-11-19T09:00:46.534548Z",
       "wertungen": 0
     },
@@ -65,7 +65,7 @@
       "land": 276,
       "status": "offen",
       "manuell": false,
-      "zuletztGeladen": "2026-11-20",
+      "zuletztGeladen": "2026-11-21",
       "standSporttech": "2026-10-26T15:20:00.181363Z",
       "wertungen": 0
     },
@@ -164,7 +164,7 @@
       "land": 276,
       "status": "offen",
       "manuell": false,
-      "zuletztGeladen": "2026-11-20",
+      "zuletztGeladen": "2026-11-21",
       "standSporttech": "2026-11-17T16:32:11.660724Z",
       "wertungen": 0
     },
@@ -371,8 +371,21 @@
       "land": 276,
       "status": "offen",
       "manuell": false,
-      "zuletztGeladen": "2026-11-20",
+      "zuletztGeladen": "2026-11-21",
       "standSporttech": "2026-11-07T17:39:37.084927Z",
+      "wertungen": 0
+    },
+    "4d96266d-7dfe-4854-764a-417ebe40b04d": {
+      "name": "Vereinsmeisterschaften TSV Mannheim 2026",
+      "beginn": "2026-11-28",
+      "ende": "2026-11-28",
+      "ausrichter": "TSV Mannheim",
+      "ausrichterId": "fd6aa409-c8bd-463a-5428-ef9618308b88",
+      "land": 276,
+      "status": "offen",
+      "manuell": false,
+      "zuletztGeladen": "2026-11-21",
+      "standSporttech": "2026-11-20T14:53:46.745251Z",
       "wertungen": 0
     },
     "4df253ee-2188-4f40-4a66-4dfbff913130": {
@@ -396,7 +409,7 @@
       "land": 276,
       "status": "offen",
       "manuell": false,
-      "zuletztGeladen": "2026-11-20",
+      "zuletztGeladen": "2026-11-21",
       "standSporttech": "2026-10-20T12:19:07.332879Z",
       "wertungen": 0
     },
@@ -446,7 +459,7 @@
       "land": 276,
       "status": "offen",
       "manuell": false,
-      "zuletztGeladen": "2026-11-20",
+      "zuletztGeladen": "2026-11-21",
       "standSporttech": "2026-11-08T12:05:53.740023Z",
       "wertungen": 0
     },
@@ -824,7 +837,7 @@
       "land": 276,
       "status": "offen",
       "manuell": false,
-      "zuletztGeladen": "2026-11-20",
+      "zuletztGeladen": "2026-11-21",
       "standSporttech": "2026-11-12T11:20:09.089661Z",
       "wertungen": 0
     },
@@ -900,9 +913,9 @@
       "land": 276,
       "status": "offen",
       "manuell": false,
-      "zuletztGeladen": "2026-11-20",
+      "zuletztGeladen": "2026-11-21",
       "standSporttech": "2026-11-12T20:28:55.474746Z",
-      "wertungen": 0
+      "wertungen": 8
     },
     "c72a7bb9-eabf-4a7d-6073-b819d9ee59eb": {
       "name": "Qualifikations-WK DMT WAGC-JWM",
@@ -1108,7 +1121,7 @@
       "land": 276,
       "status": "offen",
       "manuell": false,
-      "zuletztGeladen": "2026-11-20",
+      "zuletztGeladen": "2026-11-21",
       "standSporttech": "2026-10-21T11:07:52.306105Z",
       "wertungen": 138
     },

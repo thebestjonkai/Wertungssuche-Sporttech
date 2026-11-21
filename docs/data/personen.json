@@ -3438,6 +3438,20 @@
     "letzterWettkampf": "2026-10-10"
   },
   {
+    "vorname": "Tale",
+    "nachname": "Berger",
+    "jahrgang": 2019,
+    "vereine": [
+      "Märkischer Turnerbund Brandenburg e. V."
+    ],
+    "nationen": [],
+    "datei": "b",
+    "anzahl": 1,
+    "wettkaempfe": 1,
+    "bestGesamt": 31.92,
+    "letzterWettkampf": "2026-11-21"
+  },
+  {
     "vorname": "Pepe",
     "nachname": "Berges",
     "jahrgang": null,
@@ -8654,6 +8668,20 @@
     "letzterWettkampf": "2024-10-26"
   },
   {
+    "vorname": "Anni",
+    "nachname": "Dawydow",
+    "jahrgang": 2020,
+    "vereine": [
+      "Trampolinturnen Unstrut-Hainich e.V."
+    ],
+    "nationen": [],
+    "datei": "d",
+    "anzahl": 1,
+    "wettkaempfe": 1,
+    "bestGesamt": 30.71,
+    "letzterWettkampf": "2026-11-21"
+  },
+  {
     "vorname": "Carlos",
     "nachname": "DE ARGILA",
     "jahrgang": 2009,
@@ -11279,6 +11307,20 @@
     "letzterWettkampf": "2026-07-04"
   },
   {
+    "vorname": "Noa",
+    "nachname": "Erdmann",
+    "jahrgang": 2017,
+    "vereine": [
+      "Trampolinturnen Unstrut-Hainich e.V."
+    ],
+    "nationen": [],
+    "datei": "e",
+    "anzahl": 1,
+    "wettkaempfe": 1,
+    "bestGesamt": 35.11,
+    "letzterWettkampf": "2026-11-21"
+  },
+  {
     "vorname": "Emma",
     "nachname": "ERE",
     "jahrgang": 2011,
@@ -13479,6 +13521,20 @@
     "wettkaempfe": 8,
     "bestGesamt": 38.65,
     "letzterWettkampf": "2025-10-05"
+  },
+  {
+    "vorname": "Thea Liv",
+    "nachname": "Funke",
+    "jahrgang": 2018,
+    "vereine": [
+      "Märkischer Turnerbund Brandenburg e. V."
+    ],
+    "nationen": [],
+    "datei": "f",
+    "anzahl": 1,
+    "wettkaempfe": 1,
+    "bestGesamt": 15.74,
+    "letzterWettkampf": "2026-11-21"
   },
   {
     "vorname": "Ella",
@@ -17060,6 +17116,20 @@
     "letzterWettkampf": "2026-10-24"
   },
   {
+    "vorname": "Lila",
+    "nachname": "Haucke",
+    "jahrgang": 2019,
+    "vereine": [
+      "Märkischer Turnerbund Brandenburg e. V."
+    ],
+    "nationen": [],
+    "datei": "h",
+    "anzahl": 1,
+    "wettkaempfe": 1,
+    "bestGesamt": 31.18,
+    "letzterWettkampf": "2026-11-21"
+  },
+  {
     "vorname": "Bernhard",
     "nachname": "Hauk",
     "jahrgang": null,
@@ -19342,6 +19412,20 @@
     "wettkaempfe": 6,
     "bestGesamt": 46.34,
     "letzterWettkampf": "2026-10-03"
+  },
+  {
+    "vorname": "Melli Lynn",
+    "nachname": "Hötzel",
+    "jahrgang": 2016,
+    "vereine": [
+      "Turnsportverein Meiningen e.V."
+    ],
+    "nationen": [],
+    "datei": "h",
+    "anzahl": 1,
+    "wettkaempfe": 1,
+    "bestGesamt": 36.4,
+    "letzterWettkampf": "2026-11-21"
   },
   {
     "vorname": "Davit",
@@ -24942,6 +25026,20 @@
     "wettkaempfe": 1,
     "bestGesamt": 39.21,
     "letzterWettkampf": "2024-06-23"
+  },
+  {
+    "vorname": "Leonie",
+    "nachname": "Küllmer",
+    "jahrgang": 2018,
+    "vereine": [
+      "Trampolinturnen Unstrut-Hainich e.V."
+    ],
+    "nationen": [],
+    "datei": "k",
+    "anzahl": 1,
+    "wettkaempfe": 1,
+    "bestGesamt": 33.62,
+    "letzterWettkampf": "2026-11-21"
   },
   {
     "vorname": "Lotte",
@@ -35354,10 +35452,10 @@
     ],
     "nationen": [],
     "datei": "p",
-    "anzahl": 4,
-    "wettkaempfe": 2,
+    "anzahl": 5,
+    "wettkaempfe": 3,
     "bestGesamt": 35.04,
-    "letzterWettkampf": "2025-10-05"
+    "letzterWettkampf": "2026-11-21"
   },
   {
     "vorname": "Tristan",
